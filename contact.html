@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact | Rank On Maps</title>
+<meta name="description" content="Get in touch with Rank On Maps. Book a free 20-minute audit and see exactly where you sit in the local map pack." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .contact-wrap{
+    max-width:1100px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1.15fr;gap:60px;
+    align-items:start;
+  }
+  .contact-left{text-align:left}
+  .contact-left h1{font-size:clamp(48px,6.5vw,84px);line-height:1.02}
+  .contact-left h1 em{font-style:italic;background:linear-gradient(180deg,#1d1d1f 0%,#8a8a8f 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .contact-left .lead{font-size:18px;color:var(--ink-soft);max-width:480px;margin-top:24px;line-height:1.55}
+
+  .contact-info{margin-top:48px;display:grid;gap:14px}
+  .info-row{
+    display:flex;align-items:center;gap:18px;
+    padding:20px 24px;border:1px solid var(--line);border-radius:18px;
+    background:#fff;transition:all .35s cubic-bezier(.2,.7,.2,1);
+  }
+  .info-row:hover{border-color:#1d1d1f;transform:translateY(-2px);box-shadow:0 18px 40px -18px rgba(0,0,0,.16)}
+  .info-row .ico{
+    width:46px;height:46px;border-radius:14px;background:#1d1d1f;color:#fff;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    transition:transform .3s,background .3s;
+  }
+  .info-row:hover .ico{transform:rotate(-6deg) scale(1.05)}
+  .info-row .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft);font-weight:600}
+  .info-row .val{font-family:'Bethany Elingston',serif;font-size:22px;color:var(--ink);line-height:1.1;margin-top:4px}
+
+  .form-card{
+    background:#fff;border:1px solid var(--line);border-radius:28px;
+    padding:48px 48px;
+    box-shadow:0 30px 80px -28px rgba(0,0,0,.18);
+    text-align:left;
+  }
+  .form-card .ftitle{font-family:'Bethany Elingston',serif;font-size:28px;color:var(--ink);margin-bottom:6px}
+  .form-card .fsub{color:var(--ink-soft);font-size:14px;margin-bottom:30px}
+  .form{display:grid;gap:14px}
+  .form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .form label{display:block}
+  .form .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft);font-weight:600;margin-bottom:6px}
+  .form input,.form textarea,.form select{
+    width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--line);
+    background:#fff;font-family:inherit;font-size:14.5px;color:var(--ink);
+    transition:border-color .2s,box-shadow .2s,transform .2s;
+  }
+  .form input:hover,.form textarea:hover,.form select:hover{border-color:#a1a1a6}
+  .form input:focus,.form textarea:focus,.form select:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 4px rgba(0,0,0,.05)}
+  .form textarea{min-height:130px;resize:vertical}
+  .form button{
+    margin-top:8px;background:var(--ink);color:#fff;border:none;
+    padding:16px;border-radius:980px;font-size:15px;font-weight:500;
+    cursor:pointer;transition:transform .15s,box-shadow .25s;
+    box-shadow:0 6px 20px -8px rgba(0,0,0,.35);
+  }
+  .form button:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(0,0,0,.45);background:#000}
+  .form .agree{font-size:12px;color:var(--ink-soft);margin-top:6px}
+  .form-reassure{font-size:12px;color:var(--ink-soft);margin-top:10px;text-align:center}
+  .form-step2{display:none}
+  .form-step2.visible{display:grid;gap:14px;animation:fsIn .5s cubic-bezier(.2,.7,.2,1)}
+  @keyframes fsIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .step-indicator{display:flex;gap:8px;margin-bottom:24px}
+  .step-indicator span{height:3px;flex:1;border-radius:2px;background:var(--line);transition:background .4s}
+  .step-indicator span.done{background:var(--ink)}
+  .step-indicator span.active{background:#22c55e}
+  /* GBP Picker */
+  .gbp-field{position:relative}
+  .gbp-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+  .gbp-label-row .lbl{margin-bottom:0}
+  .gbp-optional{font-size:11px;color:var(--ink-soft);font-weight:500;background:var(--tint);padding:2px 8px;border-radius:980px}
+  .gbp-search-wrap{position:relative}
+  .gbp-search-wrap svg.gbp-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--ink-soft)}
+  .gbp-search-wrap .gbp-spinner{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;border:2px solid var(--line);border-top-color:var(--ink);border-radius:50%;animation:gbpSpin .6s linear infinite;display:none}
+  @keyframes gbpSpin{to{transform:translateY(-50%) rotate(360deg)}}
+  .gbp-search-wrap input{padding-left:42px !important}
+  .gbp-dropdown{position:absolute;left:0;right:0;top:calc(100% + 6px);background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 16px 48px -12px rgba(0,0,0,.22);z-index:100;overflow:hidden;display:none}
+  .gbp-dropdown.open{display:block}
+  .gbp-result{display:flex;align-items:center;gap:14px;padding:14px 16px;cursor:pointer;transition:background .15s;border-bottom:1px solid var(--line)}
+  .gbp-result:last-child{border-bottom:none}
+  .gbp-result:hover{background:var(--tint)}
+  .gbp-result-logo{width:40px;height:40px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);display:flex;align-items:center;justify-content:center;font-size:18px}
+  .gbp-result-info{flex:1;min-width:0}
+  .gbp-result-name{font-size:14px;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .gbp-result-addr{font-size:12px;color:var(--ink-soft);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .gbp-result-stars{font-size:11px;color:var(--ink-soft);margin-top:3px}
+  .gbp-result-stars .s{color:#fbbc04;margin-right:3px}
+  .gbp-result-badge{flex-shrink:0;font-size:11px;font-weight:600;color:#22c55e;background:rgba(34,197,94,.1);padding:3px 8px;border-radius:980px}
+  .gbp-no-results{padding:20px 16px;text-align:center;font-size:14px;color:var(--ink-soft)}
+  .gbp-selected{display:none;align-items:center;gap:14px;padding:14px 16px;border:1px solid #22c55e;border-radius:12px;background:rgba(34,197,94,.05)}
+  .gbp-selected.show{display:flex}
+  .gbp-selected-logo{width:40px;height:40px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);display:flex;align-items:center;justify-content:center;font-size:18px}
+  .gbp-selected-info{flex:1;min-width:0}
+  .gbp-selected-name{font-size:14px;font-weight:600;color:var(--ink)}
+  .gbp-selected-addr{font-size:12px;color:var(--ink-soft);margin-top:2px}
+  .gbp-selected-stars{font-size:11px;color:var(--ink-soft);margin-top:3px}
+  .gbp-selected-stars .s{color:#fbbc04;margin-right:3px}
+  .gbp-clear{margin-left:auto;flex-shrink:0;font-size:12px;color:var(--ink-soft);cursor:pointer;padding:4px 8px;border-radius:6px;transition:background .15s;border:none;background:transparent}
+  .gbp-clear:hover{background:rgba(0,0,0,.05);color:var(--ink)}
+  .gbp-hint{font-size:11px;color:var(--ink-soft);margin-top:6px;padding-left:2px}
+
+  /* Bottom strip */
+  .ways{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:60px}
+  .way{
+    background:#fff;border:1px solid var(--line);border-radius:22px;
+    padding:36px 30px;text-align:left;
+    transition:all .4s cubic-bezier(.2,.7,.2,1);
+  }
+  .way:hover{border-color:#1d1d1f;transform:translateY(-4px);box-shadow:0 26px 60px -22px rgba(0,0,0,.18)}
+  .way .ico{
+    width:50px;height:50px;border-radius:14px;background:var(--tint);
+    display:flex;align-items:center;justify-content:center;color:var(--ink);margin-bottom:20px;
+  }
+  .way h3{font-family:'Bethany Elingston',serif;font-size:26px;font-weight:400;margin-bottom:8px}
+  .way p{font-size:14.5px;color:var(--ink-soft);line-height:1.5;margin-bottom:18px}
+  .way a{font-size:13px;font-weight:500;color:var(--ink);display:inline-flex;align-items:center;gap:4px}
+  .way a::after{content:"›";margin-left:2px;font-size:18px;line-height:1;transition:transform .25s}
+  .way a:hover::after{transform:translateX(3px)}
+
+  @media (max-width:900px){
+    .contact-wrap{grid-template-columns:1fr;gap:40px}
+    .form-card{padding:36px 28px}
+    .ways{grid-template-columns:1fr}
+    .form .row{grid-template-columns:1fr}
+  }
+  @media (max-width:680px){
+    .contact-left h1{font-size:48px}
+    .contact-info{margin-top:36px}
+    .info-row{padding:16px 18px}
+    .info-row .val{font-size:18px}
+    .form-card{padding:30px 22px;border-radius:22px}
+    .form-card .ftitle{font-size:24px}
+    .way{padding:30px 24px}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a8 8 0 0 0-8 8c0 5.6 7.2 11.6 7.5 11.85a.8.8 0 0 0 1 0C12.8 21.6 20 15.6 20 10a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></symbol>
+</svg>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><svg><use href="#pin"/></svg> RANKONMAPS<span class="tld">.IO</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="process.html">Process</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <a class="nav-cta" href="contact.html">Book a call</a>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-hero" style="padding-bottom:80px">
+  <div class="container">
+    <div class="contact-wrap">
+      <div class="contact-left">
+        <div class="eyebrow">Get in touch</div>
+        <h1>Let's put you<br>on the <em>map.</em></h1>
+        <p class="lead">Tell us about your business and the suburbs you want to dominate. We'll come back with a free audit and a clear plan within 48 hours. No sales pitch, no pressure.</p>
+
+        <div class="contact-info">
+          <div class="info-row">
+            <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.4 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.4 1.7.6 2.6.8a2 2 0 0 1 1.7 2Z"/></svg></div>
+            <div>
+              <div class="lbl">Phone</div>
+              <div class="val">+1 (701) 670-3005</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m2 7 10 6 10-6"/></svg></div>
+            <div>
+              <div class="lbl">Email</div>
+              <div class="val">hello@rankonmaps.io</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="ico"><svg width="22" height="22"><use href="#pin"/></svg></div>
+            <div>
+              <div class="lbl">Office</div>
+              <div class="val">Los Angeles, CA</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <div>
+              <div class="lbl">Hours</div>
+              <div class="val">Mon-Sun · 8am-8pm PST</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div class="ftitle">Claim a free audit</div>
+        <div class="fsub">Takes 60 seconds. We'll come back within 48 hours with a full analysis, no pitch, no pressure.</div>
+        <div class="step-indicator">
+          <span class="active" id="ct-step-ind-1"></span>
+          <span id="ct-step-ind-2"></span>
+        </div>
+
+        <!-- Step 1 -->
+        <form class="form" id="ct-form-step1" onsubmit="ctAdvanceForm(event)">
+          <div class="row">
+            <label><div class="lbl">First name</div><input type="text" placeholder="John" required></label>
+            <label><div class="lbl">Last name</div><input type="text" placeholder="Smith" required></label>
+          </div>
+          <label><div class="lbl">Email</div><input type="email" placeholder="john@yourcompany.com" required></label>
+          <label><div class="lbl">Phone</div><input type="tel" placeholder="+1 (555) 000-0000"></label>
+          <button type="submit">Continue &rarr;</button>
+          <p class="form-reassure">Free · No commitment · No spam. Ever.</p>
+        </form>
+
+        <!-- Step 2 -->
+        <div class="form-step2" id="ct-form-step2">
+          <form class="form" onsubmit="ctSubmitForm(event)">
+            <div class="row">
+              <label><div class="lbl">Business name</div><input type="text" required></label>
+              <label><div class="lbl">Industry</div>
+                <select>
+                  <option>Plumbing</option><option>Electrical</option><option>Roofing</option>
+                  <option>HVAC</option><option>Restoration</option><option>Landscaping</option>
+                  <option>Med Spa / Dental</option><option>Other</option>
+                </select>
+              </label>
+            </div>
+            <div class="gbp-field">
+              <div class="gbp-label-row">
+                <div class="lbl">Find your Google Business Profile</div>
+                <span class="gbp-optional">Optional</span>
+              </div>
+              <div class="gbp-search-wrap" id="ct-gbp-search-wrap">
+                <svg class="gbp-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="ct-gbp-input" placeholder="Search by business name or address" autocomplete="off">
+                <div class="gbp-spinner" id="ct-gbp-spinner"></div>
+              </div>
+              <div class="gbp-dropdown" id="ct-gbp-dropdown"></div>
+              <div class="gbp-selected" id="ct-gbp-selected">
+                <div class="gbp-selected-logo" id="ct-gbp-sel-logo"></div>
+                <div class="gbp-selected-info">
+                  <div class="gbp-selected-name" id="ct-gbp-sel-name"></div>
+                  <div class="gbp-selected-addr" id="ct-gbp-sel-addr"></div>
+                  <div class="gbp-selected-stars" id="ct-gbp-sel-stars"></div>
+                </div>
+                <button type="button" class="gbp-clear" id="ct-gbp-clear">Change</button>
+              </div>
+              <div class="gbp-hint" id="ct-gbp-hint">Linking your profile helps us run your audit faster. You can skip this.</div>
+            </div>
+            <label><div class="lbl">Suburbs you want to rank in</div><input type="text" placeholder="e.g. Scottsdale, Tempe, Chandler"></label>
+            <label><div class="lbl">What are you stuck on? (optional)</div><textarea placeholder="e.g. Not showing up at all, or stuck at position 4..."></textarea></label>
+            <button type="submit" id="ct-final-btn">Claim a free audit</button>
+            <p class="form-reassure">Free · No commitment · Response within 48 hrs</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Three other ways -->
+<section style="background:var(--tint)">
+  <div class="container">
+    <div class="eyebrow">Other ways</div>
+    <h2>Prefer to skip the form?</h2>
+    <div class="ways">
+      <div class="way">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <h3>Book a call</h3>
+        <p>Pick a time that suits you and jump on a 20-minute audit call with our team. No pitch, just answers.</p>
+        <a href="#">Pick a time</a>
+      </div>
+      <div class="way">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="m21 11.5-6-3-6 3-6-3v10l6 3 6-3 6 3v-10Z"/></svg></div>
+        <h3>Free geogrid scan</h3>
+        <p>We'll run a live geogrid across your service area and email you the heatmap. Totally free, no commitment.</p>
+        <a href="#">Request a scan</a>
+      </div>
+      <div class="way">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10Z"/></svg></div>
+        <h3>Chat to us</h3>
+        <p>Got a quick question? Our team is online during business hours. Drop us a message and we'll reply in minutes.</p>
+        <a href="#">Open chat</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a8 8 0 0 0-8 8c0 5.6 7.2 11.6 7.5 11.85a.8.8 0 0 0 1 0C12.8 21.6 20 15.6 20 10a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>
+          RANKONMAPS<span class="tld">.IO</span>
+        </div>
+        <div class="foot-tagline">Putting service businesses at the top of Google Maps, ethically, transparently, and without lock-in contracts.</div>
+        <div class="foot-trust">No contracts · Cancel anytime</div>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="process.html">Process</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h5>Legal</h5>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Rank On Maps. All rights reserved.</div>
+      <div class="foot-social">
+        <a href="#" aria-label="X / Twitter"><svg width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.743l7.738-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25Z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2zm2-1a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"/></svg></a>
+      </div>
+      <div class="foot-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// GBP Picker + 2-step form for contact page
+(function(){
+  const input=document.getElementById('ct-gbp-input');
+  const dropdown=document.getElementById('ct-gbp-dropdown');
+  const spinner=document.getElementById('ct-gbp-spinner');
+  const selected=document.getElementById('ct-gbp-selected');
+  const searchWrap=document.getElementById('ct-gbp-search-wrap');
+  const hint=document.getElementById('ct-gbp-hint');
+  if(!input)return;
+  const mockProfiles=[
+    {emoji:'🔧',name:'Apex Plumbing & Drain',addr:'4821 N Central Ave, Phoenix, AZ 85012',rating:4.8,reviews:143,cats:'Plumber'},
+    {emoji:'⚡',name:'Apex Electrical Services',addr:'4821 N Central Ave, Scottsdale, AZ 85251',rating:4.6,reviews:87,cats:'Electrician'},
+    {emoji:'🏠',name:'Apex Roofing Co.',addr:'1102 W Indian School Rd, Phoenix, AZ 85013',rating:5.0,reviews:287,cats:'Roofing Contractor'},
+    {emoji:'❄️',name:'Apex HVAC Solutions',addr:'9240 E Raintree Dr, Scottsdale, AZ 85260',rating:4.9,reviews:201,cats:'HVAC Contractor'},
+    {emoji:'🌿',name:'Apex Landscaping & Design',addr:'3310 S Mill Ave, Tempe, AZ 85282',rating:4.7,reviews:64,cats:'Landscaper'},
+    {emoji:'🔥',name:'Apex Restoration Group',addr:'2255 W Northern Ave, Phoenix, AZ 85021',rating:4.5,reviews:39,cats:'Restoration Service'},
+  ];
+  let debounceTimer;
+  function stars(r){return '★'.repeat(Math.floor(r))+(r%1>=.5?'½':'')}
+  function showDropdown(results){
+    dropdown.innerHTML='';
+    if(!results.length){dropdown.innerHTML='<div class="gbp-no-results">No profiles found. Try a different name or address.</div>';}
+    else{results.forEach(p=>{const el=document.createElement('div');el.className='gbp-result';el.innerHTML=`<div class="gbp-result-logo">${p.emoji}</div><div class="gbp-result-info"><div class="gbp-result-name">${p.name}</div><div class="gbp-result-addr">${p.addr}</div><div class="gbp-result-stars"><span class="s">${stars(p.rating)}</span>${p.rating} · ${p.reviews} reviews · ${p.cats}</div></div><div class="gbp-result-badge">Select</div>`;el.addEventListener('mousedown',e=>{e.preventDefault();selectProfile(p)});dropdown.appendChild(el)});}
+    dropdown.classList.add('open');
+  }
+  function selectProfile(p){
+    searchWrap.style.display='none';dropdown.classList.remove('open');
+    document.getElementById('ct-gbp-sel-logo').textContent=p.emoji;
+    document.getElementById('ct-gbp-sel-name').textContent=p.name;
+    document.getElementById('ct-gbp-sel-addr').textContent=p.addr;
+    document.getElementById('ct-gbp-sel-stars').innerHTML=`<span class="s">${stars(p.rating)}</span>${p.rating} · ${p.reviews} reviews · ${p.cats}`;
+    selected.classList.add('show');
+    hint.textContent='Profile linked. We\'ll use this to run your audit.';hint.style.color='#22c55e';
+  }
+  document.getElementById('ct-gbp-clear').addEventListener('click',()=>{
+    selected.classList.remove('show');searchWrap.style.display='';input.value='';
+    hint.textContent='Linking your profile helps us run your audit faster. You can skip this.';hint.style.color='';input.focus();
+  });
+  input.addEventListener('input',()=>{
+    const q=input.value.trim().toLowerCase();clearTimeout(debounceTimer);
+    if(q.length<2){dropdown.classList.remove('open');spinner.style.display='none';return;}
+    spinner.style.display='block';
+    debounceTimer=setTimeout(()=>{spinner.style.display='none';showDropdown(mockProfiles.filter(p=>p.name.toLowerCase().includes(q)||p.addr.toLowerCase().includes(q)||p.cats.toLowerCase().includes(q)))},420);
+  });
+  input.addEventListener('blur',()=>{setTimeout(()=>dropdown.classList.remove('open'),150)});
+  input.addEventListener('focus',()=>{if(input.value.trim().length>=2)dropdown.classList.add('open')});
+})();
+function ctAdvanceForm(e){
+  e.preventDefault();
+  document.getElementById('ct-form-step1').style.display='none';
+  document.getElementById('ct-step-ind-1').className='done';
+  document.getElementById('ct-step-ind-2').className='active';
+  const s2=document.getElementById('ct-form-step2');
+  s2.classList.add('visible');
+  s2.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function ctSubmitForm(e){
+  e.preventDefault();
+  document.getElementById('ct-final-btn').textContent='Sent \u2713 We\'ll be in touch within 48 hrs';
+  document.getElementById('ct-step-ind-2').className='done';
+}
+</script>
+<script src="shared.js"></script>
+</body>
+</html>

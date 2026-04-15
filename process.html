@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Process | Rank On Maps</title>
+<meta name="description" content="The exact 5-step process we use to take service businesses from page 3 to the top of the Google map pack in 90 days." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* Vertical timeline */
+  .timeline{position:relative;max-width:920px;margin:80px auto 0;padding:0 20px}
+  .timeline::before{
+    content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;
+    background:linear-gradient(180deg,transparent 0%,var(--line) 8%,var(--line) 92%,transparent 100%);
+    transform:translateX(-50%);
+  }
+  .timeline-step{
+    position:relative;display:grid;grid-template-columns:1fr 80px 1fr;
+    gap:20px;align-items:center;margin-bottom:80px;
+  }
+  .timeline-step .node{
+    position:relative;z-index:2;width:80px;height:80px;border-radius:24px;
+    background:#1d1d1f;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 14px 40px -10px rgba(0,0,0,.4);
+    margin:0 auto;font-family:'Bethany Elingston',serif;font-size:34px;line-height:1;
+    transition:transform .3s;
+  }
+  .timeline-step:hover .node{transform:scale(1.08) rotate(-4deg)}
+  .timeline-step .card{
+    background:#fff;border:1px solid var(--line);border-radius:24px;
+    padding:34px 38px;text-align:left;
+    transition:transform .4s,box-shadow .4s,border-color .4s;
+  }
+  .timeline-step:hover .card{border-color:#1d1d1f;box-shadow:0 26px 70px -22px rgba(0,0,0,.16)}
+  .timeline-step:nth-child(odd) .card{grid-column:1}
+  .timeline-step:nth-child(odd) .visual{grid-column:3}
+  .timeline-step:nth-child(even) .visual{grid-column:1}
+  .timeline-step:nth-child(even) .card{grid-column:3}
+  .timeline-step .card .week{font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;color:var(--green)}
+  .timeline-step .card h3{font-family:'Bethany Elingston',serif;font-size:34px;font-weight:400;letter-spacing:-.01em;margin:6px 0 12px;color:var(--ink)}
+  .timeline-step .card p{color:var(--ink-soft);font-size:15px;line-height:1.6;margin-bottom:18px}
+  .timeline-step .card ul{list-style:none;padding:0}
+  .timeline-step .card ul li{font-size:13.5px;color:var(--ink);padding:6px 0;display:flex;gap:10px}
+  .timeline-step .card ul li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green);margin-top:8px;flex-shrink:0}
+  .timeline-step .visual{
+    background:linear-gradient(135deg,#f5f5f7,#e8e8ed);
+    border-radius:24px;padding:30px;min-height:220px;
+    display:flex;align-items:center;justify-content:center;
+    border:1px solid var(--line);
+  }
+  .timeline-step .visual svg{max-width:100%;max-height:200px}
+
+  /* Tools we use */
+  .tools{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:60px}
+  .tool{
+    background:#fff;border:1px solid var(--line);border-radius:20px;
+    padding:32px 24px;text-align:center;
+    transition:transform .4s,border-color .4s,box-shadow .4s;
+  }
+  .tool:hover{border-color:#1d1d1f;box-shadow:0 18px 50px -18px rgba(0,0,0,.16)}
+  .tool .ti{
+    width:54px;height:54px;border-radius:14px;background:var(--tint);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 16px;
+  }
+  .tool .tname{font-family:'Bethany Elingston',serif;font-size:22px;color:var(--ink);margin-bottom:6px}
+  .tool .tdesc{font-size:12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+
+  /* What we don't do */
+  .donts{max-width:780px;margin:60px auto 0;text-align:left}
+  .dont-row{
+    display:flex;align-items:flex-start;gap:18px;
+    padding:24px 0;border-bottom:1px solid var(--line);
+  }
+  .dont-row:last-child{border:none}
+  .dont-row .x{
+    width:36px;height:36px;border-radius:12px;background:#fef2f2;color:#dc2626;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px;font-weight:700;
+  }
+  .dont-row .body h4{font-size:17px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
+  .dont-row .body p{font-size:14.5px;color:var(--ink-soft);line-height:1.55}
+
+  @media (max-width:820px){
+    .timeline::before{display:none}
+    .timeline{padding:0;margin-top:48px}
+    .timeline-step{grid-template-columns:1fr;gap:14px;margin-bottom:48px}
+    .timeline-step .node{width:64px;height:64px;border-radius:18px;font-size:26px;margin:0}
+    .timeline-step .card,.timeline-step .visual{grid-column:1 !important;order:0 !important}
+    .timeline-step .node{order:0}
+    .timeline-step .card{order:1;padding:28px 26px}
+    .timeline-step .visual{order:2;margin-top:0;min-height:180px;padding:24px}
+    .timeline-step:nth-child(odd) .card,.timeline-step:nth-child(even) .card{grid-column:1}
+    .timeline-step:nth-child(odd) .visual,.timeline-step:nth-child(even) .visual{grid-column:1}
+    .timeline-step .card h3{font-size:30px}
+    .donts{margin-top:40px}
+    .donts .dont-row{padding:20px 0}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a8 8 0 0 0-8 8c0 5.6 7.2 11.6 7.5 11.85a.8.8 0 0 0 1 0C12.8 21.6 20 15.6 20 10a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></symbol>
+</svg>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><svg><use href="#pin"/></svg> RANKONMAPS<span class="tld">.IO</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="process.html" class="active">Process</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="nav-cta" href="contact.html">Book a call</a>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <div class="eyebrow">Our process</div>
+    <h1>Five steps<br>to the <em>top.</em></h1>
+    <p class="sub">No mystery boxes, no smoke and mirrors. Here's exactly what we do, week by week, to take you from page 3 to dominating the map pack in your service area.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="contact.html">Claim a free audit</a>
+      <a class="btn btn-ghost" href="#timeline">See the timeline</a>
+    </div>
+    <p class="cta-reassure">Free · No commitment · Response within 48 hrs</p>
+  </div>
+</header>
+
+<!-- TIMELINE -->
+<section id="timeline" style="background:var(--tint)">
+  <div class="container">
+    <div class="eyebrow">The 90-day playbook</div>
+    <h2>Everything we do.<br>In the order we do it.</h2>
+    <div class="timeline">
+
+      <div class="timeline-step">
+        <div class="card">
+          <div class="week">Week 1 · Free</div>
+          <h3>1. Audit</h3>
+          <p>Before we touch a thing, we spend 4–6 hours digging into your business, your competitors, and your map pack. You get a deep-dive report that's yours to keep, even if you decide not to work with us.</p>
+          <ul>
+            <li>Full GMB health check (categories, attributes, NAP, photos)</li>
+            <li>Top 5 competitor breakdown across your service area</li>
+            <li>Live geogrid scan showing your current rankings</li>
+            <li>Citation, schema and on-page audit</li>
+            <li>Honest, no-fluff recommendations</li>
+          </ul>
+        </div>
+        <div class="node">1</div>
+        <div class="visual">
+          <svg viewBox="0 0 220 200">
+            <rect x="20" y="20" width="180" height="160" rx="14" fill="#fff" stroke="#1d1d1f" stroke-width="2"/>
+            <rect x="36" y="40" width="120" height="10" rx="3" fill="#1d1d1f"/>
+            <rect x="36" y="60" width="80" height="6" rx="3" fill="#d2d2d7"/>
+            <rect x="36" y="80" width="148" height="6" rx="3" fill="#e8e8ed"/>
+            <rect x="36" y="92" width="148" height="6" rx="3" fill="#e8e8ed"/>
+            <rect x="36" y="104" width="100" height="6" rx="3" fill="#e8e8ed"/>
+            <rect x="36" y="130" width="148" height="36" rx="8" fill="#22c55e" fill-opacity=".12"/>
+            <text x="110" y="153" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#22c55e">AUDIT REPORT</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="timeline-step">
+        <div class="visual">
+          <svg viewBox="0 0 220 200">
+            <circle cx="110" cy="100" r="78" fill="none" stroke="#1d1d1f" stroke-width="2"/>
+            <circle cx="110" cy="100" r="50" fill="none" stroke="#1d1d1f" stroke-width="2" opacity=".5"/>
+            <circle cx="110" cy="100" r="22" fill="none" stroke="#1d1d1f" stroke-width="2" opacity=".25"/>
+            <circle cx="110" cy="100" r="6" fill="#22c55e"/>
+            <line x1="110" y1="100" x2="180" y2="60" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="180" cy="60" r="5" fill="#22c55e"/>
+          </svg>
+        </div>
+        <div class="node">2</div>
+        <div class="card">
+          <div class="week">Week 2 · Onboarding</div>
+          <h3>2. Strategy</h3>
+          <p>We sit down with you for a 90-minute strategy call. Together, we lock in the suburbs you want to win, the services you want to push, and the ranking targets we'll commit to.</p>
+          <ul>
+            <li>90-minute deep-dive strategy call</li>
+            <li>Suburb &amp; keyword priority list</li>
+            <li>90-day ranking forecast and milestones</li>
+            <li>Communication and reporting cadence agreed</li>
+            <li>Access &amp; credential handover (we handle the boring stuff)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-step">
+        <div class="card">
+          <div class="week">Weeks 3–6 · Foundation</div>
+          <h3>3. Optimize</h3>
+          <p>This is where the foundation gets rebuilt. We rip apart your GMB, fix every citation, rewrite your on-page, and bake in the schema that Google needs to take you seriously.</p>
+          <ul>
+            <li>GMB rebuild: categories, services, attributes, descriptions</li>
+            <li>200+ citation audit, clean-up and rebuild</li>
+            <li>On-page rewrites for every city + service combination</li>
+            <li>Local schema markup added across the site</li>
+            <li>Site speed and Core Web Vitals fixes</li>
+          </ul>
+        </div>
+        <div class="node">3</div>
+        <div class="visual">
+          <svg viewBox="0 0 220 200">
+            <g stroke="#1d1d1f" stroke-width="2" fill="none">
+              <rect x="30" y="40" width="50" height="30" rx="6"/>
+              <rect x="90" y="40" width="100" height="30" rx="6"/>
+              <rect x="30" y="80" width="100" height="30" rx="6"/>
+              <rect x="140" y="80" width="50" height="30" rx="6"/>
+              <rect x="30" y="120" width="50" height="30" rx="6"/>
+              <rect x="90" y="120" width="50" height="30" rx="6"/>
+              <rect x="150" y="120" width="40" height="30" rx="6"/>
+            </g>
+            <g fill="#22c55e">
+              <rect x="32" y="42" width="46" height="26" rx="4"/>
+              <rect x="92" y="82" width="96" height="26" rx="4" opacity=".25"/>
+              <rect x="32" y="122" width="46" height="26" rx="4"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="timeline-step">
+        <div class="visual">
+          <svg viewBox="0 0 220 200">
+            <defs><linearGradient id="amp" x1="0" x2="1"><stop offset="0" stop-color="#22c55e" stop-opacity=".5"/><stop offset="1" stop-color="#22c55e" stop-opacity="0"/></linearGradient></defs>
+            <path d="M20 160 L60 140 L100 110 L140 80 L180 50 L210 30 L210 180 L20 180 Z" fill="url(#amp)"/>
+            <path d="M20 160 L60 140 L100 110 L140 80 L180 50 L210 30" stroke="#22c55e" stroke-width="3" fill="none"/>
+            <g fill="#22c55e"><circle cx="60" cy="140" r="4"/><circle cx="100" cy="110" r="4"/><circle cx="140" cy="80" r="4"/><circle cx="180" cy="50" r="4"/><circle cx="210" cy="30" r="5"/></g>
+          </svg>
+        </div>
+        <div class="node">4</div>
+        <div class="card">
+          <div class="week">Weeks 7–12 · Compound</div>
+          <h3>4. Amplify</h3>
+          <p>The foundation is set. Now we feed the machine. Every week we publish posts, photos, reviews and links, all the signals Google needs to push you up the rankings, month after month.</p>
+          <ul>
+            <li>Weekly Google Posts and photo uploads</li>
+            <li>Review generation funnel turned on</li>
+            <li>White-hat local link building campaigns</li>
+            <li>Content production for service area pages</li>
+            <li>Spam fighting and competitor reporting</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-step">
+        <div class="card">
+          <div class="week">Ongoing · Forever</div>
+          <h3>5. Report</h3>
+          <p>Every Monday morning you get a digest email with where you ranked last week, what we did, and what's coming next. Once a month, we jump on a call to walk through the geogrid together.</p>
+          <ul>
+            <li>Live geogrid dashboard updated weekly</li>
+            <li>Monday morning email digest</li>
+            <li>Monthly 30-minute strategy review call</li>
+            <li>Real-time alerts when rankings shift</li>
+            <li>Quarterly business review with leadership</li>
+          </ul>
+        </div>
+        <div class="node">5</div>
+        <div class="visual">
+          <svg viewBox="0 0 220 200">
+            <g id="rep-grid"></g>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DON'T DO -->
+<section>
+  <div class="container">
+    <div class="eyebrow">Boundaries</div>
+    <h2>What we don't do.</h2>
+    <p class="sub">We say no to a lot of things so we can say yes to the work that actually moves your rankings.</p>
+    <div class="donts">
+      <div class="dont-row"><div class="x">✕</div><div class="body"><h4>Lock you into a 12-month contract</h4><p>Month-to-month, always. If we're not delivering, you're free to walk away with 14 days notice.</p></div></div>
+      <div class="dont-row"><div class="x">✕</div><div class="body"><h4>Run Google Ads (yet)</h4><p>We're laser-focused on organic local rankings. If you need paid, we'll refer you to specialists we trust.</p></div></div>
+      <div class="dont-row"><div class="x">✕</div><div class="body"><h4>Buy spammy links from Fiverr</h4><p>Every link we build is from a real US site. No PBNs, no link farms, no shortcuts that get you penalized.</p></div></div>
+      <div class="dont-row"><div class="x">✕</div><div class="body"><h4>Outsource your account overseas</h4><p>Every account is managed by a real US specialist who knows your industry and your suburbs.</p></div></div>
+      <div class="dont-row"><div class="x">✕</div><div class="body"><h4>Send PDF reports nobody reads</h4><p>Reporting is live, simple, and tells you exactly what we did and what changed. No 80-page PDFs.</p></div></div>
+      <div class="dont-row"><div class="x">✕</div><div class="body"><h4>Take on competing clients</h4><p>One client per service per service area. We won't work with your direct competitor. Ever.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT TEASER -->
+<section style="background:var(--tint)">
+  <div class="container">
+    <div class="eyebrow">Talk to us</div>
+    <h2>Got questions?<br>We've got answers.</h2>
+    <p class="sub">Every project starts with a real conversation, not a generic form response. Tell us what you're stuck on, and we'll tell you exactly how we'd fix it.</p>
+    <div class="ctas" style="margin-top:48px">
+      <a class="btn btn-primary" href="contact.html">Contact us</a>
+      <a class="btn btn-ghost" href="case-studies.html">See case studies</a>
+    </div>
+    <p class="cta-reassure">Free · No commitment · Response within 48 hrs</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-final">
+  <div class="container">
+    <div class="eyebrow">Get started</div>
+    <h2>Ready when you are.</h2>
+    <p class="sub">Step 1 is free. Book a 20-minute audit and see exactly where you sit in the map pack today.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="contact.html">Claim a free audit</a>
+      <a class="btn btn-ghost" href="services.html">See services</a>
+    </div>
+    <p class="cta-reassure">Free · No commitment · Response within 48 hrs</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a8 8 0 0 0-8 8c0 5.6 7.2 11.6 7.5 11.85a.8.8 0 0 0 1 0C12.8 21.6 20 15.6 20 10a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>
+          RANKONMAPS<span class="tld">.IO</span>
+        </div>
+        <div class="foot-tagline">Putting service businesses at the top of Google Maps, ethically, transparently, and without lock-in contracts.</div>
+        <div class="foot-trust">No contracts · Cancel anytime</div>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="process.html">Process</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h5>Legal</h5>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Rank On Maps. All rights reserved.</div>
+      <div class="foot-social">
+        <a href="#" aria-label="X / Twitter"><svg width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.743l7.738-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25Z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2zm2-1a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"/></svg></a>
+      </div>
+      <div class="foot-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mini geogrid for "report" timeline visual
+  (function(){
+    const g = document.getElementById('rep-grid');
+    if(!g) return;
+    const N=5,step=28,offX=110-((N-1)*step)/2,offY=100-((N-1)*step)/2;
+    const stops=[[34,197,94],[132,204,22],[234,179,8],[249,115,22],[239,68,68]];
+    function color(t){const i=Math.floor(t*(stops.length-1)),f=t*(stops.length-1)-i;const a=stops[i],b=stops[Math.min(i+1,stops.length-1)];return `rgb(${Math.round(a[0]+(b[0]-a[0])*f)},${Math.round(a[1]+(b[1]-a[1])*f)},${Math.round(a[2]+(b[2]-a[2])*f)})`;}
+    for(let y=0;y<N;y++)for(let x=0;x<N;x++){
+      const d=Math.hypot(x-(N-1)/2,y-(N-1)/2)/Math.hypot((N-1)/2,(N-1)/2);
+      const c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+      c.setAttribute('cx',offX+x*step);c.setAttribute('cy',offY+y*step);c.setAttribute('r',12);
+      c.setAttribute('fill',color(d*0.5));
+      c.setAttribute('stroke','#fff');c.setAttribute('stroke-width','2');
+      g.appendChild(c);
+    }
+  })();
+</script>
+<script src="shared.js"></script>
+</body>
+</html>

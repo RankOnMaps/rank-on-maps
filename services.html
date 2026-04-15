@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Services | Rank On Maps</title>
+<meta name="description" content="GMB optimization, local SEO, website builds, review generation, rank tracking, and lead tracking. Everything your service business needs to dominate Google." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* Service detail tiles — full-width alternating rows */
+  .svc-detail{
+    display:grid;grid-template-columns:1.05fr 1fr;gap:0;
+    background:#fff;border:1px solid var(--line);border-radius:32px;
+    overflow:hidden;margin-top:28px;
+    transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s,border-color .4s;
+  }
+  .svc-detail:hover{border-color:#1d1d1f}
+  .svc-detail:nth-child(even){grid-template-columns:1fr 1.05fr}
+  .svc-detail:nth-child(even) .svc-vis{order:2}
+  .svc-detail .svc-vis{
+    background:linear-gradient(135deg,#f5f5f7,#e8e8ed);
+    position:relative;min-height:380px;overflow:hidden;
+    transition:transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  .svc-detail:hover .svc-vis{transform:scale(1.04)}
+  .svc-detail .svc-vis svg{position:absolute;inset:0;width:100%;height:100%}
+  .svc-detail .svc-body{padding:60px 64px;display:flex;flex-direction:column;justify-content:center;text-align:left}
+  .svc-detail .icon{
+    width:54px;height:54px;border-radius:16px;background:#1d1d1f;color:#fff;
+    display:flex;align-items:center;justify-content:center;margin-bottom:22px;
+    transition:transform .35s,background .3s;
+  }
+  .svc-detail:hover .icon{transform:rotate(-6deg) scale(1.08)}
+  .svc-detail h3.display{font-size:clamp(34px,3.6vw,46px);margin-bottom:14px}
+  .svc-detail .lead{color:var(--ink-soft);font-size:17px;line-height:1.55;max-width:520px;margin-bottom:24px}
+  .svc-detail .features{list-style:none;padding:0;margin-bottom:24px}
+  .svc-detail .features li{
+    display:flex;align-items:flex-start;gap:10px;
+    padding:8px 0;font-size:14.5px;color:var(--ink);
+  }
+  .svc-detail .features li::before{
+    content:"";display:block;width:18px;height:18px;flex-shrink:0;
+    background:var(--green);border-radius:50%;margin-top:2px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' d='m4 8 3 3 5-6'/></svg>");
+    background-size:14px;background-repeat:no-repeat;background-position:center;
+  }
+  .svc-detail .outcome{
+    display:inline-flex;align-items:center;gap:14px;
+    padding:14px 20px;background:var(--tint);border-radius:14px;
+    font-size:13px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;font-weight:600;
+  }
+  .svc-detail .outcome strong{
+    font-family:'Bethany Elingston',serif;font-weight:400;font-size:28px;color:var(--ink);text-transform:none;letter-spacing:0;
+  }
+
+  /* Pricing tiers */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:64px;text-align:left}
+  .tier{
+    background:#fff;border:1px solid var(--line);border-radius:24px;padding:40px 36px;
+    transition:transform .4s,box-shadow .4s,border-color .4s;
+    display:flex;flex-direction:column;
+  }
+  .tier:hover{border-color:#1d1d1f;box-shadow:0 26px 70px -22px rgba(0,0,0,.16)}
+  .tier.featured{background:var(--ink);color:#fff;border-color:#000}
+  .tier.featured *{color:#fff !important}
+  .tier.featured .feat-tag{position:absolute;top:-12px;right:24px;background:var(--green);color:#fff;font-size:11px;padding:5px 12px;border-radius:980px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+  .tier{position:relative}
+  .tier-name{font-size:13px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;color:var(--ink-soft)}
+  .tier-price{font-family:'Bethany Elingston',serif;font-size:64px;line-height:1;margin:10px 0 4px;color:var(--ink)}
+  .tier-price small{font-family:'Inter',sans-serif;font-size:14px;color:var(--ink-soft);font-weight:500}
+  .tier-desc{color:var(--ink-soft);font-size:14px;line-height:1.55;margin-bottom:24px}
+  .tier ul{list-style:none;padding:0;margin-bottom:32px;flex:1}
+  .tier ul li{display:flex;gap:10px;padding:9px 0;font-size:14px;border-bottom:1px solid var(--line)}
+  .tier.featured ul li{border-color:rgba(255,255,255,.12)}
+  .tier ul li::before{content:"✓";color:var(--green);font-weight:700}
+  .tier .btn{width:100%;justify-content:center}
+  .tier.featured .btn-primary{background:#fff;color:#1d1d1f}
+
+  /* Comparison */
+  .compare{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:64px;text-align:left}
+  .compare-col{background:#fff;border:1px solid var(--line);border-radius:22px;padding:36px 32px}
+  .compare-col.us{background:var(--ink);color:#fff;border-color:#000}
+  .compare-col.us *{color:#fff !important}
+  .compare-col h4{font-family:'Bethany Elingston',serif;font-size:30px;font-weight:400;margin-bottom:8px}
+  .compare-col .who{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;color:var(--ink-soft);margin-bottom:24px}
+  .compare-col ul{list-style:none;padding:0}
+  .compare-col li{padding:11px 0;font-size:14px;display:flex;gap:10px;border-bottom:1px solid var(--line)}
+  .compare-col.us li{border-color:rgba(255,255,255,.1)}
+  .compare-col li::before{content:"—";color:var(--ink-soft)}
+  .compare-col.us li::before{content:"✓";color:var(--green)}
+
+  /* FAQ */
+  .faqs{max-width:760px;margin:56px auto 0;text-align:left}
+  .faq-item{
+    background:#fff;border:1px solid var(--line);border-radius:18px;
+    padding:24px 28px;margin-bottom:14px;transition:border-color .3s,transform .3s;
+  }
+  .faq-item:hover{border-color:#1d1d1f;transform:translateY(-2px)}
+  .faq-item summary{
+    cursor:pointer;list-style:none;font-size:17px;font-weight:500;
+    display:flex;justify-content:space-between;align-items:center;gap:14px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"+";font-size:24px;color:var(--ink-soft);font-weight:300;transition:transform .3s}
+  .faq-item[open] summary::after{transform:rotate(45deg)}
+  .faq-item p{margin-top:14px;color:var(--ink-soft);font-size:15px;line-height:1.6}
+
+  @media (max-width:980px){
+    .svc-detail{grid-template-columns:1fr !important}
+    .svc-detail:nth-child(even) .svc-vis{order:0}
+    .svc-detail .svc-body{padding:44px 36px}
+    .tiers,.compare{grid-template-columns:1fr}
+  }
+  @media (max-width:680px){
+    .svc-detail{border-radius:24px;margin-top:20px}
+    .svc-detail .svc-vis{min-height:240px}
+    .svc-detail .svc-body{padding:34px 26px}
+    .svc-detail h3.display{font-size:30px}
+    .svc-detail .lead{font-size:15px}
+    .svc-detail .features li{font-size:13.5px}
+    .svc-detail .outcome strong{font-size:24px}
+    .compare-col{padding:30px 26px}
+    .compare-col h4{font-size:26px}
+    .faq-item{padding:20px 22px}
+    .faq-item summary{font-size:16px}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a8 8 0 0 0-8 8c0 5.6 7.2 11.6 7.5 11.85a.8.8 0 0 0 1 0C12.8 21.6 20 15.6 20 10a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 15l4-4 3 3 5-6"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m8 8-5 4 5 4m8-8 5 4-5 4m-2-12-4 16"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7Z"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.4 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.4 1.7.6 2.6.8a2 2 0 0 1 1.7 2Z"/></symbol>
+</svg>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><svg><use href="#pin"/></svg> RANKONMAPS<span class="tld">.IO</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="process.html">Process</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="nav-cta" href="contact.html">Book a call</a>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <div class="eyebrow">Services</div>
+    <h1>Everything your<br>Google presence <em>needs.</em></h1>
+    <p class="sub">Six services. One outcome. We handle every lever that affects your map pack rankings so you can stay focused on running the jobs we book for you.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="contact.html">Claim a free audit</a>
+      <a class="btn btn-ghost" href="process.html">See our process</a>
+    </div>
+    <p class="cta-reassure">Free · No commitment · Response within 48 hrs</p>
+  </div>
+</header>
+
+<!-- 6 SERVICE DETAIL TILES -->
+<section style="background:var(--tint);padding-top:80px">
+  <div class="container">
+
+    <div class="svc-detail">
+      <div class="svc-vis">
+        <svg viewBox="0 0 500 380" preserveAspectRatio="xMidYMid slice">
+          <defs><pattern id="gp" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M 36 0 L 0 0 0 36" fill="none" stroke="rgba(0,0,0,.05)" stroke-width="1"/></pattern></defs>
+          <rect width="500" height="380" fill="url(#gp)"/>
+          <circle cx="250" cy="190" r="110" fill="rgba(34,197,94,.12)"/>
+          <circle cx="250" cy="190" r="68" fill="rgba(34,197,94,.25)"/>
+          <circle cx="250" cy="190" r="36" fill="rgba(34,197,94,.45)"/>
+          <g transform="translate(232,162)" fill="#1d1d1f"><path d="M18 0a18 18 0 0 0-18 18c0 13 17 27 17.5 27.5a.7.7 0 0 0 1 0C19 45 36 31 36 18A18 18 0 0 0 18 0Zm0 24a6 6 0 1 1 0-12 6 6 0 0 1 0 12Z"/></g>
+        </svg>
+      </div>
+      <div class="svc-body">
+        <div class="icon"><svg width="26" height="26"><use href="#pin"/></svg></div>
+        <h3 class="display">GMB Optimization</h3>
+        <p class="lead">Your Google Business Profile is the single most important asset for local search. We rebuild it from scratch and manage it daily so it ranks, converts, and never goes stale.</p>
+        <ul class="features">
+          <li>Profile rebuild: categories, services, attributes, hours, areas served</li>
+          <li>Weekly Google Posts with offers, jobs and updates</li>
+          <li>Photo and video uploads from your job sites</li>
+          <li>Q&amp;A seeding and monitoring</li>
+          <li>Spam fighting and competitor reporting</li>
+          <li>Suspension recovery if anything goes wrong</li>
+        </ul>
+        <div class="outcome"><strong>+312%</strong> Avg. lift in profile actions</div>
+      </div>
+    </div>
+
+    <div class="svc-detail">
+      <div class="svc-vis">
+        <svg viewBox="0 0 500 380" preserveAspectRatio="xMidYMid slice">
+          <defs><linearGradient id="lg1" x1="0" x2="1"><stop offset="0" stop-color="#22c55e" stop-opacity=".5"/><stop offset="1" stop-color="#22c55e" stop-opacity="0"/></linearGradient></defs>
+          <rect width="500" height="380" fill="#fff"/>
+          <path d="M0 300 L80 270 L160 230 L240 180 L320 130 L400 80 L500 40 L500 380 L0 380Z" fill="url(#lg1)"/>
+          <path d="M0 300 L80 270 L160 230 L240 180 L320 130 L400 80 L500 40" stroke="#1d1d1f" stroke-width="3" fill="none"/>
+          <g fill="#1d1d1f"><circle cx="80" cy="270" r="5"/><circle cx="160" cy="230" r="5"/><circle cx="240" cy="180" r="5"/><circle cx="320" cy="130" r="5"/><circle cx="400" cy="80" r="5"/><circle cx="500" cy="40" r="6"/></g>
+        </svg>
+      </div>
+      <div class="svc-body">
+        <div class="icon"><svg width="26" height="26"><use href="#i-chart"/></svg></div>
+        <h3 class="display">Local SEO</h3>
+        <p class="lead">The off-profile work that quietly moves you to the top: citations, on-page, schema, and links, all tuned to the suburbs and services you actually want to win.</p>
+        <ul class="features">
+          <li>Top 50 citation builds and clean-up</li>
+          <li>NAP consistency audit and fixes across 200+ directories</li>
+          <li>Local schema markup (LocalBusiness, Service, Review, FAQ)</li>
+          <li>On-page rewrites for city + service combinations</li>
+          <li>White-hat local link building from real US sites</li>
+          <li>Geo-targeted content production</li>
+        </ul>
+        <div class="outcome"><strong>#1</strong> Avg. ranking in 45 days</div>
+      </div>
+    </div>
+
+    <div class="svc-detail">
+      <div class="svc-vis">
+        <svg viewBox="0 0 500 380" preserveAspectRatio="xMidYMid slice">
+          <rect width="500" height="380" fill="#fff"/>
+          <rect x="80" y="60" width="340" height="240" rx="18" fill="#f5f5f7" stroke="#1d1d1f" stroke-width="2.5"/>
+          <rect x="80" y="60" width="340" height="32" rx="18" fill="#1d1d1f"/>
+          <circle cx="100" cy="76" r="4" fill="#fff"/><circle cx="114" cy="76" r="4" fill="#fff"/><circle cx="128" cy="76" r="4" fill="#fff"/>
+          <rect x="110" y="120" width="280" height="14" rx="4" fill="#d2d2d7"/>
+          <rect x="110" y="146" width="220" height="10" rx="4" fill="#e8e8ed"/>
+          <rect x="110" y="166" width="240" height="10" rx="4" fill="#e8e8ed"/>
+          <rect x="110" y="200" width="120" height="32" rx="16" fill="#1d1d1f"/>
+          <rect x="240" y="200" width="120" height="32" rx="16" fill="none" stroke="#1d1d1f" stroke-width="2"/>
+          <rect x="110" y="252" width="280" height="36" rx="6" fill="#22c55e" fill-opacity=".15"/>
+        </svg>
+      </div>
+      <div class="svc-body">
+        <div class="icon"><svg width="26" height="26"><use href="#i-code"/></svg></div>
+        <h3 class="display">Website Builds</h3>
+        <p class="lead">A new website that loads in under a second, ranks for the suburbs you serve, and actually turns visitors into booked jobs. Built fresh, not a template.</p>
+        <ul class="features">
+          <li>Custom design, mobile-first, &lt;1s load time</li>
+          <li>City &amp; service landing pages built into the site</li>
+          <li>Click-to-call, click-to-book, GMB embed</li>
+          <li>Lead form integrations to your CRM</li>
+          <li>Schema baked in from day one</li>
+          <li>Hosting, SSL, and ongoing maintenance included</li>
+        </ul>
+        <div class="outcome"><strong>3.2×</strong> Avg. conversion lift</div>
+      </div>
+    </div>
+
+    <div class="svc-detail">
+      <div class="svc-vis">
+        <svg viewBox="0 0 500 380" preserveAspectRatio="xMidYMid slice">
+          <rect width="500" height="380" fill="#fff"/>
+          <g transform="translate(250,180)">
+            <g fill="#fbbc04">
+              <path transform="translate(-180,-18)" d="m18 0 5.5 11 12 1-9 8 2.5 12L18 25 7 32l2.5-12-9-8 12-1Z"/>
+              <path transform="translate(-100,-18)" d="m18 0 5.5 11 12 1-9 8 2.5 12L18 25 7 32l2.5-12-9-8 12-1Z"/>
+              <path transform="translate(-20,-18)" d="m18 0 5.5 11 12 1-9 8 2.5 12L18 25 7 32l2.5-12-9-8 12-1Z"/>
+              <path transform="translate(60,-18)" d="m18 0 5.5 11 12 1-9 8 2.5 12L18 25 7 32l2.5-12-9-8 12-1Z"/>
+              <path transform="translate(140,-18)" d="m18 0 5.5 11 12 1-9 8 2.5 12L18 25 7 32l2.5-12-9-8 12-1Z"/>
+            </g>
+            <text x="0" y="60" text-anchor="middle" font-family="Inter" font-size="18" font-weight="700" fill="#1d1d1f">5.0 · 287 reviews</text>
+            <text x="0" y="86" text-anchor="middle" font-family="Inter" font-size="13" fill="#22c55e" font-weight="600">+148 reviews this quarter</text>
+          </g>
+        </svg>
+      </div>
+      <div class="svc-body">
+        <div class="icon"><svg width="26" height="26"><use href="#i-star"/></svg></div>
+        <h3 class="display">Review Generation</h3>
+        <p class="lead">An automated funnel that catches every happy customer and turns them into a 5-star Google review while quietly redirecting unhappy ones away from your profile.</p>
+        <ul class="features">
+          <li>SMS &amp; email review request automation</li>
+          <li>Smart routing: positive → Google, negative → private feedback</li>
+          <li>Response templates for your team (or we respond for you)</li>
+          <li>QR code review cards for invoices and trucks</li>
+          <li>Live review dashboard and alerts</li>
+          <li>Bad review recovery support</li>
+        </ul>
+        <div class="outcome"><strong>11×</strong> More reviews per month</div>
+      </div>
+    </div>
+
+    <div class="svc-detail">
+      <div class="svc-vis">
+        <svg viewBox="0 0 500 380" preserveAspectRatio="xMidYMid slice">
+          <rect width="500" height="380" fill="#f5f5f7"/>
+          <g id="svc-grid"></g>
+        </svg>
+      </div>
+      <div class="svc-body">
+        <div class="icon"><svg width="26" height="26"><use href="#i-grid"/></svg></div>
+        <h3 class="display">Rank Tracking</h3>
+        <p class="lead">A live geogrid dashboard so you can see exactly where your business sits on every search, in every suburb, updated weekly, no excuses.</p>
+        <ul class="features">
+          <li>7×7 geogrid scans across your service area</li>
+          <li>Weekly snapshots tracking every keyword you care about</li>
+          <li>Competitor rank comparison side-by-side</li>
+          <li>Suburb-level heatmaps you can share with your team</li>
+          <li>Email digest every Monday morning</li>
+          <li>Custom alerts when you drop or jump rank</li>
+        </ul>
+        <div class="outcome"><strong>52</strong> Reports delivered per year</div>
+      </div>
+    </div>
+
+    <div class="svc-detail">
+      <div class="svc-vis">
+        <svg viewBox="0 0 500 380" preserveAspectRatio="xMidYMid slice">
+          <rect width="500" height="380" fill="#fff"/>
+          <g transform="translate(250,190)" fill="none" stroke="#1d1d1f" stroke-width="2.5">
+            <circle r="28"/><circle r="60" opacity=".5"/><circle r="100" opacity=".25"/>
+            <path d="M-30 0 L30 0 M0 -30 L0 30" stroke-width="3"/>
+          </g>
+          <g fill="#22c55e"><circle cx="350" cy="100" r="7"/><circle cx="140" cy="270" r="7"/><circle cx="380" cy="260" r="7"/><circle cx="100" cy="120" r="7"/><circle cx="420" cy="180" r="7"/></g>
+        </svg>
+      </div>
+      <div class="svc-body">
+        <div class="icon"><svg width="26" height="26"><use href="#i-phone"/></svg></div>
+        <h3 class="display">Lead Tracking</h3>
+        <p class="lead">Every call, every form, every direction request, tied back to the channel that drove it. So you finally know what's actually working and what isn't.</p>
+        <ul class="features">
+          <li>Dynamic call tracking numbers per channel</li>
+          <li>Call recording and transcription</li>
+          <li>Form attribution to keyword and source</li>
+          <li>GMB action tracking (calls, directions, website clicks)</li>
+          <li>Monthly lead-to-revenue reporting</li>
+          <li>CRM integrations (Jobber, ServiceM8, GHL, HubSpot, more)</li>
+        </ul>
+        <div class="outcome"><strong>100%</strong> Lead source visibility</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section style="background:var(--tint)">
+  <div class="container">
+    <div class="eyebrow">Why Rank On Maps</div>
+    <h2>How we compare.</h2>
+    <div class="compare">
+      <div class="compare-col">
+        <div class="who">DIY</div>
+        <h4>Doing it yourself</h4>
+        <ul>
+          <li>20+ hours per month of admin</li>
+          <li>Guessing what Google wants</li>
+          <li>No reporting or tracking</li>
+          <li>Slow, inconsistent results</li>
+          <li>Risk of profile suspension</li>
+          <li>No specialist knowledge</li>
+        </ul>
+      </div>
+      <div class="compare-col us">
+        <div class="who">Rank On Maps</div>
+        <h4>Done for you</h4>
+        <ul>
+          <li>Specialists who only do local SEO</li>
+          <li>Live geogrid reporting weekly</li>
+          <li>No lock-in contracts ever</li>
+          <li>45-day average to map pack #1</li>
+          <li>Real US-based team you can call</li>
+          <li>Suspension recovery included</li>
+        </ul>
+      </div>
+      <div class="compare-col">
+        <div class="who">Big agencies</div>
+        <h4>Generic SEO agency</h4>
+        <ul>
+          <li>12-month lock-in contracts</li>
+          <li>Outsourced overseas</li>
+          <li>Confusing PDF reports nobody reads</li>
+          <li>Spread thin across 50+ clients</li>
+          <li>Hidden fees and upsells</li>
+          <li>Local SEO is an afterthought</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <div class="eyebrow">FAQ</div>
+    <h2>Common questions.</h2>
+    <div class="faqs">
+      <details class="faq-item" open>
+        <summary>How long until I see results?</summary>
+        <p>Most clients see meaningful ranking movement within the first 30 days, and our average time to a #1 map pack ranking is 45 days. Some industries and competitive suburbs take longer. We'll tell you upfront after the audit.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need a contract?</summary>
+        <p>No. We work month-to-month. If we're not delivering, you can cancel any time with 14 days notice. We earn the relationship every month.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if my Google Business Profile gets suspended?</summary>
+        <p>We handle reinstatements as part of every plan. We've recovered hundreds of profiles, most within 7 days.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can you work with my existing website?</summary>
+        <p>Yes. We can optimize any existing site (WordPress, Webflow, Wix, Shopify, custom). If your site is holding you back, we'll let you know honestly and offer to rebuild it.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you work with my industry?</summary>
+        <p>We specialise in service businesses: plumbing, electrical, roofing, HVAC, landscaping, restoration, med spas, dental, legal, and home services. If you've got a physical service area, we can help.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens if I don't rank?</summary>
+        <p>You stop paying. Simple as that. We're so confident in our process that we don't need to lock you in, and that keeps us honest.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-final">
+  <div class="container">
+    <div class="eyebrow">Get started</div>
+    <h2>Let's put you on the map.</h2>
+    <p class="sub">Book a free 20-minute audit. We'll tell you exactly what's working, what isn't, and how fast we can get you to #1.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="contact.html">Claim a free audit</a>
+      <a class="btn btn-ghost" href="case-studies.html">See case studies</a>
+    </div>
+    <p class="cta-reassure">Free · No commitment · Response within 48 hrs</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a8 8 0 0 0-8 8c0 5.6 7.2 11.6 7.5 11.85a.8.8 0 0 0 1 0C12.8 21.6 20 15.6 20 10a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>
+          RANKONMAPS<span class="tld">.IO</span>
+        </div>
+        <div class="foot-tagline">Putting service businesses at the top of Google Maps, ethically, transparently, and without lock-in contracts.</div>
+        <div class="foot-trust">No contracts · Cancel anytime</div>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="process.html">Process</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h5>Legal</h5>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Rank On Maps. All rights reserved.</div>
+      <div class="foot-social">
+        <a href="#" aria-label="X / Twitter"><svg width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.743l7.738-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25Z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2zm2-1a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"/></svg></a>
+      </div>
+      <div class="foot-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mini geogrid for rank tracking service tile
+  (function(){
+    const g = document.getElementById('svc-grid');
+    if(!g) return;
+    const stops=[[34,197,94],[132,204,22],[234,179,8],[249,115,22],[239,68,68]];
+    function color(t){const i=Math.floor(t*(stops.length-1)),f=t*(stops.length-1)-i;const a=stops[i],b=stops[Math.min(i+1,stops.length-1)];return `rgb(${Math.round(a[0]+(b[0]-a[0])*f)},${Math.round(a[1]+(b[1]-a[1])*f)},${Math.round(a[2]+(b[2]-a[2])*f)})`;}
+    const N=7,step=42,offX=250-((N-1)*step)/2,offY=190-((N-1)*step)/2;
+    for(let y=0;y<N;y++)for(let x=0;x<N;x++){
+      const dx=x-(N-1)/2,dy=y-(N-1)/2;
+      const d=Math.hypot(dx,dy)/Math.hypot((N-1)/2,(N-1)/2);
+      const c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+      c.setAttribute('cx',offX+x*step);
+      c.setAttribute('cy',offY+y*step);
+      c.setAttribute('r',16);
+      c.setAttribute('fill',color(d*0.6));
+      c.setAttribute('stroke','#fff');c.setAttribute('stroke-width','2');
+      g.appendChild(c);
+      const t=document.createElementNS('http://www.w3.org/2000/svg','text');
+      t.setAttribute('x',offX+x*step);t.setAttribute('y',offY+y*step+4);
+      t.setAttribute('text-anchor','middle');t.setAttribute('font-size','11');
+      t.setAttribute('font-weight','700');t.setAttribute('fill','#fff');
+      t.textContent=Math.max(1,Math.round(1+d*0.6*8));
+      g.appendChild(t);
+    }
+  })();
+</script>
+<script src="shared.js"></script>
+</body>
+</html>

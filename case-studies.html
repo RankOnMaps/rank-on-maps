@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Case Studies | Rank On Maps</title>
+<meta name="description" content="Real businesses, real rankings, real revenue. See how Rank On Maps has taken service businesses from page 3 to the top of the map pack." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* Headline stats */
+  .stats-band{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:60px}
+  .stat{
+    background:#fff;border:1px solid var(--line);border-radius:22px;padding:36px 24px;
+    transition:transform .35s,border-color .35s,box-shadow .35s;
+  }
+  .stat:hover{transform:translateY(-3px);border-color:#1d1d1f}
+  .stat .num{font-family:'Bethany Elingston',serif;font-size:62px;line-height:1;color:var(--ink)}
+  .stat .lbl{margin-top:10px;font-size:12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+
+  /* Filter pills */
+  .filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:50px}
+  .filter{
+    padding:10px 20px;border-radius:980px;border:1px solid var(--line);
+    background:#fff;font-size:13px;font-weight:500;cursor:pointer;
+    color:var(--ink);transition:all .25s;
+  }
+  .filter:hover{border-color:#1d1d1f;transform:translateY(-1px)}
+  .filter.active{background:var(--ink);color:#fff;border-color:#000}
+
+  /* Case grid */
+  .case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:36px}
+  .case-card{
+    background:#fff;border:1px solid var(--line);border-radius:28px;
+    overflow:hidden;text-align:left;
+    transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s,border-color .4s;
+    display:flex;flex-direction:column;
+  }
+  .case-card:hover{border-color:#1d1d1f;box-shadow:0 30px 80px -25px rgba(0,0,0,.2)}
+  .case-card .vis{
+    aspect-ratio:16/9;background:linear-gradient(135deg,#f5f5f7,#e8e8ed);
+    position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+    transition:transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  .case-card:hover .vis{transform:scale(1.04)}
+  .case-card .vis svg{position:absolute;inset:0;width:100%;height:100%}
+  .case-card .body{padding:36px 38px;flex:1;display:flex;flex-direction:column}
+  .case-card .tag{font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+  .case-card h3{font-family:'Bethany Elingston',serif;font-size:34px;font-weight:400;margin:8px 0 12px;letter-spacing:-.01em;color:var(--ink)}
+  .case-card p{color:var(--ink-soft);font-size:15px;line-height:1.55;margin-bottom:24px;flex:1}
+  .case-card .metrics{display:flex;gap:24px;padding-top:20px;border-top:1px solid var(--line)}
+  .case-card .m{font-family:'Bethany Elingston',serif;font-size:30px;color:var(--ink);line-height:1}
+  .case-card .m small{display:block;font-family:'Inter',sans-serif;font-size:10px;color:var(--ink-soft);margin-top:5px;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+
+  /* Featured long-form */
+  .long-case{
+    background:var(--ink);color:#fff;border-radius:32px;
+    padding:72px 70px;margin-top:48px;text-align:left;
+    display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:center;
+    box-shadow:0 40px 100px -30px rgba(0,0,0,.4);
+  }
+  .long-case *{color:#fff}
+  .long-case .tag{font-size:11px;color:var(--green) !important;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+  .long-case h3{font-family:'Bethany Elingston',serif;font-size:54px;font-weight:400;line-height:1;margin:10px 0 18px}
+  .long-case .lead{font-size:17px;line-height:1.6;color:rgba(255,255,255,.75) !important;margin-bottom:30px}
+  .long-case blockquote{
+    border-left:3px solid var(--green);padding-left:20px;
+    font-size:18px;line-height:1.5;margin-bottom:24px;font-style:italic;
+  }
+  .long-case .quoted-by{font-size:13px;color:rgba(255,255,255,.6) !important;letter-spacing:.04em;text-transform:uppercase;font-weight:600;margin-bottom:30px}
+  .long-case .lc-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-top:30px;border-top:1px solid rgba(255,255,255,.15)}
+  .long-case .lc-metrics .m{font-family:'Bethany Elingston',serif;font-size:46px;line-height:1}
+  .long-case .lc-metrics .m small{display:block;font-size:11px;color:rgba(255,255,255,.6) !important;letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-top:6px;font-family:'Inter',sans-serif}
+  .long-case .visual{
+    background:#000;border-radius:24px;overflow:hidden;
+    border:1px solid rgba(255,255,255,.1);min-height:420px;
+    display:flex;align-items:center;justify-content:center;position:relative;
+  }
+  .long-case .visual svg{width:100%;height:100%}
+
+  /* Industry breakdown */
+  .industries{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:60px}
+  .industry-card{
+    background:#fff;border:1px solid var(--line);border-radius:22px;
+    padding:34px 28px;text-align:left;
+    transition:transform .4s,border-color .4s,box-shadow .4s;
+  }
+  .industry-card:hover{border-color:#1d1d1f;box-shadow:0 22px 60px -22px rgba(0,0,0,.16)}
+  .industry-card .ic{
+    width:46px;height:46px;border-radius:13px;background:var(--tint);
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--ink);
+  }
+  .industry-card h4{font-family:'Bethany Elingston',serif;font-size:24px;font-weight:400;margin-bottom:14px}
+  .industry-card .stats-mini{display:flex;gap:18px;font-size:12px;color:var(--ink-soft)}
+  .industry-card .stats-mini b{display:block;font-family:'Bethany Elingston',serif;font-size:22px;font-weight:400;color:var(--ink)}
+
+  /* Testimonials wall */
+  .testimonials{column-count:3;column-gap:20px;margin-top:60px}
+  .testimonial-card{
+    break-inside:avoid;background:#fff;border:1px solid var(--line);
+    border-radius:20px;padding:28px;margin-bottom:20px;text-align:left;
+    transition:transform .35s,border-color .35s,box-shadow .35s;
+  }
+  .testimonial-card:hover{border-color:#1d1d1f;box-shadow:0 18px 50px -18px rgba(0,0,0,.16);transform:translateY(-3px)}
+  .testimonial-card .stars{color:#fbbc04;letter-spacing:2px;font-size:14px;margin-bottom:12px}
+  .testimonial-card p{font-size:15px;line-height:1.55;color:var(--ink);margin-bottom:14px}
+  .testimonial-card .who{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-soft)}
+  .testimonial-card .av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#d2d2d7,#a1a1a6);display:flex;align-items:center;justify-content:center;font-weight:600;color:#fff;font-size:13px}
+
+  @media (max-width:980px){
+    .stats-band{grid-template-columns:repeat(2,1fr)}
+    .case-grid{grid-template-columns:1fr}
+    .long-case{grid-template-columns:1fr;padding:48px 36px;gap:36px}
+    .long-case h3{font-size:42px}
+    .industries{grid-template-columns:repeat(2,1fr)}
+    .testimonials{column-count:2}
+  }
+  @media (max-width:680px){
+    .stats-band{grid-template-columns:1fr;gap:14px}
+    .stat{padding:30px 22px}
+    .stat .num{font-size:48px}
+    .filters{gap:8px;margin-top:36px}
+    .filter{padding:8px 16px;font-size:12px}
+    .case-card .body{padding:30px 26px}
+    .case-card h3{font-size:30px}
+    .case-card .metrics{flex-wrap:wrap;gap:16px}
+    .case-card .m{font-size:24px}
+    .long-case{padding:40px 26px;border-radius:24px}
+    .long-case h3{font-size:34px}
+    .long-case .lc-metrics{grid-template-columns:repeat(3,1fr);gap:14px}
+    .long-case .lc-metrics .m{font-size:28px}
+    .long-case .visual{min-height:280px}
+    .industries{grid-template-columns:1fr}
+    .testimonials{column-count:1}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a8 8 0 0 0-8 8c0 5.6 7.2 11.6 7.5 11.85a.8.8 0 0 0 1 0C12.8 21.6 20 15.6 20 10a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></symbol>
+</svg>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><svg><use href="#pin"/></svg> RANKONMAPS<span class="tld">.IO</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="process.html">Process</a>
+      <a href="case-studies.html" class="active">Case Studies</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="nav-cta" href="contact.html">Book a call</a>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <div class="eyebrow">Case studies</div>
+    <h1>Real businesses.<br>Real <em>rankings.</em></h1>
+    <p class="sub">120+ service businesses. Hundreds of thousands of new calls. Here's the receipts.</p>
+    <div class="stats-band">
+      <div class="stat"><div class="num">120+</div><div class="lbl">Businesses ranked</div></div>
+      <div class="stat"><div class="num">$14.2M</div><div class="lbl">Revenue generated</div></div>
+      <div class="stat"><div class="num">94%</div><div class="lbl">Client retention</div></div>
+      <div class="stat"><div class="num">45 days</div><div class="lbl">Avg. to map pack</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- FILTER + GRID -->
+<section style="background:var(--tint);padding-top:80px">
+  <div class="container">
+    <div class="eyebrow">Browse by industry</div>
+    <h2>Pick a story.</h2>
+    <div class="filters">
+      <button class="filter active">All</button>
+      <button class="filter">Plumbing</button>
+      <button class="filter">Electrical</button>
+      <button class="filter">Roofing</button>
+      <button class="filter">Restoration</button>
+      <button class="filter">Med Spa</button>
+      <button class="filter">Landscaping</button>
+    </div>
+
+    <div class="case-grid">
+
+      <div class="case-card">
+        <div class="vis">
+          <svg viewBox="0 0 500 280" preserveAspectRatio="xMidYMid slice">
+            <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#22c55e" stop-opacity=".4"/><stop offset="1" stop-color="#22c55e" stop-opacity="0"/></linearGradient></defs>
+            <rect width="500" height="280" fill="#f5f5f7"/>
+            <path d="M0 230 L80 210 L160 180 L240 130 L320 90 L400 60 L500 30 L500 280 L0 280Z" fill="url(#g1)"/>
+            <path d="M0 230 L80 210 L160 180 L240 130 L320 90 L400 60 L500 30" stroke="#22c55e" stroke-width="3" fill="none"/>
+            <g fill="#22c55e"><circle cx="80" cy="210" r="5"/><circle cx="160" cy="180" r="5"/><circle cx="240" cy="130" r="5"/><circle cx="320" cy="90" r="5"/><circle cx="400" cy="60" r="5"/><circle cx="500" cy="30" r="6"/></g>
+          </svg>
+        </div>
+        <div class="body">
+          <div class="tag">Plumbing · Los Angeles</div>
+          <h3>JSW Plumbing</h3>
+          <p>From page 3 to dominating the map pack across 12 LA neighborhoods in just 45 days. Inbound calls more than doubled in the first quarter.</p>
+          <div class="metrics">
+            <div class="m">#1<small>Map pack</small></div>
+            <div class="m">+213%<small>Directions</small></div>
+            <div class="m">2.4×<small>Calls</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="vis">
+          <svg viewBox="0 0 500 280" preserveAspectRatio="xMidYMid slice">
+            <rect width="500" height="280" fill="#f5f5f7"/>
+            <g id="cs-grid-1"></g>
+          </svg>
+        </div>
+        <div class="body">
+          <div class="tag">Electrical · San Diego</div>
+          <h3>Voltage Co.</h3>
+          <p>98% increase in inbound calls within two months. We turned a stagnant local presence into the most-clicked listing in their category.</p>
+          <div class="metrics">
+            <div class="m">+98%<small>Calls</small></div>
+            <div class="m">#1<small>3 categories</small></div>
+            <div class="m">5.0★<small>180+ reviews</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="vis">
+          <svg viewBox="0 0 500 280" preserveAspectRatio="xMidYMid slice">
+            <defs><linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#22c55e" stop-opacity=".4"/><stop offset="1" stop-color="#22c55e" stop-opacity="0"/></linearGradient></defs>
+            <rect width="500" height="280" fill="#f5f5f7"/>
+            <path d="M0 240 L80 230 L160 195 L240 165 L320 110 L400 70 L500 25 L500 280 L0 280Z" fill="url(#g2)"/>
+            <path d="M0 240 L80 230 L160 195 L240 165 L320 110 L400 70 L500 25" stroke="#22c55e" stroke-width="3" fill="none"/>
+            <g fill="#22c55e"><circle cx="80" cy="230" r="5"/><circle cx="160" cy="195" r="5"/><circle cx="240" cy="165" r="5"/><circle cx="320" cy="110" r="5"/><circle cx="400" cy="70" r="5"/><circle cx="500" cy="25" r="6"/></g>
+          </svg>
+        </div>
+        <div class="body">
+          <div class="tag">Roofing · Los Angeles</div>
+          <h3>Apex Roofing Co.</h3>
+          <p>From 12 calls per month to 121+ in under 90 days. Now ranking #1 for "roofing Los Angeles" and 8 surrounding neighborhoods.</p>
+          <div class="metrics">
+            <div class="m">10×<small>Monthly calls</small></div>
+            <div class="m">#1<small>LA metro</small></div>
+            <div class="m">62 days<small>To #1</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="vis">
+          <svg viewBox="0 0 500 280" preserveAspectRatio="xMidYMid slice">
+            <rect width="500" height="280" fill="#f5f5f7"/>
+            <g transform="translate(250,140)">
+              <g fill="#fbbc04">
+                <path transform="translate(-180,-20)" d="m20 0 6 12 13 1-10 9 3 13L20 28 8 35l3-13-10-9 13-1Z"/>
+                <path transform="translate(-100,-20)" d="m20 0 6 12 13 1-10 9 3 13L20 28 8 35l3-13-10-9 13-1Z"/>
+                <path transform="translate(-20,-20)" d="m20 0 6 12 13 1-10 9 3 13L20 28 8 35l3-13-10-9 13-1Z"/>
+                <path transform="translate(60,-20)" d="m20 0 6 12 13 1-10 9 3 13L20 28 8 35l3-13-10-9 13-1Z"/>
+                <path transform="translate(140,-20)" d="m20 0 6 12 13 1-10 9 3 13L20 28 8 35l3-13-10-9 13-1Z"/>
+              </g>
+              <text x="0" y="60" text-anchor="middle" font-family="Inter" font-size="20" font-weight="700" fill="#1d1d1f">5.0 · 312 reviews</text>
+            </g>
+          </svg>
+        </div>
+        <div class="body">
+          <div class="tag">Med Spa · Beverly Hills</div>
+          <h3>Bella Med Spa</h3>
+          <p>From 40 reviews to 312 in 4 months. Now the #1-rated med spa in Beverly Hills and the surrounding West Hollywood area.</p>
+          <div class="metrics">
+            <div class="m">+272<small>Reviews</small></div>
+            <div class="m">#1<small>Beverly Hills</small></div>
+            <div class="m">4.2×<small>Bookings</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="vis">
+          <svg viewBox="0 0 500 280" preserveAspectRatio="xMidYMid slice">
+            <defs><linearGradient id="g3" x1="0" x2="1"><stop offset="0" stop-color="#1d1d1f" stop-opacity=".25"/><stop offset="1" stop-color="#1d1d1f" stop-opacity="0"/></linearGradient></defs>
+            <rect width="500" height="280" fill="#f5f5f7"/>
+            <path d="M0 250 L80 220 L160 200 L240 150 L320 100 L400 60 L500 25 L500 280 L0 280Z" fill="url(#g3)"/>
+            <path d="M0 250 L80 220 L160 200 L240 150 L320 100 L400 60 L500 25" stroke="#1d1d1f" stroke-width="3" fill="none"/>
+          </svg>
+        </div>
+        <div class="body">
+          <div class="tag">Landscaping · Phoenix</div>
+          <h3>Greenline Landscapes</h3>
+          <p>Tripled their qualified leads in a single quarter. Built a new website + ranked them #1 for high-value commercial landscaping searches.</p>
+          <div class="metrics">
+            <div class="m">3×<small>Qualified leads</small></div>
+            <div class="m">$220k<small>New revenue</small></div>
+            <div class="m">#1<small>Commercial</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="vis">
+          <svg viewBox="0 0 500 280" preserveAspectRatio="xMidYMid slice">
+            <rect width="500" height="280" fill="#f5f5f7"/>
+            <g id="cs-grid-2"></g>
+          </svg>
+        </div>
+        <div class="body">
+          <div class="tag">Restoration · Dallas</div>
+          <h3>Rapid Restoration</h3>
+          <p>Emergency water and fire damage specialists who needed to be visible 24/7. Now they own the after-hours map pack across all of the Dallas-Fort Worth metro.</p>
+          <div class="metrics">
+            <div class="m">#1<small>24/7 emergency</small></div>
+            <div class="m">+186%<small>After-hours calls</small></div>
+            <div class="m">7 days<small>To rank</small></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED LONG-FORM CASE -->
+<section>
+  <div class="container">
+    <div class="eyebrow">Featured case study</div>
+    <h2>Alpine Restoration</h2>
+    <div class="long-case">
+      <div>
+        <div class="tag">RESTORATION · LOS ANGELES</div>
+        <h3>From 40 calls<br>to $540k<br>in 6 months.</h3>
+        <p class="lead">Alpine Restoration came to us in October 2025 with a stagnant Google profile, a broken website, and 40 calls per month. Six months later, they're the #1 restoration company in greater Los Angeles, fielding 180+ calls per month and have opened a second location in Long Beach.</p>
+        <blockquote>"I honestly didn't think it would work this fast. Within six weeks we were #1 for fire damage Los Angeles. The phone hasn't stopped ringing since."</blockquote>
+        <div class="quoted-by">Mike Chen, Owner</div>
+        <div class="lc-metrics">
+          <div class="m">348%<small>Traffic lift</small></div>
+          <div class="m">$540k<small>New revenue</small></div>
+          <div class="m">4.5×<small>Booked jobs</small></div>
+        </div>
+      </div>
+      <div class="visual">
+        <svg viewBox="0 0 400 420" preserveAspectRatio="xMidYMid meet">
+          <g id="long-grid"></g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRY BREAKDOWN -->
+<section style="background:var(--tint)">
+  <div class="container">
+    <div class="eyebrow">Industries we serve</div>
+    <h2>What we know best.</h2>
+    <p class="sub">We've worked with hundreds of service businesses. These are the categories where we've delivered the strongest results.</p>
+    <div class="industries">
+      <div class="industry-card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6m0 0a4 4 0 0 0 4 4h2v6a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-6h2a4 4 0 0 0 4-4Z"/></svg></div><h4>Plumbing</h4><div class="stats-mini"><div><b>34</b>Clients</div><div><b>52d</b>Avg #1</div></div></div>
+      <div class="industry-card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m13 2-9 13h7l-1 7 9-13h-7Z"/></svg></div><h4>Electrical</h4><div class="stats-mini"><div><b>22</b>Clients</div><div><b>41d</b>Avg #1</div></div></div>
+      <div class="industry-card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12 12 4l9 8M5 10v10h14V10"/></svg></div><h4>Roofing</h4><div class="stats-mini"><div><b>18</b>Clients</div><div><b>38d</b>Avg #1</div></div></div>
+      <div class="industry-card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 0-4 4v6a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4Zm-7 9a7 7 0 0 0 14 0M12 19v3"/></svg></div><h4>HVAC</h4><div class="stats-mini"><div><b>12</b>Clients</div><div><b>56d</b>Avg #1</div></div></div>
+      <div class="industry-card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 22V8m0 0c4 0 6-4 9-4s5 4 9 4v14"/></svg></div><h4>Restoration</h4><div class="stats-mini"><div><b>9</b>Clients</div><div><b>45d</b>Avg #1</div></div></div>
+      <div class="industry-card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5"/></svg></div><h4>Med Spa</h4><div class="stats-mini"><div><b>11</b>Clients</div><div><b>49d</b>Avg #1</div></div></div>
+      <div class="industry-card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div><h4>Landscaping</h4><div class="stats-mini"><div><b>14</b>Clients</div><div><b>43d</b>Avg #1</div></div></div>
+      <div class="industry-card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg></div><h4>Home Services</h4><div class="stats-mini"><div><b>16</b>Clients</div><div><b>47d</b>Avg #1</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS WALL -->
+<section>
+  <div class="container">
+    <div class="eyebrow">In their words</div>
+    <h2>What clients actually say.</h2>
+    <div class="testimonials">
+      <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Within six weeks we were #1 in the map pack across every suburb that mattered. The phone hasn't stopped ringing."</p><div class="who"><div class="av">MT</div>Mark T. · Plumbing</div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><p>"They fixed what two other agencies couldn't. The reporting alone is worth the monthly fee. Total game changer."</p><div class="who"><div class="av">SL</div>Sarah L. · Restoration</div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Direction requests tripled in the first month. Insane results, and they actually pick up the phone when you call them."</p><div class="who"><div class="av">DK</div>Daniel K. · Electrical</div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><p>"No contracts, no nonsense. Just rankings and real leads. After a year, we're still month-to-month and still climbing."</p><div class="who"><div class="av">PM</div>Priya M. · Med Spa</div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><p>"We dominate every suburb that matters now. My biggest competitor literally asked me who runs my marketing. I'm not telling."</p><div class="who"><div class="av">JR</div>James R. · Roofing</div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><p>"The geogrid heatmap reports are addictive. I check them every Monday morning. Watching us turn the map green has been wild."</p><div class="who"><div class="av">JN</div>Jordan N. · HVAC</div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Best money I've spent on marketing in 12 years of trading. Bookings have doubled and I'm not running ads anymore."</p><div class="who"><div class="av">BH</div>Brett H. · Landscaping</div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><p>"From page 3 to top of the map pack in under two months. They built us a new website AND ranked us. Honest team."</p><div class="who"><div class="av">AN</div>Aisha N. · Plumbing</div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Honestly the best ROI of any marketing spend in our business. They just get local SEO in a way nobody else does."</p><div class="who"><div class="av">EM</div>Emma M. · Restoration</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-final">
+  <div class="container">
+    <div class="eyebrow">Get started</div>
+    <h2>Want to be next?</h2>
+    <p class="sub">Book a free 20-minute audit and let's see if we can put your business on the wall.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="contact.html">Claim a free audit</a>
+      <a class="btn btn-ghost" href="services.html">See services</a>
+    </div>
+    <p class="cta-reassure">Free · No commitment · Response within 48 hrs</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a8 8 0 0 0-8 8c0 5.6 7.2 11.6 7.5 11.85a.8.8 0 0 0 1 0C12.8 21.6 20 15.6 20 10a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>
+          RANKONMAPS<span class="tld">.IO</span>
+        </div>
+        <div class="foot-tagline">Putting service businesses at the top of Google Maps, ethically, transparently, and without lock-in contracts.</div>
+        <div class="foot-trust">No contracts · Cancel anytime</div>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="process.html">Process</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h5>Legal</h5>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Rank On Maps. All rights reserved.</div>
+      <div class="foot-social">
+        <a href="#" aria-label="X / Twitter"><svg width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.743l7.738-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25Z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2zm2-1a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"/></svg></a>
+      </div>
+      <div class="foot-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Geogrid generators
+  function makeGrid(targetId,N,step,offX,offY,r,maxT){
+    const g=document.getElementById(targetId);if(!g)return;
+    const stops=[[34,197,94],[132,204,22],[234,179,8],[249,115,22],[239,68,68]];
+    function color(t){const i=Math.floor(t*(stops.length-1)),f=t*(stops.length-1)-i;const a=stops[i],b=stops[Math.min(i+1,stops.length-1)];return `rgb(${Math.round(a[0]+(b[0]-a[0])*f)},${Math.round(a[1]+(b[1]-a[1])*f)},${Math.round(a[2]+(b[2]-a[2])*f)})`;}
+    for(let y=0;y<N;y++)for(let x=0;x<N;x++){
+      const dx=x-(N-1)/2,dy=y-(N-1)/2;
+      const d=Math.hypot(dx,dy)/Math.hypot((N-1)/2,(N-1)/2)*(maxT||0.6);
+      const c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+      c.setAttribute('cx',offX+x*step);c.setAttribute('cy',offY+y*step);c.setAttribute('r',r);
+      c.setAttribute('fill',color(d));
+      c.setAttribute('stroke','#fff');c.setAttribute('stroke-width','2');
+      g.appendChild(c);
+      const t=document.createElementNS('http://www.w3.org/2000/svg','text');
+      t.setAttribute('x',offX+x*step);t.setAttribute('y',offY+y*step+4);
+      t.setAttribute('text-anchor','middle');t.setAttribute('font-size',Math.max(9,r-3));
+      t.setAttribute('font-weight','700');t.setAttribute('fill','#fff');
+      t.textContent=Math.max(1,Math.round(1+d*9));
+      g.appendChild(t);
+    }
+  }
+  makeGrid('cs-grid-1',6,38,250-((6-1)*38)/2,140-((6-1)*38)/2,15,0.55);
+  makeGrid('cs-grid-2',6,38,250-((6-1)*38)/2,140-((6-1)*38)/2,15,0.5);
+  makeGrid('long-grid',7,48,200-((7-1)*48)/2,210-((7-1)*48)/2,20,0.5);
+
+  // Filter pills (visual only — all cards stay visible)
+  document.querySelectorAll('.filter').forEach(b=>{
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('.filter').forEach(f=>f.classList.remove('active'));
+      b.classList.add('active');
+    });
+  });
+</script>
+<script src="shared.js"></script>
+</body>
+</html>
