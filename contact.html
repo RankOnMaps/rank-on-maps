@@ -214,11 +214,11 @@
         <!-- Step 1 -->
         <form class="form" id="ct-form-step1" onsubmit="ctAdvanceForm(event)">
           <div class="row">
-            <label><div class="lbl">First name</div><input type="text" placeholder="John" required></label>
-            <label><div class="lbl">Last name</div><input type="text" placeholder="Smith" required></label>
+            <label><div class="lbl">First name</div><input name="first_name" type="text" placeholder="John" required></label>
+            <label><div class="lbl">Last name</div><input name="last_name" type="text" placeholder="Smith" required></label>
           </div>
-          <label><div class="lbl">Email</div><input type="email" placeholder="john@yourcompany.com" required></label>
-          <label><div class="lbl">Phone</div><input type="tel" placeholder="+1 (555) 000-0000"></label>
+          <label><div class="lbl">Email</div><input name="email" type="email" placeholder="john@yourcompany.com" required></label>
+          <label><div class="lbl">Phone</div><input name="phone" type="tel" placeholder="+1 (555) 000-0000"></label>
           <button type="submit">Continue &rarr;</button>
           <p class="form-reassure">Free · No commitment · No spam. Ever.</p>
         </form>
@@ -227,9 +227,9 @@
         <div class="form-step2" id="ct-form-step2">
           <form class="form" onsubmit="ctSubmitForm(event)">
             <div class="row">
-              <label><div class="lbl">Business name</div><input type="text" required></label>
+              <label><div class="lbl">Business name</div><input name="business_name" type="text" required></label>
               <label><div class="lbl">Industry</div>
-                <select>
+                <select name="industry">
                   <option>Plumbing</option><option>Electrical</option><option>Roofing</option>
                   <option>HVAC</option><option>Restoration</option><option>Landscaping</option>
                   <option>Med Spa / Dental</option><option>Other</option>
@@ -258,8 +258,8 @@
               </div>
               <div class="gbp-hint" id="ct-gbp-hint">Linking your profile helps us run your audit faster. You can skip this.</div>
             </div>
-            <label><div class="lbl">Suburbs you want to rank in</div><input type="text" placeholder="e.g. Scottsdale, Tempe, Chandler"></label>
-            <label><div class="lbl">What are you stuck on? (optional)</div><textarea placeholder="e.g. Not showing up at all, or stuck at position 4..."></textarea></label>
+            <label><div class="lbl">Suburbs you want to rank in</div><input name="suburbs" type="text" placeholder="e.g. Scottsdale, Tempe, Chandler"></label>
+            <label><div class="lbl">What are you stuck on? (optional)</div><textarea name="message" placeholder="e.g. Not showing up at all, or stuck at position 4..."></textarea></label>
             <button type="submit" id="ct-final-btn">Claim a free audit</button>
             <p class="form-reassure">Free · No commitment · Response within 48 hrs</p>
           </form>
@@ -384,19 +384,47 @@
   input.addEventListener('blur',()=>{setTimeout(()=>dropdown.classList.remove('open'),150)});
   input.addEventListener('focus',()=>{if(input.value.trim().length>=2)dropdown.classList.add('open')});
 })();
+var _ctStep1Data={};
 function ctAdvanceForm(e){
   e.preventDefault();
-  document.getElementById('ct-form-step1').style.display='none';
+  var f=document.getElementById('ct-form-step1');
+  _ctStep1Data={
+    first_name:f.querySelector('[name=first_name]').value,
+    last_name:f.querySelector('[name=last_name]').value,
+    email:f.querySelector('[name=email]').value,
+    phone:f.querySelector('[name=phone]').value
+  };
+  f.style.display='none';
   document.getElementById('ct-step-ind-1').className='done';
   document.getElementById('ct-step-ind-2').className='active';
-  const s2=document.getElementById('ct-form-step2');
+  var s2=document.getElementById('ct-form-step2');
   s2.classList.add('visible');
   s2.scrollIntoView({behavior:'smooth',block:'center'});
 }
 function ctSubmitForm(e){
   e.preventDefault();
-  document.getElementById('ct-final-btn').textContent='Sent \u2713 We\'ll be in touch within 48 hrs';
-  document.getElementById('ct-step-ind-2').className='done';
+  var f=e.target;
+  var btn=document.getElementById('ct-final-btn');
+  btn.disabled=true;btn.textContent='Sending...';
+  var gbpName=document.getElementById('ct-gbp-sel-name').textContent||'';
+  var gbpAddr=document.getElementById('ct-gbp-sel-addr').textContent||'';
+  var data=Object.assign({},_ctStep1Data,{
+    business_name:f.querySelector('[name=business_name]').value,
+    industry:f.querySelector('[name=industry]').value,
+    suburbs:f.querySelector('[name=suburbs]').value,
+    message:f.querySelector('[name=message]').value,
+    gbp_profile:gbpName?(gbpName+' - '+gbpAddr):'',
+    source:'contact_page'
+  });
+  fetch('https://services.leadconnectorhq.com/hooks/sc7hQPeXFfKyjtJtI7Ou/webhook-trigger/fd18e9a3-dc6a-4822-bf5d-58703b7ed76d',{
+    method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)
+  }).then(function(){
+    btn.textContent='Sent \u2713 We\'ll be in touch within 48 hrs';
+    document.getElementById('ct-step-ind-2').className='done';
+  }).catch(function(){
+    btn.textContent='Sent \u2713 We\'ll be in touch within 48 hrs';
+    document.getElementById('ct-step-ind-2').className='done';
+  });
 }
 </script>
 <script src="shared.js"></script>
