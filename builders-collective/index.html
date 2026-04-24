@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Builders Collective × RankOnMaps — Custom Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #fafaf9;
+    --bg-alt: #ffffff;
+    --ink: #0a0a0a;
+    --ink-soft: #1a1a1a;
+    --muted: #6b7280;
+    --muted-soft: #9ca3af;
+    --line: #e7e5e4;
+    --line-soft: #f3f4f6;
+    --green: #22c55e;
+    --green-deep: #16a34a;
+    --green-soft: #dcfce7;
+    --green-wash: #f0fdf4;
+    --strike: #d1d5db;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  .serif {
+    font-family: 'Instrument Serif', 'Times New Roman', serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  em, .italic {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .narrow { max-width: 920px; }
+
+  /* LABEL */
+  .label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .label .sep { color: var(--muted-soft); }
+
+  /* HERO */
+  .hero {
+    padding: 72px 0 100px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(56px, 8vw, 104px);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    margin: 24px 0 32px;
+  }
+
+  .hero h1 em {
+    color: var(--ink);
+  }
+
+  .hero .sub {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 480px;
+    line-height: 1.6;
+  }
+
+  .hero-card {
+    position: relative;
+    background: var(--bg-alt);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.04),
+      0 12px 32px -8px rgba(0,0,0,0.08),
+      0 32px 64px -16px rgba(0,0,0,0.12);
+    transform: rotate(-2deg);
+  }
+
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 52px;
+    height: 52px;
+    background: var(--green);
+    color: white;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .hero-card::after {
+    content: '10 DAYS';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  .card-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .card-logo {
+    width: 48px;
+    height: 48px;
+    background: var(--ink);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+  }
+
+  .card-head .name {
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    line-height: 1.1;
+  }
+
+  .card-head .meta {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .card-stat {
+    background: var(--bg);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-top: 16px;
+  }
+
+  .card-stat .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .card-stat .stat-value {
+    font-family: 'Instrument Serif', serif;
+    font-size: 42px;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .card-stat .stat-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    color: var(--green-deep);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* map pins grid mini */
+  .pins-grid {
+    margin-top: 16px;
+    background: linear-gradient(to bottom right, #e0f2fe, #f0fdf4);
+    border-radius: 14px;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+  }
+
+  .pin {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--green);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(34,197,94,0.3);
+  }
+
+  /* META */
+  .hero-meta {
+    margin-top: 80px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+  }
+
+  .meta-item .m-label {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 6px;
+  }
+
+  .meta-item .m-value {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 120px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(40px, 5.5vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin: 24px 0 24px;
+  }
+
+  h2 em { color: var(--ink); }
+
+  .section-intro {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 620px;
+    line-height: 1.6;
+  }
+
+  /* VISION */
+  .vision-text {
+    margin-top: 48px;
+    max-width: 680px;
+  }
+
+  .vision-text p {
+    font-size: 19px;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+    line-height: 1.55;
+  }
+
+  .vision-text p:last-child {
+    font-family: 'Instrument Serif', serif;
+    font-size: 28px;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-top: 32px;
+  }
+
+  /* VALUE STACK */
+  .stack-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: end;
+    margin-bottom: 48px;
+  }
+
+  .stack-list {
+    border-top: 1px solid var(--line);
+  }
+
+  .stack-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 32px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line);
+    transition: padding 0.2s ease;
+  }
+
+  .stack-item:hover { padding-left: 12px; }
+
+  .stack-item .name {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .stack-item .desc {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .stack-item .price {
+    font-family: 'Instrument Serif', serif;
+    font-size: 26px;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .stack-total {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    gap: 32px;
+    padding: 40px 0 0;
+  }
+
+  .stack-total .t-label {
+    font-size: 13px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+
+  .stack-total .t-value {
+    font-family: 'Instrument Serif', serif;
+    font-size: 56px;
+    line-height: 1;
+    color: var(--muted-soft);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--strike);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* REVEAL */
+  .reveal {
+    margin-top: 72px;
+    background: var(--ink);
+    color: white;
+    border-radius: 32px;
+    padding: 72px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .reveal::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, var(--green) 0%, transparent 70%);
+    opacity: 0.25;
+  }
+
+  .reveal .r-label {
+    font-size: 12px;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .reveal .r-headline {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.05;
+    margin-bottom: 48px;
+    max-width: 720px;
+    position: relative;
+  }
+
+  .reveal .r-headline em { color: var(--green); }
+
+  .reveal-prices {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    position: relative;
+    max-width: 680px;
+  }
+
+  .reveal-price {
+    padding: 32px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+  }
+
+  .reveal-price .rp-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .reveal-price .rp-value {
+    font-family: 'Instrument Serif', serif;
+    font-size: 64px;
+    line-height: 1;
+    color: white;
+    margin-bottom: 8px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .reveal-price .rp-note {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .reveal-savings {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 12px 22px;
+    background: var(--green);
+    color: var(--ink);
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    position: relative;
+  }
+
+  /* ROADMAP */
+  .phases {
+    display: grid;
+    gap: 16px;
+    margin-top: 48px;
+  }
+
+  .phase {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 40px;
+    padding: 32px 36px;
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    transition: all 0.2s ease;
+  }
+
+  .phase:hover {
+    transform: translateX(4px);
+    border-color: var(--green);
+    box-shadow: 0 8px 24px -12px rgba(34,197,94,0.2);
+  }
+
+  .phase .days {
+    font-family: 'Instrument Serif', serif;
+    font-size: 32px;
+    color: var(--ink);
+    line-height: 1;
+    padding-top: 4px;
+  }
+
+  .phase .days em { color: var(--green-deep); }
+
+  .phase .phase-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .phase .phase-content {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* WINS */
+  .wins-head .small-joke {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 22px;
+    margin-top: -8px;
+    display: block;
+  }
+
+  .wins-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 56px;
+  }
+
+  .win {
+    padding: 32px;
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    transition: all 0.2s;
+  }
+
+  .win:hover {
+    border-color: var(--green);
+    transform: translateY(-2px);
+  }
+
+  .win .w-num {
+    font-family: 'Instrument Serif', serif;
+    font-size: 32px;
+    color: var(--green-deep);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .win .w-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .win .w-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* CONVERSATIONAL AGENT DETAIL */
+  .channels-detail {
+    margin-top: 64px;
+    padding: 48px;
+    background: var(--green-wash);
+    border-radius: 24px;
+    border: 1px solid var(--green-soft);
+  }
+
+  .channels-detail .cd-label {
+    font-size: 12px;
+    color: var(--green-deep);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .channels-detail h3 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 36px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    max-width: 620px;
+  }
+
+  .channels-detail p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    max-width: 620px;
+    margin-bottom: 24px;
+  }
+
+  .channel-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .pill.pill-off {
+    color: var(--muted-soft);
+    background: transparent;
+    text-decoration: line-through;
+  }
+
+  .pill .check {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--green);
+    color: white;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+
+  /* CTA */
+  .cta {
+    padding: 140px 0;
+    text-align: center;
+    background: var(--bg-alt);
+  }
+
+  .cta h2 { max-width: 780px; margin: 24px auto 24px; }
+  .cta-sub {
+    font-size: 19px;
+    color: var(--muted);
+    max-width: 560px;
+    margin: 0 auto 48px;
+  }
+
+  .cta-terms {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    padding: 28px 40px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    margin-bottom: 48px;
+  }
+
+  .cta-term .ct-label {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 6px;
+  }
+
+  .cta-term .ct-value {
+    font-family: 'Instrument Serif', serif;
+    font-size: 28px;
+    color: var(--ink);
+  }
+
+  .signature {
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+    font-size: 15px;
+    color: var(--muted);
+  }
+
+  .signature .sig-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: 28px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .signature .sig-contact {
+    margin-top: 12px;
+    font-size: 13px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .hero-card { transform: rotate(-1deg); max-width: 420px; }
+    .stack-head { grid-template-columns: 1fr; }
+    .phase { grid-template-columns: 1fr; gap: 16px; padding: 24px; }
+    .reveal { padding: 48px 32px; border-radius: 24px; }
+    .reveal-prices { grid-template-columns: 1fr; }
+    .container { padding: 0 24px; }
+    section { padding: 80px 0; }
+    .hero { padding: 48px 0 64px; }
+    .channels-detail { padding: 32px 24px; }
+  }
+
+  @media print {
+    body { background: white; }
+    section { page-break-inside: avoid; }
+    .reveal { background: var(--bg); color: var(--ink); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="label">
+          <span>BUILDERS COLLECTIVE</span>
+          <span class="sep">·</span>
+          <span>RANKONMAPS</span>
+        </div>
+        <h1>Every lead,<br>every call,<br>every follow-up.<br><em>Handled.</em></h1>
+        <p class="sub">A complete sales operating system for Perth's best building broker. Built in 10 days. Designed to run without you.</p>
+      </div>
+
+      <div class="hero-card">
+        <div class="card-head">
+          <div class="card-logo">B</div>
+          <div>
+            <div class="name">Builders Collective</div>
+            <div class="meta">BUILDING BROKER · PERTH</div>
+          </div>
+        </div>
+        <div class="card-stat">
+          <div class="stat-label">Leads this month</div>
+          <div class="stat-value">137</div>
+          <div class="stat-meta">↑ 312% vs last month</div>
+        </div>
+        <div class="pins-grid">
+          <div class="pin">1</div><div class="pin">1</div><div class="pin">1</div>
+          <div class="pin">1</div><div class="pin">1</div><div class="pin">1</div>
+          <div class="pin">1</div><div class="pin">1</div><div class="pin">1</div>
+          <div class="pin">1</div><div class="pin">1</div><div class="pin">1</div>
+          <div class="pin">1</div><div class="pin">1</div><div class="pin">1</div>
+          <div class="pin">1</div><div class="pin">1</div><div class="pin">1</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-meta">
+      <div class="meta-item">
+        <div class="m-label">Prepared for</div>
+        <div class="m-value">David, Abdullah, Hasib & Masih</div>
+      </div>
+      <div class="meta-item">
+        <div class="m-label">Prepared by</div>
+        <div class="m-value">Daniel Girmay, RankOnMaps</div>
+      </div>
+      <div class="meta-item">
+        <div class="m-label">Date</div>
+        <div class="m-value">23 April 2026</div>
+      </div>
+      <div class="meta-item">
+        <div class="m-label">Build timeline</div>
+        <div class="m-value">10 business days</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- VISION -->
+<section>
+  <div class="container narrow">
+    <div class="label"><span>THE VISION</span></div>
+    <h2>You don't need<br>more leads.<br><em>You need a system<br>that doesn't leak them.</em></h2>
+    <div class="vision-text">
+      <p>Right now you've got four lead sources coming online. REA. Meta. Google. Organic. And four operators trying to manage it all manually.</p>
+      <p>That works until volume spikes. The moment it does, leads slip, follow-ups get missed, and ad spend goes straight to waste.</p>
+      <p>We're solving that before it happens — so by the time a competitor picks up the phone, <em>you've already closed.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE STACK -->
+<section>
+  <div class="container narrow">
+    <div class="stack-head">
+      <div>
+        <div class="label"><span>THE FULL BUILD</span></div>
+        <h2>Everything<br>you're getting.</h2>
+      </div>
+    </div>
+    <p class="section-intro">Every line item priced at standard Australian agency rates. This is what a legit operator would quote you — itemised, transparent, no fluff.</p>
+
+    <div class="stack-list" style="margin-top: 48px;">
+
+      <div class="stack-item">
+        <div>
+          <div class="name">CloseBetter CRM — Full Build & Configuration</div>
+          <div class="desc">Pipelines, automations, 4 user seats, mobile app, branded workspace</div>
+        </div>
+        <div class="price">$4,500</div>
+      </div>
+
+      <div class="stack-item">
+        <div>
+          <div class="name">Dedicated Business Phone Number + Call Recording</div>
+          <div class="desc">Routed through CRM, existing line forwarded, full call history</div>
+        </div>
+        <div class="price">$500</div>
+      </div>
+
+      <div class="stack-item">
+        <div>
+          <div class="name">AI Voice Agent — After-Hours Receptionist</div>
+          <div class="desc">Books calls live, captures details, transcripts logged to CRM (8pm–6am)</div>
+        </div>
+        <div class="price">$2,500</div>
+      </div>
+
+      <div class="stack-item">
+        <div>
+          <div class="name">AI Conversational Agent — Omnichannel</div>
+          <div class="desc">SMS, Facebook Messenger, Instagram DMs + email. Books appointments autonomously.</div>
+        </div>
+        <div class="price">$2,500</div>
+      </div>
+
+      <div class="stack-item">
+        <div>
+          <div class="name">VSL Script — Written for Builders Collective</div>
+          <div class="desc">2–3 minute script positioned around your independent vetting angle</div>
+        </div>
+        <div class="price">$1,500</div>
+      </div>
+
+      <div class="stack-item">
+        <div>
+          <div class="name">VSL Landing Page — WordPress Build</div>
+          <div class="desc">Branded page, embedded calendar, mobile-optimised</div>
+        </div>
+        <div class="price">$1,500</div>
+      </div>
+
+      <div class="stack-item">
+        <div>
+          <div class="name">Conversion Tracking Setup</div>
+          <div class="desc">Pixel install, lead + booking events, thank-you page tracking for ad optimisation</div>
+        </div>
+        <div class="price">$800</div>
+      </div>
+
+      <div class="stack-item">
+        <div>
+          <div class="name">REA API Integration</div>
+          <div class="desc">Direct lead flow to CRM + auto-send package info</div>
+        </div>
+        <div class="price">$800</div>
+      </div>
+
+      <div class="stack-item">
+        <div>
+          <div class="name">Meta Ads Lead Form Integration</div>
+          <div class="desc">Facebook + Instagram lead forms piped directly to CRM</div>
+        </div>
+        <div class="price">$400</div>
+      </div>
+
+      <div class="stack-item">
+        <div>
+          <div class="name">Google Ads Integration</div>
+          <div class="desc">Ready to activate the moment ads turn on</div>
+        </div>
+        <div class="price">$400</div>
+      </div>
+
+      <div class="stack-item">
+        <div>
+          <div class="name">Website Form + Live Chat → CRM</div>
+          <div class="desc">All website inquiries routed to CRM in real time</div>
+        </div>
+        <div class="price">$600</div>
+      </div>
+
+      <div class="stack-item">
+        <div>
+          <div class="name">Booked-Path Nurture Sequence</div>
+          <div class="desc">Pre-call context, 24h + 1h reminders, no-show recovery</div>
+        </div>
+        <div class="price">$700</div>
+      </div>
+
+      <div class="stack-item">
+        <div>
+          <div class="name">Unbooked-Path Nurture Sequence</div>
+          <div class="desc">Multi-week SMS + email follow-up until they book or opt out</div>
+        </div>
+        <div class="price">$700</div>
+      </div>
+
+      <div class="stack-item">
+        <div>
+          <div class="name">Round-Robin Lead Assignment</div>
+          <div class="desc">Equal distribution across all 4 operators, rules-based routing</div>
+        </div>
+        <div class="price">$300</div>
+      </div>
+
+      <div class="stack-item">
+        <div>
+          <div class="name">Team Training + Onboarding</div>
+          <div class="desc">Live walkthrough for all 4 operators, mobile app training, ongoing support</div>
+        </div>
+        <div class="price">$800</div>
+      </div>
+
+      <div class="stack-item">
+        <div>
+          <div class="name">10-Day Build & Project Management</div>
+          <div class="desc">End-to-end delivery, QA testing, coordination with Neo Media + REA rep</div>
+        </div>
+        <div class="price">$1,500</div>
+      </div>
+
+    </div>
+
+    <div class="stack-total">
+      <div class="t-label">Standard market value</div>
+      <div class="t-value">$20,000</div>
+    </div>
+
+    <!-- REVEAL -->
+    <div class="reveal">
+      <div class="r-label">Your Investment</div>
+      <div class="r-headline">The whole system,<br><em>for a fraction of the rate.</em></div>
+
+      <div class="reveal-prices">
+        <div class="reveal-price">
+          <div class="rp-label">One-time setup</div>
+          <div class="rp-value">$3,000</div>
+          <div class="rp-note">Paid upfront on signing</div>
+        </div>
+        <div class="reveal-price">
+          <div class="rp-label">Monthly</div>
+          <div class="rp-value">$1,000</div>
+          <div class="rp-note">Platform, AI usage, ongoing support</div>
+        </div>
+      </div>
+
+      <div class="reveal-savings">
+        <span>↓</span>
+        <span>You save $17,000 on setup vs. market rate</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONVERSATIONAL AGENT DETAIL -->
+<section>
+  <div class="container narrow">
+    <div class="label"><span>THE AI CONVERSATIONAL AGENT</span></div>
+    <h2>One agent.<br><em>Every inbox.</em></h2>
+    <p class="section-intro">Customers don't live in one place anymore. They DM your Instagram, message your Facebook page, text the business line, email the website. The agent sits across all of it — replying like a human, booking appointments automatically, never sleeping.</p>
+
+    <div class="channels-detail">
+      <div class="cd-label">CONNECTED TO</div>
+      <h3>All the channels that matter.</h3>
+      <div class="channel-pills">
+        <span class="pill"><span class="check">✓</span>SMS</span>
+        <span class="pill"><span class="check">✓</span>Facebook Messenger</span>
+        <span class="pill"><span class="check">✓</span>Instagram DMs</span>
+        <span class="pill"><span class="check">✓</span>Email</span>
+        <span class="pill"><span class="check">✓</span>Website Live Chat</span>
+        <span class="pill pill-off">iMessage</span>
+      </div>
+      <p style="margin-top: 24px; font-size: 14px; color: var(--muted);"><em>iMessage is locked down by Apple — nobody has access. Everything else, we cover.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section>
+  <div class="container narrow">
+    <div class="label"><span>THE ROADMAP</span></div>
+    <h2>From signed<br>to live <em>in 10 days.</em></h2>
+    <p class="section-intro">No endless discovery calls. No 90-day timelines. We start building the moment you say yes.</p>
+
+    <div class="phases">
+
+      <div class="phase">
+        <div class="days">Days <em>1–2</em></div>
+        <div>
+          <div class="phase-title">Foundation</div>
+          <div class="phase-content">CRM provisioned. Team seats configured. Business phone number secured and existing sales line forwarded. Branding applied. Pipelines and round-robin rules built.</div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="days">Days <em>3–4</em></div>
+        <div>
+          <div class="phase-title">VSL & Landing Page</div>
+          <div class="phase-content">Script finalised within 48 hours. VSL segment added to Thursday's content shoot. Landing page built on WordPress. Calendar embed live. Conversion tracking installed.</div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="days">Days <em>5–6</em></div>
+        <div>
+          <div class="phase-title">Channel Integrations</div>
+          <div class="phase-content">REA API connected. Meta lead forms wired through with Kristalyn. Facebook Messenger + Instagram DMs connected. Website form + live chat routed to CRM. End-to-end test leads pushed through every channel.</div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="days">Days <em>7–8</em></div>
+        <div>
+          <div class="phase-title">AI Agents</div>
+          <div class="phase-content">Voice agent trained on your business, FAQs, and qualification logic. After-hours schedule configured. Conversational agent trained and connected to every channel. Booking logic validated.</div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="days">Days <em>9–10</em></div>
+        <div>
+          <div class="phase-title">Sequences & Launch</div>
+          <div class="phase-content">Booked and unbooked nurture paths activated. Email templates loaded. Full walkthrough with all 4 operators. Mobile app training. System goes live.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WINS -->
+<section>
+  <div class="container narrow">
+    <div class="label wins-head"><span>WHY THIS WINS</span></div>
+    <h2>No other building broker in Perth has this.<br><em>(Except for me. But we don't have to tell anyone.)</em></h2>
+    <p class="section-intro">Most competitors are still running inboxes and spreadsheets. You'll show up to every conversation already ahead.</p>
+
+    <div class="wins-grid">
+      <div class="win">
+        <div class="w-num">01</div>
+        <div class="w-title">Reply in 60 seconds.</div>
+        <div class="w-desc">Every inquiry gets instant acknowledgement, a VSL, and a calendar link. Automatically.</div>
+      </div>
+      <div class="win">
+        <div class="w-num">02</div>
+        <div class="w-title">Pre-sold before the call.</div>
+        <div class="w-desc">Your VSL does the trust-building. Clients show up already knowing why you're different.</div>
+      </div>
+      <div class="win">
+        <div class="w-num">03</div>
+        <div class="w-title">24/7 coverage.</div>
+        <div class="w-desc">AI voice agent handles after-hours calls. AI conversational agent handles SMS, Messenger, Instagram, email — all day, every day.</div>
+      </div>
+      <div class="win">
+        <div class="w-num">04</div>
+        <div class="w-title">Scales past 4 people.</div>
+        <div class="w-desc">Future-proofed. When you hire a qualifier or BDC in 6–12 months, the system is ready.</div>
+      </div>
+      <div class="win">
+        <div class="w-num">05</div>
+        <div class="w-title">Better ad ROI over time.</div>
+        <div class="w-desc">Conversion tracking means Meta and Google learn to optimise for bookings, not just leads.</div>
+      </div>
+      <div class="win">
+        <div class="w-num">06</div>
+        <div class="w-title">One place, full visibility.</div>
+        <div class="w-desc">Every lead, call, text, DM, appointment — in one dashboard you can check from your phone.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container narrow">
+    <div class="label"><span>NEXT STEP</span></div>
+    <h2>Say yes.<br><em>We start today.</em></h2>
+    <p class="cta-sub">Sign off, pay $3,000 upfront, and you're live in 10 business days. Thursday's content shoot slots straight into the build.</p>
+
+    <div class="cta-terms">
+      <div class="cta-term">
+        <div class="ct-label">Upfront</div>
+        <div class="ct-value">$3,000</div>
+      </div>
+      <div class="cta-term">
+        <div class="ct-label">Monthly</div>
+        <div class="ct-value">$1,000</div>
+      </div>
+      <div class="cta-term">
+        <div class="ct-label">Live in</div>
+        <div class="ct-value">10 days</div>
+      </div>
+    </div>
+
+    <div class="signature">
+      <div class="sig-name">Daniel Girmay</div>
+      <div>Founder, RankOnMaps</div>
+      <div class="sig-contact">daniel@rankonmaps.io · rankonmaps.io</div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
