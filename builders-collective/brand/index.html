@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Builders Collective — Brand Kit v2.0 (Broker)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;900&family=Inter:wght@400;500&family=Fraunces:ital,wght@1,200;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest: #0F3D20;
+  --forest-deep: #08291A;
+  --paper: #F8F6F1;
+  --cream: #EFEAD8;
+  --stone: #1A1A1A;
+  --spark: #E8FB94;
+  --rule: rgba(26,26,26,0.12);
+  --rule-light: rgba(248,246,241,0.18);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { font-family: 'Inter', -apple-system, sans-serif; background: var(--paper); color: var(--stone); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+section { padding: 112px 80px; max-width: 1440px; margin: 0 auto; }
+.section-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26,26,26,0.5); }
+.section-title { font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 40px; letter-spacing: -0.025em; margin-top: 12px; margin-bottom: 56px; line-height: 1; }
+.section-title .accent { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; color: var(--forest); }
+.color-rule { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(26,26,26,0.55); margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--rule); }
+
+/* HERO */
+.hero { background: var(--forest); color: var(--paper); padding: 140px 80px 96px; position: relative; overflow: hidden; max-width: none; }
+.hero-grid { background-image: linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 40px 40px; position: absolute; inset: 0; pointer-events: none; }
+.hero-inner { position: relative; max-width: 1280px; margin: 0 auto; }
+.hero-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: rgba(248,246,241,0.55); text-transform: uppercase; display: flex; justify-content: space-between; padding-bottom: 24px; border-bottom: 1px solid var(--rule-light); }
+.hero-wordmark { margin: 96px 0 32px; }
+.apex { width: 96px; height: 48px; background: var(--spark); clip-path: polygon(50% 0, 100% 100%, 0 100%); margin-bottom: 22px; }
+.wordmark-builders { font-family: 'Inter Tight', sans-serif; font-weight: 900; font-size: 112px; letter-spacing: -0.035em; line-height: 0.82; color: var(--paper); }
+.wordmark-collective { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 72px; line-height: 1; color: var(--paper); margin-top: 4px; letter-spacing: -0.02em; }
+.tagline { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 30px; max-width: 720px; margin-top: 56px; color: rgba(248,246,241,0.95); line-height: 1.3; letter-spacing: -0.01em; }
+.hero-spec-strip { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(248,246,241,0.55); margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--rule-light); display: flex; gap: 32px; flex-wrap: wrap; }
+
+/* POSITIONING */
+.pos-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; }
+.pos-card { padding: 36px; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; }
+.pos-card.not { background: var(--paper); border: 1px solid var(--rule); color: rgba(26,26,26,0.55); }
+.pos-card.are { background: var(--forest); color: var(--paper); }
+.pos-card.for { background: var(--cream); color: var(--stone); }
+.pos-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.65; margin-bottom: 12px; }
+.pos-headline { font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 16px; }
+.pos-headline .acc { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; }
+.pos-body { font-size: 14px; line-height: 1.5; }
+
+/* COLOR */
+.color-row { display: grid; grid-template-columns: 60fr 25fr 10fr 5fr; gap: 4px; height: 360px; margin-bottom: 16px; }
+.swatch { padding: 28px; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+.sw-forest { background: var(--forest); color: var(--paper); }
+.sw-paper { background: var(--paper); color: var(--stone); border: 1px solid var(--rule); }
+.sw-stone { background: var(--stone); color: var(--paper); }
+.sw-spark { background: var(--spark); color: var(--stone); }
+.sw-role { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.65; }
+.sw-name { font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.015em; margin-top: 8px; }
+.sw-hex { font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.05em; }
+
+/* TYPE */
+.typo-section { background: var(--cream); max-width: none; }
+.typo-inner { max-width: 1440px; margin: 0 auto; }
+.typo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px 80px; }
+.typo-block { border-top: 1px solid var(--rule); padding-top: 28px; }
+.typo-role { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26,26,26,0.5); margin-bottom: 28px; }
+.typo-sample { margin-bottom: 20px; }
+.typo-specs { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(26,26,26,0.6); letter-spacing: 0.06em; }
+
+/* LOGO */
+.logo-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 4px; min-height: 320px; }
+.logo-cell { padding: 36px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 16px; position: relative; }
+.logo-label { position: absolute; top: 18px; left: 18px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.6; }
+.cell-forest { background: var(--forest); color: var(--paper); }
+.cell-cream { background: var(--cream); color: var(--stone); }
+.cell-paper { background: var(--paper); color: var(--stone); border: 1px solid var(--rule); }
+.mini-wordmark .b { font-family: 'Inter Tight', sans-serif; font-weight: 900; font-size: 44px; letter-spacing: -0.035em; line-height: 0.82; }
+.mini-wordmark .c { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 28px; line-height: 1; margin-top: 4px; letter-spacing: -0.02em; }
+.mini-apex { width: 40px; height: 20px; background: var(--spark); clip-path: polygon(50% 0, 100% 100%, 0 100%); margin-bottom: 12px; }
+.monogram { width: 132px; height: 132px; border-radius: 50%; background: var(--spark); display: flex; align-items: center; justify-content: center; font-family: 'Inter Tight', sans-serif; font-weight: 900; font-size: 72px; color: var(--forest); letter-spacing: -0.04em; }
+.apex-standalone { width: 96px; height: 48px; background: var(--forest); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+
+/* PATTERN */
+.pattern-section { background: var(--forest); color: var(--paper); max-width: none; }
+.pattern-inner { max-width: 1440px; margin: 0 auto; }
+.pattern-section .section-num { color: rgba(248,246,241,0.5); }
+.pattern-section .section-title { color: var(--paper); }
+.pattern-section .section-title .accent { color: var(--spark); }
+.pattern-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
+.pattern-grid-2 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 24px; }
+.pattern-card { background: var(--paper); color: var(--stone); padding: 36px; }
+.pattern-name { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26,26,26,0.5); margin-bottom: 20px; }
+.pattern-note { font-family: 'Inter', sans-serif; font-size: 13px; margin-top: 20px; color: rgba(26,26,26,0.65); line-height: 1.5; }
+
+/* shortlist card */
+.shortlist { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; border: 1px solid var(--rule); }
+.shortlist > div { padding: 12px 14px; border-right: 1px solid var(--rule); }
+.shortlist > div:last-child { border-right: none; }
+.shortlist .sh-header { background: var(--forest); color: var(--paper); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; }
+.shortlist .sh-row { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.05em; }
+.shortlist .sh-row.featured { background: var(--spark); font-weight: 500; }
+.shortlist .sh-name { font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: -0.01em; }
+
+/* stage tags */
+.stage-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.stage-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; padding: 8px 16px; border: 1px solid var(--forest); color: var(--forest); border-radius: 100px; display: inline-flex; align-items: center; gap: 8px; }
+.stage-tag .num { font-weight: 700; }
+.stage-tag.active { background: var(--spark); border-color: var(--spark); color: var(--forest); }
+
+/* apex bullets */
+.apex-bullets { list-style: none; }
+.apex-bullets li { display: flex; align-items: flex-start; gap: 14px; padding: 8px 0; font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.5; }
+.apex-bullets li::before { content: ''; width: 12px; height: 8px; background: var(--forest); clip-path: polygon(50% 0, 100% 100%, 0 100%); flex-shrink: 0; margin-top: 8px; }
+
+/* suburb strip */
+.suburb-strip { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--forest); padding: 14px 0; border-top: 1px solid var(--forest); border-bottom: 1px solid var(--forest); display: flex; gap: 18px; flex-wrap: wrap; }
+.suburb-strip span b { font-weight: 700; }
+
+/* savings stamp */
+.stamp { width: 180px; height: 180px; border-radius: 50%; border: 2px solid var(--forest); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; text-align: center; margin: 0 auto; position: relative; }
+.stamp::before, .stamp::after { content: ''; position: absolute; left: 12px; right: 12px; height: 1px; background: var(--forest); }
+.stamp::before { top: 38px; }
+.stamp::after { bottom: 38px; }
+.stamp-top { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--forest); position: absolute; top: 18px; }
+.stamp-mid { font-family: 'Inter Tight', sans-serif; font-weight: 900; font-size: 28px; color: var(--forest); letter-spacing: -0.02em; line-height: 1; }
+.stamp-mid-sub { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 14px; color: var(--forest); margin-top: 4px; }
+.stamp-bot { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--forest); position: absolute; bottom: 18px; }
+
+/* VOICE */
+.voice-block { background: var(--cream); padding: 56px; margin-top: 16px; }
+.voice-feeling { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 36px; line-height: 1.25; color: var(--forest); margin-bottom: 20px; max-width: 720px; letter-spacing: -0.015em; }
+.voice-spec { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: var(--stone); margin-bottom: 20px; text-transform: uppercase; }
+.voice-body { font-family: 'Inter', sans-serif; font-size: 17px; max-width: 720px; line-height: 1.55; color: var(--stone); }
+.yes-no { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 56px; }
+.yes-no h3 { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26,26,26,0.5); margin-bottom: 20px; font-weight: 500; }
+
+/* APPLICATIONS */
+.app-section { background: var(--cream); max-width: none; }
+.app-inner { max-width: 1440px; margin: 0 auto; }
+.app-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+.app-card { aspect-ratio: 3/4; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+.app-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.5; position: absolute; bottom: 10px; left: 10px; }
+
+/* TAGLINES */
+.tag-card { padding: 40px; background: var(--paper); border: 1px solid var(--rule); margin-bottom: 16px; }
+.tag-card.featured { border-left: 4px solid var(--spark); }
+.tag-role { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26,26,26,0.55); margin-bottom: 12px; }
+.tag-line { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; line-height: 1.15; letter-spacing: -0.015em; }
+.tag-line.lg { font-size: 44px; color: var(--forest); }
+.tag-line.md { font-size: 32px; color: var(--stone); }
+.tag-note { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(26,26,26,0.65); margin-top: 16px; max-width: 720px; line-height: 1.55; }
+
+/* FOOTER */
+footer { background: var(--forest-deep); color: rgba(248,246,241,0.7); padding: 64px 80px; }
+.footer-inner { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; }
+
+@media (max-width: 900px) {
+  .wordmark-builders { font-size: 64px; }
+  .wordmark-collective { font-size: 42px; }
+  .color-row { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; height: auto; }
+  .swatch { aspect-ratio: 2/1; }
+  .typo-grid, .logo-grid, .pos-grid, .pattern-grid, .pattern-grid-2, .yes-no, .app-grid { grid-template-columns: 1fr; }
+  .shortlist { grid-template-columns: 1fr 1fr; }
+  .footer-inner { flex-direction: column; gap: 12px; }
+  section { padding: 80px 32px; }
+  .hero { padding: 96px 32px 72px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-meta">
+      <span>Builders Collective</span>
+      <span>Brand Kit v2.0 · The Broker</span>
+      <span>2026 · By Rank On Maps</span>
+    </div>
+    <div class="hero-wordmark">
+      <div class="apex"></div>
+      <div class="wordmark-builders">BUILDERS</div>
+      <div class="wordmark-collective">collective</div>
+    </div>
+    <div class="tagline">go direct, pay retail.<br>come through us, pay wholesale.</div>
+    <div class="hero-spec-strip">
+      <span>Direction · The Broker</span>
+      <span>Buyer's side of the table</span>
+      <span>Perth WA · 60+ suburbs</span>
+      <span>Finance · Land · Build</span>
+    </div>
+  </div>
+</section>
+
+<!-- 01 POSITIONING -->
+<section>
+  <div class="section-num">01 · Positioning</div>
+  <h2 class="section-title">we're a <span class="accent">broker</span>, not a builder.</h2>
+  <div class="pos-grid">
+    <div class="pos-card not">
+      <div>
+        <div class="pos-label">What we're not</div>
+        <div class="pos-headline">not a <span class="acc">builder.</span></div>
+        <div class="pos-body">We don't pour slabs, frame walls, or hand over keys. The brand should never speak in trade language ("handover folder", "PC sum", "lockup") as if the work is ours.</div>
+      </div>
+    </div>
+    <div class="pos-card are">
+      <div>
+        <div class="pos-label" style="color: rgba(248,246,241,0.55);">What we are</div>
+        <div class="pos-headline">the <span class="acc" style="color: var(--spark);">building broker.</span></div>
+        <div class="pos-body">We sit on the buyer's side. We shortlist builders, secure land, line up finance. The buyer pays nothing extra. We're paid a fixed fee from the builder side, like an in-house consultant who happens to work for the customer.</div>
+      </div>
+    </div>
+    <div class="pos-card for">
+      <div>
+        <div class="pos-label">Who we're for</div>
+        <div class="pos-headline">perth buyers ready to <span class="acc">build.</span></div>
+        <div class="pos-body">First home buyers, upgraders, downsizers, turnkey buyers. Anyone who'd otherwise walk into one display village and trust whoever's standing there. We give them the shortlist.</div>
+      </div>
+    </div>
+  </div>
+  <div class="color-rule">every brand decision flows from this. if it reads like a builder talking, it's wrong. if it reads like a mortgage broker who handles the whole build, it's right.</div>
+</section>
+
+<!-- 02 COLOR -->
+<section style="background: var(--paper);">
+  <div class="section-num">02 · Color System</div>
+  <h2 class="section-title">one anchor. <span class="accent">one spark.</span></h2>
+  <div class="color-row">
+    <div class="swatch sw-forest">
+      <div>
+        <div class="sw-role">Anchor · 60%</div>
+        <div class="sw-name">Forest Floor</div>
+      </div>
+      <div class="sw-hex">#0F3D20</div>
+    </div>
+    <div class="swatch sw-paper">
+      <div>
+        <div class="sw-role">Page · 25%</div>
+        <div class="sw-name">Paper</div>
+      </div>
+      <div class="sw-hex">#F8F6F1</div>
+    </div>
+    <div class="swatch sw-stone">
+      <div>
+        <div class="sw-role">Ink · 10%</div>
+        <div class="sw-name">Stone</div>
+      </div>
+      <div class="sw-hex">#1A1A1A</div>
+    </div>
+    <div class="swatch sw-spark">
+      <div>
+        <div class="sw-role">Spark · 5%</div>
+        <div class="sw-name">Fresh Cut</div>
+      </div>
+      <div class="sw-hex">#E8FB94</div>
+    </div>
+  </div>
+  <div class="color-rule">your current deck floods chartreuse across whole pages and stacks chartreuse text on chartreuse backgrounds. that's the readability bug. 5% rule = chartreuse only highlights the moment of value (the saving, the active step, the CTA), never wallpapers the page.</div>
+</section>
+
+<!-- 03 TYPE -->
+<section class="typo-section">
+  <div class="typo-inner">
+    <div class="section-num">03 · Typography</div>
+    <h2 class="section-title">two voices. <span class="accent">one mono spine.</span></h2>
+    <div class="typo-grid">
+      <div class="typo-block">
+        <div class="typo-role">Display · The Headline</div>
+        <div class="typo-sample" style="font-family: 'Inter Tight', sans-serif; font-weight: 900; font-size: 88px; letter-spacing: -0.035em; line-height: 0.88; color: var(--stone);">BUILDERS</div>
+        <div class="typo-specs">Inter Tight · Black 900 · ALL CAPS · -3.5% tracking</div>
+      </div>
+      <div class="typo-block">
+        <div class="typo-role">Editorial · The Promise</div>
+        <div class="typo-sample" style="font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 72px; line-height: 0.95; color: var(--forest); letter-spacing: -0.02em;">your side.</div>
+        <div class="typo-specs">Fraunces · Light Italic 300 · lowercase</div>
+      </div>
+      <div class="typo-block">
+        <div class="typo-role">Body · The Explainer</div>
+        <div class="typo-sample" style="font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.55; color: var(--stone); max-width: 440px;">We compare every builder on your shortlist side by side. Same brief, same budget, same suburb. You see all of it. They compete for you.</div>
+        <div class="typo-specs" style="margin-top: 20px;">Inter · Regular &amp; Medium · 16–18px / 1.55</div>
+      </div>
+      <div class="typo-block">
+        <div class="typo-role">Mono · The Numbers</div>
+        <div class="typo-sample" style="font-family: 'JetBrains Mono', monospace; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--forest); line-height: 1.7;">FHOG · $10,000<br>BYFORD · 6122<br>4 BUILDERS COMPARED<br>LOE IN 48 HRS</div>
+        <div class="typo-specs" style="margin-top: 20px;">JetBrains Mono · Regular · uppercase · for prices, suburb codes, savings</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 LOGO -->
+<section>
+  <div class="section-num">04 · Logo System</div>
+  <h2 class="section-title">the apex. the mark. <span class="accent">the stamp.</span></h2>
+  <div class="logo-grid">
+    <div class="logo-cell cell-forest">
+      <div class="logo-label" style="color: rgba(248,246,241,0.55);">Primary Lockup</div>
+      <div style="color: var(--paper); display: flex; flex-direction: column; align-items: flex-start;">
+        <div class="mini-apex"></div>
+        <div class="mini-wordmark">
+          <div class="b">BUILDERS</div>
+          <div class="c">collective</div>
+        </div>
+      </div>
+    </div>
+    <div class="logo-cell cell-cream">
+      <div class="logo-label">Monogram · Avatar</div>
+      <div class="monogram">B</div>
+    </div>
+    <div class="logo-cell cell-paper">
+      <div class="logo-label">Apex Mark · The Roof</div>
+      <div class="apex-standalone"></div>
+    </div>
+  </div>
+  <div class="color-rule">apex reads as a roof (your category) and as a matching point (your role). it's the only piece of your current logo worth keeping at full strength. monogram = social avatar + favicon. wordmark = everywhere else.</div>
+</section>
+
+<!-- 05 PATTERN -->
+<section class="pattern-section">
+  <div class="pattern-inner">
+    <div class="section-num">05 · Pattern System</div>
+    <h2 class="section-title">the <span class="accent">shortlist.</span></h2>
+    <div class="pattern-grid">
+      <div class="pattern-card">
+        <div class="pattern-name">The Shortlist · Comparison Card</div>
+        <div class="shortlist">
+          <div class="sh-header">Builder</div>
+          <div class="sh-header">Base Price</div>
+          <div class="sh-header">Wholesale</div>
+          <div class="sh-header">You Save</div>
+          <div class="sh-row"><span class="sh-name">Builder 01</span></div>
+          <div class="sh-row">$412,000</div>
+          <div class="sh-row">$381,400</div>
+          <div class="sh-row">$30,600</div>
+          <div class="sh-row featured"><span class="sh-name">Builder 02</span></div>
+          <div class="sh-row featured">$398,500</div>
+          <div class="sh-row featured">$362,200</div>
+          <div class="sh-row featured">$36,300</div>
+          <div class="sh-row"><span class="sh-name">Builder 03</span></div>
+          <div class="sh-row">$425,000</div>
+          <div class="sh-row">$398,700</div>
+          <div class="sh-row">$26,300</div>
+        </div>
+        <div class="pattern-note">The brand's signature. Replaces the "what we offer" bullet lists in your current deck. Every appointment ends with one of these on the table.</div>
+      </div>
+      <div class="pattern-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div class="pattern-name">The Savings Stamp</div>
+          <div class="stamp">
+            <div class="stamp-top">Wholesale Saving</div>
+            <div class="stamp-mid">$36,300</div>
+            <div class="stamp-mid-sub">on this build</div>
+            <div class="stamp-bot">Builder 02 · Byford</div>
+          </div>
+        </div>
+        <div class="pattern-note">Round seal goes on the shortlist card, the cover slide, the social tile. One number, big and proud.</div>
+      </div>
+    </div>
+    <div class="pattern-grid-2">
+      <div class="pattern-card">
+        <div class="pattern-name">Stage Tags · Your 3-Step</div>
+        <div class="stage-tags">
+          <span class="stage-tag active"><span class="num">01</span> Finance</span>
+          <span class="stage-tag"><span class="num">02</span> Land</span>
+          <span class="stage-tag"><span class="num">03</span> Build</span>
+        </div>
+        <div class="pattern-note">Filled tag = where the client is right now. Used in every email, every appointment recap, every progress check-in.</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-name">Suburb Strip</div>
+        <div class="suburb-strip">
+          <span><b>BYFORD</b> $772K</span>
+          <span><b>WELLARD</b> $739K</span>
+          <span><b>HAYNES</b> $748K</span>
+          <span><b>MADDINGTON</b> $680K</span>
+        </div>
+        <div class="pattern-note">Real REIWA median price + suburb in mono. Replaces the dense colour-coded map page in your current deck.</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-name">Apex Bullets</div>
+        <ul class="apex-bullets">
+          <li>Fixed broker fee paid by builder, not you.</li>
+          <li>4 builders compared, side by side.</li>
+          <li>FHOG eligibility checked in 48 hours.</li>
+        </ul>
+        <div class="pattern-note">Triangle bullet replaces disc bullet across all body copy. The roof shape, smaller.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 VOICE -->
+<section>
+  <div class="section-num">06 · Voice &amp; Tone</div>
+  <h2 class="section-title">confident. specific. <span class="accent">on your side.</span></h2>
+  <div class="voice-block">
+    <div class="voice-feeling">"you wouldn't buy a mortgage without a broker.<br>why would you buy a home you have to build?"</div>
+    <div class="voice-spec">First Appointment · The Pitch</div>
+    <div class="voice-body">Most first home buyers walk into one display village, meet one consultant, sign the contract that consultant is paid to sell. We line up four builders for the same brief, same budget, same suburb. You see the prices side by side. You pick the one that fits. Our fee comes out of the builder's pocket, not yours.</div>
+  </div>
+  <div class="yes-no">
+    <div>
+      <h3>Yes</h3>
+      <ul class="apex-bullets" style="font-size: 15px;">
+        <li>Real numbers: FHOG $10K, LOE in 48 hours, 4 builders compared, $30K typical wholesale saving.</li>
+        <li>Buyer-side language: "your shortlist", "your side of the table", "we work for you".</li>
+        <li>Italic serif for the promise. Mono for the numbers. Sans for the explainer.</li>
+        <li>Name the suburb, the price band, the buyer type (first home / upgrader / downsizer).</li>
+      </ul>
+    </div>
+    <div>
+      <h3>No</h3>
+      <ul class="apex-bullets" style="font-size: 15px;">
+        <li>Builder cosplay: "passionate craftsmanship", "your dream home", "every fixture matters".</li>
+        <li>"Where Your Home Journey Finds it Match" (typo + Mad-Libs structure, your current cover).</li>
+        <li>Em-dashes, semicolons, exclamation marks, "let's get you into your dream home!"</li>
+        <li>Stock photo metaphors: bear traps, dancing families, confused men holding phones.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 07 APPLICATIONS -->
+<section class="app-section">
+  <div class="app-inner">
+    <div class="section-num">07 · Application Surfaces</div>
+    <h2 class="section-title">how it <span class="accent">lives.</span></h2>
+    <div class="app-grid">
+
+      <!-- REDESIGNED COVER -->
+      <div class="app-card" style="background: var(--forest); color: var(--paper);">
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.18em; color: rgba(248,246,241,0.55);">FIRST APPOINTMENT · 2026</div>
+          <div class="mini-apex" style="margin-top: 14px;"></div>
+          <div style="font-family: 'Inter Tight', sans-serif; font-weight: 900; font-size: 24px; letter-spacing: -0.03em; line-height: 0.85; margin-top: 6px;">BUILDERS</div>
+          <div style="font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 17px; color: var(--spark); margin-top: 2px;">collective</div>
+        </div>
+        <div>
+          <div style="font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 24px; line-height: 1.15; color: var(--paper); letter-spacing: -0.01em;">your shortlist of perth builders.</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.15em; color: rgba(248,246,241,0.55); margin-top: 12px; text-transform: uppercase; border-top: 1px solid rgba(248,246,241,0.18); padding-top: 10px;">first home · upgrader · downsizer</div>
+        </div>
+        <div class="app-label" style="color: rgba(248,246,241,0.55);">Cover · Redesigned</div>
+      </div>
+
+      <!-- SHORTLIST CARD -->
+      <div class="app-card" style="background: var(--paper); border: 1px solid var(--rule);">
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.18em; color: rgba(26,26,26,0.55); text-transform: uppercase;">Your Shortlist · 4 Builders</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; color: rgba(26,26,26,0.5); margin-top: 16px; line-height: 1.7;">BUILDER 01 ········ $412K<br>BUILDER 02 ······· <b style="color: var(--forest);">$398K</b><br>BUILDER 03 ········ $425K<br>BUILDER 04 ········ $441K</div>
+        </div>
+        <div>
+          <div style="font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 20px; color: var(--forest); line-height: 1; letter-spacing: -0.02em;">save $36,300</div>
+          <div style="font-family: 'Fraunces', serif; font-style: italic; font-size: 14px; color: var(--stone); margin-top: 4px;">vs walking in alone.</div>
+        </div>
+        <div class="app-label">Shortlist Card</div>
+      </div>
+
+      <!-- 3-STEP -->
+      <div class="app-card" style="background: var(--paper); border: 1px solid var(--rule);">
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.18em; color: rgba(26,26,26,0.55); text-transform: uppercase;">Your Journey</div>
+          <div style="font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 24px; color: var(--forest); margin-top: 14px; line-height: 1.15;">finance, land,<br>then build.</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span class="stage-tag active" style="font-size: 9px; padding: 5px 10px; align-self: flex-start;"><span class="num">01</span> Finance</span>
+          <span class="stage-tag" style="font-size: 9px; padding: 5px 10px; align-self: flex-start;"><span class="num">02</span> Land</span>
+          <span class="stage-tag" style="font-size: 9px; padding: 5px 10px; align-self: flex-start;"><span class="num">03</span> Build</span>
+        </div>
+        <div class="app-label">3-Step Card</div>
+      </div>
+
+      <!-- SUBURB MAP HEADER -->
+      <div class="app-card" style="background: var(--forest-deep); color: var(--paper);">
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.18em; color: rgba(248,246,241,0.55);">PERTH · MAR 2026</div>
+          <div style="font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 22px; color: var(--paper); margin-top: 12px; line-height: 1.15;">where your<br>budget builds.</div>
+        </div>
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; color: var(--spark); line-height: 1.7;">UNDER $700K · 14 SUBURBS<br>$700K–$800K · 22 SUBURBS<br>$800K–$1M · 18 SUBURBS</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 0.15em; color: rgba(248,246,241,0.45); margin-top: 10px; border-top: 1px solid rgba(248,246,241,0.18); padding-top: 8px;">SOURCE · REIWA</div>
+        </div>
+        <div class="app-label" style="color: rgba(248,246,241,0.55);">Suburb Map · Cover</div>
+      </div>
+
+      <!-- INSTAGRAM -->
+      <div class="app-card" style="background: var(--spark); color: var(--forest);">
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.18em; color: rgba(15,61,32,0.65);">MYTH · 01</div>
+          <div style="font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 26px; color: var(--forest); margin-top: 16px; line-height: 1.15;">"going direct<br>is cheaper."</div>
+        </div>
+        <div>
+          <div style="font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 14px; color: var(--forest); line-height: 1.2;">Wrong. Direct = retail.<br>Through us = wholesale.</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.15em; color: rgba(15,61,32,0.65); margin-top: 12px; text-transform: uppercase; border-top: 1px solid rgba(15,61,32,0.25); padding-top: 8px;">@builderscollectiveau</div>
+        </div>
+        <div class="app-label" style="color: rgba(15,61,32,0.6);">Instagram · Myth Series</div>
+      </div>
+
+      <!-- BUSINESS CARD -->
+      <div class="app-card" style="background: var(--paper); border: 1px solid var(--rule);">
+        <div>
+          <div class="mini-apex" style="margin-bottom: 10px;"></div>
+          <div style="font-family: 'Inter Tight', sans-serif; font-weight: 900; font-size: 26px; letter-spacing: -0.03em; color: var(--stone); line-height: 0.85;">BUILDERS</div>
+          <div style="font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 18px; color: var(--forest); margin-top: 2px;">collective</div>
+        </div>
+        <div>
+          <div style="font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 15px; color: var(--stone);">[Broker Name]</div>
+          <div style="font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 14px; color: var(--forest); margin-top: 2px;">building broker · Perth WA</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.12em; color: rgba(26,26,26,0.6); margin-top: 18px; text-transform: uppercase; line-height: 1.6;">+61 4XX XXX XXX<br>builderscollective.au</div>
+        </div>
+        <div class="app-label">Business Card</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 08 TAGLINES -->
+<section>
+  <div class="section-num">08 · Tagline Directions</div>
+  <h2 class="section-title">pick one and <span class="accent">ride it.</span></h2>
+  <div class="tag-card featured">
+    <div class="tag-role">Recommended · The Wholesale Frame</div>
+    <div class="tag-line lg">go direct, pay retail.<br>come through us, pay wholesale.</div>
+    <div class="tag-note">Counterintuitive (most buyers assume direct = cheapest). Parallel structure makes it sticky. Earns the savings stamp, the shortlist card, the dollar mono pattern. Differentiates from every "we make building easy" broker tagline.</div>
+  </div>
+  <div class="tag-card">
+    <div class="tag-role">The Mortgage-Broker Analogy</div>
+    <div class="tag-line md">you wouldn't buy a mortgage without a broker.<br>why buy a home you have to build?</div>
+    <div class="tag-note">Anchors to a category buyers already understand. Good for explainer content and YouTube ad scripts.</div>
+  </div>
+  <div class="tag-card">
+    <div class="tag-role">The Side-of-Table Frame</div>
+    <div class="tag-line md">your side of the table.<br>perth's building broker.</div>
+    <div class="tag-note">Plainest version. Good as the email signature line and the website fold-line.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span>Builders Collective · Brand Kit v2.0 · The Broker</span>
+    <span>Forest Floor &amp; Fresh Cut</span>
+    <span>By Rank On Maps · 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
