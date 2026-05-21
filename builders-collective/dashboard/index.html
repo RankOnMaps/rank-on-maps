@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Builders Collective — Operations Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #fafaf9;
+    --bg-card: #ffffff;
+    --ink: #0a0a0a;
+    --ink-soft: #1a1a1a;
+    --muted: #6b7280;
+    --muted-soft: #9ca3af;
+    --line: #e7e5e4;
+    --line-soft: #f3f4f6;
+    --green: #22c55e;
+    --green-deep: #16a34a;
+    --green-soft: #dcfce7;
+    --green-wash: #f0fdf4;
+    --red: #ef4444;
+    --amber: #f59e0b;
+    --blue: #3b82f6;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .serif { font-family: 'Instrument Serif', serif; font-weight: 400; }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* HEADER */
+  header {
+    padding: 32px 0;
+    border-bottom: 1px solid var(--line);
+    background: var(--bg-card);
+  }
+
+  .head-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .brand-stack {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .brand-logo {
+    width: 48px;
+    height: 48px;
+    background: var(--ink);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Instrument Serif', serif;
+    font-size: 28px;
+  }
+
+  .brand-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .brand-sub {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .head-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .filter-pill {
+    padding: 10px 18px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .filter-pill:hover { border-color: var(--green); }
+  .filter-pill.active { background: var(--ink); color: white; border-color: var(--ink); }
+
+  .live-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: var(--green-wash);
+    border: 1px solid var(--green-soft);
+    border-radius: 999px;
+    font-size: 12px;
+    color: var(--green-deep);
+    font-weight: 600;
+  }
+
+  .live-dot::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 48px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .section-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    gap: 24px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    color: var(--green-deep);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(32px, 4vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  h2 em { color: var(--green-deep); font-style: italic; }
+
+  .section-note {
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 360px;
+    text-align: right;
+  }
+
+  /* TOP STATS */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .stat-card {
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    transition: all 0.15s;
+  }
+
+  .stat-card:hover {
+    border-color: var(--green);
+    transform: translateY(-2px);
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .stat-value {
+    font-family: 'Instrument Serif', serif;
+    font-size: 48px;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 8px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stat-delta {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .stat-delta.up { color: var(--green-deep); }
+  .stat-delta.down { color: var(--red); }
+  .stat-delta.neutral { color: var(--muted); }
+
+  /* LEAD SOURCES GRID */
+  .lead-sources {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+  }
+
+  .source-table {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .source-row {
+    display: grid;
+    grid-template-columns: 140px 1fr 100px 90px 100px;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background 0.15s;
+  }
+
+  .source-row:last-child { border-bottom: none; }
+  .source-row:hover { background: var(--bg); }
+
+  .source-row.header {
+    background: var(--bg);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 14px 24px;
+  }
+
+  .source-row.header:hover { background: var(--bg); }
+
+  .source-name {
+    font-weight: 600;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .source-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .icon-rea { background: #e4002b; }
+  .icon-meta { background: #1877f2; }
+  .icon-google { background: #4285f4; }
+  .icon-website { background: var(--ink); }
+  .icon-phone { background: var(--green-deep); }
+
+  .bar-wrap {
+    width: 100%;
+    height: 8px;
+    background: var(--line-soft);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: linear-gradient(to right, var(--green), var(--green-deep));
+    border-radius: 4px;
+  }
+
+  .source-leads {
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .source-conv {
+    font-size: 13px;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  .source-conv strong { color: var(--ink); font-size: 14px; }
+
+  /* SPEND */
+  .spend-card {
+    background: var(--ink);
+    color: white;
+    border-radius: 16px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .spend-card::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, var(--green) 0%, transparent 70%);
+    opacity: 0.2;
+  }
+
+  .spend-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    position: relative;
+  }
+
+  .spend-total {
+    font-family: 'Instrument Serif', serif;
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 8px;
+    font-variant-numeric: tabular-nums;
+    position: relative;
+  }
+
+  .spend-note {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .spend-rows {
+    position: relative;
+  }
+
+  .spend-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 14px;
+  }
+
+  .spend-row:last-child { border-bottom: none; }
+
+  .spend-row .label { color: rgba(255,255,255,0.8); }
+  .spend-row .value { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  .cpl-pill {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 6px 14px;
+    background: var(--green);
+    color: var(--ink);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    position: relative;
+  }
+
+  /* PIPELINE STAGES */
+  .pipeline-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 32px;
+  }
+
+  .pipeline-stages {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+  }
+
+  .stage-card {
+    padding: 18px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.15s;
+  }
+
+  .stage-card:hover {
+    border-color: var(--green);
+    transform: translateY(-1px);
+  }
+
+  .stage-card.win { background: var(--green-wash); border-color: var(--green-soft); }
+  .stage-card.win .stage-count { color: var(--green-deep); }
+
+  .stage-name {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+    font-weight: 600;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .stage-count {
+    font-family: 'Instrument Serif', serif;
+    font-size: 36px;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 6px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stage-value {
+    font-size: 12px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* SPEND ALLOCATION */
+  .allocation-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 32px;
+  }
+
+  .allocation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 24px;
+  }
+
+  .alloc-block h4 {
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .alloc-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 80px;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .alloc-row:last-child { border-bottom: none; }
+
+  .alloc-name { font-size: 14px; color: var(--ink); font-weight: 500; }
+
+  .alloc-bar-wrap {
+    background: var(--line-soft);
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .alloc-bar-fill {
+    height: 100%;
+    background: var(--ink);
+    border-radius: 3px;
+  }
+
+  .alloc-bar-fill.green { background: var(--green-deep); }
+  .alloc-bar-fill.blue { background: var(--blue); }
+  .alloc-bar-fill.amber { background: var(--amber); }
+  .alloc-bar-fill.red { background: var(--red); }
+
+  .alloc-amount {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  /* TEAM */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .team-card {
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+  }
+
+  .team-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+
+  .team-role {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 20px;
+  }
+
+  .team-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .team-stat-label { font-size: 11px; color: var(--muted); }
+  .team-stat-value { font-family: 'Instrument Serif', serif; font-size: 24px; }
+
+  /* RECOMMENDATIONS */
+  .reco-box {
+    background: var(--green-wash);
+    border: 1px solid var(--green-soft);
+    border-radius: 16px;
+    padding: 28px;
+    margin-top: 24px;
+  }
+
+  .reco-label {
+    font-size: 11px;
+    color: var(--green-deep);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .reco-headline {
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    max-width: 760px;
+  }
+
+  .reco-list { list-style: none; }
+  .reco-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(34,197,94,0.2);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 14px;
+  }
+
+  .reco-list li:last-child { border-bottom: none; }
+  .reco-list .arrow { color: var(--green-deep); font-weight: 700; flex-shrink: 0; }
+
+  /* FOOTER */
+  footer {
+    padding: 48px 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  footer .signature {
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1100px) {
+    .stat-grid, .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .pipeline-stages { grid-template-columns: repeat(3, 1fr); }
+    .lead-sources, .allocation-grid { grid-template-columns: 1fr; }
+    .source-row { grid-template-columns: 100px 1fr 60px 60px; }
+    .source-row .bar-wrap { display: none; }
+  }
+
+  @media (max-width: 700px) {
+    .container { padding: 0 16px; }
+    .stat-grid { grid-template-columns: 1fr; }
+    .pipeline-stages { grid-template-columns: repeat(2, 1fr); }
+    .team-grid { grid-template-columns: 1fr; }
+    h2 { font-size: 28px; }
+    .head-row { flex-direction: column; align-items: flex-start; }
+  }
+
+  .placeholder-note {
+    font-size: 11px;
+    color: var(--muted-soft);
+    margin-top: 8px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <div class="head-row">
+      <div class="brand-stack">
+        <div class="brand-logo">B</div>
+        <div>
+          <div class="brand-name">Builders Collective</div>
+          <div class="brand-sub">Operations Dashboard · Perth, WA</div>
+        </div>
+      </div>
+      <div class="head-actions">
+        <span class="filter-pill">7 days</span>
+        <span class="filter-pill active">30 days</span>
+        <span class="filter-pill">90 days</span>
+        <span class="live-dot">Connected</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TOP STATS -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-label">At a glance</div>
+        <h2>Last 30 days <em>at a glance.</em></h2>
+      </div>
+      <p class="section-note">Live data pulled from CloseBetter CRM. All numbers update in real time.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-label">Total Leads</div>
+        <div class="stat-value">137</div>
+        <div class="stat-delta up">↑ 42% vs last 30</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Calls Booked</div>
+        <div class="stat-value">38</div>
+        <div class="stat-delta up">↑ 28% vs last 30</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">PPAs Signed</div>
+        <div class="stat-value">6</div>
+        <div class="stat-delta up">↑ 2 vs last 30</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Pipeline Value</div>
+        <div class="stat-value">$3.8M</div>
+        <div class="stat-delta up">↑ $1.1M added</div>
+      </div>
+    </div>
+    <p class="placeholder-note">Placeholder figures — will populate from CRM once first 30 days of data come in.</p>
+  </div>
+</section>
+
+<!-- LEAD SOURCES + SPEND -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Where leads come from</div>
+        <h2>By channel, <em>last 30 days.</em></h2>
+      </div>
+      <p class="section-note">Every lead is auto-tagged by source at intake. Total spend below is what we know about — add manually for offline channels.</p>
+    </div>
+
+    <div class="lead-sources">
+      <!-- Source table -->
+      <div class="source-table">
+        <div class="source-row header">
+          <div>Channel</div>
+          <div>Share of leads</div>
+          <div>Leads</div>
+          <div>Booked</div>
+          <div>Conv. rate</div>
+        </div>
+        <div class="source-row">
+          <div class="source-name"><span class="source-icon icon-rea">R</span>REA</div>
+          <div class="bar-wrap"><div class="bar-fill" style="width:42%"></div></div>
+          <div class="source-leads">58</div>
+          <div class="source-leads">19</div>
+          <div class="source-conv"><strong>32.8%</strong></div>
+        </div>
+        <div class="source-row">
+          <div class="source-name"><span class="source-icon icon-meta">M</span>Meta Ads</div>
+          <div class="bar-wrap"><div class="bar-fill" style="width:28%"></div></div>
+          <div class="source-leads">39</div>
+          <div class="source-leads">9</div>
+          <div class="source-conv"><strong>23.1%</strong></div>
+        </div>
+        <div class="source-row">
+          <div class="source-name"><span class="source-icon icon-google">G</span>Google Ads</div>
+          <div class="bar-wrap"><div class="bar-fill" style="width:14%"></div></div>
+          <div class="source-leads">19</div>
+          <div class="source-leads">6</div>
+          <div class="source-conv"><strong>31.6%</strong></div>
+        </div>
+        <div class="source-row">
+          <div class="source-name"><span class="source-icon icon-website">W</span>Website</div>
+          <div class="bar-wrap"><div class="bar-fill" style="width:11%"></div></div>
+          <div class="source-leads">15</div>
+          <div class="source-leads">3</div>
+          <div class="source-conv"><strong>20.0%</strong></div>
+        </div>
+        <div class="source-row">
+          <div class="source-name"><span class="source-icon icon-phone">P</span>Phone / AI</div>
+          <div class="bar-wrap"><div class="bar-fill" style="width:5%"></div></div>
+          <div class="source-leads">6</div>
+          <div class="source-leads">1</div>
+          <div class="source-conv"><strong>16.7%</strong></div>
+        </div>
+      </div>
+
+      <!-- Total spend card -->
+      <div class="spend-card">
+        <div class="spend-label">Total Spend (30 days)</div>
+        <div class="spend-total">$8,420</div>
+        <div class="spend-note">Across REA + Meta + Google</div>
+        <div class="spend-rows">
+          <div class="spend-row"><span class="label">REA listings (50)</span><span class="value">$2,200</span></div>
+          <div class="spend-row"><span class="label">Meta Ads</span><span class="value">$4,180</span></div>
+          <div class="spend-row"><span class="label">Google Ads</span><span class="value">$2,040</span></div>
+        </div>
+        <div class="cpl-pill">Avg CPL: $61.46</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PIPELINE -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Pipeline snapshot</div>
+        <h2>Where every deal sits <em>right now.</em></h2>
+      </div>
+      <p class="section-note">Pipeline matches the building broker workflow — from inquiry through PPA → contract → handover.</p>
+    </div>
+
+    <div class="pipeline-wrap">
+      <div class="pipeline-stages">
+        <div class="stage-card"><div class="stage-name">New Lead</div><div class="stage-count">22</div><div class="stage-value">$770K</div></div>
+        <div class="stage-card"><div class="stage-name">Nurturing</div><div class="stage-count">31</div><div class="stage-value">$1.1M</div></div>
+        <div class="stage-card"><div class="stage-name">Discovery Booked</div><div class="stage-count">14</div><div class="stage-value">$490K</div></div>
+        <div class="stage-card"><div class="stage-name">Discovery Done</div><div class="stage-count">9</div><div class="stage-value">$315K</div></div>
+        <div class="stage-card"><div class="stage-name">Looking for Land</div><div class="stage-count">5</div><div class="stage-value">$175K</div></div>
+        <div class="stage-card"><div class="stage-name">Block Confirmed</div><div class="stage-count">7</div><div class="stage-value">$245K</div></div>
+
+        <div class="stage-card"><div class="stage-name">Shortlist Sent</div><div class="stage-count">4</div><div class="stage-value">$140K</div></div>
+        <div class="stage-card"><div class="stage-name">Quote Review</div><div class="stage-count">3</div><div class="stage-value">$105K</div></div>
+        <div class="stage-card"><div class="stage-name">PPA Signed</div><div class="stage-count">6</div><div class="stage-value">$210K</div></div>
+        <div class="stage-card"><div class="stage-name">Plans Finalised</div><div class="stage-count">2</div><div class="stage-value">$70K</div></div>
+        <div class="stage-card"><div class="stage-name">Finance Approved</div><div class="stage-count">3</div><div class="stage-value">$105K</div></div>
+        <div class="stage-card"><div class="stage-name">Contract Signed</div><div class="stage-count">4</div><div class="stage-value">$140K</div></div>
+
+        <div class="stage-card win"><div class="stage-name">Build Started</div><div class="stage-count">2</div><div class="stage-value">$70K</div></div>
+        <div class="stage-card win"><div class="stage-name">In Progress</div><div class="stage-count">5</div><div class="stage-value">$175K</div></div>
+        <div class="stage-card win"><div class="stage-name">Handover (WON)</div><div class="stage-count">3</div><div class="stage-value">$105K</div></div>
+        <div class="stage-card"><div class="stage-name">Referral Loop</div><div class="stage-count">3</div><div class="stage-value">—</div></div>
+        <div class="stage-card"><div class="stage-name">Not Yet Ready</div><div class="stage-count">8</div><div class="stage-value">—</div></div>
+        <div class="stage-card"><div class="stage-name">Lost</div><div class="stage-count">12</div><div class="stage-value">—</div></div>
+      </div>
+    </div>
+    <p class="placeholder-note">Counts will sync live from your CRM once the pipeline is built. PPA stage triggers commission tracking.</p>
+  </div>
+</section>
+
+<!-- SPEND ALLOCATION -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Money & ROI</div>
+        <h2>Where the budget went <em>and what it earned.</em></h2>
+      </div>
+      <p class="section-note">Track every dollar in vs every PPA out. The allocation panel on the right is editable — drag sliders to reallocate for next month.</p>
+    </div>
+
+    <div class="allocation-card">
+      <div class="allocation-grid">
+        <!-- Current spend -->
+        <div class="alloc-block">
+          <h4>Current allocation (30d)</h4>
+          <div class="alloc-row">
+            <div class="alloc-name">REA</div>
+            <div class="alloc-bar-wrap"><div class="alloc-bar-fill" style="width:26%"></div></div>
+            <div class="alloc-amount">$2,200</div>
+          </div>
+          <div class="alloc-row">
+            <div class="alloc-name">Meta</div>
+            <div class="alloc-bar-wrap"><div class="alloc-bar-fill blue" style="width:50%"></div></div>
+            <div class="alloc-amount">$4,180</div>
+          </div>
+          <div class="alloc-row">
+            <div class="alloc-name">Google</div>
+            <div class="alloc-bar-wrap"><div class="alloc-bar-fill amber" style="width:24%"></div></div>
+            <div class="alloc-amount">$2,040</div>
+          </div>
+          <div class="alloc-row">
+            <div class="alloc-name"><strong>Total</strong></div>
+            <div></div>
+            <div class="alloc-amount"><strong>$8,420</strong></div>
+          </div>
+        </div>
+
+        <!-- Cost per outcome -->
+        <div class="alloc-block">
+          <h4>Cost per outcome (30d)</h4>
+          <div class="alloc-row">
+            <div class="alloc-name">Cost per lead</div>
+            <div class="alloc-bar-wrap"><div class="alloc-bar-fill green" style="width:40%"></div></div>
+            <div class="alloc-amount">$61</div>
+          </div>
+          <div class="alloc-row">
+            <div class="alloc-name">Cost per booking</div>
+            <div class="alloc-bar-wrap"><div class="alloc-bar-fill green" style="width:60%"></div></div>
+            <div class="alloc-amount">$222</div>
+          </div>
+          <div class="alloc-row">
+            <div class="alloc-name">Cost per PPA</div>
+            <div class="alloc-bar-wrap"><div class="alloc-bar-fill green" style="width:80%"></div></div>
+            <div class="alloc-amount">$1,403</div>
+          </div>
+          <div class="alloc-row">
+            <div class="alloc-name"><strong>ROI</strong></div>
+            <div></div>
+            <div class="alloc-amount"><strong style="color:var(--green-deep)">11.4x</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reco-box">
+      <div class="reco-label">This month's recommendation</div>
+      <div class="reco-headline">REA and Google are converting twice as well as Meta. Shift $1.5K of Meta into REA + Google next month.</div>
+      <ul class="reco-list">
+        <li><span class="arrow">→</span> REA: 32.8% conversion at $116 per booking. Highest ROI channel right now. Add 25 more listings.</li>
+        <li><span class="arrow">→</span> Google: 31.6% conversion at $340 per booking. Lean into high-intent keywords.</li>
+        <li><span class="arrow">→</span> Meta: 23.1% conversion at $464 per booking. Pause underperforming creative, double down on the VSL ads.</li>
+        <li><span class="arrow">→</span> Phone/AI: only 6 leads but 1 booked. As VSL goes live and after-hours agent is dialled in, expect this to climb fast.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Team performance</div>
+        <h2>Bookings + calls <em>by operator.</em></h2>
+      </div>
+      <p class="section-note">Round-robin distributes leads evenly. Track individual show-up and qualification rates here.</p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-name">David</div>
+        <div class="team-role">Founder · Sales</div>
+        <div class="team-stats">
+          <div>
+            <div class="team-stat-label">Calls (30d)</div>
+            <div class="team-stat-value">11</div>
+          </div>
+          <div>
+            <div class="team-stat-label">PPAs</div>
+            <div class="team-stat-value">2</div>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Hasib</div>
+        <div class="team-role">Founder · Sales</div>
+        <div class="team-stats">
+          <div>
+            <div class="team-stat-label">Calls (30d)</div>
+            <div class="team-stat-value">9</div>
+          </div>
+          <div>
+            <div class="team-stat-label">PPAs</div>
+            <div class="team-stat-value">2</div>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Abdullah</div>
+        <div class="team-role">Founder · Sales</div>
+        <div class="team-stats">
+          <div>
+            <div class="team-stat-label">Calls (30d)</div>
+            <div class="team-stat-value">10</div>
+          </div>
+          <div>
+            <div class="team-stat-label">PPAs</div>
+            <div class="team-stat-value">1</div>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Masih</div>
+        <div class="team-role">Founder · Sales</div>
+        <div class="team-stats">
+          <div>
+            <div class="team-stat-label">Calls (30d)</div>
+            <div class="team-stat-value">8</div>
+          </div>
+          <div>
+            <div class="team-stat-label">PPAs</div>
+            <div class="team-stat-value">1</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="signature">Builders Collective × RankOnMaps</div>
+    <div>Powered by CloseBetter CRM · Updated live</div>
+    <div style="margin-top: 16px; font-size: 11px; color: var(--muted-soft);">
+      All figures shown are illustrative until live data syncs from your CRM.<br>
+      Once the GHL build is complete, this dashboard pulls numbers in real time via API.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
