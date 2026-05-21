@@ -6,1163 +6,1349 @@
 <title>Builders Collective — Operations Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;900&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Inter+Tight:wght@400;500;700;900&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --page:        #F1EFE9;
-    --paper:       #FAF8F2;
-    --tone:        #D9D4C5;
-    --sage:        #1F4D3C;
-    --sage-soft:   #3A6E5A;
-    --ink:         #1A1F1B;
-    --ink-2:       #5C6A5F;
-    --rule:        rgba(26,31,27,0.10);
-    --rule-strong: rgba(26,31,27,0.20);
-    --display: "Inter Tight", -apple-system, "Helvetica Neue", Arial, sans-serif;
-    --serif:   "Fraunces", Georgia, "Times New Roman", serif;
-    --mono:    "JetBrains Mono", ui-monospace, Menlo, monospace;
+    --forest:      #0F3D20;
+    --forest-deep: #08291A;
+    --paper:       #F8F6F1;
+    --cream:       #EFEAD8;
+    --stone:       #1A1A1A;
+    --stone-2:     rgba(26,26,26,0.65);
+    --stone-soft:  rgba(26,26,26,0.5);
+    --spark:       #E8FB94;
+    --rule:        rgba(26,26,26,0.1);
+    --rule-strong: rgba(26,26,26,0.18);
+    --rule-light:  rgba(248,246,241,0.14);
+    --green-up:    #1F7A3E;
+    --red-down:    #B8412C;
   }
 
+  html, body { height: 100%; }
+
   body {
-    font-family: var(--display);
-    background: var(--page);
-    color: var(--ink);
-    line-height: 1.55;
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--paper);
+    color: var(--stone);
+    font-size: 13px;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    font-weight: 400;
+    overflow-x: hidden;
   }
 
   a { color: inherit; }
 
-  .wrap {
-    max-width: 1320px;
-    margin: 0 auto;
-    padding: 0 32px;
-  }
-
-  .kicker {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.28em;
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--ink-2);
-    font-weight: 400;
   }
 
-  .italic { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--sage); text-transform: none; }
-
-  /* TOPNAV */
-  .topnav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 32px;
-    border-bottom: 1px solid var(--rule);
-    background: var(--page);
-    position: sticky;
-    top: 0;
-    z-index: 10;
+  .italic {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--forest);
+    text-transform: none;
   }
 
-  .topnav .brand {
+  /* APEX */
+  .apex {
+    width: 28px;
+    height: 14px;
+    background: var(--spark);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  }
+
+  /* APP SHELL */
+  .app {
+    display: grid;
+    grid-template-columns: 240px 1fr 320px;
+    min-height: 100vh;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    background: var(--forest);
+    color: var(--paper);
+    padding: 24px 0;
+    border-right: 1px solid var(--rule-light);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sidebar-grid {
+    background-image:
+      linear-gradient(to right, rgba(248,246,241,0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(248,246,241,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .sb-brand {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 12px;
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 14px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    padding: 0 24px 28px;
+    border-bottom: 1px solid var(--rule-light);
+    margin-bottom: 20px;
   }
 
-  .topnav .mark {
-    width: 28px;
-    height: 28px;
-    background: var(--sage);
+  .sb-brand .b {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: -0.035em;
+    line-height: 0.82;
     color: var(--paper);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 16px;
-    border-radius: 2px;
   }
 
-  .topnav .actions {
-    display: flex;
-    gap: 4px;
-    align-items: center;
+  .sb-brand .c {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1;
+    margin-top: 2px;
+    color: var(--paper);
   }
 
-  .filter {
-    font-family: var(--mono);
-    font-size: 10px;
+  .sb-section {
+    position: relative;
+    padding: 16px 24px 6px;
+  }
+
+  .sb-section .sb-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    padding: 8px 14px;
-    background: transparent;
-    border: 1px solid var(--rule);
-    color: var(--ink-2);
-    cursor: pointer;
+    color: rgba(248,246,241,0.4);
+    margin-bottom: 8px;
+  }
+
+  .sb-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 24px;
+    color: rgba(248,246,241,0.78);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
     transition: all 0.15s;
+    border-left: 2px solid transparent;
   }
 
-  .filter:hover { color: var(--ink); border-color: var(--rule-strong); }
-
-  .filter.active {
-    background: var(--ink);
+  .sb-link:hover {
     color: var(--paper);
-    border-color: var(--ink);
+    background: rgba(248,246,241,0.04);
   }
 
-  .live {
-    font-family: var(--mono);
+  .sb-link.active {
+    color: var(--paper);
+    background: rgba(248,246,241,0.06);
+    border-left-color: var(--spark);
+  }
+
+  .sb-link .num {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.12em;
+    color: rgba(248,246,241,0.4);
+  }
+
+  .sb-link.active .num { color: var(--spark); }
+
+  .sb-foot {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 24px;
+    border-top: 1px solid var(--rule-light);
+    background: var(--forest-deep);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    padding: 8px 14px;
-    background: var(--sage);
-    color: var(--paper);
+    color: rgba(248,246,241,0.5);
+    line-height: 1.6;
+  }
+
+  /* MAIN */
+  main {
+    background: var(--paper);
+    overflow-y: auto;
+    max-height: 100vh;
+  }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+
+  .topbar-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+  }
+
+  .topbar-title .italic { font-size: 0.85em; }
+
+  .topbar-actions {
     display: flex;
     align-items: center;
     gap: 8px;
   }
 
-  .live::before {
+  .filter {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    background: transparent;
+    border: 1px solid var(--rule-strong);
+    color: var(--stone-2);
+    cursor: pointer;
+    transition: all 0.15s;
+    font-weight: 500;
+  }
+
+  .filter:hover { color: var(--stone); border-color: var(--stone); }
+
+  .filter.active {
+    background: var(--stone);
+    color: var(--paper);
+    border-color: var(--stone);
+  }
+
+  .live-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    background: var(--spark);
+    color: var(--forest);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .live-tag::before {
     content: '';
     width: 6px;
     height: 6px;
-    background: var(--paper);
+    background: var(--forest);
     border-radius: 50%;
     animation: pulse 2s infinite;
   }
 
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-  /* HEADER */
-  header.head {
-    padding: 56px 0 40px;
-    background: var(--page);
-    border-bottom: 1px solid var(--rule);
+  /* MAIN CONTENT */
+  .content { padding: 32px; }
+
+  /* KPI ROW */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid var(--rule-strong);
+    margin-bottom: 32px;
+    background: var(--paper);
   }
 
-  .head-grid {
+  .kpi {
+    padding: 24px;
+    border-right: 1px solid var(--rule);
+  }
+
+  .kpi:last-child { border-right: 0; }
+
+  .kpi-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--stone-soft);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .kpi-label .badge {
+    color: var(--green-up);
+    font-weight: 700;
+  }
+
+  .kpi-label .badge.down { color: var(--red-down); }
+
+  .kpi-value {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 38px;
+    letter-spacing: -0.025em;
+    line-height: 0.95;
+    color: var(--stone);
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 12px;
+  }
+
+  .kpi-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--stone-soft);
+  }
+
+  .spark-svg { display: block; margin-top: 8px; }
+
+  /* GRID 2-up */
+  .grid-2 {
     display: grid;
     grid-template-columns: 1.4fr 1fr;
-    gap: 48px;
-    align-items: end;
+    gap: 24px;
+    margin-bottom: 32px;
   }
 
-  h1 {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: clamp(48px, 7vw, 88px);
-    line-height: 0.92;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    margin-top: 16px;
-  }
-
-  h1 .italic { letter-spacing: -0.005em; }
-
-  .head-meta {
-    border-top: 1px solid var(--rule-strong);
-    padding-top: 12px;
-  }
-
-  .head-meta .row {
+  .grid-3 {
     display: grid;
-    grid-template-columns: 130px 1fr;
-    gap: 16px;
-    padding: 10px 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  /* CARD */
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--rule-strong);
+    padding: 24px;
+  }
+
+  .card.forest {
+    background: var(--forest);
+    color: var(--paper);
+    border-color: var(--forest);
+  }
+
+  .card.cream { background: var(--cream); border-color: var(--rule); }
+
+  .card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
     border-bottom: 1px solid var(--rule);
+  }
+
+  .card.forest .card-head { border-bottom-color: var(--rule-light); }
+
+  .card-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.015em;
+  }
+
+  .card-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--stone-soft);
+  }
+
+  .card.forest .card-meta { color: rgba(248,246,241,0.5); }
+
+  /* CHANNEL TABLE */
+  .chan-table {
+    width: 100%;
     font-size: 12px;
   }
 
-  .head-meta .row .k {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    color: var(--ink-2);
-    text-transform: uppercase;
-  }
-
-  .head-meta .row .v { color: var(--ink); }
-  .head-meta .row .v.mono { font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; }
-
-  .receipt {
-    display: flex;
+  .chan-row {
+    display: grid;
+    grid-template-columns: 90px 1fr 50px 50px 60px;
     align-items: center;
     gap: 12px;
-    flex-wrap: wrap;
-    padding-top: 24px;
-    margin-top: 32px;
-    border-top: 1px solid var(--rule-strong);
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--ink-2);
-  }
-
-  .receipt .dot { color: var(--rule-strong); }
-
-  /* SECTIONS */
-  section {
-    padding: 64px 0;
+    padding: 12px 0;
     border-bottom: 1px solid var(--rule);
   }
 
-  .section-head {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 32px;
-    align-items: end;
-    margin-bottom: 40px;
-  }
+  .chan-row:last-child { border-bottom: 0; }
 
-  .section-kicker {
-    display: inline-block;
-    padding-bottom: 12px;
-    margin-bottom: 16px;
-    border-bottom: 1px solid var(--rule-strong);
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.32em;
-    color: var(--sage);
-    text-transform: uppercase;
-  }
-
-  h2 {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: clamp(32px, 4.5vw, 56px);
-    line-height: 0.95;
-    letter-spacing: -0.015em;
-    text-transform: uppercase;
-    max-width: 18ch;
-  }
-
-  .section-note {
-    font-family: var(--mono);
-    font-size: 10px;
+  .chan-row.head {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
     letter-spacing: 0.22em;
-    color: var(--ink-2);
     text-transform: uppercase;
-    text-align: right;
-    max-width: 28ch;
-    line-height: 1.6;
+    color: var(--stone-soft);
+    padding: 8px 0;
   }
 
-  /* TOP STATS GRID */
-  .stat-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border: 1px solid var(--rule-strong);
-    background: var(--paper);
+  .chan-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
   }
 
-  .stat-card {
-    padding: 28px 24px;
-    border-right: 1px solid var(--rule);
-  }
-
-  .stat-card:last-child { border-right: 0; }
-
-  .stat-label {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.24em;
-    color: var(--ink-2);
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-
-  .stat-value {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 52px;
-    line-height: 0.9;
-    color: var(--ink);
-    margin-bottom: 12px;
-    font-variant-numeric: tabular-nums;
-    letter-spacing: -0.015em;
-  }
-
-  .stat-delta {
-    font-family: var(--mono);
-    font-size: 10px;
+  .chan-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
     letter-spacing: 0.18em;
-    text-transform: uppercase;
     font-weight: 700;
+    padding: 3px 6px;
+    background: var(--cream);
+    color: var(--forest);
   }
 
-  .stat-delta.up { color: var(--sage); }
-  .stat-delta.down { color: #8C2C1E; }
-
-  .placeholder-tag {
-    margin-top: 16px;
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    color: var(--ink-2);
-    text-transform: uppercase;
-  }
-
-  /* LEAD SOURCES + SPEND */
-  .channels-wrap {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 0;
-    border: 1px solid var(--rule-strong);
-  }
-
-  .source-table {
-    background: var(--paper);
-    border-right: 1px solid var(--rule);
-  }
-
-  .source-row {
-    display: grid;
-    grid-template-columns: 160px 1fr 80px 80px 90px;
-    align-items: center;
-    gap: 16px;
-    padding: 20px 24px;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .source-row:last-child { border-bottom: 0; }
-
-  .source-row.header {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    color: var(--ink-2);
-    text-transform: uppercase;
-    background: var(--page);
-    padding: 14px 24px;
-  }
-
-  .source-name {
-    font-family: var(--display);
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    letter-spacing: 0.01em;
-  }
-
-  .source-mark {
-    width: 28px;
-    height: 28px;
-    border-radius: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--mono);
-    font-weight: 700;
-    font-size: 11px;
-    color: var(--paper);
-    background: var(--sage);
-  }
-
-  .bar-track {
-    width: 100%;
-    height: 6px;
-    background: var(--page);
+  .chan-bar {
+    height: 5px;
+    background: var(--rule);
     overflow: hidden;
   }
 
-  .bar-fill {
-    height: 100%;
-    background: var(--sage);
-  }
+  .chan-bar-fill { height: 100%; background: var(--forest); }
+  .chan-bar-fill.spark { background: var(--spark); }
 
-  .source-num {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 22px;
-    color: var(--ink);
-    font-variant-numeric: tabular-nums;
-    letter-spacing: -0.01em;
-  }
-
-  .source-conv {
-    text-align: right;
-    font-family: var(--mono);
+  .chan-num {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
-    color: var(--ink);
     font-weight: 700;
-    letter-spacing: 0.02em;
-  }
-
-  /* SPEND CARD */
-  .spend-card {
-    background: var(--sage);
-    color: var(--paper);
-    padding: 32px 28px;
-  }
-
-  .spend-label {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: rgba(250,248,242,0.65);
-    margin-bottom: 16px;
-  }
-
-  .spend-total {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 64px;
-    line-height: 0.92;
-    letter-spacing: -0.02em;
-    margin-bottom: 8px;
     font-variant-numeric: tabular-nums;
-  }
-
-  .spend-note {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    color: rgba(250,248,242,0.65);
-    text-transform: uppercase;
-    margin-bottom: 28px;
-  }
-
-  .spend-rows {
-    border-top: 1px solid rgba(250,248,242,0.2);
-  }
-
-  .spend-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(250,248,242,0.1);
-    font-size: 13px;
-  }
-
-  .spend-row .label {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(250,248,242,0.7);
-  }
-
-  .spend-row .value {
-    font-family: var(--display);
-    font-weight: 700;
-    color: var(--paper);
-    font-variant-numeric: tabular-nums;
-  }
-
-  .cpl-tag {
-    display: inline-block;
-    margin-top: 24px;
-    padding: 8px 14px;
-    background: var(--paper);
-    color: var(--sage);
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-
-  /* PIPELINE */
-  .pipeline {
-    border: 1px solid var(--rule-strong);
-    background: var(--paper);
-  }
-
-  .pipe-row {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .pipe-row:last-child { border-bottom: 0; }
-
-  .pipe-cell {
-    padding: 20px 16px;
-    border-right: 1px solid var(--rule);
-    text-align: left;
-  }
-
-  .pipe-cell:last-child { border-right: 0; }
-
-  .pipe-cell.star { background: var(--sage); color: var(--paper); }
-
-  .pipe-cell .pn {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    color: var(--sage);
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-
-  .pipe-cell.star .pn { color: rgba(250,248,242,0.7); }
-
-  .pipe-cell .pname {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 11px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    line-height: 1.2;
-    min-height: 26px;
-  }
-
-  .pipe-cell .pcount {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 32px;
-    line-height: 0.9;
-    margin-bottom: 6px;
-    font-variant-numeric: tabular-nums;
-    letter-spacing: -0.015em;
-  }
-
-  .pipe-cell .pval {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    color: var(--ink-2);
-    text-transform: uppercase;
-  }
-
-  .pipe-cell.star .pval { color: rgba(250,248,242,0.7); }
-
-  /* ALLOCATION */
-  .alloc-wrap {
-    border: 1px solid var(--rule-strong);
-    background: var(--paper);
-  }
-
-  .alloc-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .alloc-col {
-    padding: 32px;
-    border-right: 1px solid var(--rule);
-  }
-
-  .alloc-col:last-child { border-right: 0; }
-
-  .alloc-col h4 {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.28em;
-    color: var(--ink-2);
-    text-transform: uppercase;
-    margin-bottom: 24px;
-    font-weight: 400;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .alloc-row {
-    display: grid;
-    grid-template-columns: 120px 1fr 100px;
-    align-items: center;
-    gap: 16px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .alloc-row:last-child { border-bottom: 0; }
-
-  .alloc-name {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.01em;
-  }
-
-  .alloc-bar-track {
-    height: 6px;
-    background: var(--page);
-  }
-
-  .alloc-bar {
-    height: 100%;
-    background: var(--sage);
-  }
-
-  .alloc-amount {
     text-align: right;
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 13px;
-    font-variant-numeric: tabular-nums;
   }
 
-  .alloc-row.total {
-    border-top: 1px solid var(--rule-strong);
-    border-bottom: 0;
-    padding-top: 16px;
-    margin-top: 8px;
-  }
-
-  /* RECOMMENDATION */
-  .reco-box {
-    background: var(--sage);
-    color: var(--paper);
-    padding: 40px;
-    margin-top: 24px;
-  }
-
-  .reco-label {
-    font-family: var(--mono);
+  .chan-conv {
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: rgba(250,248,242,0.7);
-    margin-bottom: 16px;
+    font-weight: 500;
   }
 
-  .reco-headline {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 28px;
-    line-height: 1.1;
-    text-transform: uppercase;
-    max-width: 28ch;
-    margin-bottom: 32px;
-    letter-spacing: -0.01em;
-  }
+  .chan-conv.good { color: var(--forest); font-weight: 700; }
 
-  .reco-headline .italic { color: var(--paper); }
-
-  .reco-list { list-style: none; border-top: 1px solid rgba(250,248,242,0.2); }
-  .reco-list li {
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(250,248,242,0.1);
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 16px;
-    font-size: 13px;
-    color: rgba(250,248,242,0.9);
-    line-height: 1.6;
-  }
-  .reco-list li:last-child { border-bottom: 0; }
-  .reco-list .label {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: rgba(250,248,242,0.65);
-  }
-
-  /* TEAM */
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border: 1px solid var(--rule-strong);
-    background: var(--paper);
-  }
-
-  .team-card {
-    padding: 28px 24px;
-    border-right: 1px solid var(--rule);
-  }
-
-  .team-card:last-child { border-right: 0; }
-
-  .team-card .tk {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    color: var(--sage);
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-
-  .team-card .tname {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 26px;
-    text-transform: uppercase;
-    margin-bottom: 24px;
-    letter-spacing: -0.005em;
-  }
-
-  .team-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    padding-top: 16px;
-    border-top: 1px solid var(--rule);
-  }
-
-  .team-stat-label {
-    font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.22em;
-    color: var(--ink-2);
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  .team-stat-value {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 26px;
-    font-variant-numeric: tabular-nums;
-    letter-spacing: -0.01em;
-  }
-
-  /* FOOTER */
-  footer {
-    padding: 64px 0;
-    background: var(--paper);
-    border-top: 1px solid var(--rule);
-  }
-
-  .foot-grid {
+  /* DONUT */
+  .donut-wrap {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-bottom: 32px;
-    border-bottom: 1px solid var(--rule-strong);
-    margin-bottom: 24px;
-  }
-
-  footer h3 {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 28px;
-    text-transform: uppercase;
-    letter-spacing: -0.005em;
-  }
-
-  footer h3 .italic { color: var(--sage); }
-
-  .foot-links {
-    display: flex;
     gap: 24px;
   }
 
-  .foot-links a {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--ink-2);
-    transition: color 0.15s;
+  .donut-svg {
+    flex-shrink: 0;
   }
 
-  .foot-links a:hover { color: var(--sage); }
+  .donut-legend {
+    flex: 1;
+    font-size: 11px;
+  }
 
-  .foot-receipt {
+  .donut-row {
+    display: grid;
+    grid-template-columns: 12px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--rule-light);
+  }
+
+  .card.forest .donut-row { border-bottom-color: var(--rule-light); }
+
+  .donut-row:last-child { border-bottom: 0; }
+
+  .donut-swatch {
+    width: 10px;
+    height: 10px;
+  }
+
+  .donut-row .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(248,246,241,0.75);
+  }
+
+  .donut-row .val {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .donut-total {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule-light);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .donut-total .l {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(248,246,241,0.5);
+  }
+
+  .donut-total .v {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+    letter-spacing: -0.02em;
+    color: var(--spark);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* PIPELINE KANBAN */
+  .kanban {
+    background: var(--paper);
+    border: 1px solid var(--rule-strong);
+    padding: 16px;
+    overflow-x: auto;
+    margin-bottom: 32px;
+  }
+
+  .kanban-cols {
+    display: flex;
+    gap: 12px;
+    min-width: max-content;
+  }
+
+  .kan-col {
+    width: 180px;
+    flex-shrink: 0;
+    background: var(--cream);
+    padding: 14px;
+    min-height: 220px;
+  }
+
+  .kan-col.spark { background: var(--spark); }
+
+  .kan-col.forest { background: var(--forest); color: var(--paper); }
+
+  .kan-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .kan-col.forest .kan-head { border-bottom-color: var(--rule-light); }
+
+  .kan-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+  }
+
+  .kan-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 6px;
+    background: rgba(26,26,26,0.08);
+  }
+
+  .kan-col.forest .kan-count { background: rgba(248,246,241,0.15); color: var(--spark); }
+
+  .kan-deal {
+    background: var(--paper);
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border: 1px solid var(--rule);
+  }
+
+  .kan-col.forest .kan-deal { background: var(--forest-deep); border-color: var(--rule-light); color: var(--paper); }
+
+  .kan-deal-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+
+  .kan-deal-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--stone-soft);
+  }
+
+  .kan-col.forest .kan-deal-meta { color: rgba(248,246,241,0.6); }
+
+  .kan-deal-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--forest);
+    margin-top: 4px;
+  }
+
+  .kan-col.forest .kan-deal-val { color: var(--spark); }
+
+  /* COST PANEL */
+  .cost-rows .crow {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+    font-size: 12px;
+  }
+
+  .cost-rows .crow:last-child { border-bottom: 0; }
+
+  .cost-rows .clabel {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--stone-soft);
+  }
+
+  .cost-rows .cval {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .cost-rows .cval.good { color: var(--green-up); }
+
+  .cost-rows .csub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--stone-soft);
+    margin-top: 2px;
+  }
+
+  /* TEAM CARDS */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .team-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 16px;
+  }
+
+  .team-init {
+    width: 32px;
+    height: 32px;
+    background: var(--forest);
+    color: var(--paper);
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .team-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .team-line {
     display: flex;
     justify-content: space-between;
-    font-family: var(--mono);
+    padding: 6px 0;
+    border-bottom: 1px solid var(--rule-light);
+    font-size: 11px;
+  }
+
+  .team-line:last-child { border-bottom: 0; }
+
+  .team-line .l {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--stone-soft);
+  }
+
+  .team-line .v {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* RIGHT RAIL — ACTIVITY */
+  .rail {
+    background: var(--cream);
+    border-left: 1px solid var(--rule);
+    padding: 24px;
+    overflow-y: auto;
+    max-height: 100vh;
+  }
+
+  .rail-section {
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .rail-section:last-child { border-bottom: 0; }
+
+  .rail-label {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--ink-2);
+    color: var(--stone-soft);
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
   }
+
+  .activity {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule-light);
+  }
+
+  .activity:last-child { border-bottom: 0; }
+
+  .act-dot {
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--forest);
+    margin-top: 6px;
+  }
+
+  .act-dot.spark { background: var(--spark); border: 1px solid var(--forest); }
+
+  .act-content { flex: 1; font-size: 12px; line-height: 1.4; }
+
+  .act-content strong {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+  }
+
+  .act-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--stone-soft);
+    margin-top: 4px;
+  }
+
+  /* RECO box */
+  .reco {
+    background: var(--forest);
+    color: var(--paper);
+    padding: 20px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .reco-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--spark);
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+
+  .reco-text {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+    color: var(--paper);
+  }
+
+  .reco-text .italic { color: var(--spark); }
 
   /* RESPONSIVE */
-  @media (max-width: 1100px) {
-    .stat-grid { grid-template-columns: repeat(2, 1fr); }
-    .stat-card:nth-child(2) { border-right: 0; }
-    .stat-card:nth-child(1), .stat-card:nth-child(2) { border-bottom: 1px solid var(--rule); }
-    .channels-wrap, .alloc-grid { grid-template-columns: 1fr; }
-    .source-table { border-right: 0; border-bottom: 1px solid var(--rule); }
-    .alloc-col { border-right: 0; border-bottom: 1px solid var(--rule); }
-    .alloc-col:last-child { border-bottom: 0; }
-    .pipe-row { grid-template-columns: repeat(3, 1fr); }
-    .team-grid { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 1280px) {
+    .app { grid-template-columns: 200px 1fr; }
+    .rail { display: none; }
   }
 
-  @media (max-width: 700px) {
-    .wrap { padding: 0 20px; }
-    .head-grid, .section-head { grid-template-columns: 1fr; }
-    .stat-grid { grid-template-columns: 1fr; }
-    .stat-card { border-right: 0; border-bottom: 1px solid var(--rule); }
-    .source-row { grid-template-columns: 120px 1fr 60px; }
-    .source-row > :nth-child(4), .source-row > :nth-child(5) { display: none; }
-    .pipe-row { grid-template-columns: repeat(2, 1fr); }
-    .team-grid { grid-template-columns: 1fr; }
-    .section-note { text-align: left; }
-    .foot-grid { flex-direction: column; gap: 24px; align-items: flex-start; }
+  @media (max-width: 900px) {
+    .app { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .kpi:nth-child(2) { border-right: 0; }
+    .kpi:nth-child(1), .kpi:nth-child(2) { border-bottom: 1px solid var(--rule); }
+    .grid-2, .grid-3, .team-grid { grid-template-columns: 1fr; }
+    .topbar { flex-direction: column; gap: 16px; align-items: flex-start; }
   }
 </style>
 </head>
 <body>
 
-<!-- TOPNAV -->
-<nav class="topnav">
-  <div class="brand">
-    <div class="mark">B</div>
-    <span>Builders Collective</span>
-  </div>
-  <div class="actions">
-    <button class="filter">7D</button>
-    <button class="filter active">30D</button>
-    <button class="filter">90D</button>
-    <span class="live">Live</span>
-  </div>
-</nav>
+<div class="app">
 
-<!-- HEADER -->
-<header class="head">
-  <div class="wrap">
-    <div class="head-grid">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-grid"></div>
+    <div class="sb-brand">
+      <div class="apex"></div>
       <div>
-        <div class="kicker">Operations Dashboard · 2026 · Perth, WA</div>
-        <h1>LAST 30 DAYS<br><span class="italic">at a glance.</span></h1>
-      </div>
-      <div>
-        <div class="head-meta">
-          <div class="row"><span class="k">CRM</span><span class="v">CloseBetter (whitelabel)</span></div>
-          <div class="row"><span class="k">Sub-account</span><span class="v mono">FHqDcxUQEx6VJ5iKVi5a</span></div>
-          <div class="row"><span class="k">Operators</span><span class="v">David · Hasib · Abdullah · Masih</span></div>
-          <div class="row"><span class="k">Channels</span><span class="v">REA · Meta · Google · Web · Phone</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="receipt">
-      <span>BUILDERS COLLECTIVE</span>
-      <span class="dot">·</span>
-      <span>FIG. 01 · OPERATIONS</span>
-      <span class="dot">·</span>
-      <span>LIVE FEED</span>
-      <span class="dot">·</span>
-      <span>↗ BUILDERSCOLLECTIVE.AU</span>
-    </div>
-  </div>
-</header>
-
-<!-- TOP STATS -->
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">01 · AT A GLANCE</div>
-        <h2>FOUR<br>NUMBERS<br>THAT <span class="italic">matter.</span></h2>
-      </div>
-      <div class="section-note">Live data from CloseBetter CRM<br>Updates in real time</div>
-    </div>
-
-    <div class="stat-grid">
-      <div class="stat-card">
-        <div class="stat-label">Total Leads</div>
-        <div class="stat-value">137</div>
-        <div class="stat-delta up">↑ 42% vs prev 30</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Calls Booked</div>
-        <div class="stat-value">38</div>
-        <div class="stat-delta up">↑ 28% vs prev 30</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">PPAs Signed</div>
-        <div class="stat-value">6</div>
-        <div class="stat-delta up">↑ 2 vs prev 30</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Pipeline Value</div>
-        <div class="stat-value">$3.8M</div>
-        <div class="stat-delta up">↑ $1.1M added</div>
+        <div class="b">BUILDERS</div>
+        <div class="c">Collective</div>
       </div>
     </div>
 
-    <div class="placeholder-tag">★ Illustrative figures · populate from CRM on go-live</div>
-  </div>
-</section>
-
-<!-- CHANNELS + SPEND -->
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">02 · WHERE LEADS COME FROM</div>
-        <h2>BY CHANNEL,<br><span class="italic">last 30.</span></h2>
-      </div>
-      <div class="section-note">Every lead auto-tagged at intake<br>Spend tracked per channel</div>
+    <div class="sb-section">
+      <div class="sb-label">Operations</div>
     </div>
+    <a href="#" class="sb-link active"><span>Overview</span><span class="num">01</span></a>
+    <a href="#channels" class="sb-link"><span>Channels</span><span class="num">02</span></a>
+    <a href="#pipeline" class="sb-link"><span>Pipeline</span><span class="num">03</span></a>
+    <a href="#money" class="sb-link"><span>Money &amp; ROI</span><span class="num">04</span></a>
+    <a href="#team" class="sb-link"><span>Team</span><span class="num">05</span></a>
 
-    <div class="channels-wrap">
-      <div class="source-table">
-        <div class="source-row header">
-          <div>Channel</div>
-          <div>Share of leads</div>
-          <div>Leads</div>
-          <div>Booked</div>
-          <div>Conv. rate</div>
-        </div>
-        <div class="source-row">
-          <div class="source-name"><div class="source-mark">REA</div>REA</div>
-          <div class="bar-track"><div class="bar-fill" style="width:42%"></div></div>
-          <div class="source-num">58</div>
-          <div class="source-num">19</div>
-          <div class="source-conv">32.8%</div>
-        </div>
-        <div class="source-row">
-          <div class="source-name"><div class="source-mark">MTA</div>Meta</div>
-          <div class="bar-track"><div class="bar-fill" style="width:28%"></div></div>
-          <div class="source-num">39</div>
-          <div class="source-num">9</div>
-          <div class="source-conv">23.1%</div>
-        </div>
-        <div class="source-row">
-          <div class="source-name"><div class="source-mark">GGL</div>Google</div>
-          <div class="bar-track"><div class="bar-fill" style="width:14%"></div></div>
-          <div class="source-num">19</div>
-          <div class="source-num">6</div>
-          <div class="source-conv">31.6%</div>
-        </div>
-        <div class="source-row">
-          <div class="source-name"><div class="source-mark">WEB</div>Website</div>
-          <div class="bar-track"><div class="bar-fill" style="width:11%"></div></div>
-          <div class="source-num">15</div>
-          <div class="source-num">3</div>
-          <div class="source-conv">20.0%</div>
-        </div>
-        <div class="source-row">
-          <div class="source-name"><div class="source-mark">PHN</div>Phone</div>
-          <div class="bar-track"><div class="bar-fill" style="width:5%"></div></div>
-          <div class="source-num">6</div>
-          <div class="source-num">1</div>
-          <div class="source-conv">16.7%</div>
-        </div>
-      </div>
-
-      <div class="spend-card">
-        <div class="spend-label">Total Spend · 30D</div>
-        <div class="spend-total">$8,420</div>
-        <div class="spend-note">REA + META + GOOGLE</div>
-        <div class="spend-rows">
-          <div class="spend-row"><span class="label">REA · 50 listings</span><span class="value">$2,200</span></div>
-          <div class="spend-row"><span class="label">Meta Ads</span><span class="value">$4,180</span></div>
-          <div class="spend-row"><span class="label">Google Ads</span><span class="value">$2,040</span></div>
-        </div>
-        <span class="cpl-tag">Avg CPL · $61.46</span>
-      </div>
+    <div class="sb-section" style="margin-top: 16px;">
+      <div class="sb-label">Settings</div>
     </div>
-  </div>
-</section>
+    <a href="../handbook/" class="sb-link"><span>Handbook</span><span class="num">↗</span></a>
+    <a href="../" class="sb-link"><span>Proposal</span><span class="num">↗</span></a>
+    <a href="#" class="sb-link"><span>CRM</span><span class="num">↗</span></a>
 
-<!-- PIPELINE -->
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">03 · PIPELINE SNAPSHOT</div>
-        <h2>WHERE EVERY<br>DEAL <span class="italic">sits</span><br>RIGHT NOW.</h2>
-      </div>
-      <div class="section-note">18 stages mapped<br>to the WA building broker workflow</div>
+    <div class="sb-foot">
+      <div>BUILDERS COLLECTIVE</div>
+      <div>OPS DASHBOARD V1.0</div>
+      <div style="margin-top: 8px;">EDITION 2026</div>
     </div>
+  </aside>
 
-    <div class="pipeline">
-      <div class="pipe-row">
-        <div class="pipe-cell"><div class="pn">01</div><div class="pname">New Lead</div><div class="pcount">22</div><div class="pval">$770K</div></div>
-        <div class="pipe-cell"><div class="pn">02</div><div class="pname">Nurturing</div><div class="pcount">31</div><div class="pval">$1.1M</div></div>
-        <div class="pipe-cell"><div class="pn">03</div><div class="pname">Discovery Booked</div><div class="pcount">14</div><div class="pval">$490K</div></div>
-        <div class="pipe-cell"><div class="pn">04</div><div class="pname">Discovery Done</div><div class="pcount">9</div><div class="pval">$315K</div></div>
-        <div class="pipe-cell"><div class="pn">05</div><div class="pname">Looking for Land</div><div class="pcount">5</div><div class="pval">$175K</div></div>
-        <div class="pipe-cell"><div class="pn">06</div><div class="pname">Block Confirmed</div><div class="pcount">7</div><div class="pval">$245K</div></div>
-      </div>
-      <div class="pipe-row">
-        <div class="pipe-cell"><div class="pn">07</div><div class="pname">Shortlist Sent</div><div class="pcount">4</div><div class="pval">$140K</div></div>
-        <div class="pipe-cell"><div class="pn">08</div><div class="pname">Quote Review</div><div class="pcount">3</div><div class="pval">$105K</div></div>
-        <div class="pipe-cell star"><div class="pn">09 ★</div><div class="pname">PPA Signed</div><div class="pcount">6</div><div class="pval">$210K</div></div>
-        <div class="pipe-cell"><div class="pn">10</div><div class="pname">Plans Finalised</div><div class="pcount">2</div><div class="pval">$70K</div></div>
-        <div class="pipe-cell"><div class="pn">11</div><div class="pname">Finance Approved</div><div class="pcount">3</div><div class="pval">$105K</div></div>
-        <div class="pipe-cell"><div class="pn">12</div><div class="pname">Contract Signed</div><div class="pcount">4</div><div class="pval">$140K</div></div>
-      </div>
-      <div class="pipe-row">
-        <div class="pipe-cell"><div class="pn">13</div><div class="pname">Build Started</div><div class="pcount">2</div><div class="pval">$70K</div></div>
-        <div class="pipe-cell"><div class="pn">14</div><div class="pname">In Progress</div><div class="pcount">5</div><div class="pval">$175K</div></div>
-        <div class="pipe-cell star"><div class="pn">15 ★</div><div class="pname">Handover (WON)</div><div class="pcount">3</div><div class="pval">$105K</div></div>
-        <div class="pipe-cell"><div class="pn">16</div><div class="pname">Referral Loop</div><div class="pcount">3</div><div class="pval">—</div></div>
-        <div class="pipe-cell"><div class="pn">17</div><div class="pname">Not Yet Ready</div><div class="pcount">8</div><div class="pval">—</div></div>
-        <div class="pipe-cell"><div class="pn">18</div><div class="pname">Lost</div><div class="pcount">12</div><div class="pval">—</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ALLOCATION -->
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">04 · MONEY &amp; ROI</div>
-        <h2>WHERE THE<br>BUDGET <span class="italic">went</span><br>&amp; WHAT IT EARNED.</h2>
-      </div>
-      <div class="section-note">Every dollar in vs every PPA out<br>Reallocate at month-end</div>
-    </div>
-
-    <div class="alloc-wrap">
-      <div class="alloc-grid">
-        <div class="alloc-col">
-          <h4>Current Allocation · 30D</h4>
-          <div class="alloc-row">
-            <div class="alloc-name">REA</div>
-            <div class="alloc-bar-track"><div class="alloc-bar" style="width:26%"></div></div>
-            <div class="alloc-amount">$2,200</div>
-          </div>
-          <div class="alloc-row">
-            <div class="alloc-name">Meta</div>
-            <div class="alloc-bar-track"><div class="alloc-bar" style="width:50%"></div></div>
-            <div class="alloc-amount">$4,180</div>
-          </div>
-          <div class="alloc-row">
-            <div class="alloc-name">Google</div>
-            <div class="alloc-bar-track"><div class="alloc-bar" style="width:24%"></div></div>
-            <div class="alloc-amount">$2,040</div>
-          </div>
-          <div class="alloc-row total">
-            <div class="alloc-name">Total</div>
-            <div></div>
-            <div class="alloc-amount">$8,420</div>
-          </div>
-        </div>
-        <div class="alloc-col">
-          <h4>Cost per Outcome · 30D</h4>
-          <div class="alloc-row">
-            <div class="alloc-name">Per lead</div>
-            <div class="alloc-bar-track"><div class="alloc-bar" style="width:30%"></div></div>
-            <div class="alloc-amount">$61</div>
-          </div>
-          <div class="alloc-row">
-            <div class="alloc-name">Per booking</div>
-            <div class="alloc-bar-track"><div class="alloc-bar" style="width:55%"></div></div>
-            <div class="alloc-amount">$222</div>
-          </div>
-          <div class="alloc-row">
-            <div class="alloc-name">Per PPA</div>
-            <div class="alloc-bar-track"><div class="alloc-bar" style="width:85%"></div></div>
-            <div class="alloc-amount">$1,403</div>
-          </div>
-          <div class="alloc-row total">
-            <div class="alloc-name">ROI</div>
-            <div></div>
-            <div class="alloc-amount" style="color:var(--sage);">11.4×</div>
-          </div>
-        </div>
+  <!-- MAIN -->
+  <main>
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="topbar-title">Overview <span class="italic">— last 30 days.</span></div>
+      <div class="topbar-actions">
+        <button class="filter">7D</button>
+        <button class="filter active">30D</button>
+        <button class="filter">90D</button>
+        <button class="filter">YTD</button>
+        <span class="live-tag">Live</span>
       </div>
     </div>
 
-    <div class="reco-box">
-      <div class="reco-label">★ This month's recommendation</div>
-      <div class="reco-headline">REA + Google are converting <span class="italic">twice</span> as well as Meta.</div>
-      <ul class="reco-list">
-        <li><span class="label">REA · 01</span><span><strong>32.8%</strong> conversion at $116 per booking. Highest ROI channel. Add 25 more listings.</span></li>
-        <li><span class="label">Google · 02</span><span><strong>31.6%</strong> conversion at $340 per booking. Lean into high-intent keywords.</span></li>
-        <li><span class="label">Meta · 03</span><span><strong>23.1%</strong> conversion at $464 per booking. Pause underperforming creative. Double down on VSL ads.</span></li>
-        <li><span class="label">Phone · 04</span><span>6 leads · 1 booked. Will climb fast as VSL goes live + after-hours AI dials in.</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
+    <div class="content">
 
-<!-- TEAM -->
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">05 · TEAM PERFORMANCE</div>
-        <h2>BOOKINGS<br>BY <span class="italic">operator.</span></h2>
+      <!-- WEEKLY ACTION PANEL -->
+      <div style="background:var(--spark);padding:24px 28px;margin-bottom:32px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;">
+        <div>
+          <div class="mono" style="color:var(--forest);font-weight:700;margin-bottom:8px;">★ ACTION THIS WEEK · 03 MOVES</div>
+          <div style="font-family:'Inter Tight';font-weight:700;font-size:22px;letter-spacing:-0.02em;line-height:1.25;color:var(--stone);max-width:60ch;">
+            Two deals stuck in Quote Review for 8+ days. One PPA opportunity ready to close. Shift $1.5K from Meta into REA.
+          </div>
+        </div>
+        <div style="font-family:'Inter Tight';font-weight:900;font-size:48px;letter-spacing:-0.025em;line-height:1;color:var(--forest);">
+          $2.1M
+          <div class="mono" style="color:var(--forest);font-size:9px;margin-top:4px;font-weight:700;">FORECAST VALUE AT RISK</div>
+        </div>
       </div>
-      <div class="section-note">Round-robin distributes evenly<br>Track individual conversion</div>
+
+      <!-- BOTTLENECK ALERTS -->
+      <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-bottom:32px;">
+        <div style="background:var(--paper);border:1px solid var(--rule-strong);border-left:3px solid var(--green-up);padding:14px 16px;">
+          <div class="mono" style="color:var(--green-up);font-weight:700;margin-bottom:6px;">✓ WORKING WELL</div>
+          <div style="font-family:'Inter Tight';font-weight:700;font-size:14px;letter-spacing:-0.01em;line-height:1.3;">REA conversion at <span style="color:var(--forest);">32.8%</span> — highest of all channels.</div>
+        </div>
+        <div style="background:var(--paper);border:1px solid var(--rule-strong);border-left:3px solid #C28A1C;padding:14px 16px;">
+          <div class="mono" style="color:#C28A1C;font-weight:700;margin-bottom:6px;">⚠ NEEDS ATTENTION</div>
+          <div style="font-family:'Inter Tight';font-weight:700;font-size:14px;letter-spacing:-0.01em;line-height:1.3;">2 deals in <span style="color:var(--stone);">Quote Review</span> for 8+ days — push to PPA.</div>
+        </div>
+        <div style="background:var(--paper);border:1px solid var(--rule-strong);border-left:3px solid var(--red-down);padding:14px 16px;">
+          <div class="mono" style="color:var(--red-down);font-weight:700;margin-bottom:6px;">✕ LEAKING</div>
+          <div style="font-family:'Inter Tight';font-weight:700;font-size:14px;letter-spacing:-0.01em;line-height:1.3;">Meta CPL is <span style="color:var(--red-down);">2.3×</span> REA — reallocate budget.</div>
+        </div>
+      </div>
+
+      <!-- KPI ROW -->
+      <div class="kpi-grid">
+        <div class="kpi">
+          <div class="kpi-label"><span>Total Leads</span><span class="badge">↑ 42%</span></div>
+          <div class="kpi-value">137</div>
+          <div class="kpi-sub">vs prev 30d · 96</div>
+          <svg class="spark-svg" width="100%" height="32" viewBox="0 0 200 32" preserveAspectRatio="none">
+            <polyline points="0,24 20,22 40,20 60,18 80,16 100,18 120,14 140,12 160,8 180,6 200,4" fill="none" stroke="#0F3D20" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label"><span>Calls Booked</span><span class="badge">↑ 28%</span></div>
+          <div class="kpi-value">38</div>
+          <div class="kpi-sub">vs prev 30d · 30</div>
+          <svg class="spark-svg" width="100%" height="32" viewBox="0 0 200 32" preserveAspectRatio="none">
+            <polyline points="0,20 20,22 40,18 60,20 80,16 100,18 120,14 140,16 160,12 180,10 200,8" fill="none" stroke="#0F3D20" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label"><span>PPAs Signed</span><span class="badge">+2</span></div>
+          <div class="kpi-value">6</div>
+          <div class="kpi-sub">vs prev 30d · 4</div>
+          <svg class="spark-svg" width="100%" height="32" viewBox="0 0 200 32" preserveAspectRatio="none">
+            <polyline points="0,28 25,26 50,24 75,22 100,20 125,16 150,12 175,8 200,4" fill="none" stroke="#0F3D20" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label"><span>Pipeline Value</span><span class="badge">↑ $1.1M</span></div>
+          <div class="kpi-value">$3.8M</div>
+          <div class="kpi-sub">across 18 stages</div>
+          <svg class="spark-svg" width="100%" height="32" viewBox="0 0 200 32" preserveAspectRatio="none">
+            <polyline points="0,26 20,24 40,22 60,18 80,16 100,14 120,16 140,10 160,8 180,6 200,2" fill="none" stroke="#0F3D20" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- CHANNELS + SPEND DONUT -->
+      <div class="grid-2" id="channels">
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <div class="card-title">Channels — leads &amp; conversion</div>
+            </div>
+            <div class="card-meta">02 · LAST 30D</div>
+          </div>
+          <div class="chan-table">
+            <div class="chan-row head">
+              <div>CHANNEL</div>
+              <div>SHARE</div>
+              <div>LEADS</div>
+              <div>BOOKED</div>
+              <div>CONV%</div>
+            </div>
+            <div class="chan-row">
+              <div class="chan-name"><span class="chan-tag">REA</span></div>
+              <div class="chan-bar"><div class="chan-bar-fill spark" style="width: 42%"></div></div>
+              <div class="chan-num">58</div>
+              <div class="chan-num">19</div>
+              <div class="chan-conv good">32.8%</div>
+            </div>
+            <div class="chan-row">
+              <div class="chan-name"><span class="chan-tag">MTA</span></div>
+              <div class="chan-bar"><div class="chan-bar-fill" style="width: 28%"></div></div>
+              <div class="chan-num">39</div>
+              <div class="chan-num">9</div>
+              <div class="chan-conv">23.1%</div>
+            </div>
+            <div class="chan-row">
+              <div class="chan-name"><span class="chan-tag">GGL</span></div>
+              <div class="chan-bar"><div class="chan-bar-fill spark" style="width: 14%"></div></div>
+              <div class="chan-num">19</div>
+              <div class="chan-num">6</div>
+              <div class="chan-conv good">31.6%</div>
+            </div>
+            <div class="chan-row">
+              <div class="chan-name"><span class="chan-tag">WEB</span></div>
+              <div class="chan-bar"><div class="chan-bar-fill" style="width: 11%"></div></div>
+              <div class="chan-num">15</div>
+              <div class="chan-num">3</div>
+              <div class="chan-conv">20.0%</div>
+            </div>
+            <div class="chan-row">
+              <div class="chan-name"><span class="chan-tag">PHN</span></div>
+              <div class="chan-bar"><div class="chan-bar-fill" style="width: 5%"></div></div>
+              <div class="chan-num">6</div>
+              <div class="chan-num">1</div>
+              <div class="chan-conv">16.7%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card forest">
+          <div class="card-head">
+            <div class="card-title" style="color:#F8F6F1;">Ad spend allocation</div>
+            <div class="card-meta">04 · 30D</div>
+          </div>
+          <div class="donut-wrap">
+            <svg class="donut-svg" width="120" height="120" viewBox="0 0 42 42">
+              <circle cx="21" cy="21" r="15.915" fill="none" stroke="#08291A" stroke-width="6"/>
+              <circle cx="21" cy="21" r="15.915" fill="none" stroke="#E8FB94" stroke-width="6"
+                stroke-dasharray="26.1 73.9" stroke-dashoffset="25" transform="rotate(-90 21 21)"/>
+              <circle cx="21" cy="21" r="15.915" fill="none" stroke="#F8F6F1" stroke-width="6"
+                stroke-dasharray="49.6 50.4" stroke-dashoffset="-1.1" transform="rotate(-90 21 21)"/>
+              <circle cx="21" cy="21" r="15.915" fill="none" stroke="#EFEAD8" stroke-width="6"
+                stroke-dasharray="24.3 75.7" stroke-dashoffset="-50.7" transform="rotate(-90 21 21)"/>
+            </svg>
+            <div class="donut-legend">
+              <div class="donut-row">
+                <span class="donut-swatch" style="background:#E8FB94"></span>
+                <span class="label">REA</span>
+                <span class="val">$2,200</span>
+              </div>
+              <div class="donut-row">
+                <span class="donut-swatch" style="background:#F8F6F1"></span>
+                <span class="label">Meta</span>
+                <span class="val">$4,180</span>
+              </div>
+              <div class="donut-row">
+                <span class="donut-swatch" style="background:#EFEAD8"></span>
+                <span class="label">Google</span>
+                <span class="val">$2,040</span>
+              </div>
+              <div class="donut-total">
+                <span class="l">Total · 30D</span>
+                <span class="v">$8,420</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COST PER OUTCOME + RECO -->
+      <div class="grid-2">
+        <div class="card cream">
+          <div class="card-head">
+            <div class="card-title">Cost per outcome</div>
+            <div class="card-meta">04 · ROI</div>
+          </div>
+          <div class="cost-rows">
+            <div class="crow">
+              <div>
+                <div class="clabel">Per lead</div>
+                <div class="csub">137 leads</div>
+              </div>
+              <div class="cval">$61</div>
+            </div>
+            <div class="crow">
+              <div>
+                <div class="clabel">Per booking</div>
+                <div class="csub">38 calls booked</div>
+              </div>
+              <div class="cval">$222</div>
+            </div>
+            <div class="crow">
+              <div>
+                <div class="clabel">Per PPA</div>
+                <div class="csub">6 PPAs signed</div>
+              </div>
+              <div class="cval">$1,403</div>
+            </div>
+            <div class="crow">
+              <div>
+                <div class="clabel">ROI</div>
+                <div class="csub">PPA value vs spend</div>
+              </div>
+              <div class="cval good">11.4×</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card forest">
+          <div class="card-head">
+            <div class="card-title" style="color:#F8F6F1;">This month's recommendation</div>
+            <div class="card-meta" style="color:rgba(248,246,241,0.55);">★ READ</div>
+          </div>
+          <div style="font-family:'Inter Tight';font-weight:700;font-size:20px;letter-spacing:-0.02em;line-height:1.2;color:#F8F6F1;margin-bottom:20px;">
+            REA + Google convert <span class="italic" style="color:#E8FB94;">twice</span> as well as Meta.
+          </div>
+          <div style="border-top:1px solid rgba(248,246,241,0.14);padding-top:16px;">
+            <div style="display:grid;grid-template-columns:60px 1fr;gap:12px;padding:8px 0;border-bottom:1px solid rgba(248,246,241,0.1);font-size:11px;color:rgba(248,246,241,0.9);"><span class="mono" style="color:#E8FB94;">REA · 01</span><span>32.8% conv · $116 per booking. Add 25 more listings.</span></div>
+            <div style="display:grid;grid-template-columns:60px 1fr;gap:12px;padding:8px 0;border-bottom:1px solid rgba(248,246,241,0.1);font-size:11px;color:rgba(248,246,241,0.9);"><span class="mono" style="color:#E8FB94;">GGL · 02</span><span>31.6% conv. Lean into high-intent keywords.</span></div>
+            <div style="display:grid;grid-template-columns:60px 1fr;gap:12px;padding:8px 0;font-size:11px;color:rgba(248,246,241,0.9);"><span class="mono" style="color:#E8FB94;">MTA · 03</span><span>23.1% conv. Pause underperformers. Lean into VSL.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KANBAN PIPELINE -->
+      <div style="margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-family:'Inter Tight';font-weight:700;font-size:18px;letter-spacing:-0.02em;" id="pipeline">Pipeline <span class="italic">— live snapshot.</span></div>
+        <div class="mono" style="color:var(--stone-soft);">03 · 18 STAGES · SCROLL →</div>
+      </div>
+
+      <div class="kanban">
+        <div class="kanban-cols">
+          <div class="kan-col">
+            <div class="kan-head"><div class="kan-name">New Lead</div><div class="kan-count">22</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">J. Patel</div><div class="kan-deal-meta">REA · 2H AGO</div><div class="kan-deal-val">$420K</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">S. Khan</div><div class="kan-deal-meta">META · 5H AGO</div><div class="kan-deal-val">$380K</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">+ 20 more</div><div class="kan-deal-meta">SUM · $770K</div></div>
+          </div>
+          <div class="kan-col">
+            <div class="kan-head"><div class="kan-name">Nurturing</div><div class="kan-count">31</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">M. Williams</div><div class="kan-deal-meta">DAY 4 OF 21</div><div class="kan-deal-val">$520K</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">R. Singh</div><div class="kan-deal-meta">DAY 11 OF 21</div><div class="kan-deal-val">$450K</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">+ 29 more</div><div class="kan-deal-meta">SUM · $1.1M</div></div>
+          </div>
+          <div class="kan-col">
+            <div class="kan-head"><div class="kan-name">Discovery Booked</div><div class="kan-count">14</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">T. Hassan</div><div class="kan-deal-meta">CALL · TODAY 3PM</div><div class="kan-deal-val">$480K</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">A. Mehta</div><div class="kan-deal-meta">CALL · TMRW 10AM</div><div class="kan-deal-val">$540K</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">+ 12 more</div><div class="kan-deal-meta">SUM · $490K</div></div>
+          </div>
+          <div class="kan-col">
+            <div class="kan-head"><div class="kan-name">Discovery Done</div><div class="kan-count">9</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">D. Brown</div><div class="kan-deal-meta">QUALIFIED · DAVID</div><div class="kan-deal-val">$420K</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">+ 8 more</div><div class="kan-deal-meta">SUM · $315K</div></div>
+          </div>
+          <div class="kan-col">
+            <div class="kan-head"><div class="kan-name">Looking for Land</div><div class="kan-count">5</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">L. Tran</div><div class="kan-deal-meta">NORTHERN CORR.</div><div class="kan-deal-val">$510K</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">+ 4 more</div><div class="kan-deal-meta">SUM · $175K</div></div>
+          </div>
+          <div class="kan-col">
+            <div class="kan-head"><div class="kan-name">Block Confirmed</div><div class="kan-count">7</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">P. Yusuf</div><div class="kan-deal-meta">BALDIVIS · 450SQM</div><div class="kan-deal-val">$580K</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">+ 6 more</div><div class="kan-deal-meta">SUM · $245K</div></div>
+          </div>
+          <div class="kan-col">
+            <div class="kan-head"><div class="kan-name">Shortlist Sent</div><div class="kan-count">4</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">N. Costa</div><div class="kan-deal-meta">3 BUILDERS</div><div class="kan-deal-val">$610K</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">+ 3 more</div><div class="kan-deal-meta">SUM · $140K</div></div>
+          </div>
+          <div class="kan-col">
+            <div class="kan-head"><div class="kan-name">Quote Review</div><div class="kan-count">3</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">B. Owens</div><div class="kan-deal-meta">2 QUOTES IN</div><div class="kan-deal-val">$680K</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">+ 2 more</div><div class="kan-deal-meta">SUM · $105K</div></div>
+          </div>
+          <div class="kan-col spark">
+            <div class="kan-head"><div class="kan-name">★ PPA Signed</div><div class="kan-count">6</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">K. Reilly</div><div class="kan-deal-meta">ARMOUR HOMES</div><div class="kan-deal-val">$620K</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">+ 5 more</div><div class="kan-deal-meta">SUM · $210K</div></div>
+          </div>
+          <div class="kan-col">
+            <div class="kan-head"><div class="kan-name">Plans Finalised</div><div class="kan-count">2</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">+ 2 more</div><div class="kan-deal-meta">SUM · $70K</div></div>
+          </div>
+          <div class="kan-col">
+            <div class="kan-head"><div class="kan-name">Finance Approved</div><div class="kan-count">3</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">+ 3 more</div><div class="kan-deal-meta">SUM · $105K</div></div>
+          </div>
+          <div class="kan-col">
+            <div class="kan-head"><div class="kan-name">Contract Signed</div><div class="kan-count">4</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">+ 4 more</div><div class="kan-deal-meta">SUM · $140K</div></div>
+          </div>
+          <div class="kan-col">
+            <div class="kan-head"><div class="kan-name">Build Started</div><div class="kan-count">2</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">+ 2 more</div><div class="kan-deal-meta">SUM · $70K</div></div>
+          </div>
+          <div class="kan-col">
+            <div class="kan-head"><div class="kan-name">In Progress</div><div class="kan-count">5</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">+ 5 more</div><div class="kan-deal-meta">SUM · $175K</div></div>
+          </div>
+          <div class="kan-col forest">
+            <div class="kan-head"><div class="kan-name">★ Handover · WON</div><div class="kan-count">3</div></div>
+            <div class="kan-deal"><div class="kan-deal-name">+ 3 more</div><div class="kan-deal-meta">SUM · $105K</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEAM -->
+      <div style="margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-family:'Inter Tight';font-weight:700;font-size:18px;letter-spacing:-0.02em;" id="team">Team <span class="italic">— performance.</span></div>
+        <div class="mono" style="color:var(--stone-soft);">05 · ROUND-ROBIN</div>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-init">D</div>
+          <div class="team-name">David</div>
+          <div class="team-line"><span class="l">CALLS 30D</span><span class="v">11</span></div>
+          <div class="team-line"><span class="l">SHOW UP</span><span class="v">91%</span></div>
+          <div class="team-line"><span class="l">QUAL</span><span class="v">8</span></div>
+          <div class="team-line"><span class="l">PPAs</span><span class="v" style="color:var(--green-up);">2</span></div>
+        </div>
+        <div class="team-card">
+          <div class="team-init">H</div>
+          <div class="team-name">Hasib</div>
+          <div class="team-line"><span class="l">CALLS 30D</span><span class="v">9</span></div>
+          <div class="team-line"><span class="l">SHOW UP</span><span class="v">89%</span></div>
+          <div class="team-line"><span class="l">QUAL</span><span class="v">7</span></div>
+          <div class="team-line"><span class="l">PPAs</span><span class="v" style="color:var(--green-up);">2</span></div>
+        </div>
+        <div class="team-card">
+          <div class="team-init">A</div>
+          <div class="team-name">Abdullah</div>
+          <div class="team-line"><span class="l">CALLS 30D</span><span class="v">10</span></div>
+          <div class="team-line"><span class="l">SHOW UP</span><span class="v">80%</span></div>
+          <div class="team-line"><span class="l">QUAL</span><span class="v">6</span></div>
+          <div class="team-line"><span class="l">PPAs</span><span class="v">1</span></div>
+        </div>
+        <div class="team-card">
+          <div class="team-init">M</div>
+          <div class="team-name">Masih</div>
+          <div class="team-line"><span class="l">CALLS 30D</span><span class="v">8</span></div>
+          <div class="team-line"><span class="l">SHOW UP</span><span class="v">88%</span></div>
+          <div class="team-line"><span class="l">QUAL</span><span class="v">5</span></div>
+          <div class="team-line"><span class="l">PPAs</span><span class="v">1</span></div>
+        </div>
+      </div>
+
+      <div style="margin-top:32px;padding-top:24px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+        <div class="mono" style="color:var(--stone-soft);">BUILDERS COLLECTIVE × CLOSEBETTER · FIG. OPS · LIVE</div>
+        <div class="mono" style="color:var(--stone-soft);">★ ILLUSTRATIVE FIGURES · POPULATES FROM CRM ON GO-LIVE</div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- RIGHT RAIL — ACTIVITY -->
+  <aside class="rail">
+    <div class="rail-section">
+      <div class="rail-label"><span>Today's calls</span><span style="color:var(--forest);font-weight:700;">3</span></div>
+      <div class="activity">
+        <div class="act-dot spark"></div>
+        <div class="act-content">
+          <strong>T. Hassan</strong> · Discovery call<div class="act-time">3:00 PM · DAVID</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-dot"></div>
+        <div class="act-content">
+          <strong>A. Mehta</strong> · Discovery call<div class="act-time">4:30 PM · HASIB</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-dot"></div>
+        <div class="act-content">
+          <strong>C. Foster</strong> · Discovery call<div class="act-time">5:15 PM · MASIH</div>
+        </div>
+      </div>
     </div>
 
-    <div class="team-grid">
-      <div class="team-card">
-        <div class="tk">Op · 01</div>
-        <div class="tname">David</div>
-        <div class="team-stats">
-          <div>
-            <div class="team-stat-label">Calls 30d</div>
-            <div class="team-stat-value">11</div>
-          </div>
-          <div>
-            <div class="team-stat-label">PPAs</div>
-            <div class="team-stat-value">2</div>
-          </div>
+    <div class="rail-section">
+      <div class="rail-label"><span>Live activity</span><span class="mono" style="color:var(--forest);">↻ AUTO</span></div>
+      <div class="activity">
+        <div class="act-dot spark"></div>
+        <div class="act-content">
+          <strong>K. Reilly</strong> moved to <strong>PPA Signed</strong>
+          <div class="act-time">2 MIN AGO · ARMOUR HOMES · $620K</div>
         </div>
       </div>
-      <div class="team-card">
-        <div class="tk">Op · 02</div>
-        <div class="tname">Hasib</div>
-        <div class="team-stats">
-          <div>
-            <div class="team-stat-label">Calls 30d</div>
-            <div class="team-stat-value">9</div>
-          </div>
-          <div>
-            <div class="team-stat-label">PPAs</div>
-            <div class="team-stat-value">2</div>
-          </div>
+      <div class="activity">
+        <div class="act-dot"></div>
+        <div class="act-content">
+          New REA lead · <strong>J. Patel</strong>
+          <div class="act-time">14 MIN AGO · BALDIVIS · $420K</div>
         </div>
       </div>
-      <div class="team-card">
-        <div class="tk">Op · 03</div>
-        <div class="tname">Abdullah</div>
-        <div class="team-stats">
-          <div>
-            <div class="team-stat-label">Calls 30d</div>
-            <div class="team-stat-value">10</div>
-          </div>
-          <div>
-            <div class="team-stat-label">PPAs</div>
-            <div class="team-stat-value">1</div>
-          </div>
+      <div class="activity">
+        <div class="act-dot"></div>
+        <div class="act-content">
+          <strong>S. Khan</strong> booked a call
+          <div class="act-time">38 MIN AGO · META · WED 11AM</div>
         </div>
       </div>
-      <div class="team-card">
-        <div class="tk">Op · 04</div>
-        <div class="tname">Masih</div>
-        <div class="team-stats">
-          <div>
-            <div class="team-stat-label">Calls 30d</div>
-            <div class="team-stat-value">8</div>
-          </div>
-          <div>
-            <div class="team-stat-label">PPAs</div>
-            <div class="team-stat-value">1</div>
-          </div>
+      <div class="activity">
+        <div class="act-dot"></div>
+        <div class="act-content">
+          AI voice agent captured <strong>L. Tran</strong>
+          <div class="act-time">1H 12M AGO · AFTER HOURS</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-dot"></div>
+        <div class="act-content">
+          <strong>P. Yusuf</strong> moved to <strong>Block Confirmed</strong>
+          <div class="act-time">2H 04M AGO · ABDULLAH</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-dot"></div>
+        <div class="act-content">
+          Build update: <strong>D. Brown</strong> · slab inspection
+          <div class="act-time">3H 41M AGO · INSPECTOR REPORT SENT</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <h3>BUILT BY <span class="italic">rankonmaps.</span></h3>
-      <div class="foot-links">
-        <a href="../handbook/">↗ HANDBOOK</a>
-        <a href="../">↗ PROPOSAL</a>
+    <div class="rail-section">
+      <div class="rail-label">Quick stats · today</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="padding:12px;background:var(--paper);border:1px solid var(--rule);">
+          <div class="mono" style="color:var(--stone-soft);margin-bottom:6px;">NEW</div>
+          <div style="font-family:'Inter Tight';font-weight:900;font-size:24px;letter-spacing:-0.02em;">7</div>
+        </div>
+        <div style="padding:12px;background:var(--paper);border:1px solid var(--rule);">
+          <div class="mono" style="color:var(--stone-soft);margin-bottom:6px;">BOOKED</div>
+          <div style="font-family:'Inter Tight';font-weight:900;font-size:24px;letter-spacing:-0.02em;">3</div>
+        </div>
+        <div style="padding:12px;background:var(--spark);border:1px solid var(--rule);">
+          <div class="mono" style="color:var(--forest);margin-bottom:6px;font-weight:700;">PPAs</div>
+          <div style="font-family:'Inter Tight';font-weight:900;font-size:24px;letter-spacing:-0.02em;color:var(--forest);">1</div>
+        </div>
+        <div style="padding:12px;background:var(--paper);border:1px solid var(--rule);">
+          <div class="mono" style="color:var(--stone-soft);margin-bottom:6px;">REPLIES</div>
+          <div style="font-family:'Inter Tight';font-weight:900;font-size:24px;letter-spacing:-0.02em;">5</div>
+        </div>
       </div>
     </div>
-    <div class="foot-receipt">
-      <span>BUILDERS COLLECTIVE × RANKONMAPS</span>
-      <span>FIG. END · OPERATIONS V1.0</span>
-      <span>EDITION 2026</span>
-      <span>↗ RANKONMAPS.IO</span>
+
+    <div class="rail-section">
+      <div class="rail-label">Builds in progress</div>
+      <div class="activity">
+        <div class="act-dot"></div>
+        <div class="act-content">
+          <strong>D. Brown</strong> · slab → frame
+          <div class="act-time">FRAME INSP. SCHEDULED · 28 MAY</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-dot"></div>
+        <div class="act-content">
+          <strong>M. Lopez</strong> · lockup
+          <div class="act-time">LOCKUP INSP. 02 JUN</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-dot"></div>
+        <div class="act-content">
+          <strong>R. Choi</strong> · fixing stage
+          <div class="act-time">HANDOVER · ~14 JUN</div>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
+  </aside>
+
+</div>
 
 </body>
 </html>

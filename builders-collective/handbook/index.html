@@ -6,96 +6,111 @@
 <title>Builders Collective — CRM Handbook</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;900&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Inter+Tight:wght@400;500;700;900&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --page:        #F1EFE9;
-    --paper:       #FAF8F2;
-    --tone:        #D9D4C5;
-    --sage:        #1F4D3C;
-    --sage-soft:   #3A6E5A;
-    --ink:         #1A1F1B;
-    --ink-2:       #5C6A5F;
-    --rule:        rgba(26,31,27,0.10);
-    --rule-strong: rgba(26,31,27,0.20);
-    --display: "Inter Tight", -apple-system, "Helvetica Neue", Arial, sans-serif;
-    --serif:   "Fraunces", Georgia, "Times New Roman", serif;
-    --mono:    "JetBrains Mono", ui-monospace, Menlo, monospace;
+    --forest:      #0F3D20;
+    --forest-deep: #08291A;
+    --paper:       #F8F6F1;
+    --cream:       #EFEAD8;
+    --stone:       #1A1A1A;
+    --stone-2:     rgba(26,26,26,0.65);
+    --stone-soft:  rgba(26,26,26,0.5);
+    --spark:       #E8FB94;
+    --rule:        rgba(26,26,26,0.12);
+    --rule-strong: rgba(26,26,26,0.22);
+    --rule-light:  rgba(248,246,241,0.18);
+    --rule-light-strong: rgba(248,246,241,0.32);
   }
 
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: var(--display);
-    background: var(--page);
-    color: var(--ink);
-    line-height: 1.55;
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--paper);
+    color: var(--stone);
+    line-height: 1.6;
+    font-size: 15px;
     -webkit-font-smoothing: antialiased;
-    font-weight: 400;
   }
 
   a { color: inherit; }
 
-  .wrap, .container {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 0 32px;
-  }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 56px; }
+  .wrap-narrow { max-width: 920px; margin: 0 auto; padding: 0 56px; }
 
-  .wrap-narrow { max-width: 920px; margin: 0 auto; padding: 0 32px; }
-
-  .kicker {
-    font-family: var(--mono);
+  /* TYPE UTILS */
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    letter-spacing: 0.28em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--ink-2);
-    font-weight: 400;
+    color: var(--stone-soft);
   }
 
-  .sage-text { color: var(--sage); }
+  .italic {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--forest);
+    text-transform: none;
+    letter-spacing: -0.005em;
+  }
 
-  .italic { font-family: var(--serif); font-style: italic; font-weight: 400; }
+  /* APEX MARK */
+  .apex {
+    width: 36px;
+    height: 18px;
+    background: var(--spark);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  }
+
+  .apex.forest { background: var(--forest); }
+
+  /* WORDMARK */
+  .wordmark {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wordmark .b {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: -0.035em;
+    line-height: 0.82;
+    color: var(--stone);
+  }
+
+  .wordmark .c {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1;
+    margin-top: 2px;
+    letter-spacing: -0.02em;
+    color: var(--stone);
+  }
+
+  .wordmark.invert .b, .wordmark.invert .c { color: var(--paper); }
 
   /* TOPNAV */
   .topnav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 32px;
+    padding: 24px 56px;
     border-bottom: 1px solid var(--rule);
-    background: var(--page);
+    background: var(--paper);
     position: sticky;
     top: 0;
     z-index: 10;
   }
 
-  .topnav .brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 14px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-
-  .topnav .mark {
-    width: 28px;
-    height: 28px;
-    background: var(--sage);
-    color: var(--paper);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 16px;
-    border-radius: 2px;
-  }
+  .topnav .nav-left { display: flex; align-items: center; gap: 16px; }
 
   .topnav .links {
     display: flex;
@@ -103,114 +118,204 @@
   }
 
   .topnav .links a {
-    font-family: var(--mono);
+    font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 8px 12px;
-    color: var(--ink-2);
+    padding: 8px 14px;
+    color: var(--stone-soft);
     transition: all 0.15s;
   }
 
-  .topnav .links a:hover { background: var(--paper); color: var(--ink); }
+  .topnav .links a:hover { background: var(--cream); color: var(--stone); }
 
   /* HERO */
   .hero {
-    padding: 88px 0 64px;
-    border-bottom: 1px solid var(--rule);
-    background: var(--page);
+    background: var(--forest);
+    color: var(--paper);
+    padding: 96px 56px 64px;
+    position: relative;
+    overflow: hidden;
   }
 
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 64px;
-    align-items: end;
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, rgba(248,246,241,0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(248,246,241,0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
   }
+
+  .grid-bg.dark-paper {
+    background-image:
+      linear-gradient(to right, rgba(26,26,26,0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26,26,26,0.04) 1px, transparent 1px);
+  }
+
+  .hero-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: rgba(248,246,241,0.55);
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule-light);
+    position: relative;
+  }
+
+  .hero-content { position: relative; padding-top: 56px; }
 
   .hero h1 {
-    font-family: var(--display);
+    font-family: 'Inter Tight', sans-serif;
     font-weight: 900;
-    font-size: clamp(56px, 9vw, 120px);
-    line-height: 0.92;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    margin-top: 24px;
+    font-size: clamp(64px, 9vw, 128px);
+    letter-spacing: -0.035em;
+    line-height: 0.86;
+    color: var(--paper);
   }
 
   .hero h1 .italic {
-    color: var(--sage);
-    text-transform: none;
-    letter-spacing: -0.01em;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.78em;
+    color: var(--spark);
+    letter-spacing: -0.02em;
   }
 
-  .hero-lead {
-    font-size: 15px;
-    color: var(--ink-2);
-    max-width: 38ch;
+  .hero-tagline {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 28px;
+    max-width: 640px;
+    margin-top: 48px;
+    color: rgba(248,246,241,0.92);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    position: relative;
+  }
+
+  .hero-spec-strip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(248,246,241,0.55);
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule-light);
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .hero-apex {
+    width: 80px;
+    height: 40px;
+    background: var(--spark);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  /* SECTION SHELL */
+  section.chapter {
+    padding: 96px 0;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    position: relative;
+  }
+
+  section.chapter.cream { background: var(--cream); }
+
+  section.chapter.forest {
+    background: var(--forest);
+    color: var(--paper);
+  }
+
+  .chapter-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--stone-soft);
+    margin-bottom: 16px;
+  }
+
+  section.chapter.forest .chapter-num { color: rgba(248,246,241,0.55); }
+
+  h2 {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: clamp(40px, 5vw, 64px);
+    letter-spacing: -0.025em;
+    line-height: 0.95;
+    margin-bottom: 56px;
+    max-width: 20ch;
+  }
+
+  h2 .italic { font-weight: 300; }
+
+  section.chapter.forest h2 { color: var(--paper); }
+  section.chapter.forest h2 .italic { color: var(--spark); }
+
+  h3 {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 56px 0 24px;
+  }
+
+  h3 .italic { font-weight: 300; }
+
+  /* BODY COPY */
+  p {
+    font-size: 16px;
+    color: var(--stone-2);
+    margin-bottom: 16px;
+    max-width: 60ch;
     line-height: 1.7;
   }
 
-  .meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding-top: 12px;
-    border-top: 1px solid var(--rule-strong);
+  section.chapter.forest p { color: rgba(248,246,241,0.85); }
+
+  p.lead {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 24px;
+    color: var(--stone);
+    line-height: 1.4;
+    margin-bottom: 40px;
+    max-width: 28ch;
+    letter-spacing: -0.01em;
   }
 
-  .meta .row {
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--rule);
-    font-size: 12px;
-  }
-
-  .meta .row .k {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    color: var(--ink-2);
-    text-transform: uppercase;
-  }
-
-  .meta .row .v { color: var(--ink); }
-  .meta .row .v.mono { font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; }
-
-  /* RECEIPT ROW */
-  .receipt-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    padding-top: 32px;
-    margin-top: 56px;
-    border-top: 1px solid var(--rule-strong);
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--ink-2);
-  }
-
-  .receipt-row .dot { color: var(--rule-strong); }
+  section.chapter.forest p.lead { color: var(--paper); }
 
   /* TOC */
   .toc-section {
-    padding: 48px 0;
-    background: var(--paper);
+    background: var(--cream);
+    padding: 64px 0;
     border-bottom: 1px solid var(--rule);
   }
 
   .toc-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    border: 1px solid var(--rule);
+    margin-top: 32px;
+    background: var(--paper);
     list-style: none;
-    border-top: 1px solid var(--rule);
-    margin-top: 24px;
   }
 
   .toc-list li {
@@ -218,290 +323,275 @@
   }
 
   .toc-list li:nth-child(odd) { border-right: 1px solid var(--rule); }
+  .toc-list li:last-child, .toc-list li:nth-last-child(2):nth-child(odd) { border-bottom: 0; }
 
   .toc-list a {
     display: grid;
-    grid-template-columns: 60px 1fr;
+    grid-template-columns: 60px 1fr 24px;
     align-items: center;
     gap: 16px;
-    padding: 18px 20px;
+    padding: 22px 24px;
     text-decoration: none;
     transition: background 0.15s;
   }
 
-  .toc-list a:hover { background: var(--page); }
+  .toc-list a:hover { background: var(--cream); }
 
   .toc-list .toc-num {
-    font-family: var(--mono);
+    font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    letter-spacing: 0.22em;
-    color: var(--sage);
+    letter-spacing: 0.18em;
+    color: var(--forest);
     text-transform: uppercase;
   }
 
   .toc-list .toc-title {
-    font-family: var(--display);
+    font-family: 'Inter Tight', sans-serif;
     font-weight: 700;
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    color: var(--ink);
+    font-size: 17px;
+    letter-spacing: -0.01em;
+    color: var(--stone);
   }
 
-  /* SECTIONS */
-  section.chapter {
-    padding: 96px 0;
-    border-top: 1px solid var(--rule);
+  .toc-list .toc-arrow {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--stone-soft);
   }
 
-  .chapter-head {
-    margin-bottom: 56px;
-  }
-
-  .chapter-num {
-    display: inline-block;
-    padding-bottom: 16px;
-    margin-bottom: 24px;
-    border-bottom: 1px solid var(--rule-strong);
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.32em;
-    color: var(--sage);
-    text-transform: uppercase;
-  }
-
-  h2 {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: clamp(40px, 6vw, 72px);
-    line-height: 0.95;
-    letter-spacing: -0.015em;
-    text-transform: uppercase;
-    max-width: 18ch;
-  }
-
-  h2 .italic {
-    color: var(--sage);
-    text-transform: none;
-    letter-spacing: -0.005em;
-  }
-
-  h3 {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 24px;
-    line-height: 1.1;
-    text-transform: uppercase;
-    letter-spacing: -0.005em;
-    margin: 56px 0 24px;
-  }
-
-  h3 .italic { color: var(--sage); text-transform: none; }
-
-  p {
-    font-size: 15px;
-    color: var(--ink-2);
-    margin-bottom: 16px;
-    max-width: 64ch;
-    line-height: 1.7;
-  }
-
-  p.lead {
-    font-family: var(--display);
-    font-size: 22px;
-    color: var(--ink);
-    line-height: 1.4;
-    margin-bottom: 40px;
-    max-width: 30ch;
-    font-weight: 400;
-  }
-
-  /* PILLAR GRID */
-  .pillars {
+  /* POSITION CARDS (used in ch 01) */
+  .pos-cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid var(--rule-strong);
-    border-bottom: 1px solid var(--rule-strong);
-    margin: 48px 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 40px 0;
   }
 
-  .pillar {
-    padding: 40px 32px;
-    border-right: 1px solid var(--rule);
+  .pos-card {
+    padding: 40px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  .pillar:last-child { border-right: 0; }
-
-  .pillar .num {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.28em;
-    color: var(--sage);
-    text-transform: uppercase;
-    margin-bottom: 24px;
+  .pos-card.before {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    color: var(--stone-2);
   }
 
-  .pillar h4 {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 20px;
-    line-height: 1.1;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-
-  .pillar p {
-    font-size: 13px;
-    color: var(--ink-2);
-    margin: 0;
-    line-height: 1.7;
-  }
-
-  /* TWO-COL CARDS */
-  .two-col {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    border: 1px solid var(--rule-strong);
-    margin: 32px 0;
-  }
-
-  .two-col .col {
-    padding: 32px;
-    border-right: 1px solid var(--rule);
-  }
-
-  .two-col .col:last-child { border-right: 0; }
-
-  .two-col .col.sage-bg {
-    background: var(--sage);
+  .pos-card.after {
+    background: var(--forest);
     color: var(--paper);
-    border-right: 0;
   }
 
-  .two-col .col.sage-bg .num,
-  .two-col .col.sage-bg h4,
-  .two-col .col.sage-bg p { color: var(--paper); }
+  .pos-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin-bottom: 16px;
+  }
 
-  .two-col .col.sage-bg .num { color: rgba(250,248,242,0.7); }
+  .pos-headline {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  .pos-card.after .pos-headline { color: var(--paper); }
+
+  .pos-body {
+    font-size: 14px;
+    line-height: 1.6;
+  }
 
   /* FLOW STEPS */
-  .flow {
-    border-top: 1px solid var(--rule-strong);
-    border-bottom: 1px solid var(--rule-strong);
-    margin: 32px 0;
+  .flow-list {
+    border-top: 1px solid var(--rule);
+    margin-top: 32px;
   }
 
-  .flow-step {
-    display: grid;
-    grid-template-columns: 80px 1fr 200px;
-    gap: 24px;
-    padding: 28px 0;
+  .myth {
+    padding: 32px 0;
     border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 100px 1fr 200px;
+    gap: 32px;
     align-items: start;
   }
 
-  .flow-step:last-child { border-bottom: 0; }
+  section.chapter.forest .myth { border-bottom-color: var(--rule-light); }
 
-  .flow-step .step-num {
-    font-family: var(--mono);
+  .myth-num {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    letter-spacing: 0.28em;
-    color: var(--sage);
+    letter-spacing: 0.18em;
+    color: var(--forest);
     text-transform: uppercase;
   }
 
-  .flow-step .step-content h5 {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 18px;
-    text-transform: uppercase;
+  section.chapter.forest .myth-num { color: var(--spark); }
+
+  .myth-content h5 {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.015em;
     margin-bottom: 8px;
-    letter-spacing: -0.005em;
   }
 
-  .flow-step .step-content p {
+  .myth-content p {
     font-size: 14px;
-    color: var(--ink-2);
     margin: 0;
+    color: var(--stone-2);
+    max-width: 50ch;
   }
 
-  .flow-step .step-meta {
-    font-family: var(--mono);
+  section.chapter.forest .myth-content p { color: rgba(248,246,241,0.75); }
+
+  .myth-meta {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    letter-spacing: 0.22em;
-    color: var(--ink-2);
+    letter-spacing: 0.18em;
+    color: var(--stone-soft);
     text-transform: uppercase;
     text-align: right;
   }
 
-  /* CALLOUT BOX (sage) */
-  .callout {
-    background: var(--sage);
-    color: var(--paper);
-    padding: 40px 48px;
+  section.chapter.forest .myth-meta { color: rgba(248,246,241,0.55); }
+
+  /* STEP CARDS (3-up) */
+  .step-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
     margin: 40px 0;
-    border-radius: 0;
   }
 
-  .callout .callout-label {
-    font-family: var(--mono);
+  .step-card {
+    background: var(--cream);
+    padding: 36px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .step-card.active {
+    background: var(--forest);
+    color: var(--paper);
+  }
+
+  .step-num {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    letter-spacing: 0.28em;
+    letter-spacing: 0.18em;
+    color: var(--forest);
     text-transform: uppercase;
-    color: rgba(250,248,242,0.7);
+    margin-bottom: 24px;
+  }
+
+  .step-card.active .step-num { color: var(--spark); }
+
+  .step-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
     margin-bottom: 16px;
   }
 
-  .callout .callout-text {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 28px;
-    line-height: 1.2;
+  .step-card.active .step-title { color: var(--paper); }
+
+  .step-body {
+    font-size: 14px;
+    color: var(--stone-2);
+    line-height: 1.6;
+  }
+
+  .step-card.active .step-body { color: rgba(248,246,241,0.85); }
+
+  /* CALLOUT (spark) */
+  .callout-spark {
+    background: var(--spark);
+    color: var(--stone);
+    padding: 40px 48px;
+    margin: 40px 0;
+  }
+
+  .callout-spark .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--paper);
-    max-width: 24ch;
+    color: var(--forest);
+    margin-bottom: 16px;
+    font-weight: 500;
   }
 
-  .callout .callout-text .italic {
-    text-transform: none;
-    font-weight: 400;
+  .callout-spark .text {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--stone);
+    max-width: 28ch;
   }
 
-  /* PIPELINE STRIP */
-  .pipeline-strip {
+  .callout-spark .text .italic {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--forest);
+  }
+
+  /* PIPELINE TABLE */
+  .pipeline-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    border: 1px solid var(--rule-strong);
+    border: 1px solid var(--rule);
+    background: var(--paper);
     margin: 32px 0;
   }
 
-  .pipe-stage {
-    padding: 20px 16px;
+  .pipe-cell {
+    padding: 22px 18px;
     border-right: 1px solid var(--rule);
     border-bottom: 1px solid var(--rule);
-    background: var(--paper);
   }
 
-  .pipe-stage.star { background: var(--sage); color: var(--paper); }
+  .pipe-cell:nth-child(6n) { border-right: 0; }
+  .pipe-cell:nth-last-child(-n+6) { border-bottom: 0; }
 
-  .pipe-stage .pn {
-    font-family: var(--mono);
+  .pipe-cell.pick { background: var(--spark); }
+  .pipe-cell.forest { background: var(--forest); color: var(--paper); }
+
+  .pipe-cell .pn {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    letter-spacing: 0.22em;
-    color: var(--sage);
+    letter-spacing: 0.18em;
+    color: var(--forest);
     text-transform: uppercase;
     margin-bottom: 12px;
   }
 
-  .pipe-stage.star .pn { color: rgba(250,248,242,0.7); }
+  .pipe-cell.forest .pn { color: var(--spark); }
+  .pipe-cell.pick .pn { color: var(--forest); }
 
-  .pipe-stage .pname {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 12px;
-    line-height: 1.2;
-    text-transform: uppercase;
-    letter-spacing: -0.005em;
+  .pipe-cell .pname {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
   }
 
   /* RULES LIST */
@@ -512,45 +602,80 @@
 
   .rule-item {
     display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 24px;
-    padding: 28px 0;
+    grid-template-columns: 100px 1fr;
+    gap: 32px;
+    padding: 32px 0;
     border-bottom: 1px solid var(--rule);
     align-items: start;
   }
 
   .rule-item .rule-num {
-    font-family: var(--mono);
+    font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    letter-spacing: 0.28em;
-    color: var(--sage);
+    letter-spacing: 0.18em;
+    color: var(--forest);
     text-transform: uppercase;
   }
 
   .rule-item h5 {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 18px;
-    text-transform: uppercase;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.02em;
     margin-bottom: 8px;
-    letter-spacing: -0.005em;
   }
 
   .rule-item p {
-    font-size: 14px;
-    color: var(--ink-2);
+    font-size: 15px;
+    color: var(--stone-2);
     margin: 0;
+    max-width: 56ch;
+  }
+
+  /* AUTOMATIONS LIST */
+  .auto-list {
+    border-top: 1px solid var(--rule-light);
+    margin-top: 32px;
+  }
+
+  .auto-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule-light);
+    align-items: start;
+  }
+
+  .auto-row .auto-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--spark);
+    text-transform: uppercase;
+  }
+
+  .auto-row .auto-text {
+    font-size: 15px;
+    color: rgba(248,246,241,0.92);
+    line-height: 1.6;
+  }
+
+  .auto-row .auto-text strong {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    color: var(--paper);
   }
 
   /* GLOSSARY */
-  .glossary {
-    border-top: 1px solid var(--rule-strong);
-    margin-top: 32px;
+  .gloss-list {
+    border-top: 1px solid var(--rule);
+    margin-top: 24px;
   }
 
   .gloss {
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 220px 1fr;
     gap: 32px;
     padding: 24px 0;
     border-bottom: 1px solid var(--rule);
@@ -558,133 +683,128 @@
   }
 
   .gloss .term {
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.01em;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.015em;
   }
 
   .gloss .def {
     font-size: 14px;
-    color: var(--ink-2);
+    color: var(--stone-2);
     line-height: 1.7;
-  }
-
-  /* AUTOMATIONS LIST */
-  .auto-list {
-    border-top: 1px solid var(--rule-strong);
-    margin-top: 24px;
-  }
-
-  .auto-row {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 24px;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .auto-row .auto-tag {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    color: var(--sage);
-    text-transform: uppercase;
-  }
-
-  .auto-row .auto-text {
-    font-size: 14px;
-    color: var(--ink);
-  }
-
-  .auto-row .auto-text strong {
-    font-weight: 700;
-    font-family: var(--display);
+    max-width: 56ch;
   }
 
   /* FOOTER */
   footer {
+    background: var(--forest);
+    color: var(--paper);
     padding: 96px 0 64px;
-    background: var(--paper);
-    border-top: 1px solid var(--rule);
+    position: relative;
+    overflow: hidden;
   }
 
-  footer .foot-row {
+  .foot-content {
+    position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
-    padding-bottom: 32px;
-    border-bottom: 1px solid var(--rule-strong);
-    margin-bottom: 24px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--rule-light);
+    margin-bottom: 32px;
+    gap: 48px;
   }
 
-  footer h3 {
-    margin: 0;
-    font-size: 36px;
+  .foot-headline {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 56px;
+    letter-spacing: -0.035em;
+    line-height: 0.92;
+    color: var(--paper);
   }
 
-  footer h3 .italic { color: var(--sage); }
+  .foot-headline .italic {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--spark);
+  }
 
-  footer .foot-links {
+  .foot-links {
     display: flex;
-    gap: 24px;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
+    flex-direction: column;
+    gap: 8px;
+    text-align: right;
   }
 
-  footer .foot-links a {
+  .foot-links a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     text-decoration: none;
-    color: var(--ink-2);
+    color: rgba(248,246,241,0.65);
     transition: color 0.15s;
   }
 
-  footer .foot-links a:hover { color: var(--sage); }
+  .foot-links a:hover { color: var(--spark); }
 
-  footer .foot-receipt {
+  .foot-receipt {
+    position: relative;
     display: flex;
     justify-content: space-between;
-    font-family: var(--mono);
+    font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--ink-2);
+    color: rgba(248,246,241,0.55);
+    flex-wrap: wrap;
+    gap: 16px;
   }
 
   /* RESPONSIVE */
   @media (max-width: 900px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-    .pillars { grid-template-columns: 1fr; }
-    .pillar { border-right: 0; border-bottom: 1px solid var(--rule); }
-    .pillar:last-child { border-bottom: 0; }
-    .two-col { grid-template-columns: 1fr; }
-    .two-col .col { border-right: 0; border-bottom: 1px solid var(--rule); }
-    .flow-step { grid-template-columns: 60px 1fr; }
-    .flow-step .step-meta { grid-column: 1 / -1; text-align: left; }
-    .pipeline-strip { grid-template-columns: repeat(3, 1fr); }
-    .gloss { grid-template-columns: 1fr; gap: 8px; }
+    .wrap, .wrap-narrow { padding: 0 32px; }
+    .hero { padding: 64px 32px 48px; }
+    .pos-cards { grid-template-columns: 1fr; }
+    .step-cards { grid-template-columns: 1fr; }
+    .pipeline-grid { grid-template-columns: repeat(3, 1fr); }
+    .pipe-cell:nth-child(6n) { border-right: 1px solid var(--rule); }
+    .pipe-cell:nth-child(3n) { border-right: 0; }
+    .pipe-cell:nth-last-child(-n+6) { border-bottom: 1px solid var(--rule); }
+    .pipe-cell:nth-last-child(-n+3) { border-bottom: 0; }
     .toc-list { grid-template-columns: 1fr; }
     .toc-list li:nth-child(odd) { border-right: 0; }
+    .myth { grid-template-columns: 80px 1fr; }
+    .myth-meta { grid-column: 1 / -1; text-align: left; }
+    .gloss { grid-template-columns: 1fr; gap: 8px; }
+    .auto-row { grid-template-columns: 1fr; }
+    .foot-content { flex-direction: column; align-items: flex-start; }
+    .foot-links { flex-direction: row; flex-wrap: wrap; text-align: left; }
   }
 
   @media (max-width: 600px) {
-    .container, .wrap, .wrap-narrow { padding: 0 20px; }
-    .pipeline-strip { grid-template-columns: repeat(2, 1fr); }
-    .auto-row { grid-template-columns: 1fr; }
+    .wrap, .wrap-narrow, .topnav { padding-left: 20px; padding-right: 20px; }
+    .pipeline-grid { grid-template-columns: repeat(2, 1fr); }
+    .pipe-cell:nth-child(3n) { border-right: 1px solid var(--rule); }
+    .pipe-cell:nth-child(2n) { border-right: 0; }
+    .hero h1 { font-size: 56px; }
+    .foot-headline { font-size: 36px; }
   }
-
-  @media print { body { background: white; } section { page-break-inside: avoid; } }
 </style>
 </head>
 <body>
 
 <!-- TOPNAV -->
 <nav class="topnav">
-  <div class="brand">
-    <div class="mark">B</div>
-    <span>Builders Collective</span>
+  <div class="nav-left">
+    <div class="apex"></div>
+    <div class="wordmark">
+      <div class="b">BUILDERS</div>
+      <div class="c">Collective</div>
+    </div>
   </div>
   <div class="links">
     <a href="#what">01 · WHAT</a>
@@ -698,49 +818,90 @@
 
 <!-- HERO -->
 <header class="hero">
+  <div class="grid-bg"></div>
   <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <div class="kicker">CRM Handbook · v1.0 · 2026 · Founders Edition</div>
-        <h1>YOUR<br>NEW<br>SALES<br><span class="italic">machine,</span><br>EXPLAINED.</h1>
-      </div>
-      <div>
-        <div class="meta">
-          <div class="row"><span class="k">For</span><span class="v">David · Hasib · Abdullah · Masih</span></div>
-          <div class="row"><span class="k">CRM</span><span class="v">CloseBetter (whitelabel)</span></div>
-          <div class="row"><span class="k">Use</span><span class="v">Read once, refer back</span></div>
-          <div class="row"><span class="k">Time</span><span class="v">~12 minutes to read</span></div>
-          <div class="row"><span class="k">Domain</span><span class="v mono">builderscollective.au</span></div>
-          <div class="row"><span class="k">Type voice</span><span class="v">Plain English · no jargon</span></div>
-        </div>
-        <p class="hero-lead" style="margin-top: 32px;">A plain-English guide to how your CRM works, what it does for you, and how you actually use it day-to-day.</p>
-      </div>
-    </div>
-    <div class="receipt-row">
-      <span>BUILDERS COLLECTIVE</span>
-      <span class="dot">·</span>
-      <span>FIG. 00 · COVER PLATE</span>
-      <span class="dot">·</span>
-      <span>HANDBOOK V1.0</span>
-      <span class="dot">·</span>
+    <div class="hero-meta">
+      <span>CRM HANDBOOK · V1.0 · 2026</span>
+      <span>FOUNDERS EDITION</span>
       <span>↗ BUILDERSCOLLECTIVE.AU</span>
+    </div>
+    <div class="hero-content">
+      <div class="hero-apex"></div>
+      <h1>YOUR<br>NEW SALES<br><span class="italic">machine,</span><br>EXPLAINED.</h1>
+      <p class="hero-tagline">A plain-English guide to how your CRM works, what it does for you, and how you actually use it day-to-day.</p>
+    </div>
+    <div class="hero-spec-strip">
+      <span>FOR · DAVID HASIB ABDULLAH MASIH</span>
+      <span>CRM · CLOSEBETTER</span>
+      <span>READ TIME · ~12 MIN</span>
+      <span>USE · READ ONCE REFER BACK</span>
     </div>
   </div>
 </header>
 
+<!-- TL;DR -->
+<section style="background: var(--paper); padding: 64px 0; border-bottom: 1px solid var(--rule);">
+  <div class="wrap-narrow">
+    <div class="mono" style="margin-bottom: 16px;">★ THE 90-SECOND VERSION</div>
+    <h3 style="font-family:'Inter Tight';font-weight:700;font-size:32px;letter-spacing:-0.025em;margin:0 0 32px;line-height:1.1;">If you only read <span class="italic">five things</span>, read these.</h3>
+
+    <div style="border-top: 1px solid var(--rule-strong);">
+      <div style="display:grid;grid-template-columns:80px 1fr;gap:32px;padding:24px 0;border-bottom:1px solid var(--rule);align-items:start;">
+        <div class="mono" style="color:var(--forest);font-weight:700;">01</div>
+        <div>
+          <div style="font-family:'Inter Tight';font-weight:700;font-size:19px;letter-spacing:-0.015em;margin-bottom:6px;">Open CloseBetter every morning.</div>
+          <div style="color:var(--stone-2);font-size:15px;">It's your one source of truth. New leads, today's calls, follow-ups due. Two-minute check.</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:80px 1fr;gap:32px;padding:24px 0;border-bottom:1px solid var(--rule);align-items:start;">
+        <div class="mono" style="color:var(--forest);font-weight:700;">02</div>
+        <div>
+          <div style="font-family:'Inter Tight';font-weight:700;font-size:19px;letter-spacing:-0.015em;margin-bottom:6px;">Always update the pipeline stage after every call.</div>
+          <div style="color:var(--stone-2);font-size:15px;">The whole system runs off this. If you don't move the card, the wrong emails go out.</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:80px 1fr;gap:32px;padding:24px 0;border-bottom:1px solid var(--rule);align-items:start;">
+        <div class="mono" style="color:var(--forest);font-weight:700;">03</div>
+        <div>
+          <div style="font-family:'Inter Tight';font-weight:700;font-size:19px;letter-spacing:-0.015em;margin-bottom:6px;">★ PPA Signed = your commission locks in.</div>
+          <div style="color:var(--stone-2);font-size:15px;">Drag the card to PPA Signed the moment the deposit's paid to the builder. Triggers inspector workflow + commission tracking.</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:80px 1fr;gap:32px;padding:24px 0;border-bottom:1px solid var(--rule);align-items:start;">
+        <div class="mono" style="color:var(--forest);font-weight:700;">04</div>
+        <div>
+          <div style="font-family:'Inter Tight';font-weight:700;font-size:19px;letter-spacing:-0.015em;margin-bottom:6px;">When a lead replies, you've got 60 minutes.</div>
+          <div style="color:var(--stone-2);font-size:15px;">System pauses automation and pings you. Reply fast. That's where deals are won.</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:80px 1fr;gap:32px;padding:24px 0;align-items:start;">
+        <div class="mono" style="color:var(--forest);font-weight:700;">05</div>
+        <div>
+          <div style="font-family:'Inter Tight';font-weight:700;font-size:19px;letter-spacing:-0.015em;margin-bottom:6px;">Check the dashboard Monday morning.</div>
+          <div style="color:var(--stone-2);font-size:15px;">It tells you where leads are stalling and where spend is converting. Adjust. <a href="../dashboard/" style="color:var(--forest);font-weight:700;text-decoration:underline;">↗ Open dashboard</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;padding:20px 24px;background:var(--cream);font-family:'Inter Tight';font-weight:700;font-size:16px;letter-spacing:-0.01em;line-height:1.4;">
+      That's it. Five things. Do them and the system works for you. <span class="italic">The rest of this handbook is reference.</span>
+    </div>
+  </div>
+</section>
+
 <!-- TOC -->
 <section class="toc-section">
   <div class="wrap">
-    <div class="kicker">Contents · 08 Chapters</div>
+    <div class="mono">CONTENTS · 08 CHAPTERS</div>
     <ul class="toc-list">
-      <li><a href="#what"><span class="toc-num">01</span><span class="toc-title">What is the CRM</span></a></li>
-      <li><a href="#how"><span class="toc-num">02</span><span class="toc-title">How leads flow through it</span></a></li>
-      <li><a href="#daily"><span class="toc-num">03</span><span class="toc-title">Your day-to-day</span></a></li>
-      <li><a href="#pipeline"><span class="toc-num">04</span><span class="toc-title">The pipeline explained</span></a></li>
-      <li><a href="#automations"><span class="toc-num">05</span><span class="toc-title">What's automated</span></a></li>
-      <li><a href="#calls"><span class="toc-num">06</span><span class="toc-title">When you take a call</span></a></li>
-      <li><a href="#rules"><span class="toc-num">07</span><span class="toc-title">5 rules to live by</span></a></li>
-      <li><a href="#glossary"><span class="toc-num">08</span><span class="toc-title">Glossary</span></a></li>
+      <li><a href="#what"><span class="toc-num">01</span><span class="toc-title">What is the CRM</span><span class="toc-arrow">↗</span></a></li>
+      <li><a href="#how"><span class="toc-num">02</span><span class="toc-title">How leads flow through it</span><span class="toc-arrow">↗</span></a></li>
+      <li><a href="#daily"><span class="toc-num">03</span><span class="toc-title">Your day-to-day</span><span class="toc-arrow">↗</span></a></li>
+      <li><a href="#pipeline"><span class="toc-num">04</span><span class="toc-title">The pipeline explained</span><span class="toc-arrow">↗</span></a></li>
+      <li><a href="#automations"><span class="toc-num">05</span><span class="toc-title">What's automated</span><span class="toc-arrow">↗</span></a></li>
+      <li><a href="#calls"><span class="toc-num">06</span><span class="toc-title">When you take a call</span><span class="toc-arrow">↗</span></a></li>
+      <li><a href="#rules"><span class="toc-num">07</span><span class="toc-title">5 rules to live by</span><span class="toc-arrow">↗</span></a></li>
+      <li><a href="#glossary"><span class="toc-num">08</span><span class="toc-title">Glossary</span><span class="toc-arrow">↗</span></a></li>
     </ul>
   </div>
 </section>
@@ -748,93 +909,93 @@
 <!-- 01 -->
 <section class="chapter" id="what">
   <div class="wrap-narrow">
-    <div class="chapter-head">
-      <div class="chapter-num">01 · WHAT IS THE CRM</div>
-      <h2>YOUR BUSINESS<br>IN ONE <span class="italic">screen.</span></h2>
-    </div>
+    <div class="chapter-num">01 · WHAT IS THE CRM</div>
+    <h2>Your business<br>in <span class="italic">one screen.</span></h2>
 
     <p class="lead">Think of the CRM as the central nervous system of Builders Collective. Every lead, every call, every text — one place.</p>
 
-    <div class="callout">
-      <div class="callout-label">In one line</div>
-      <div class="callout-text">A CRM is how you keep track of <span class="italic">everyone</span> who's ever shown interest — from inquiry to handover.</div>
+    <div class="callout-spark">
+      <div class="label">★ In one line</div>
+      <div class="text">A CRM is how you keep track of <span class="italic">everyone</span> who's ever shown interest — from inquiry to handover.</div>
     </div>
 
     <p>You're set up on <strong>CloseBetter CRM</strong> — that's your branded version. Behind the scenes it's enterprise-grade software (the same kind big agencies use), but the interface is clean and made for you.</p>
 
-    <h3>WHAT IT <span class="italic">replaces.</span></h3>
+    <h3>What it <span class="italic">replaces.</span></h3>
 
-    <div class="two-col">
-      <div class="col">
-        <div class="kicker" style="margin-bottom:16px;">Before · 01</div>
-        <h4 style="font-family:var(--display);font-weight:900;font-size:20px;text-transform:uppercase;margin-bottom:12px;">Spreadsheets &amp; sticky notes</h4>
-        <p style="font-size:13px;color:var(--ink-2);">"Did Hasib follow up with that REA lead?" Phone calls to find out who's doing what. Leads going cold.</p>
+    <div class="pos-cards">
+      <div class="pos-card before">
+        <div>
+          <div class="pos-label">BEFORE · 01</div>
+          <div class="pos-headline">Spreadsheets &amp;<br>sticky notes</div>
+        </div>
+        <div class="pos-body">"Did Hasib follow up with that REA lead?" Phone calls to find out who's doing what. Leads going cold.</div>
       </div>
-      <div class="col sage-bg">
-        <div class="kicker" style="margin-bottom:16px;color:rgba(250,248,242,0.7);">After · 02</div>
-        <h4 style="font-family:var(--display);font-weight:900;font-size:20px;text-transform:uppercase;margin-bottom:12px;">One screen, one truth</h4>
-        <p style="font-size:13px;color:rgba(250,248,242,0.85);">Every lead, who owns it, where it is, what's been said, what's next. From your phone or laptop.</p>
+      <div class="pos-card after">
+        <div>
+          <div class="pos-label">AFTER · 02</div>
+          <div class="pos-headline">One screen,<br>one truth</div>
+        </div>
+        <div class="pos-body" style="color: rgba(248,246,241,0.85);">Every lead, who owns it, where it is, what's been said, what's next. From your phone or laptop.</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- 02 -->
-<section class="chapter" id="how">
+<section class="chapter cream" id="how">
   <div class="wrap-narrow">
-    <div class="chapter-head">
-      <div class="chapter-num">02 · HOW LEADS FLOW</div>
-      <h2>FIVE PLACES<br>LEADS COME <span class="italic">in.</span></h2>
-    </div>
+    <div class="chapter-num">02 · HOW LEADS FLOW</div>
+    <h2>Five places leads<br><span class="italic">come in.</span></h2>
 
     <p class="lead">Every lead that hits your business comes through one of five channels. The CRM catches all of them automatically.</p>
 
-    <div class="flow">
-      <div class="flow-step">
-        <div class="step-num">CHANNEL · 01</div>
-        <div class="step-content">
+    <div class="flow-list">
+      <div class="myth">
+        <div class="myth-num">CHANNEL · 01</div>
+        <div class="myth-content">
           <h5>REA · realestate.com.au</h5>
           <p>Someone inquires on one of your 50 listings. Lands in CRM with the suburb, package and price already attached.</p>
         </div>
-        <div class="step-meta">$2,200/mo · 50 listings</div>
+        <div class="myth-meta">$2,200/mo · 50 listings</div>
       </div>
-      <div class="flow-step">
-        <div class="step-num">CHANNEL · 02</div>
-        <div class="step-content">
+      <div class="myth">
+        <div class="myth-num">CHANNEL · 02</div>
+        <div class="myth-content">
           <h5>Meta Ads · FB + IG</h5>
           <p>From the ads Kristalyn runs. Lead form fill → CRM → instant follow-up.</p>
         </div>
-        <div class="step-meta">Run by Neo Media</div>
+        <div class="myth-meta">Run by Neo Media</div>
       </div>
-      <div class="flow-step">
-        <div class="step-num">CHANNEL · 03</div>
-        <div class="step-content">
+      <div class="myth">
+        <div class="myth-num">CHANNEL · 03</div>
+        <div class="myth-content">
           <h5>Google Ads</h5>
           <p>High-intent searches like "home builders Perth". They're already comparison shopping.</p>
         </div>
-        <div class="step-meta">High intent</div>
+        <div class="myth-meta">High intent</div>
       </div>
-      <div class="flow-step">
-        <div class="step-num">CHANNEL · 04</div>
-        <div class="step-content">
+      <div class="myth">
+        <div class="myth-num">CHANNEL · 04</div>
+        <div class="myth-content">
           <h5>Website + Live Chat</h5>
           <p>Forms on builderscollective.au, plus the chat widget. Warmest leads — they're already on your site.</p>
         </div>
-        <div class="step-meta">Warmest signal</div>
+        <div class="myth-meta">Warmest signal</div>
       </div>
-      <div class="flow-step">
-        <div class="step-num">CHANNEL · 05</div>
-        <div class="step-content">
+      <div class="myth">
+        <div class="myth-num">CHANNEL · 05</div>
+        <div class="myth-content">
           <h5>Phone · incl. AI after-hours</h5>
           <p>Inbound calls. After 8pm the AI voice agent takes the call, captures their details, and books them in.</p>
         </div>
-        <div class="step-meta">24/7 coverage</div>
+        <div class="myth-meta">24/7 coverage</div>
       </div>
     </div>
 
-    <div class="callout">
-      <div class="callout-label">Important</div>
-      <div class="callout-text">No matter the channel, every lead lands in <span class="italic">the same</span> CRM. The system tags each one (e.g. source:rea) so you know which dollar earned it.</div>
+    <div class="callout-spark">
+      <div class="label">★ Important</div>
+      <div class="text">No matter the channel, every lead lands in <span class="italic">the same</span> CRM. The system tags each one so you know which dollar earned it.</div>
     </div>
   </div>
 </section>
@@ -842,28 +1003,32 @@
 <!-- 03 -->
 <section class="chapter" id="daily">
   <div class="wrap-narrow">
-    <div class="chapter-head">
-      <div class="chapter-num">03 · YOUR DAY-TO-DAY</div>
-      <h2>WHAT YOU'LL<br><span class="italic">actually</span> DO.</h2>
-    </div>
+    <div class="chapter-num">03 · YOUR DAY-TO-DAY</div>
+    <h2>What you'll <span class="italic">actually</span> do.</h2>
 
     <p class="lead">Most of the work is automated. Your job is straightforward.</p>
 
-    <div class="pillars">
-      <div class="pillar">
-        <div class="num">01 · MORNING</div>
-        <h4>Check the app</h4>
-        <p>Open CloseBetter on your phone. See new leads, today's calls, follow-ups due. Two minutes, max.</p>
+    <div class="step-cards">
+      <div class="step-card">
+        <div>
+          <div class="step-num">MORNING · 01</div>
+          <div class="step-title">Check the app</div>
+        </div>
+        <div class="step-body">Open CloseBetter on your phone. See new leads, today's calls, follow-ups due. Two minutes, max.</div>
       </div>
-      <div class="pillar">
-        <div class="num">02 · CALLS</div>
-        <h4>Take your calls</h4>
-        <p>Leads book themselves into your calendar. You just show up. The CRM has pre-sent the context.</p>
+      <div class="step-card active">
+        <div>
+          <div class="step-num">CALLS · 02</div>
+          <div class="step-title">Take your calls</div>
+        </div>
+        <div class="step-body">Leads book themselves into your calendar. You just show up. The CRM has pre-sent the context.</div>
       </div>
-      <div class="pillar">
-        <div class="num">03 · UPDATE</div>
-        <h4>Move the card</h4>
-        <p>After each call, drag the deal to the next stage. Add a couple of notes. Next email goes auto.</p>
+      <div class="step-card">
+        <div>
+          <div class="step-num">UPDATE · 03</div>
+          <div class="step-title">Move the card</div>
+        </div>
+        <div class="step-body">After each call, drag the deal to the next stage. Add a couple of notes. Next email goes auto.</div>
       </div>
     </div>
 
@@ -872,79 +1037,76 @@
 </section>
 
 <!-- 04 -->
-<section class="chapter" id="pipeline">
+<section class="chapter cream" id="pipeline">
   <div class="wrap-narrow">
-    <div class="chapter-head">
-      <div class="chapter-num">04 · THE PIPELINE EXPLAINED</div>
-      <h2>FROM INQUIRY<br>TO <span class="italic">handover.</span></h2>
-    </div>
+    <div class="chapter-num">04 · THE PIPELINE EXPLAINED</div>
+    <h2>From inquiry to<br><span class="italic">handover.</span></h2>
 
     <p class="lead">Every lead moves through these stages. Drag the card across as things progress. Each stage triggers different automation.</p>
 
-    <div class="pipeline-strip">
-      <div class="pipe-stage"><div class="pn">01</div><div class="pname">New Lead</div></div>
-      <div class="pipe-stage"><div class="pn">02</div><div class="pname">Nurturing</div></div>
-      <div class="pipe-stage"><div class="pn">03</div><div class="pname">Discovery Booked</div></div>
-      <div class="pipe-stage"><div class="pn">04</div><div class="pname">Discovery Done</div></div>
-      <div class="pipe-stage"><div class="pn">05</div><div class="pname">Looking for Land</div></div>
-      <div class="pipe-stage"><div class="pn">06</div><div class="pname">Block Confirmed</div></div>
-      <div class="pipe-stage"><div class="pn">07</div><div class="pname">Shortlist Sent</div></div>
-      <div class="pipe-stage"><div class="pn">08</div><div class="pname">Quote Review</div></div>
-      <div class="pipe-stage star"><div class="pn">09</div><div class="pname">PPA Signed ★</div></div>
-      <div class="pipe-stage"><div class="pn">10</div><div class="pname">Plans Finalised</div></div>
-      <div class="pipe-stage"><div class="pn">11</div><div class="pname">Finance Approved</div></div>
-      <div class="pipe-stage"><div class="pn">12</div><div class="pname">Contract Signed</div></div>
-      <div class="pipe-stage"><div class="pn">13</div><div class="pname">Build Started</div></div>
-      <div class="pipe-stage"><div class="pn">14</div><div class="pname">In Progress</div></div>
-      <div class="pipe-stage star"><div class="pn">15</div><div class="pname">Handover (WON) ★</div></div>
-      <div class="pipe-stage"><div class="pn">16</div><div class="pname">Referral Loop</div></div>
-      <div class="pipe-stage"><div class="pn">17</div><div class="pname">Not Yet Ready</div></div>
-      <div class="pipe-stage"><div class="pn">18</div><div class="pname">Lost</div></div>
+    <div class="pipeline-grid">
+      <div class="pipe-cell"><div class="pn">01</div><div class="pname">New Lead</div></div>
+      <div class="pipe-cell"><div class="pn">02</div><div class="pname">Nurturing</div></div>
+      <div class="pipe-cell"><div class="pn">03</div><div class="pname">Discovery Booked</div></div>
+      <div class="pipe-cell"><div class="pn">04</div><div class="pname">Discovery Done</div></div>
+      <div class="pipe-cell"><div class="pn">05</div><div class="pname">Looking for Land</div></div>
+      <div class="pipe-cell"><div class="pn">06</div><div class="pname">Block Confirmed</div></div>
+      <div class="pipe-cell"><div class="pn">07</div><div class="pname">Shortlist Sent</div></div>
+      <div class="pipe-cell"><div class="pn">08</div><div class="pname">Quote Review</div></div>
+      <div class="pipe-cell pick"><div class="pn">09 ★</div><div class="pname">PPA Signed</div></div>
+      <div class="pipe-cell"><div class="pn">10</div><div class="pname">Plans Finalised</div></div>
+      <div class="pipe-cell"><div class="pn">11</div><div class="pname">Finance Approved</div></div>
+      <div class="pipe-cell"><div class="pn">12</div><div class="pname">Contract Signed</div></div>
+      <div class="pipe-cell"><div class="pn">13</div><div class="pname">Build Started</div></div>
+      <div class="pipe-cell"><div class="pn">14</div><div class="pname">In Progress</div></div>
+      <div class="pipe-cell forest"><div class="pn">15 ★</div><div class="pname">Handover · WON</div></div>
+      <div class="pipe-cell"><div class="pn">16</div><div class="pname">Referral Loop</div></div>
+      <div class="pipe-cell"><div class="pn">17</div><div class="pname">Not Yet Ready</div></div>
+      <div class="pipe-cell"><div class="pn">18</div><div class="pname">Lost</div></div>
     </div>
 
-    <div class="callout">
-      <div class="callout-label">The Big Two</div>
-      <div class="callout-text">PPA Signed = commission locked.<br>Handover = deal <span class="italic">delivered.</span></div>
+    <div class="callout-spark">
+      <div class="label">★ The big two</div>
+      <div class="text">PPA Signed = commission locked.<br>Handover = deal <span class="italic">delivered.</span></div>
     </div>
 
-    <h3>STAGES YOU'LL <span class="italic">touch most.</span></h3>
+    <h3>Stages you'll <span class="italic">touch most.</span></h3>
 
-    <div class="flow">
-      <div class="flow-step">
-        <div class="step-num">MOVE · A</div>
-        <div class="step-content">
+    <div class="flow-list">
+      <div class="myth">
+        <div class="myth-num">MOVE · A</div>
+        <div class="myth-content">
           <h5>Discovery Done → Block / Land</h5>
           <p>After your first call, decide if they have a block already or need help finding one. Drag accordingly.</p>
         </div>
-        <div class="step-meta">After call</div>
+        <div class="myth-meta">After call</div>
       </div>
-      <div class="flow-step">
-        <div class="step-num">MOVE · B</div>
-        <div class="step-content">
+      <div class="myth">
+        <div class="myth-num">MOVE · B</div>
+        <div class="myth-content">
           <h5>Quote Review → PPA Signed</h5>
           <p>The conversion point. When they sign the PPA, drag the card. Automation kicks off inspector workflow + commission tracking.</p>
         </div>
-        <div class="step-meta">★ Critical</div>
+        <div class="myth-meta">★ Critical</div>
       </div>
-      <div class="flow-step">
-        <div class="step-num">MOVE · C</div>
-        <div class="step-content">
+      <div class="myth">
+        <div class="myth-num">MOVE · C</div>
+        <div class="myth-content">
           <h5>Handover → Referral Loop</h5>
           <p>Deal won. System auto-asks for a Google review and referral 7 days later. You don't lift a finger.</p>
         </div>
-        <div class="step-meta">Automated</div>
+        <div class="myth-meta">Automated</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 05 -->
-<section class="chapter" id="automations">
-  <div class="wrap-narrow">
-    <div class="chapter-head">
-      <div class="chapter-num">05 · WHAT'S AUTOMATED</div>
-      <h2>THE SYSTEM<br>DOES <span class="italic">most</span><br>OF THE WORK.</h2>
-    </div>
+<!-- 05 (forest) -->
+<section class="chapter forest" id="automations">
+  <div class="grid-bg"></div>
+  <div class="wrap-narrow" style="position: relative;">
+    <div class="chapter-num">05 · WHAT'S AUTOMATED</div>
+    <h2>The system does<br><span class="italic">most</span> of the work.</h2>
 
     <p class="lead">Here's everything that happens without you lifting a finger.</p>
 
@@ -959,9 +1121,9 @@
       <div class="auto-row"><div class="auto-tag">↗ 08 · REVIEWS</div><div class="auto-text"><strong>Review + referral asks</strong> trigger 7 days post-handover, then 30 days.</div></div>
     </div>
 
-    <div class="callout">
-      <div class="callout-label">What you still own</div>
-      <div class="callout-text">Take the calls. Read the contracts. Send the 15-min post-call recap. Be present <span class="italic">when it matters.</span></div>
+    <div class="callout-spark" style="margin-top: 56px;">
+      <div class="label">★ What you still own</div>
+      <div class="text">Take the calls. Read the contracts. Send the 15-min post-call recap. Be present <span class="italic">when it matters.</span></div>
     </div>
   </div>
 </section>
@@ -969,57 +1131,53 @@
 <!-- 06 -->
 <section class="chapter" id="calls">
   <div class="wrap-narrow">
-    <div class="chapter-head">
-      <div class="chapter-num">06 · WHEN YOU TAKE A CALL</div>
-      <h2>THE 4-STEP<br><span class="italic">call</span> PROCESS.</h2>
-    </div>
+    <div class="chapter-num">06 · WHEN YOU TAKE A CALL</div>
+    <h2>The 4-step<br><span class="italic">call</span> process.</h2>
 
     <p class="lead">Same simple process every time. Don't overthink it.</p>
 
-    <div class="flow">
-      <div class="flow-step">
-        <div class="step-num">STEP · 01</div>
-        <div class="step-content">
+    <div class="flow-list">
+      <div class="myth">
+        <div class="myth-num">STEP · 01</div>
+        <div class="myth-content">
           <h5>Before · 2 minutes</h5>
           <p>Open the contact card in CloseBetter. Read the notes (where they came from, form fills, prior messages). Be ready.</p>
         </div>
-        <div class="step-meta">Prep</div>
+        <div class="myth-meta">Prep</div>
       </div>
-      <div class="flow-step">
-        <div class="step-num">STEP · 02</div>
-        <div class="step-content">
+      <div class="myth">
+        <div class="myth-num">STEP · 02</div>
+        <div class="myth-content">
           <h5>During · 15 minutes</h5>
           <p>Listen first. Ask about block, budget, timeline, finance. Mention the vetting angle. Take quick notes in "Notes From Call".</p>
         </div>
-        <div class="step-meta">The call</div>
+        <div class="myth-meta">The call</div>
       </div>
-      <div class="flow-step">
-        <div class="step-num">STEP · 03</div>
-        <div class="step-content">
+      <div class="myth">
+        <div class="myth-num">STEP · 03</div>
+        <div class="myth-content">
           <h5>After · 5 minutes</h5>
           <p>Tag them: Audience Type + Timeline. Move the card. Trigger the post-call recap (fill 3 bullets, system sends).</p>
         </div>
-        <div class="step-meta">Logging</div>
+        <div class="myth-meta">Logging</div>
       </div>
-      <div class="flow-step">
-        <div class="step-num">STEP · 04</div>
-        <div class="step-content">
+      <div class="myth">
+        <div class="myth-num">STEP · 04</div>
+        <div class="myth-content">
           <h5>Within 24 hours</h5>
           <p>If qualified, send the builder shortlist. If not yet ready, the system will check back in for you. Done.</p>
         </div>
-        <div class="step-meta">Follow-through</div>
+        <div class="myth-meta">Follow-through</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- 07 -->
-<section class="chapter" id="rules">
+<section class="chapter cream" id="rules">
   <div class="wrap-narrow">
-    <div class="chapter-head">
-      <div class="chapter-num">07 · 5 RULES TO LIVE BY</div>
-      <h2>STICK TO THESE<br><span class="italic">and</span> IT WORKS.</h2>
-    </div>
+    <div class="chapter-num">07 · 5 RULES TO LIVE BY</div>
+    <h2>Stick to these,<br><span class="italic">and</span> it works.</h2>
 
     <p class="lead">Most CRMs fail because the team stops using them. Five rules to keep that from happening.</p>
 
@@ -1056,7 +1214,7 @@
         <div class="rule-num">RULE · 05</div>
         <div>
           <h5>Check the dashboard weekly</h5>
-          <p>Every Monday, look at where leads are stalling and where spend is converting. Adjust. <a href="../dashboard/" style="color:var(--sage);font-weight:700;">↗ Open dashboard</a></p>
+          <p>Every Monday, look at where leads are stalling and where spend is converting. Adjust. <a href="../dashboard/" style="color:var(--forest);font-weight:700;">↗ Open dashboard</a></p>
         </div>
       </div>
     </div>
@@ -1066,12 +1224,10 @@
 <!-- 08 -->
 <section class="chapter" id="glossary">
   <div class="wrap-narrow">
-    <div class="chapter-head">
-      <div class="chapter-num">08 · GLOSSARY</div>
-      <h2>THE WORDS<br>YOU'LL <span class="italic">hear.</span></h2>
-    </div>
+    <div class="chapter-num">08 · GLOSSARY</div>
+    <h2>The words<br>you'll <span class="italic">hear.</span></h2>
 
-    <div class="glossary">
+    <div class="gloss-list">
       <div class="gloss"><div class="term">CRM</div><div class="def">Customer Relationship Management — the software that tracks every lead, every conversation, every deal. Yours is CloseBetter.</div></div>
       <div class="gloss"><div class="term">Pipeline</div><div class="def">The visual board showing every deal and what stage it's in. Drag cards across as deals progress.</div></div>
       <div class="gloss"><div class="term">Lead source</div><div class="def">Where a lead came from (REA / Meta / Google / Website / Phone). Auto-tagged by the system.</div></div>
@@ -1090,19 +1246,21 @@
 
 <!-- FOOTER -->
 <footer>
+  <div class="grid-bg"></div>
   <div class="wrap">
-    <div class="foot-row">
-      <h3>YOU'RE <span class="italic">all set.</span></h3>
+    <div class="foot-content">
+      <div class="foot-headline">You're<br><span class="italic">all set.</span></div>
       <div class="foot-links">
         <a href="../dashboard/">↗ DASHBOARD</a>
         <a href="../">↗ PROPOSAL</a>
+        <a href="https://builderscollective.au">↗ BUILDERSCOLLECTIVE.AU</a>
       </div>
     </div>
     <div class="foot-receipt">
-      <span>BUILDERS COLLECTIVE × RANKONMAPS</span>
+      <span>BUILDERS COLLECTIVE × CLOSEBETTER</span>
       <span>FIG. END · HANDBOOK V1.0</span>
       <span>EDITION 2026</span>
-      <span>↗ RANKONMAPS.IO</span>
+      <span>BUILT BY RANKONMAPS</span>
     </div>
   </div>
 </footer>
