@@ -6,828 +6,1103 @@
 <title>Builders Collective — CRM Handbook</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;900&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --bg: #fafaf9;
-    --bg-card: #ffffff;
-    --ink: #0a0a0a;
-    --ink-soft: #1a1a1a;
-    --muted: #6b7280;
-    --muted-soft: #9ca3af;
-    --line: #e7e5e4;
-    --line-soft: #f3f4f6;
-    --green: #22c55e;
-    --green-deep: #16a34a;
-    --green-soft: #dcfce7;
-    --green-wash: #f0fdf4;
+    --page:        #F1EFE9;
+    --paper:       #FAF8F2;
+    --tone:        #D9D4C5;
+    --sage:        #1F4D3C;
+    --sage-soft:   #3A6E5A;
+    --ink:         #1A1F1B;
+    --ink-2:       #5C6A5F;
+    --rule:        rgba(26,31,27,0.10);
+    --rule-strong: rgba(26,31,27,0.20);
+    --display: "Inter Tight", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --serif:   "Fraunces", Georgia, "Times New Roman", serif;
+    --mono:    "JetBrains Mono", ui-monospace, Menlo, monospace;
   }
 
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--bg);
+    font-family: var(--display);
+    background: var(--page);
     color: var(--ink);
-    line-height: 1.6;
+    line-height: 1.55;
     -webkit-font-smoothing: antialiased;
+    font-weight: 400;
   }
 
-  .container {
-    max-width: 880px;
+  a { color: inherit; }
+
+  .wrap, .container {
+    max-width: 1180px;
     margin: 0 auto;
     padding: 0 32px;
   }
 
-  /* HERO */
-  .hero {
-    padding: 80px 0 60px;
-    text-align: center;
-    border-bottom: 1px solid var(--line);
-    background: var(--bg-card);
+  .wrap-narrow { max-width: 920px; margin: 0 auto; padding: 0 32px; }
+
+  .kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    font-weight: 400;
   }
 
-  .brand-logo {
-    width: 64px;
-    height: 64px;
-    background: var(--ink);
-    border-radius: 16px;
-    display: inline-flex;
+  .sage-text { color: var(--sage); }
+
+  .italic { font-family: var(--serif); font-style: italic; font-weight: 400; }
+
+  /* TOPNAV */
+  .topnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--page);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .topnav .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .topnav .mark {
+    width: 28px;
+    height: 28px;
+    background: var(--sage);
+    color: var(--paper);
+    display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-family: 'Instrument Serif', serif;
-    font-size: 36px;
-    margin-bottom: 24px;
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 16px;
+    border-radius: 2px;
   }
 
-  .hero-label {
-    font-size: 12px;
-    color: var(--green-deep);
-    letter-spacing: 0.2em;
+  .topnav .links {
+    display: flex;
+    gap: 4px;
+  }
+
+  .topnav .links a {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 16px;
+    text-decoration: none;
+    padding: 8px 12px;
+    color: var(--ink-2);
+    transition: all 0.15s;
   }
 
-  h1 {
-    font-family: 'Instrument Serif', serif;
-    font-weight: 400;
-    font-size: clamp(48px, 7vw, 84px);
-    line-height: 1.02;
-    letter-spacing: -0.025em;
-    margin-bottom: 24px;
+  .topnav .links a:hover { background: var(--paper); color: var(--ink); }
+
+  /* HERO */
+  .hero {
+    padding: 88px 0 64px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--page);
   }
 
-  h1 em { color: var(--green-deep); font-style: italic; }
-
-  .hero-sub {
-    font-size: 19px;
-    color: var(--muted);
-    max-width: 560px;
-    margin: 0 auto;
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 64px;
+    align-items: end;
   }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: clamp(56px, 9vw, 120px);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin-top: 24px;
+  }
+
+  .hero h1 .italic {
+    color: var(--sage);
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-lead {
+    font-size: 15px;
+    color: var(--ink-2);
+    max-width: 38ch;
+    line-height: 1.7;
+  }
+
+  .meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 12px;
+    border-top: 1px solid var(--rule-strong);
+  }
+
+  .meta .row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 12px;
+  }
+
+  .meta .row .k {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--ink-2);
+    text-transform: uppercase;
+  }
+
+  .meta .row .v { color: var(--ink); }
+  .meta .row .v.mono { font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; }
+
+  /* RECEIPT ROW */
+  .receipt-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-top: 32px;
+    margin-top: 56px;
+    border-top: 1px solid var(--rule-strong);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+
+  .receipt-row .dot { color: var(--rule-strong); }
 
   /* TOC */
-  .toc {
-    padding: 32px 0;
-    border-bottom: 1px solid var(--line);
-    background: var(--bg);
+  .toc-section {
+    padding: 48px 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
   }
 
   .toc-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
     list-style: none;
-    counter-reset: chapter;
-  }
-
-  .toc-list li {
-    counter-increment: chapter;
-  }
-
-  .toc-list a {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 12px 16px;
-    color: var(--ink);
-    text-decoration: none;
-    border-radius: 10px;
-    transition: all 0.15s;
-    font-size: 15px;
-  }
-
-  .toc-list a:hover {
-    background: var(--bg-card);
-    transform: translateX(4px);
-  }
-
-  .toc-list a::before {
-    content: counter(chapter, decimal-leading-zero);
-    font-family: 'Instrument Serif', serif;
-    font-size: 22px;
-    color: var(--green-deep);
-    line-height: 1;
-  }
-
-  /* SECTIONS */
-  section {
-    padding: 80px 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .section-label {
-    font-size: 11px;
-    color: var(--green-deep);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 16px;
-  }
-
-  h2 {
-    font-family: 'Instrument Serif', serif;
-    font-weight: 400;
-    font-size: clamp(36px, 5vw, 52px);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    margin-bottom: 32px;
-  }
-
-  h2 em { color: var(--green-deep); font-style: italic; }
-
-  h3 {
-    font-family: 'Instrument Serif', serif;
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 1.2;
-    margin: 40px 0 16px;
-  }
-
-  p {
-    font-size: 17px;
-    color: var(--ink-soft);
-    margin-bottom: 16px;
-    max-width: 720px;
-  }
-
-  p.lead {
-    font-family: 'Instrument Serif', serif;
-    font-size: 24px;
-    color: var(--ink);
-    line-height: 1.4;
-    margin-bottom: 32px;
-  }
-
-  /* CARDS */
-  .card {
-    background: var(--bg-card);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 32px;
-    margin-bottom: 16px;
-  }
-
-  .card-num {
-    font-family: 'Instrument Serif', serif;
-    font-size: 36px;
-    color: var(--green-deep);
-    line-height: 1;
-    margin-bottom: 12px;
-  }
-
-  .card-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-
-  /* GRID */
-  .grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin: 24px 0;
-  }
-
-  /* QUICK BOX */
-  .tldr {
-    background: var(--green-wash);
-    border: 1px solid var(--green-soft);
-    border-radius: 16px;
-    padding: 28px;
-    margin: 24px 0;
-  }
-
-  .tldr-label {
-    font-size: 11px;
-    color: var(--green-deep);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: 12px;
-  }
-
-  .tldr-text {
-    font-family: 'Instrument Serif', serif;
-    font-size: 22px;
-    line-height: 1.4;
-    color: var(--ink);
-  }
-
-  /* WHAT IS BOX */
-  .what-box {
-    padding: 24px 28px;
-    background: var(--ink);
-    color: white;
-    border-radius: 12px;
-    margin: 16px 0;
-  }
-
-  .what-box-label {
-    font-size: 11px;
-    color: var(--green);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-
-  .what-box-text { font-size: 15px; line-height: 1.6; }
-
-  /* FLOW DIAGRAM */
-  .flow {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 8px;
-    margin: 24px 0;
-  }
-
-  .flow-step {
-    padding: 20px 24px;
-    background: var(--bg-card);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    display: grid;
-    grid-template-columns: 40px 1fr;
-    gap: 16px;
-    align-items: start;
-  }
-
-  .flow-num {
-    width: 32px;
-    height: 32px;
-    background: var(--green-deep);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 14px;
-  }
-
-  .flow-content .flow-title {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-
-  .flow-content .flow-desc {
-    font-size: 14px;
-    color: var(--muted);
-  }
-
-  /* RULES */
-  .rule {
-    display: flex;
-    gap: 16px;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .rule:last-child { border-bottom: none; }
-
-  .rule-icon {
-    font-family: 'Instrument Serif', serif;
-    font-size: 28px;
-    color: var(--green-deep);
-    flex-shrink: 0;
-    line-height: 1;
-  }
-
-  .rule-text {
-    font-size: 15px;
-    color: var(--ink-soft);
-  }
-
-  .rule-text strong { color: var(--ink); }
-
-  /* PIPELINE */
-  .pipeline-strip {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 8px;
-    margin: 24px 0;
-  }
-
-  .pipe-stage {
-    padding: 16px 12px;
-    background: var(--bg-card);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    text-align: center;
-    font-size: 11px;
-  }
-
-  .pipe-stage.star { background: var(--green-wash); border-color: var(--green-soft); }
-
-  .pipe-stage-num {
-    font-family: 'Instrument Serif', serif;
-    font-size: 24px;
-    color: var(--green-deep);
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-
-  .pipe-stage-name {
-    font-size: 11px;
-    color: var(--ink);
-    font-weight: 600;
-    line-height: 1.3;
-  }
-
-  /* GLOSSARY */
-  .gloss {
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    gap: 24px;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .gloss-term {
-    font-family: 'Instrument Serif', serif;
-    font-size: 20px;
-    color: var(--ink);
-  }
-
-  .gloss-def {
-    font-size: 14px;
-    color: var(--ink-soft);
-    line-height: 1.6;
-  }
-
-  /* CTA / Footer */
-  footer {
-    padding: 80px 0;
-    text-align: center;
-    background: var(--bg-card);
-  }
-
-  .sig {
-    font-family: 'Instrument Serif', serif;
-    font-size: 28px;
-    margin-bottom: 8px;
-  }
-
-  .footnote {
-    font-size: 13px;
-    color: var(--muted);
+    border-top: 1px solid var(--rule);
     margin-top: 24px;
   }
 
-  /* RESPONSIVE */
-  @media (max-width: 700px) {
-    .container { padding: 0 20px; }
-    .toc-list, .grid-2 { grid-template-columns: 1fr; }
-    .pipeline-strip { grid-template-columns: repeat(3, 1fr); }
-    .gloss { grid-template-columns: 1fr; gap: 8px; }
-    section { padding: 56px 0; }
-    .hero { padding: 56px 0 40px; }
+  .toc-list li {
+    border-bottom: 1px solid var(--rule);
   }
 
-  @media print {
-    body { background: white; }
-    section { page-break-inside: avoid; }
+  .toc-list li:nth-child(odd) { border-right: 1px solid var(--rule); }
+
+  .toc-list a {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    text-decoration: none;
+    transition: background 0.15s;
   }
+
+  .toc-list a:hover { background: var(--page); }
+
+  .toc-list .toc-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--sage);
+    text-transform: uppercase;
+  }
+
+  .toc-list .toc-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+
+  /* SECTIONS */
+  section.chapter {
+    padding: 96px 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .chapter-head {
+    margin-bottom: 56px;
+  }
+
+  .chapter-num {
+    display: inline-block;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--rule-strong);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    color: var(--sage);
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 0.95;
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+    max-width: 18ch;
+  }
+
+  h2 .italic {
+    color: var(--sage);
+    text-transform: none;
+    letter-spacing: -0.005em;
+  }
+
+  h3 {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+    margin: 56px 0 24px;
+  }
+
+  h3 .italic { color: var(--sage); text-transform: none; }
+
+  p {
+    font-size: 15px;
+    color: var(--ink-2);
+    margin-bottom: 16px;
+    max-width: 64ch;
+    line-height: 1.7;
+  }
+
+  p.lead {
+    font-family: var(--display);
+    font-size: 22px;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 40px;
+    max-width: 30ch;
+    font-weight: 400;
+  }
+
+  /* PILLAR GRID */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule-strong);
+    margin: 48px 0;
+  }
+
+  .pillar {
+    padding: 40px 32px;
+    border-right: 1px solid var(--rule);
+  }
+
+  .pillar:last-child { border-right: 0; }
+
+  .pillar .num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: var(--sage);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .pillar h4 {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .pillar p {
+    font-size: 13px;
+    color: var(--ink-2);
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  /* TWO-COL CARDS */
+  .two-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid var(--rule-strong);
+    margin: 32px 0;
+  }
+
+  .two-col .col {
+    padding: 32px;
+    border-right: 1px solid var(--rule);
+  }
+
+  .two-col .col:last-child { border-right: 0; }
+
+  .two-col .col.sage-bg {
+    background: var(--sage);
+    color: var(--paper);
+    border-right: 0;
+  }
+
+  .two-col .col.sage-bg .num,
+  .two-col .col.sage-bg h4,
+  .two-col .col.sage-bg p { color: var(--paper); }
+
+  .two-col .col.sage-bg .num { color: rgba(250,248,242,0.7); }
+
+  /* FLOW STEPS */
+  .flow {
+    border-top: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule-strong);
+    margin: 32px 0;
+  }
+
+  .flow-step {
+    display: grid;
+    grid-template-columns: 80px 1fr 200px;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+
+  .flow-step:last-child { border-bottom: 0; }
+
+  .flow-step .step-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: var(--sage);
+    text-transform: uppercase;
+  }
+
+  .flow-step .step-content h5 {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: -0.005em;
+  }
+
+  .flow-step .step-content p {
+    font-size: 14px;
+    color: var(--ink-2);
+    margin: 0;
+  }
+
+  .flow-step .step-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--ink-2);
+    text-transform: uppercase;
+    text-align: right;
+  }
+
+  /* CALLOUT BOX (sage) */
+  .callout {
+    background: var(--sage);
+    color: var(--paper);
+    padding: 40px 48px;
+    margin: 40px 0;
+    border-radius: 0;
+  }
+
+  .callout .callout-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(250,248,242,0.7);
+    margin-bottom: 16px;
+  }
+
+  .callout .callout-text {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: var(--paper);
+    max-width: 24ch;
+  }
+
+  .callout .callout-text .italic {
+    text-transform: none;
+    font-weight: 400;
+  }
+
+  /* PIPELINE STRIP */
+  .pipeline-strip {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border: 1px solid var(--rule-strong);
+    margin: 32px 0;
+  }
+
+  .pipe-stage {
+    padding: 20px 16px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+  }
+
+  .pipe-stage.star { background: var(--sage); color: var(--paper); }
+
+  .pipe-stage .pn {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--sage);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .pipe-stage.star .pn { color: rgba(250,248,242,0.7); }
+
+  .pipe-stage .pname {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+  }
+
+  /* RULES LIST */
+  .rules-list {
+    border-top: 1px solid var(--rule-strong);
+    margin-top: 32px;
+  }
+
+  .rule-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+
+  .rule-item .rule-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: var(--sage);
+    text-transform: uppercase;
+  }
+
+  .rule-item h5 {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: -0.005em;
+  }
+
+  .rule-item p {
+    font-size: 14px;
+    color: var(--ink-2);
+    margin: 0;
+  }
+
+  /* GLOSSARY */
+  .glossary {
+    border-top: 1px solid var(--rule-strong);
+    margin-top: 32px;
+  }
+
+  .gloss {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 32px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+
+  .gloss .term {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+  }
+
+  .gloss .def {
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.7;
+  }
+
+  /* AUTOMATIONS LIST */
+  .auto-list {
+    border-top: 1px solid var(--rule-strong);
+    margin-top: 24px;
+  }
+
+  .auto-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .auto-row .auto-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--sage);
+    text-transform: uppercase;
+  }
+
+  .auto-row .auto-text {
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .auto-row .auto-text strong {
+    font-weight: 700;
+    font-family: var(--display);
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 96px 0 64px;
+    background: var(--paper);
+    border-top: 1px solid var(--rule);
+  }
+
+  footer .foot-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--rule-strong);
+    margin-bottom: 24px;
+  }
+
+  footer h3 {
+    margin: 0;
+    font-size: 36px;
+  }
+
+  footer h3 .italic { color: var(--sage); }
+
+  footer .foot-links {
+    display: flex;
+    gap: 24px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  footer .foot-links a {
+    text-decoration: none;
+    color: var(--ink-2);
+    transition: color 0.15s;
+  }
+
+  footer .foot-links a:hover { color: var(--sage); }
+
+  footer .foot-receipt {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .pillars { grid-template-columns: 1fr; }
+    .pillar { border-right: 0; border-bottom: 1px solid var(--rule); }
+    .pillar:last-child { border-bottom: 0; }
+    .two-col { grid-template-columns: 1fr; }
+    .two-col .col { border-right: 0; border-bottom: 1px solid var(--rule); }
+    .flow-step { grid-template-columns: 60px 1fr; }
+    .flow-step .step-meta { grid-column: 1 / -1; text-align: left; }
+    .pipeline-strip { grid-template-columns: repeat(3, 1fr); }
+    .gloss { grid-template-columns: 1fr; gap: 8px; }
+    .toc-list { grid-template-columns: 1fr; }
+    .toc-list li:nth-child(odd) { border-right: 0; }
+  }
+
+  @media (max-width: 600px) {
+    .container, .wrap, .wrap-narrow { padding: 0 20px; }
+    .pipeline-strip { grid-template-columns: repeat(2, 1fr); }
+    .auto-row { grid-template-columns: 1fr; }
+  }
+
+  @media print { body { background: white; } section { page-break-inside: avoid; } }
 </style>
 </head>
 <body>
 
+<!-- TOPNAV -->
+<nav class="topnav">
+  <div class="brand">
+    <div class="mark">B</div>
+    <span>Builders Collective</span>
+  </div>
+  <div class="links">
+    <a href="#what">01 · WHAT</a>
+    <a href="#how">02 · FLOW</a>
+    <a href="#daily">03 · DAY</a>
+    <a href="#pipeline">04 · PIPELINE</a>
+    <a href="#rules">07 · RULES</a>
+    <a href="../dashboard/">↗ DASHBOARD</a>
+  </div>
+</nav>
+
 <!-- HERO -->
 <header class="hero">
-  <div class="container">
-    <div class="brand-logo">B</div>
-    <div class="hero-label">CRM Handbook · Founders Edition</div>
-    <h1>Your new<br>sales machine,<br><em>explained.</em></h1>
-    <p class="hero-sub">A plain-English guide to how your CloseBetter CRM works, what it does for you, and how you actually use it day-to-day. Read once. Refer back to it whenever you need.</p>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="kicker">CRM Handbook · v1.0 · 2026 · Founders Edition</div>
+        <h1>YOUR<br>NEW<br>SALES<br><span class="italic">machine,</span><br>EXPLAINED.</h1>
+      </div>
+      <div>
+        <div class="meta">
+          <div class="row"><span class="k">For</span><span class="v">David · Hasib · Abdullah · Masih</span></div>
+          <div class="row"><span class="k">CRM</span><span class="v">CloseBetter (whitelabel)</span></div>
+          <div class="row"><span class="k">Use</span><span class="v">Read once, refer back</span></div>
+          <div class="row"><span class="k">Time</span><span class="v">~12 minutes to read</span></div>
+          <div class="row"><span class="k">Domain</span><span class="v mono">builderscollective.au</span></div>
+          <div class="row"><span class="k">Type voice</span><span class="v">Plain English · no jargon</span></div>
+        </div>
+        <p class="hero-lead" style="margin-top: 32px;">A plain-English guide to how your CRM works, what it does for you, and how you actually use it day-to-day.</p>
+      </div>
+    </div>
+    <div class="receipt-row">
+      <span>BUILDERS COLLECTIVE</span>
+      <span class="dot">·</span>
+      <span>FIG. 00 · COVER PLATE</span>
+      <span class="dot">·</span>
+      <span>HANDBOOK V1.0</span>
+      <span class="dot">·</span>
+      <span>↗ BUILDERSCOLLECTIVE.AU</span>
+    </div>
   </div>
 </header>
 
 <!-- TOC -->
-<nav class="toc">
-  <div class="container">
-    <ol class="toc-list">
-      <li><a href="#what">What is the CRM</a></li>
-      <li><a href="#how">How leads flow through it</a></li>
-      <li><a href="#daily">Your day-to-day</a></li>
-      <li><a href="#pipeline">The pipeline explained</a></li>
-      <li><a href="#automations">What's automated</a></li>
-      <li><a href="#calls">When you take a call</a></li>
-      <li><a href="#rules">5 rules to live by</a></li>
-      <li><a href="#glossary">Glossary</a></li>
-    </ol>
+<section class="toc-section">
+  <div class="wrap">
+    <div class="kicker">Contents · 08 Chapters</div>
+    <ul class="toc-list">
+      <li><a href="#what"><span class="toc-num">01</span><span class="toc-title">What is the CRM</span></a></li>
+      <li><a href="#how"><span class="toc-num">02</span><span class="toc-title">How leads flow through it</span></a></li>
+      <li><a href="#daily"><span class="toc-num">03</span><span class="toc-title">Your day-to-day</span></a></li>
+      <li><a href="#pipeline"><span class="toc-num">04</span><span class="toc-title">The pipeline explained</span></a></li>
+      <li><a href="#automations"><span class="toc-num">05</span><span class="toc-title">What's automated</span></a></li>
+      <li><a href="#calls"><span class="toc-num">06</span><span class="toc-title">When you take a call</span></a></li>
+      <li><a href="#rules"><span class="toc-num">07</span><span class="toc-title">5 rules to live by</span></a></li>
+      <li><a href="#glossary"><span class="toc-num">08</span><span class="toc-title">Glossary</span></a></li>
+    </ul>
   </div>
-</nav>
+</section>
 
-<!-- 1. WHAT IS CRM -->
-<section id="what">
-  <div class="container">
-    <div class="section-label">01 · What is the CRM</div>
-    <h2>It's <em>your business in one screen.</em></h2>
-
-    <p class="lead">Think of the CRM as the central nervous system of Builders Collective. Every lead, every call, every text, every appointment — it all lives in one place.</p>
-
-    <div class="tldr">
-      <div class="tldr-label">In one line</div>
-      <div class="tldr-text">A CRM (Customer Relationship Management system) is how you keep track of every person who's ever shown interest in building with you — from the first inquiry all the way to handover.</div>
+<!-- 01 -->
+<section class="chapter" id="what">
+  <div class="wrap-narrow">
+    <div class="chapter-head">
+      <div class="chapter-num">01 · WHAT IS THE CRM</div>
+      <h2>YOUR BUSINESS<br>IN ONE <span class="italic">screen.</span></h2>
     </div>
 
-    <p>You're set up on <strong>CloseBetter CRM</strong> — that's your branded version. Behind the scenes it's powered by enterprise-grade software (the same kind big agencies use), but the interface is clean and made for you.</p>
+    <p class="lead">Think of the CRM as the central nervous system of Builders Collective. Every lead, every call, every text — one place.</p>
 
-    <h3>What it replaces</h3>
+    <div class="callout">
+      <div class="callout-label">In one line</div>
+      <div class="callout-text">A CRM is how you keep track of <span class="italic">everyone</span> who's ever shown interest — from inquiry to handover.</div>
+    </div>
 
-    <div class="grid-2">
-      <div class="card">
-        <div class="card-num">×</div>
-        <div class="card-title">Before</div>
-        <p style="font-size: 14px; margin: 0;">Spreadsheets. Sticky notes. "Did Hasib follow up with that REA lead?" Phone calls to find out who's doing what. Leads going cold.</p>
+    <p>You're set up on <strong>CloseBetter CRM</strong> — that's your branded version. Behind the scenes it's enterprise-grade software (the same kind big agencies use), but the interface is clean and made for you.</p>
+
+    <h3>WHAT IT <span class="italic">replaces.</span></h3>
+
+    <div class="two-col">
+      <div class="col">
+        <div class="kicker" style="margin-bottom:16px;">Before · 01</div>
+        <h4 style="font-family:var(--display);font-weight:900;font-size:20px;text-transform:uppercase;margin-bottom:12px;">Spreadsheets &amp; sticky notes</h4>
+        <p style="font-size:13px;color:var(--ink-2);">"Did Hasib follow up with that REA lead?" Phone calls to find out who's doing what. Leads going cold.</p>
       </div>
-      <div class="card" style="border-color: var(--green-soft); background: var(--green-wash);">
-        <div class="card-num" style="color: var(--green-deep);">✓</div>
-        <div class="card-title">After</div>
-        <p style="font-size: 14px; margin: 0;">One screen shows every lead, who owns it, where it is in the process, what's been said, what's coming next. From your phone or laptop.</p>
+      <div class="col sage-bg">
+        <div class="kicker" style="margin-bottom:16px;color:rgba(250,248,242,0.7);">After · 02</div>
+        <h4 style="font-family:var(--display);font-weight:900;font-size:20px;text-transform:uppercase;margin-bottom:12px;">One screen, one truth</h4>
+        <p style="font-size:13px;color:rgba(250,248,242,0.85);">Every lead, who owns it, where it is, what's been said, what's next. From your phone or laptop.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 2. HOW LEADS FLOW -->
-<section id="how">
-  <div class="container">
-    <div class="section-label">02 · How leads flow through it</div>
-    <h2>Five places leads come <em>in.</em></h2>
+<!-- 02 -->
+<section class="chapter" id="how">
+  <div class="wrap-narrow">
+    <div class="chapter-head">
+      <div class="chapter-num">02 · HOW LEADS FLOW</div>
+      <h2>FIVE PLACES<br>LEADS COME <span class="italic">in.</span></h2>
+    </div>
 
     <p class="lead">Every lead that hits your business comes through one of five channels. The CRM catches all of them automatically.</p>
 
     <div class="flow">
       <div class="flow-step">
-        <div class="flow-num">1</div>
-        <div class="flow-content">
-          <div class="flow-title">REA (realestate.com.au)</div>
-          <div class="flow-desc">Someone inquires on one of your 50 listings. Lands in CRM with the suburb, package and price already attached.</div>
+        <div class="step-num">CHANNEL · 01</div>
+        <div class="step-content">
+          <h5>REA · realestate.com.au</h5>
+          <p>Someone inquires on one of your 50 listings. Lands in CRM with the suburb, package and price already attached.</p>
         </div>
+        <div class="step-meta">$2,200/mo · 50 listings</div>
       </div>
       <div class="flow-step">
-        <div class="flow-num">2</div>
-        <div class="flow-content">
-          <div class="flow-title">Meta Ads (Facebook + Instagram)</div>
-          <div class="flow-desc">From the ads Kristalyn runs. Lead form fill → CRM → instant follow-up.</div>
+        <div class="step-num">CHANNEL · 02</div>
+        <div class="step-content">
+          <h5>Meta Ads · FB + IG</h5>
+          <p>From the ads Kristalyn runs. Lead form fill → CRM → instant follow-up.</p>
         </div>
+        <div class="step-meta">Run by Neo Media</div>
       </div>
       <div class="flow-step">
-        <div class="flow-num">3</div>
-        <div class="flow-content">
-          <div class="flow-title">Google Ads</div>
-          <div class="flow-desc">High-intent searches like "home builders Perth". They're already comparison shopping.</div>
+        <div class="step-num">CHANNEL · 03</div>
+        <div class="step-content">
+          <h5>Google Ads</h5>
+          <p>High-intent searches like "home builders Perth". They're already comparison shopping.</p>
         </div>
+        <div class="step-meta">High intent</div>
       </div>
       <div class="flow-step">
-        <div class="flow-num">4</div>
-        <div class="flow-content">
-          <div class="flow-title">Website + Live Chat</div>
-          <div class="flow-desc">Forms on builderscollective.au, plus the chat widget. Warmest leads — they're already on your site.</div>
+        <div class="step-num">CHANNEL · 04</div>
+        <div class="step-content">
+          <h5>Website + Live Chat</h5>
+          <p>Forms on builderscollective.au, plus the chat widget. Warmest leads — they're already on your site.</p>
         </div>
+        <div class="step-meta">Warmest signal</div>
       </div>
       <div class="flow-step">
-        <div class="flow-num">5</div>
-        <div class="flow-content">
-          <div class="flow-title">Phone (incl. AI after-hours)</div>
-          <div class="flow-desc">Inbound calls. After 8pm the AI voice agent takes the call, captures their details, and books them in.</div>
+        <div class="step-num">CHANNEL · 05</div>
+        <div class="step-content">
+          <h5>Phone · incl. AI after-hours</h5>
+          <p>Inbound calls. After 8pm the AI voice agent takes the call, captures their details, and books them in.</p>
         </div>
+        <div class="step-meta">24/7 coverage</div>
       </div>
     </div>
 
-    <div class="what-box">
-      <div class="what-box-label">Important</div>
-      <div class="what-box-text">No matter which channel a lead comes from, they all land in the same CRM. The system tags each one (e.g. "source:rea") so you always know where they came from and which ad spent the money to get them there.</div>
+    <div class="callout">
+      <div class="callout-label">Important</div>
+      <div class="callout-text">No matter the channel, every lead lands in <span class="italic">the same</span> CRM. The system tags each one (e.g. source:rea) so you know which dollar earned it.</div>
     </div>
   </div>
 </section>
 
-<!-- 3. DAY TO DAY -->
-<section id="daily">
-  <div class="container">
-    <div class="section-label">03 · Your day-to-day</div>
-    <h2>What you'll <em>actually do.</em></h2>
+<!-- 03 -->
+<section class="chapter" id="daily">
+  <div class="wrap-narrow">
+    <div class="chapter-head">
+      <div class="chapter-num">03 · YOUR DAY-TO-DAY</div>
+      <h2>WHAT YOU'LL<br><span class="italic">actually</span> DO.</h2>
+    </div>
 
-    <p class="lead">Most of the work is automated. Your job, day-to-day, is straightforward.</p>
+    <p class="lead">Most of the work is automated. Your job is straightforward.</p>
 
-    <div class="grid-2">
-      <div class="card">
-        <div class="card-num">1</div>
-        <div class="card-title">Check the app each morning</div>
-        <p style="font-size: 14px; margin: 0;">Open the CloseBetter mobile app. See your new leads, your booked calls today, and any follow-ups due.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="num">01 · MORNING</div>
+        <h4>Check the app</h4>
+        <p>Open CloseBetter on your phone. See new leads, today's calls, follow-ups due. Two minutes, max.</p>
       </div>
-      <div class="card">
-        <div class="card-num">2</div>
-        <div class="card-title">Take your calls</div>
-        <p style="font-size: 14px; margin: 0;">Leads book themselves into your calendar. You just show up. The CRM has already sent them context emails.</p>
+      <div class="pillar">
+        <div class="num">02 · CALLS</div>
+        <h4>Take your calls</h4>
+        <p>Leads book themselves into your calendar. You just show up. The CRM has pre-sent the context.</p>
       </div>
-      <div class="card">
-        <div class="card-num">3</div>
-        <div class="card-title">Update the deal after each call</div>
-        <p style="font-size: 14px; margin: 0;">Move the card to the next pipeline stage. Add a couple of notes. The next email goes out automatically.</p>
-      </div>
-      <div class="card">
-        <div class="card-num">4</div>
-        <div class="card-title">Reply when someone replies</div>
-        <p style="font-size: 14px; margin: 0;">If a lead replies to an automated email, the system pauses the automation and tags you to handle it personally.</p>
+      <div class="pillar">
+        <div class="num">03 · UPDATE</div>
+        <h4>Move the card</h4>
+        <p>After each call, drag the deal to the next stage. Add a couple of notes. Next email goes auto.</p>
       </div>
     </div>
 
-    <p>That's it. Most days you'll spend less time on admin than you do now, even though you'll have way more leads moving through.</p>
+    <p>That's it. Most days you'll spend <em>less</em> time on admin than you do now, even though you'll have way more leads moving through.</p>
   </div>
 </section>
 
-<!-- 4. PIPELINE -->
-<section id="pipeline">
-  <div class="container">
-    <div class="section-label">04 · The pipeline explained</div>
-    <h2>From inquiry to <em>handover.</em></h2>
+<!-- 04 -->
+<section class="chapter" id="pipeline">
+  <div class="wrap-narrow">
+    <div class="chapter-head">
+      <div class="chapter-num">04 · THE PIPELINE EXPLAINED</div>
+      <h2>FROM INQUIRY<br>TO <span class="italic">handover.</span></h2>
+    </div>
 
-    <p class="lead">Every lead moves through these stages. You drag the card across as things progress. Each stage triggers different automation.</p>
+    <p class="lead">Every lead moves through these stages. Drag the card across as things progress. Each stage triggers different automation.</p>
 
     <div class="pipeline-strip">
-      <div class="pipe-stage"><div class="pipe-stage-num">1</div><div class="pipe-stage-name">New Lead</div></div>
-      <div class="pipe-stage"><div class="pipe-stage-num">2</div><div class="pipe-stage-name">Nurturing</div></div>
-      <div class="pipe-stage"><div class="pipe-stage-num">3</div><div class="pipe-stage-name">Discovery Booked</div></div>
-      <div class="pipe-stage"><div class="pipe-stage-num">4</div><div class="pipe-stage-name">Discovery Done</div></div>
-      <div class="pipe-stage"><div class="pipe-stage-num">5</div><div class="pipe-stage-name">Looking for Land</div></div>
-      <div class="pipe-stage"><div class="pipe-stage-num">6</div><div class="pipe-stage-name">Block Confirmed</div></div>
-
-      <div class="pipe-stage"><div class="pipe-stage-num">7</div><div class="pipe-stage-name">Shortlist Sent</div></div>
-      <div class="pipe-stage"><div class="pipe-stage-num">8</div><div class="pipe-stage-name">Quote Review</div></div>
-      <div class="pipe-stage star"><div class="pipe-stage-num">9</div><div class="pipe-stage-name">PPA Signed ⭐</div></div>
-      <div class="pipe-stage"><div class="pipe-stage-num">10</div><div class="pipe-stage-name">Plans Finalised</div></div>
-      <div class="pipe-stage"><div class="pipe-stage-num">11</div><div class="pipe-stage-name">Finance Approved</div></div>
-      <div class="pipe-stage"><div class="pipe-stage-num">12</div><div class="pipe-stage-name">Contract Signed</div></div>
-
-      <div class="pipe-stage"><div class="pipe-stage-num">13</div><div class="pipe-stage-name">Build Started</div></div>
-      <div class="pipe-stage"><div class="pipe-stage-num">14</div><div class="pipe-stage-name">In Progress</div></div>
-      <div class="pipe-stage star"><div class="pipe-stage-num">15</div><div class="pipe-stage-name">Handover (WON) ⭐</div></div>
-      <div class="pipe-stage"><div class="pipe-stage-num">16</div><div class="pipe-stage-name">Referral Loop</div></div>
-      <div class="pipe-stage"><div class="pipe-stage-num">17</div><div class="pipe-stage-name">Not Yet Ready</div></div>
-      <div class="pipe-stage"><div class="pipe-stage-num">18</div><div class="pipe-stage-name">Lost</div></div>
+      <div class="pipe-stage"><div class="pn">01</div><div class="pname">New Lead</div></div>
+      <div class="pipe-stage"><div class="pn">02</div><div class="pname">Nurturing</div></div>
+      <div class="pipe-stage"><div class="pn">03</div><div class="pname">Discovery Booked</div></div>
+      <div class="pipe-stage"><div class="pn">04</div><div class="pname">Discovery Done</div></div>
+      <div class="pipe-stage"><div class="pn">05</div><div class="pname">Looking for Land</div></div>
+      <div class="pipe-stage"><div class="pn">06</div><div class="pname">Block Confirmed</div></div>
+      <div class="pipe-stage"><div class="pn">07</div><div class="pname">Shortlist Sent</div></div>
+      <div class="pipe-stage"><div class="pn">08</div><div class="pname">Quote Review</div></div>
+      <div class="pipe-stage star"><div class="pn">09</div><div class="pname">PPA Signed ★</div></div>
+      <div class="pipe-stage"><div class="pn">10</div><div class="pname">Plans Finalised</div></div>
+      <div class="pipe-stage"><div class="pn">11</div><div class="pname">Finance Approved</div></div>
+      <div class="pipe-stage"><div class="pn">12</div><div class="pname">Contract Signed</div></div>
+      <div class="pipe-stage"><div class="pn">13</div><div class="pname">Build Started</div></div>
+      <div class="pipe-stage"><div class="pn">14</div><div class="pname">In Progress</div></div>
+      <div class="pipe-stage star"><div class="pn">15</div><div class="pname">Handover (WON) ★</div></div>
+      <div class="pipe-stage"><div class="pn">16</div><div class="pname">Referral Loop</div></div>
+      <div class="pipe-stage"><div class="pn">17</div><div class="pname">Not Yet Ready</div></div>
+      <div class="pipe-stage"><div class="pn">18</div><div class="pname">Lost</div></div>
     </div>
 
-    <div class="tldr">
-      <div class="tldr-label">The big two</div>
-      <div class="tldr-text">PPA Signed = your commission gets locked in.<br>Handover = the deal is fully done and you've delivered.</div>
+    <div class="callout">
+      <div class="callout-label">The Big Two</div>
+      <div class="callout-text">PPA Signed = commission locked.<br>Handover = deal <span class="italic">delivered.</span></div>
     </div>
 
-    <h3>Stages you'll touch most</h3>
+    <h3>STAGES YOU'LL <span class="italic">touch most.</span></h3>
 
     <div class="flow">
       <div class="flow-step">
-        <div class="flow-num">A</div>
-        <div class="flow-content">
-          <div class="flow-title">Discovery Done → Block Confirmed (or Looking for Land)</div>
-          <div class="flow-desc">After your first call, decide if they have a block already or need help finding one. Drag the card accordingly.</div>
+        <div class="step-num">MOVE · A</div>
+        <div class="step-content">
+          <h5>Discovery Done → Block / Land</h5>
+          <p>After your first call, decide if they have a block already or need help finding one. Drag accordingly.</p>
         </div>
+        <div class="step-meta">After call</div>
       </div>
       <div class="flow-step">
-        <div class="flow-num">B</div>
-        <div class="flow-content">
-          <div class="flow-title">Quote Review → PPA Signed</div>
-          <div class="flow-desc">This is the conversion point. When they sign the PPA with a builder, drag the card. Automation kicks off the inspector workflow + commission tracking.</div>
+        <div class="step-num">MOVE · B</div>
+        <div class="step-content">
+          <h5>Quote Review → PPA Signed</h5>
+          <p>The conversion point. When they sign the PPA, drag the card. Automation kicks off inspector workflow + commission tracking.</p>
         </div>
+        <div class="step-meta">★ Critical</div>
       </div>
       <div class="flow-step">
-        <div class="flow-num">C</div>
-        <div class="flow-content">
-          <div class="flow-title">Handover → Referral Loop</div>
-          <div class="flow-desc">Deal won. The system automatically asks for a Google review and a referral 7 days later. You don't have to do anything.</div>
+        <div class="step-num">MOVE · C</div>
+        <div class="step-content">
+          <h5>Handover → Referral Loop</h5>
+          <p>Deal won. System auto-asks for a Google review and referral 7 days later. You don't lift a finger.</p>
         </div>
+        <div class="step-meta">Automated</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 5. AUTOMATIONS -->
-<section id="automations">
-  <div class="container">
-    <div class="section-label">05 · What's automated</div>
-    <h2>The system does <em>most of the work.</em></h2>
-
-    <p class="lead">Here's everything that happens without you lifting a finger:</p>
-
-    <div class="rule">
-      <div class="rule-icon">→</div>
-      <div class="rule-text"><strong>Instant reply.</strong> Every new lead gets an SMS + email within 60 seconds, no matter the time of day.</div>
-    </div>
-    <div class="rule">
-      <div class="rule-icon">→</div>
-      <div class="rule-text"><strong>Booking confirmations + reminders.</strong> 24-hour and 1-hour reminders before every discovery call.</div>
-    </div>
-    <div class="rule">
-      <div class="rule-icon">→</div>
-      <div class="rule-text"><strong>Multi-day nurture.</strong> Leads that don't book get a 21-day email + SMS sequence designed to bring them back.</div>
-    </div>
-    <div class="rule">
-      <div class="rule-icon">→</div>
-      <div class="rule-text"><strong>No-show recovery.</strong> If someone misses their call, they get an automatic reschedule message the same day.</div>
-    </div>
-    <div class="rule">
-      <div class="rule-icon">→</div>
-      <div class="rule-text"><strong>After-hours coverage.</strong> The AI voice agent answers between 8pm and 6am, books calls live, captures everything.</div>
-    </div>
-    <div class="rule">
-      <div class="rule-icon">→</div>
-      <div class="rule-text"><strong>DM responses.</strong> Facebook Messenger and Instagram DMs are handled by the AI conversational agent. It can book calls autonomously.</div>
-    </div>
-    <div class="rule">
-      <div class="rule-icon">→</div>
-      <div class="rule-text"><strong>Build milestone emails.</strong> When a build hits slab, frame, lockup, or fixing — the client gets an inspection report email automatically.</div>
-    </div>
-    <div class="rule">
-      <div class="rule-icon">→</div>
-      <div class="rule-text"><strong>Review + referral asks.</strong> Triggered 7 days after handover, then again at 30 days.</div>
+<!-- 05 -->
+<section class="chapter" id="automations">
+  <div class="wrap-narrow">
+    <div class="chapter-head">
+      <div class="chapter-num">05 · WHAT'S AUTOMATED</div>
+      <h2>THE SYSTEM<br>DOES <span class="italic">most</span><br>OF THE WORK.</h2>
     </div>
 
-    <div class="what-box">
-      <div class="what-box-label">What you still own</div>
-      <div class="what-box-text">Taking the actual calls. Reading the actual contracts. The 15-minute post-call recap (which the system reminds you to send). Being present as a human when it matters. The CRM handles the rest.</div>
+    <p class="lead">Here's everything that happens without you lifting a finger.</p>
+
+    <div class="auto-list">
+      <div class="auto-row"><div class="auto-tag">↗ 01 · INSTANT REPLY</div><div class="auto-text"><strong>SMS + email within 60 seconds</strong> of every new lead, no matter the time of day.</div></div>
+      <div class="auto-row"><div class="auto-tag">↗ 02 · REMINDERS</div><div class="auto-text"><strong>24h + 1h reminders</strong> before every discovery call.</div></div>
+      <div class="auto-row"><div class="auto-tag">↗ 03 · NURTURE</div><div class="auto-text"><strong>21-day email + SMS sequence</strong> for leads who don't book, designed to bring them back.</div></div>
+      <div class="auto-row"><div class="auto-tag">↗ 04 · NO-SHOWS</div><div class="auto-text"><strong>Same-day reschedule message</strong> if someone misses their call.</div></div>
+      <div class="auto-row"><div class="auto-tag">↗ 05 · AFTER-HOURS</div><div class="auto-text"><strong>AI voice agent</strong> answers 8pm–6am. Books calls live, captures everything.</div></div>
+      <div class="auto-row"><div class="auto-tag">↗ 06 · DMS</div><div class="auto-text"><strong>FB Messenger + Instagram DMs</strong> handled by the AI conversational agent. Can book autonomously.</div></div>
+      <div class="auto-row"><div class="auto-tag">↗ 07 · BUILD UPDATES</div><div class="auto-text"><strong>Inspection report emails</strong> auto-send at slab, frame, lockup, fixing milestones.</div></div>
+      <div class="auto-row"><div class="auto-tag">↗ 08 · REVIEWS</div><div class="auto-text"><strong>Review + referral asks</strong> trigger 7 days post-handover, then 30 days.</div></div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">What you still own</div>
+      <div class="callout-text">Take the calls. Read the contracts. Send the 15-min post-call recap. Be present <span class="italic">when it matters.</span></div>
     </div>
   </div>
 </section>
 
-<!-- 6. WHEN YOU TAKE A CALL -->
-<section id="calls">
-  <div class="container">
-    <div class="section-label">06 · When you take a call</div>
-    <h2>The 4-step <em>call process.</em></h2>
+<!-- 06 -->
+<section class="chapter" id="calls">
+  <div class="wrap-narrow">
+    <div class="chapter-head">
+      <div class="chapter-num">06 · WHEN YOU TAKE A CALL</div>
+      <h2>THE 4-STEP<br><span class="italic">call</span> PROCESS.</h2>
+    </div>
 
     <p class="lead">Same simple process every time. Don't overthink it.</p>
 
     <div class="flow">
       <div class="flow-step">
-        <div class="flow-num">1</div>
-        <div class="flow-content">
-          <div class="flow-title">Before the call (2 minutes)</div>
-          <div class="flow-desc">Open the contact card in CloseBetter. Read the notes the system has captured (where they came from, anything they typed into the form, any prior messages). Be ready.</div>
+        <div class="step-num">STEP · 01</div>
+        <div class="step-content">
+          <h5>Before · 2 minutes</h5>
+          <p>Open the contact card in CloseBetter. Read the notes (where they came from, form fills, prior messages). Be ready.</p>
         </div>
+        <div class="step-meta">Prep</div>
       </div>
       <div class="flow-step">
-        <div class="flow-num">2</div>
-        <div class="flow-content">
-          <div class="flow-title">During the call (15 minutes)</div>
-          <div class="flow-desc">Listen first. Understand their situation. Ask about block status, budget, timeline, finance. Mention the vetting angle. Take quick notes in the contact's "Notes From Call" field.</div>
+        <div class="step-num">STEP · 02</div>
+        <div class="step-content">
+          <h5>During · 15 minutes</h5>
+          <p>Listen first. Ask about block, budget, timeline, finance. Mention the vetting angle. Take quick notes in "Notes From Call".</p>
         </div>
+        <div class="step-meta">The call</div>
       </div>
       <div class="flow-step">
-        <div class="flow-num">3</div>
-        <div class="flow-content">
-          <div class="flow-title">Right after the call (5 minutes)</div>
-          <div class="flow-desc">Tag them: Audience Type (FHB / Upgrader / Investor) and Timeline (Hot / Warm / Cold). Move the pipeline card. Trigger the post-call recap email (you'll fill in 3 bullet points — system sends).</div>
+        <div class="step-num">STEP · 03</div>
+        <div class="step-content">
+          <h5>After · 5 minutes</h5>
+          <p>Tag them: Audience Type + Timeline. Move the card. Trigger the post-call recap (fill 3 bullets, system sends).</p>
         </div>
+        <div class="step-meta">Logging</div>
       </div>
       <div class="flow-step">
-        <div class="flow-num">4</div>
-        <div class="flow-content">
-          <div class="flow-title">Within 24 hours</div>
-          <div class="flow-desc">If they're qualified, send the builder shortlist or schedule the next step. If they're not yet ready, the system will check back in for you. Either way, your work is done.</div>
+        <div class="step-num">STEP · 04</div>
+        <div class="step-content">
+          <h5>Within 24 hours</h5>
+          <p>If qualified, send the builder shortlist. If not yet ready, the system will check back in for you. Done.</p>
+        </div>
+        <div class="step-meta">Follow-through</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 -->
+<section class="chapter" id="rules">
+  <div class="wrap-narrow">
+    <div class="chapter-head">
+      <div class="chapter-num">07 · 5 RULES TO LIVE BY</div>
+      <h2>STICK TO THESE<br><span class="italic">and</span> IT WORKS.</h2>
+    </div>
+
+    <p class="lead">Most CRMs fail because the team stops using them. Five rules to keep that from happening.</p>
+
+    <div class="rules-list">
+      <div class="rule-item">
+        <div class="rule-num">RULE · 01</div>
+        <div>
+          <h5>Always update the stage</h5>
+          <p>After every meaningful interaction, drag the deal to the right stage. If you don't, the wrong emails go out and the dashboard lies.</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">RULE · 02</div>
+        <div>
+          <h5>Tag every lead within 24h</h5>
+          <p>Source is automatic. You add: Audience Type + Timeline. Takes 5 seconds, makes segmentation work.</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">RULE · 03</div>
+        <div>
+          <h5>Reply to replies fast</h5>
+          <p>When a lead replies, the system pauses automation and pings you. You've got 60 minutes. Don't let it sit.</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">RULE · 04</div>
+        <div>
+          <h5>Never delete a contact</h5>
+          <p>If they're not buying, move them to "Not Yet Ready" or "Lost". Don't delete. We track everything for future re-engagement.</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">RULE · 05</div>
+        <div>
+          <h5>Check the dashboard weekly</h5>
+          <p>Every Monday, look at where leads are stalling and where spend is converting. Adjust. <a href="../dashboard/" style="color:var(--sage);font-weight:700;">↗ Open dashboard</a></p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 7. RULES -->
-<section id="rules">
-  <div class="container">
-    <div class="section-label">07 · 5 rules to live by</div>
-    <h2>Stick to these, <em>and the system works.</em></h2>
-
-    <p class="lead">Most CRMs fail because the team stops using them. Five rules to keep that from happening here.</p>
-
-    <div class="card">
-      <div class="card-num">1</div>
-      <div class="card-title">Always update the pipeline stage</div>
-      <p style="font-size: 14px; margin: 0;">After every meaningful interaction, drag the deal to the right stage. If you don't, the wrong emails go out and the dashboard lies.</p>
+<!-- 08 -->
+<section class="chapter" id="glossary">
+  <div class="wrap-narrow">
+    <div class="chapter-head">
+      <div class="chapter-num">08 · GLOSSARY</div>
+      <h2>THE WORDS<br>YOU'LL <span class="italic">hear.</span></h2>
     </div>
 
-    <div class="card">
-      <div class="card-num">2</div>
-      <div class="card-title">Tag every lead within 24 hours of first contact</div>
-      <p style="font-size: 14px; margin: 0;">Source tag is automatic. You add: Audience Type + Timeline. Takes 5 seconds, makes the segmentation work.</p>
-    </div>
-
-    <div class="card">
-      <div class="card-num">3</div>
-      <div class="card-title">Reply to replies fast</div>
-      <p style="font-size: 14px; margin: 0;">When a lead replies, the system pauses automation and pings you. You've got 60 minutes. Don't let it sit.</p>
-    </div>
-
-    <div class="card">
-      <div class="card-num">4</div>
-      <div class="card-title">Never delete a contact</div>
-      <p style="font-size: 14px; margin: 0;">If they're not buying, move them to "Not Yet Ready" or "Lost". Don't delete. We track everything for future re-engagement.</p>
-    </div>
-
-    <div class="card">
-      <div class="card-num">5</div>
-      <div class="card-title">Check the dashboard weekly</div>
-      <p style="font-size: 14px; margin: 0;">Every Monday, look at where leads are stalling and where the spend is converting. Adjust accordingly. <a href="../dashboard/" style="color: var(--green-deep); font-weight: 600;">→ Open dashboard</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- 8. GLOSSARY -->
-<section id="glossary">
-  <div class="container">
-    <div class="section-label">08 · Glossary</div>
-    <h2>The words <em>you'll hear.</em></h2>
-
-    <div class="gloss">
-      <div class="gloss-term">CRM</div>
-      <div class="gloss-def">Customer Relationship Management — the software that tracks every lead, every conversation, every deal. Yours is CloseBetter.</div>
-    </div>
-    <div class="gloss">
-      <div class="gloss-term">Pipeline</div>
-      <div class="gloss-def">The visual board showing every deal and what stage it's in. Drag cards across as deals progress.</div>
-    </div>
-    <div class="gloss">
-      <div class="gloss-term">Lead source</div>
-      <div class="gloss-def">Where a lead came from (REA / Meta / Google / Website / Phone). Auto-tagged by the system.</div>
-    </div>
-    <div class="gloss">
-      <div class="gloss-term">Discovery call</div>
-      <div class="gloss-def">The 15-minute call you take to qualify a new lead. Round-robin distributed across the 4 of you.</div>
-    </div>
-    <div class="gloss">
-      <div class="gloss-term">PPA</div>
-      <div class="gloss-def">Preliminary Property Agreement — the contract a buyer signs with a builder before the final HIA contract. Includes a small deposit (typically $1-3K). This is when your commission becomes locked in.</div>
-    </div>
-    <div class="gloss">
-      <div class="gloss-term">Building Contract (HIA)</div>
-      <div class="gloss-def">The full, formal building contract. Signed after the PPA and after plans are finalised. Triggers the inspector workflow.</div>
-    </div>
-    <div class="gloss">
-      <div class="gloss-term">Workflow</div>
-      <div class="gloss-def">An automated sequence of emails, SMS, and tasks triggered by a specific event (e.g. a booking, a stage move).</div>
-    </div>
-    <div class="gloss">
-      <div class="gloss-term">Nurture</div>
-      <div class="gloss-def">The multi-day email + SMS sequence that runs for leads who haven't booked yet. 21 days, then they go to long-term follow-up.</div>
-    </div>
-    <div class="gloss">
-      <div class="gloss-term">Round-robin</div>
-      <div class="gloss-def">How leads are distributed across the team — automatically rotated so everyone gets an equal share.</div>
-    </div>
-    <div class="gloss">
-      <div class="gloss-term">VSL</div>
-      <div class="gloss-def">Video Sales Letter — the 2-3 minute explainer video on the landing page. Pre-sells before the call.</div>
-    </div>
-    <div class="gloss">
-      <div class="gloss-term">Inspector</div>
-      <div class="gloss-def">The independent third-party building inspector who does random site visits during your clients' builds. Their fee is built into your package.</div>
-    </div>
-    <div class="gloss">
-      <div class="gloss-term">AI voice agent</div>
-      <div class="gloss-def">Answers calls between 8pm and 6am. Takes details, books calls. Doesn't replace you — it just makes sure leads aren't lost overnight.</div>
+    <div class="glossary">
+      <div class="gloss"><div class="term">CRM</div><div class="def">Customer Relationship Management — the software that tracks every lead, every conversation, every deal. Yours is CloseBetter.</div></div>
+      <div class="gloss"><div class="term">Pipeline</div><div class="def">The visual board showing every deal and what stage it's in. Drag cards across as deals progress.</div></div>
+      <div class="gloss"><div class="term">Lead source</div><div class="def">Where a lead came from (REA / Meta / Google / Website / Phone). Auto-tagged by the system.</div></div>
+      <div class="gloss"><div class="term">Discovery call</div><div class="def">The 15-minute call you take to qualify a new lead. Round-robin distributed across the 4 of you.</div></div>
+      <div class="gloss"><div class="term">PPA</div><div class="def">Preliminary Property Agreement — signed with a builder before the formal HIA contract. Small deposit ($1–3K). Your commission locks in here.</div></div>
+      <div class="gloss"><div class="term">Building Contract</div><div class="def">The formal HIA contract. Signed after PPA + plans finalised. Triggers the inspector workflow.</div></div>
+      <div class="gloss"><div class="term">Workflow</div><div class="def">An automated sequence of emails, SMS and tasks triggered by a specific event.</div></div>
+      <div class="gloss"><div class="term">Nurture</div><div class="def">Multi-day sequence for leads who haven't booked yet. 21 days, then long-term follow-up.</div></div>
+      <div class="gloss"><div class="term">Round-robin</div><div class="def">How leads distribute across the team — auto-rotated so everyone gets an equal share.</div></div>
+      <div class="gloss"><div class="term">VSL</div><div class="def">Video Sales Letter — the 2-3 minute explainer on the landing page. Pre-sells before the call.</div></div>
+      <div class="gloss"><div class="term">Inspector</div><div class="def">The independent third-party building inspector who does random site visits during builds. Fee built into the package.</div></div>
+      <div class="gloss"><div class="term">AI voice agent</div><div class="def">Answers calls 8pm–6am. Takes details, books calls. Doesn't replace you, just makes sure no lead is lost overnight.</div></div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="container">
-    <div class="hero-label" style="margin-bottom: 24px;">You're all set</div>
-    <p class="lead" style="margin: 0 auto 32px;">Open the app. Take the calls. Trust the system. Reach out if anything breaks.</p>
-
-    <div class="sig">— Daniel, RankOnMaps</div>
-    <div style="font-size: 14px; color: var(--muted);">daniel@rankonmaps.io · rankonmaps.io</div>
-
-    <div class="footnote">
-      <strong>Quick links:</strong>
-      <a href="../dashboard/" style="color: var(--green-deep); margin: 0 8px;">Dashboard</a> ·
-      <a href="../" style="color: var(--green-deep); margin: 0 8px;">Proposal</a>
+  <div class="wrap">
+    <div class="foot-row">
+      <h3>YOU'RE <span class="italic">all set.</span></h3>
+      <div class="foot-links">
+        <a href="../dashboard/">↗ DASHBOARD</a>
+        <a href="../">↗ PROPOSAL</a>
+      </div>
+    </div>
+    <div class="foot-receipt">
+      <span>BUILDERS COLLECTIVE × RANKONMAPS</span>
+      <span>FIG. END · HANDBOOK V1.0</span>
+      <span>EDITION 2026</span>
+      <span>↗ RANKONMAPS.IO</span>
     </div>
   </div>
 </footer>
