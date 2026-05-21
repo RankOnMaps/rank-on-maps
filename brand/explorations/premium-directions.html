@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ROM · 3 Premium Directions</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+
+<style>
+:root {
+  /* Page chrome */
+  --page-bg: #ECEAE4;
+  --page-ink: #1A1A1A;
+  --page-ink-2: #5A5A5A;
+  --hairline: rgba(0,0,0,0.10);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--page-bg); color: var(--page-ink); font-family: "Inter", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+
+/* ─── PAGE CHROME ──────────────────────────────────────────────────────── */
+.page-head { padding: 64px 48px 56px; max-width: 1680px; margin: 0 auto; }
+.page-head .eyebrow { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--page-ink-2); }
+.page-head h1 { font-family: "Inter Tight", sans-serif; font-weight: 900; font-size: clamp(36px, 5vw, 64px); letter-spacing: -0.03em; line-height: 0.96; margin-top: 14px; max-width: 22ch; }
+.page-head p { max-width: 60ch; margin-top: 24px; font-size: 16px; line-height: 1.55; color: #2A2A2A; }
+.page-head .meta { margin-top: 32px; display: flex; gap: 24px; flex-wrap: wrap; font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--page-ink-2); }
+
+/* Three-column grid for direction comparison */
+.comparison { max-width: 1680px; margin: 0 auto; padding: 0 48px 96px; }
+.row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+.row .cell { background: white; border: 1px solid var(--hairline); padding: 28px; min-height: 320px; position: relative; overflow: hidden; }
+.row .cell.frame-cell { padding: 0; }
+
+.row-label { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin: 48px 0 16px; }
+.row-label .l { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--page-ink-2); padding-bottom: 12px; border-bottom: 1px solid var(--hairline); }
+.row-label .l strong { color: var(--page-ink); font-weight: 600; letter-spacing: 0.16em; }
+
+/* Direction header */
+.dir-head .name { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--page-ink-2); }
+.dir-head h2 { font-family: "Inter Tight", sans-serif; font-weight: 900; font-size: 36px; letter-spacing: -0.025em; line-height: 1; margin-top: 8px; }
+.dir-head .ref { margin-top: 10px; font-size: 13px; color: var(--page-ink-2); font-style: italic; }
+.dir-head .desc { margin-top: 14px; font-size: 14px; line-height: 1.55; color: #333; max-width: 38ch; }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   DIRECTION A · EDITORIAL OPERATOR
+   Stripe Press / Linear / The Browser Company
+═══════════════════════════════════════════════════════════════════════ */
+.A {
+  --bg: #F4F3EE;
+  --paper: #FFFFFF;
+  --ink: #14140F;
+  --ink-2: #4A4A42;
+  --green: #0A2E22;
+  --green-2: #14533C;
+  --accent: #B5532E; /* whispered terracotta */
+  --rule: rgba(20,20,15,0.10);
+  font-family: "Inter", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+.A.dir-head .name { color: var(--green); }
+.A.dir-head h2 { font-family: "Fraunces", serif; font-weight: 600; font-style: italic; font-size: 44px; letter-spacing: -0.02em; }
+
+/* A · color row */
+.A.color-row { display: flex; flex-direction: column; gap: 0; padding: 0; }
+.A.color-row .swatch { display: flex; align-items: flex-end; padding: 14px 18px; height: 64px; font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.06em; }
+.A .sw-bg     { background: var(--bg);    color: var(--ink); }
+.A .sw-paper  { background: var(--paper); color: var(--ink); border-top: 1px solid var(--rule); }
+.A .sw-ink    { background: var(--ink);   color: var(--bg); }
+.A .sw-green  { background: var(--green); color: #DFE9DD; }
+.A .sw-green2 { background: var(--green-2); color: #DFE9DD; }
+.A .sw-accent { background: var(--accent); color: #FFF1E5; }
+
+/* A · type sample */
+.A.type-cell .label { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink-2); }
+.A.type-cell .display { font-family: "Inter Tight", sans-serif; font-weight: 800; font-size: 56px; letter-spacing: -0.03em; line-height: 0.95; margin-top: 14px; }
+.A.type-cell .quote { font-family: "Fraunces", serif; font-weight: 400; font-style: italic; font-size: 26px; line-height: 1.35; margin-top: 28px; color: var(--green); border-left: 2px solid var(--accent); padding-left: 18px; max-width: 28ch; }
+.A.type-cell .body { font-size: 14px; line-height: 1.6; color: var(--ink-2); margin-top: 24px; max-width: 40ch; }
+
+/* A · 9:16 caption frame */
+.A.caption-frame { aspect-ratio: 9/16; background: var(--bg); padding: 56px 36px; display: flex; flex-direction: column; justify-content: space-between; }
+.A.caption-frame .top { display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-2); }
+.A.caption-frame .body { font-family: "Inter Tight", sans-serif; font-weight: 800; font-size: 64px; line-height: 0.96; letter-spacing: -0.03em; color: var(--ink); }
+.A.caption-frame .body em { font-family: "Fraunces", serif; font-weight: 400; font-style: italic; color: var(--green); font-size: 60px; }
+.A.caption-frame .accent-line { width: 32px; height: 2px; background: var(--accent); margin: 12px 0; }
+.A.caption-frame .bottom { display: flex; justify-content: space-between; align-items: flex-end; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-2); }
+
+/* A · 16:9 deck slide */
+.A.deck-frame { aspect-ratio: 16/9; background: var(--paper); padding: 48px 56px; display: grid; grid-template-rows: auto 1fr auto; }
+.A.deck-frame .top { display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-2); border-bottom: 1px solid var(--rule); padding-bottom: 12px; }
+.A.deck-frame .h { font-family: "Fraunces", serif; font-weight: 600; font-style: italic; font-size: 64px; line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); margin-top: 36px; max-width: 14ch; }
+.A.deck-frame .h .green { color: var(--green); }
+.A.deck-frame .sub { margin-top: 16px; font-size: 16px; color: var(--ink-2); max-width: 50ch; }
+.A.deck-frame .bottom { display: flex; justify-content: space-between; align-items: flex-end; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-2); padding-top: 12px; border-top: 1px solid var(--rule); }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   DIRECTION B · ARCHITECT / SWISS GRID
+   Pentagram / Vignelli / Hermès directories
+═══════════════════════════════════════════════════════════════════════ */
+.B {
+  --bg: #FAFAF7;
+  --paper: #FFFFFF;
+  --ink: #0E0E0E;
+  --ink-2: #5A5A5A;
+  --green: #1A3D2F;
+  --rule: rgba(0,0,0,0.18);
+  font-family: "Inter Tight", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+.B.dir-head .name { color: var(--green); }
+.B.dir-head h2 { font-family: "Inter Tight", sans-serif; font-weight: 900; font-size: 36px; letter-spacing: -0.04em; text-transform: uppercase; }
+
+/* B · color row */
+.B.color-row { display: flex; flex-direction: column; gap: 0; padding: 0; border-left: 1px solid var(--rule); border-right: 1px solid var(--rule); }
+.B.color-row .swatch { display: flex; align-items: center; justify-content: space-between; padding: 18px 18px; height: 64px; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid var(--rule); }
+.B .sw-paper  { background: var(--paper); color: var(--ink); }
+.B .sw-bg     { background: var(--bg); color: var(--ink); }
+.B .sw-green  { background: var(--green); color: var(--bg); }
+.B .sw-ink    { background: var(--ink); color: var(--bg); }
+.B.color-row .swatch.note { background: transparent; color: var(--ink-2); font-style: italic; text-transform: none; letter-spacing: 0.04em; }
+
+/* B · type sample */
+.B.type-cell { font-family: "Inter Tight", sans-serif; }
+.B.type-cell .label { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink-2); border-bottom: 1px solid var(--rule); padding-bottom: 12px; }
+.B.type-cell .display { font-weight: 900; font-size: 64px; letter-spacing: -0.04em; line-height: 0.92; text-transform: uppercase; margin-top: 20px; }
+.B.type-cell .body-sample { font-weight: 500; font-size: 14px; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.02em; margin-top: 24px; color: var(--ink-2); max-width: 40ch; }
+.B.type-cell .mono-row { font-family: "JetBrains Mono", monospace; font-size: 11px; line-height: 1.7; color: var(--ink); margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--rule); }
+
+/* B · 9:16 caption frame */
+.B.caption-frame { aspect-ratio: 9/16; background: var(--bg); padding: 48px 32px; display: grid; grid-template-rows: auto 1fr auto; gap: 24px; position: relative; }
+.B.caption-frame::before { content: ""; position: absolute; left: 32px; right: 32px; top: 96px; height: 1px; background: var(--rule); }
+.B.caption-frame::after { content: ""; position: absolute; left: 32px; right: 32px; bottom: 96px; height: 1px; background: var(--rule); }
+.B.caption-frame .top { display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink); }
+.B.caption-frame .body { font-family: "Inter Tight", sans-serif; font-weight: 900; font-size: 70px; line-height: 0.92; letter-spacing: -0.04em; color: var(--ink); text-transform: uppercase; align-self: center; }
+.B.caption-frame .body .green { color: var(--green); border-bottom: 4px solid var(--green); padding-bottom: 4px; }
+.B.caption-frame .bottom { display: flex; justify-content: space-between; align-items: flex-end; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink); }
+
+/* B · 16:9 deck slide */
+.B.deck-frame { aspect-ratio: 16/9; background: var(--paper); padding: 0; display: grid; grid-template-columns: 1fr 1fr; }
+.B.deck-frame .left { padding: 40px 48px; border-right: 1px solid var(--rule); display: flex; flex-direction: column; justify-content: space-between; }
+.B.deck-frame .right { padding: 40px 48px; display: flex; flex-direction: column; justify-content: space-between; background: var(--green); color: var(--bg); }
+.B.deck-frame .num { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-2); }
+.B.deck-frame .right .num { color: rgba(250,250,247,0.6); }
+.B.deck-frame .h { font-family: "Inter Tight", sans-serif; font-weight: 900; font-size: 56px; line-height: 0.94; letter-spacing: -0.04em; text-transform: uppercase; }
+.B.deck-frame .right .h { font-weight: 500; }
+.B.deck-frame .meta { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-2); }
+.B.deck-frame .right .meta { color: rgba(250,250,247,0.6); }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   DIRECTION C · SOFT-TECH / QUIET LUXURY
+   Vercel marketing / Arc Browser / Linear marketing
+═══════════════════════════════════════════════════════════════════════ */
+.C {
+  --bg: #F1EFE9;
+  --paper: #FAF8F2;
+  --ink: #1A1F1B;
+  --ink-2: #5C6A5F;
+  --green: #1F4D3C;
+  --green-soft: #3A6E5A;
+  --tone: #D9D4C5; /* warm tone, no second color */
+  --rule: rgba(26,31,27,0.08);
+  font-family: "Inter", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+.C.dir-head .name { color: var(--green); }
+.C.dir-head h2 { font-family: "Inter Tight", sans-serif; font-weight: 800; font-size: 36px; letter-spacing: -0.035em; }
+.C.dir-head h2 em { font-family: "Fraunces", serif; font-weight: 400; font-style: italic; font-size: 38px; letter-spacing: -0.01em; color: var(--green); }
+
+/* C · color row */
+.C.color-row { display: flex; flex-direction: column; gap: 0; padding: 0; }
+.C.color-row .swatch { display: flex; align-items: flex-end; padding: 14px 18px; height: 64px; font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.06em; }
+.C .sw-bg     { background: var(--bg);    color: var(--ink); }
+.C .sw-paper  { background: var(--paper); color: var(--ink); }
+.C .sw-tone   { background: var(--tone);  color: var(--ink); }
+.C .sw-green  { background: var(--green); color: var(--paper); }
+.C .sw-greens { background: var(--green-soft); color: var(--paper); }
+.C .sw-ink    { background: var(--ink);   color: var(--paper); }
+
+/* C · type sample */
+.C.type-cell .label { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink-2); }
+.C.type-cell .display { font-family: "Inter Tight", sans-serif; font-weight: 800; font-size: 56px; letter-spacing: -0.035em; line-height: 0.96; margin-top: 14px; }
+.C.type-cell .display em { font-family: "Fraunces", serif; font-weight: 400; font-style: italic; color: var(--green); font-size: 58px; }
+.C.type-cell .body { font-size: 15px; line-height: 1.6; color: var(--ink-2); margin-top: 28px; max-width: 40ch; }
+.C.type-cell .mono { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--ink-2); margin-top: 24px; letter-spacing: 0.06em; }
+
+/* C · 9:16 caption frame */
+.C.caption-frame { aspect-ratio: 9/16; background: var(--bg); padding: 56px 36px; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+.C.caption-frame .top { display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-2); }
+.C.caption-frame .body { font-family: "Inter Tight", sans-serif; font-weight: 800; font-size: 60px; line-height: 0.98; letter-spacing: -0.035em; color: var(--ink); }
+.C.caption-frame .body em { font-family: "Fraunces", serif; font-weight: 400; font-style: italic; color: var(--green); font-size: 64px; line-height: 1; }
+.C.caption-frame .pin { position: absolute; bottom: 36px; left: 36px; width: 22px; height: 22px; }
+.C.caption-frame .pin svg { width: 100%; height: 100%; }
+.C.caption-frame .bottom-r { position: absolute; bottom: 36px; right: 36px; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-2); }
+
+/* C · 16:9 deck slide */
+.C.deck-frame { aspect-ratio: 16/9; background: var(--paper); padding: 56px; display: grid; grid-template-rows: auto 1fr auto; position: relative; }
+.C.deck-frame .top { display: flex; justify-content: space-between; align-items: center; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-2); }
+.C.deck-frame .top .pin { width: 18px; height: 18px; }
+.C.deck-frame .h { font-family: "Inter Tight", sans-serif; font-weight: 800; font-size: 64px; line-height: 1.0; letter-spacing: -0.035em; align-self: center; max-width: 16ch; }
+.C.deck-frame .h em { font-family: "Fraunces", serif; font-weight: 400; font-style: italic; color: var(--green); font-size: 68px; line-height: 1; }
+.C.deck-frame .bottom { display: flex; justify-content: space-between; align-items: flex-end; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-2); }
+
+/* ─── Pin SVG inline use ──────────────────────────────────────────────── */
+.pin-mark { display: inline-block; vertical-align: middle; }
+
+/* ─── Footer ──────────────────────────────────────────────────────────── */
+footer { padding: 64px 48px; max-width: 1680px; margin: 0 auto; border-top: 1px solid var(--hairline); }
+footer h3 { font-family: "Inter Tight", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.025em; }
+footer p { margin-top: 12px; font-size: 15px; color: var(--page-ink-2); max-width: 60ch; line-height: 1.55; }
+footer .legend { margin-top: 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+footer .legend .item { padding: 16px 0; border-top: 1px solid var(--hairline); }
+footer .legend .item h4 { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; }
+footer .legend .item p { font-size: 13px; }
+
+@media (max-width: 1100px) {
+  .row { grid-template-columns: 1fr; }
+  .row-label { grid-template-columns: 1fr; }
+  footer .legend { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── PAGE HEAD ────────────────────────────────────────────────────────── -->
+<div class="page-head">
+  <div class="eyebrow">Rank On Maps · Premium evolution · 3 directions</div>
+  <h1>Three premium futures for the brand. Same content in each · pick the one that feels like you.</h1>
+  <p>Each direction is a coherent system, not a mood board. Compare row-by-row: color, type, a short-form caption frame, and a deck slide · all carrying the same message. Differences will jump out.</p>
+  <div class="meta">
+    <span>Same headline · same content · same proof line</span>
+    <span>·</span>
+    <span>Different palette · different type voice · different pace</span>
+  </div>
+</div>
+
+<div class="comparison">
+
+  <!-- ─── ROW 0 · DIRECTION HEADERS ────────────────────────────────────── -->
+  <div class="row-label">
+    <div class="l"><strong>00 · DIRECTION</strong></div>
+    <div class="l"></div>
+    <div class="l"></div>
+  </div>
+  <div class="row">
+    <div class="cell A dir-head">
+      <div class="name">A · Editorial Operator</div>
+      <h2>Quietly written.</h2>
+      <div class="ref">refs · Stripe Press · Linear · The Browser Company</div>
+      <div class="desc">Italic editorial serif as the marquee voice. Cool neutral page. Bright Maps Green is gone · replaced by a whispered terracotta accent used at less than 1%. Reads like a confident operator's quarterly brief.</div>
+    </div>
+    <div class="cell B dir-head">
+      <div class="name">B · Architect</div>
+      <h2>Cold &amp; structural.</h2>
+      <div class="ref">refs · Pentagram · Vignelli · Hermès directories</div>
+      <div class="desc">Pure paper white. A single cold sage green. Hairline rules and mono coordinates everywhere. All-caps grotesque as the only voice. Austere, institutional. The brand stops being loud and becomes serious.</div>
+    </div>
+    <div class="cell C dir-head">
+      <div class="name">C · Soft-Tech</div>
+      <h2>Calm. <em>Considered.</em></h2>
+      <div class="ref">refs · Vercel · Arc Browser · Linear marketing</div>
+      <div class="desc">Warm-quiet off-white. Sage-tinted forest green. No second color at all · only tone. Tight neutral sans for headlines with one italic serif accent line. Calm, expensive without trying.</div>
+    </div>
+  </div>
+
+  <!-- ─── ROW 1 · COLOR ────────────────────────────────────────────────── -->
+  <div class="row-label">
+    <div class="l"><strong>01 · COLOR SYSTEM</strong></div>
+    <div class="l">Anchor + neutrals · accent rationed</div>
+    <div class="l">No bright Maps Green in any direction</div>
+  </div>
+  <div class="row">
+    <!-- A -->
+    <div class="cell A color-row" style="padding: 0;">
+      <div class="swatch sw-bg">#F4F3EE · BG · COOL NEUTRAL</div>
+      <div class="swatch sw-paper">#FFFFFF · PAPER</div>
+      <div class="swatch sw-ink">#14140F · INK</div>
+      <div class="swatch sw-green">#0A2E22 · DEEP FOREST</div>
+      <div class="swatch sw-green2">#14533C · MID FOREST</div>
+      <div class="swatch sw-accent">#B5532E · TERRACOTTA · &lt;1%</div>
+    </div>
+    <!-- B -->
+    <div class="cell B color-row" style="padding: 0;">
+      <div class="swatch sw-paper">#FFFFFF · PAPER<span>01</span></div>
+      <div class="swatch sw-bg">#FAFAF7 · BG<span>02</span></div>
+      <div class="swatch sw-green">#1A3D2F · COLD SAGE<span>03</span></div>
+      <div class="swatch sw-ink">#0E0E0E · INK<span>04</span></div>
+      <div class="swatch note">No accent. Color is information, not decoration. The single sage replaces every other color move.</div>
+    </div>
+    <!-- C -->
+    <div class="cell C color-row" style="padding: 0;">
+      <div class="swatch sw-bg">#F1EFE9 · WARM-QUIET</div>
+      <div class="swatch sw-paper">#FAF8F2 · PAPER</div>
+      <div class="swatch sw-tone">#D9D4C5 · TONE · NEUTRAL ACCENT</div>
+      <div class="swatch sw-green">#1F4D3C · SAGE FOREST</div>
+      <div class="swatch sw-greens">#3A6E5A · SAGE SOFT</div>
+      <div class="swatch sw-ink">#1A1F1B · INK</div>
+    </div>
+  </div>
+
+  <!-- ─── ROW 2 · TYPE ─────────────────────────────────────────────────── -->
+  <div class="row-label">
+    <div class="l"><strong>02 · TYPOGRAPHY</strong></div>
+    <div class="l">Display + body + receipts</div>
+    <div class="l">All free / commercially licensed</div>
+  </div>
+  <div class="row">
+    <!-- A -->
+    <div class="cell A type-cell">
+      <div class="label">Inter Tight 800 + Fraunces Italic + JBMono</div>
+      <div class="display">Rank where it matters.</div>
+      <div class="quote">"Most agencies sell traffic. We deliver phone calls: measured, attributed, recurring."</div>
+      <div class="body">Inter Tight handles the structural type. Fraunces (italic) is reserved for one quoted statement per piece · the marquee moment. Mono is for receipts only. Body is Inter at calm settings.</div>
+    </div>
+    <!-- B -->
+    <div class="cell B type-cell">
+      <div class="label">Inter Tight 900 only · JBMono for data</div>
+      <div class="display">Rank where it matters</div>
+      <div class="body-sample">Local SEO · Service-area businesses · Engineered for the call, not the click. Built for operators who need pin placements and phones ringing this quarter.</div>
+      <div class="mono-row">
+        ROM · CASE 014 · 04:38<br/>
+        ↑ 213% CALL VOLUME · 22 DAYS<br/>
+        47 PIN PLACEMENTS · 14 KEYWORDS
+      </div>
+    </div>
+    <!-- C -->
+    <div class="cell C type-cell">
+      <div class="label">Inter Tight 800 + Fraunces Italic accent</div>
+      <div class="display">Calm work. <em>Loud results.</em></div>
+      <div class="body">Inter Tight does the heavy lifting at calmer sizes than the original kit. A single italic line of Fraunces appears once per piece · the punctuation. Mono is rare, only on receipts.</div>
+      <div class="mono">EP. 014 · 04:38 · ROM</div>
+    </div>
+  </div>
+
+  <!-- ─── ROW 3 · 9:16 CAPTION FRAME ───────────────────────────────────── -->
+  <div class="row-label">
+    <div class="l"><strong>03 · SHORT-FORM CAPTION · 9:16</strong></div>
+    <div class="l">Same line of copy</div>
+    <div class="l">Reels / TikTok / Shorts</div>
+  </div>
+  <div class="row">
+    <!-- A -->
+    <div class="cell frame-cell">
+      <div class="A caption-frame">
+        <div class="top"><span>ROM · REEL 022</span><span>0:08 / 0:24</span></div>
+        <div>
+          <div class="body">You don't lose calls to <em>competitors.</em></div>
+          <div class="accent-line"></div>
+          <div class="body" style="font-size: 36px; color: var(--ink-2); font-weight: 600;">You lose them to silence.</div>
+        </div>
+        <div class="bottom"><span>RANKONMAPS.IO</span><span>↗</span></div>
+      </div>
+    </div>
+    <!-- B -->
+    <div class="cell frame-cell">
+      <div class="B caption-frame">
+        <div class="top"><span>RANK ON MAPS</span><span>022 / 0:08</span></div>
+        <div class="body">YOU DON'T<br/>LOSE TO<br/><span class="green">COMPETITORS.</span><br/>YOU LOSE<br/>TO SILENCE.</div>
+        <div class="bottom"><span>↗ RANKONMAPS.IO</span><span>FIG. 022</span></div>
+      </div>
+    </div>
+    <!-- C -->
+    <div class="cell frame-cell">
+      <div class="C caption-frame">
+        <div class="top"><span>EP. 022</span><span>00:08</span></div>
+        <div class="body">You don't lose<br/>to competitors.<br/><em>You lose to silence.</em></div>
+        <div class="pin">
+          <svg viewBox="0 0 512 512"><path fill="#1F4D3C" d="M256 56c-66.3 0-120 53.7-120 120 0 24 7 46.4 19.2 65.2L256 388l100.8-146.8C369 222.4 376 200 376 176c0-66.3-53.7-120-120-120zm0 162c-23.2 0-42-18.8-42-42s18.8-42 42-42 42 18.8 42 42-18.8 42-42 42z"/></svg>
+        </div>
+        <div class="bottom-r">RANKONMAPS.IO</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── ROW 4 · 16:9 DECK SLIDE ──────────────────────────────────────── -->
+  <div class="row-label">
+    <div class="l"><strong>04 · SALES DECK · 16:9</strong></div>
+    <div class="l">Same headline</div>
+    <div class="l">Pitch / proposal slide</div>
+  </div>
+  <div class="row">
+    <!-- A -->
+    <div class="cell frame-cell">
+      <div class="A deck-frame">
+        <div class="top"><span>RANK ON MAPS · PROPOSAL</span><span>03 / 12</span></div>
+        <div class="h">We build local <span class="green">authority</span> the way Google rewards it.</div>
+        <div class="sub" style="margin-top: 16px;">Proof, signals, and the kind of consistency that compounds. No tricks, no churn · just the work that pushes the pin.</div>
+        <div class="bottom"><span>RANKONMAPS.IO</span><span>03</span></div>
+      </div>
+    </div>
+    <!-- B -->
+    <div class="cell frame-cell">
+      <div class="B deck-frame">
+        <div class="left">
+          <div class="num">03 · METHOD</div>
+          <div class="h">WE BUILD<br/>LOCAL<br/>AUTHORITY.</div>
+          <div class="meta">RANK ON MAPS · 2026</div>
+        </div>
+        <div class="right">
+          <div class="num">RESULT</div>
+          <div class="h">The way Google rewards it. Proof. Signals. Compounding consistency.</div>
+          <div class="meta">↗ RANKONMAPS.IO</div>
+        </div>
+      </div>
+    </div>
+    <!-- C -->
+    <div class="cell frame-cell">
+      <div class="C deck-frame">
+        <div class="top">
+          <span>RANK ON MAPS · PROPOSAL · 03</span>
+          <span class="pin">
+            <svg viewBox="0 0 512 512"><path fill="#1F4D3C" d="M256 56c-66.3 0-120 53.7-120 120 0 24 7 46.4 19.2 65.2L256 388l100.8-146.8C369 222.4 376 200 376 176c0-66.3-53.7-120-120-120zm0 162c-23.2 0-42-18.8-42-42s18.8-42 42-42 42 18.8 42 42-18.8 42-42 42z"/></svg>
+          </span>
+        </div>
+        <div class="h">We build local authority <em>the way Google rewards it.</em></div>
+        <div class="bottom">
+          <span>03 / 12</span>
+          <span>RANKONMAPS.IO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ─── FOOTER · DECISION GUIDE ────────────────────────────────────────── -->
+<footer>
+  <h3>Which one?</h3>
+  <p>This isn't a final commitment · pick a direction, or mix two ("A's color with C's type"), and I'll apply it across the existing kit and templates. You can also point at a specific cell ("the deck slide in B is right but the caption frame is too cold") and we'll adjust.</p>
+  <div class="legend">
+    <div class="item">
+      <h4>A · EDITORIAL OPERATOR</h4>
+      <p>Pick this if you want the brand to feel <strong>written</strong>. Best fit for: long-form YouTube, sales decks, podcast intros. Risk: italic serif moments need protection · easy for editors to over-use.</p>
+    </div>
+    <div class="item">
+      <h4>B · ARCHITECT</h4>
+      <p>Pick this if you want the brand to feel <strong>institutional</strong>. Best fit for: pitch decks, the website, anything where seriousness sells. Risk: harder to translate into kinetic short-form without the system softening.</p>
+    </div>
+    <div class="item">
+      <h4>C · SOFT-TECH</h4>
+      <p>Pick this if you want the brand to feel <strong>calmly expensive</strong>. Best fit for: most things · most flexible across surfaces. Risk: closest to your current direction, so the upgrade is subtle (which can be a feature, not a bug).</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

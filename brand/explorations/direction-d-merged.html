@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ROM · Direction D · Merged (B type + C color)</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Inter+Tight:wght@500;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+
+<style>
+:root {
+  /* Color · from C (warm-quiet sage) */
+  --bg: #F1EFE9;
+  --paper: #FAF8F2;
+  --tone: #D9D4C5;
+  --sage: #1F4D3C;
+  --sage-soft: #3A6E5A;
+  --ink: #1A1F1B;
+  --ink-2: #5C6A5F;
+  --rule: rgba(26,31,27,0.10);
+  --rule-strong: rgba(26,31,27,0.20);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--ink); font-family: "Inter Tight", sans-serif; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+
+/* ─── PAGE ─────────────────────────────────────────────────────────────── */
+.page { max-width: 1680px; margin: 0 auto; padding: 64px 48px 96px; }
+
+.head { padding-bottom: 56px; border-bottom: 1px solid var(--rule); margin-bottom: 56px; display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: end; }
+.head .eyebrow { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--sage); }
+.head h1 { font-family: "Inter Tight", sans-serif; font-weight: 900; font-size: clamp(48px, 7vw, 96px); letter-spacing: -0.04em; line-height: 0.92; text-transform: uppercase; margin-top: 16px; max-width: 14ch; }
+.head .meta { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2); text-align: right; line-height: 2; }
+.head .meta strong { color: var(--ink); font-weight: 700; }
+
+/* Section labels */
+.section { margin-bottom: 56px; }
+.section .label-row { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 14px; border-bottom: 1px solid var(--rule); margin-bottom: 32px; }
+.section .label-row .l { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink); }
+.section .label-row .l-r { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2); }
+
+/* ─── COLOR ROW ────────────────────────────────────────────────────────── */
+.color { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; border: 1px solid var(--rule-strong); }
+.color .sw { aspect-ratio: 1/1.1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid var(--rule-strong); position: relative; }
+.color .sw:last-child { border-right: 0; }
+.color .sw .top { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; }
+.color .sw .name { font-family: "Inter Tight", sans-serif; font-weight: 800; font-size: 14px; letter-spacing: -0.01em; text-transform: uppercase; }
+.color .sw .hex { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.06em; }
+
+.sw-bg     { background: var(--bg);    color: var(--ink); }
+.sw-paper  { background: var(--paper); color: var(--ink); }
+.sw-tone   { background: var(--tone);  color: var(--ink); }
+.sw-sage   { background: var(--sage); color: var(--paper); }
+.sw-sages  { background: var(--sage-soft); color: var(--paper); }
+.sw-ink    { background: var(--ink);   color: var(--paper); }
+
+.ratio { display: flex; height: 56px; margin-top: 24px; border: 1px solid var(--rule-strong); }
+.ratio > div { display: flex; align-items: center; padding: 0 14px; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; }
+.ratio .r-bg { background: var(--bg); color: var(--ink-2); flex: 60; }
+.ratio .r-sage { background: var(--sage); color: var(--paper); flex: 25; }
+.ratio .r-tone { background: var(--tone); color: var(--ink); flex: 10; }
+.ratio .r-ink { background: var(--ink); color: var(--paper); flex: 5; }
+
+/* ─── TYPE ─────────────────────────────────────────────────────────────── */
+.type { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; }
+.type .left { background: var(--paper); border: 1px solid var(--rule); padding: 40px; }
+.type .left .display { font-family: "Inter Tight", sans-serif; font-weight: 900; font-size: clamp(56px, 8vw, 120px); letter-spacing: -0.045em; line-height: 0.9; text-transform: uppercase; }
+.type .left .display .sage { color: var(--sage); }
+.type .left .body { font-family: "Inter Tight", sans-serif; font-weight: 500; font-size: 16px; line-height: 1.6; color: var(--ink-2); margin-top: 32px; max-width: 56ch; text-transform: uppercase; letter-spacing: 0.02em; }
+.type .left .receipt { font-family: "JetBrains Mono", monospace; font-size: 12px; line-height: 1.85; color: var(--ink); margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--rule); letter-spacing: 0.04em; }
+.type .left .receipt .dim { color: var(--ink-2); }
+
+.type .right { padding: 40px 0; }
+.type .right h3 { font-family: "Inter Tight", sans-serif; font-weight: 900; font-size: 22px; letter-spacing: -0.025em; text-transform: uppercase; margin-bottom: 20px; }
+.type .right table { width: 100%; border-collapse: collapse; }
+.type .right td { padding: 12px 0; border-bottom: 1px solid var(--rule); font-size: 13px; vertical-align: top; }
+.type .right td.k { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-2); width: 130px; }
+
+/* ─── FRAMES ───────────────────────────────────────────────────────────── */
+.frames { display: grid; grid-template-columns: 360px 1fr; gap: 32px; align-items: start; }
+@media (max-width: 1100px) { .frames { grid-template-columns: 1fr; } .type { grid-template-columns: 1fr; } }
+
+/* 9:16 caption frame */
+.caption {
+  aspect-ratio: 9/16;
+  background: var(--bg);
+  padding: 48px 32px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  border: 1px solid var(--rule-strong);
+}
+.caption::before { content: ""; position: absolute; left: 32px; right: 32px; top: 92px; height: 1px; background: var(--rule); }
+.caption::after { content: ""; position: absolute; left: 32px; right: 32px; bottom: 92px; height: 1px; background: var(--rule); }
+.caption .top { display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink); }
+.caption .body {
+  font-family: "Inter Tight", sans-serif;
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+  text-transform: uppercase;
+  align-self: center;
+}
+.caption .body .sage {
+  color: var(--sage);
+  border-bottom: 4px solid var(--sage);
+  padding-bottom: 4px;
+}
+.caption .bottom { display: flex; justify-content: space-between; align-items: flex-end; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink); }
+
+/* 16:9 deck slide */
+.deck {
+  aspect-ratio: 16/9;
+  background: var(--paper);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--rule-strong);
+}
+.deck .left {
+  padding: 40px 48px;
+  border-right: 1px solid var(--rule-strong);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.deck .right {
+  padding: 40px 48px;
+  background: var(--sage);
+  color: var(--paper);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.deck .num { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-2); }
+.deck .right .num { color: rgba(250,248,242,0.6); }
+.deck .h {
+  font-family: "Inter Tight", sans-serif;
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+}
+.deck .right .h { font-family: "Inter Tight", sans-serif; font-weight: 500; font-size: 28px; text-transform: none; letter-spacing: -0.015em; line-height: 1.25; }
+.deck .meta { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-2); }
+.deck .right .meta { color: rgba(250,248,242,0.6); }
+
+/* Lower-third sample */
+.lt-frame {
+  aspect-ratio: 16/9;
+  background: linear-gradient(180deg, #1B2A36 0%, #0F1418 100%);
+  border: 1px solid var(--rule-strong);
+  position: relative;
+}
+.lt {
+  position: absolute;
+  bottom: 12%;
+  left: 6%;
+  width: 52%;
+  background: var(--paper);
+  padding: 18px 22px;
+  display: grid;
+  grid-template-columns: 4px 1fr;
+  gap: 16px;
+}
+.lt .stripe { background: var(--sage); align-self: stretch; }
+.lt .name { font-family: "Inter Tight", sans-serif; font-weight: 900; font-size: 22px; letter-spacing: -0.025em; text-transform: uppercase; }
+.lt .role { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-2); margin-top: 4px; }
+.lt-tag {
+  position: absolute;
+  bottom: calc(12% + 78px);
+  left: 6%;
+  background: var(--sage);
+  color: var(--paper);
+  padding: 6px 12px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+/* ─── NOTES ────────────────────────────────────────────────────────────── */
+.notes { margin-top: 56px; padding: 32px 40px; background: var(--paper); border: 1px solid var(--rule); }
+.notes h3 { font-family: "Inter Tight", sans-serif; font-weight: 900; font-size: 22px; letter-spacing: -0.025em; text-transform: uppercase; margin-bottom: 16px; }
+.notes ul { list-style: none; padding: 0; }
+.notes li { padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 14px; line-height: 1.55; display: grid; grid-template-columns: 130px 1fr; gap: 24px; }
+.notes li:last-child { border-bottom: 0; }
+.notes li .k { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-2); padding-top: 2px; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="head">
+    <div>
+      <div class="eyebrow">Direction D · Merged · B type × C color</div>
+      <h1>Cold structure on a warm page.</h1>
+    </div>
+    <div class="meta">
+      <strong>Display</strong>  Inter Tight 900 · ALL-CAPS<br/>
+      <strong>Receipts</strong>  JetBrains Mono<br/>
+      <strong>Anchor</strong>  Sage Forest #1F4D3C<br/>
+      <strong>Page</strong>  Warm-quiet #F1EFE9<br/>
+      <strong>Accent</strong>  Tone #D9D4C5 · no second color
+    </div>
+  </div>
+
+  <!-- COLOR -->
+  <div class="section">
+    <div class="label-row">
+      <div class="l">01 · COLOR SYSTEM</div>
+      <div class="l-r">Anchor + neutrals · no second color</div>
+    </div>
+    <div class="color">
+      <div class="sw sw-bg">    <div class="top">PAGE</div>     <div><div class="name">Warm-quiet</div><div class="hex">#F1EFE9</div></div></div>
+      <div class="sw sw-paper"> <div class="top">PAPER</div>    <div><div class="name">Paper</div>      <div class="hex">#FAF8F2</div></div></div>
+      <div class="sw sw-tone">  <div class="top">TONE</div>     <div><div class="name">Tone</div>       <div class="hex">#D9D4C5</div></div></div>
+      <div class="sw sw-sage">  <div class="top">ANCHOR</div>   <div><div class="name">Sage Forest</div><div class="hex">#1F4D3C</div></div></div>
+      <div class="sw sw-sages"> <div class="top">SOFT</div>     <div><div class="name">Sage Soft</div>  <div class="hex">#3A6E5A</div></div></div>
+      <div class="sw sw-ink">   <div class="top">INK</div>      <div><div class="name">Ink</div>        <div class="hex">#1A1F1B</div></div></div>
+    </div>
+    <div class="ratio">
+      <div class="r-bg">PAGE · 60%</div>
+      <div class="r-sage">SAGE FOREST · 25%</div>
+      <div class="r-tone">TONE · 10%</div>
+      <div class="r-ink">INK · 5%</div>
+    </div>
+  </div>
+
+  <!-- TYPE -->
+  <div class="section">
+    <div class="label-row">
+      <div class="l">02 · TYPOGRAPHY</div>
+      <div class="l-r">Inter Tight 900 · JetBrains Mono · NO serif</div>
+    </div>
+    <div class="type">
+      <div class="left">
+        <div class="display">RANK<br/>WHERE IT<br/><span class="sage">MATTERS.</span></div>
+        <div class="body">Local SEO · Service-area businesses · Engineered for the call, not the click. Built for operators who need pin placements and phones ringing this quarter.</div>
+        <div class="receipt">
+          ROM · CASE 014 · 04:38<br/>
+          <span class="dim">↑</span> 213% CALL VOLUME · 22 DAYS<br/>
+          47 PIN PLACEMENTS · 14 KEYWORDS<br/>
+          <span class="dim">↗</span> RANKONMAPS.IO
+        </div>
+      </div>
+      <div class="right">
+        <h3>Type rules</h3>
+        <table>
+          <tr><td class="k">Display</td><td><strong>Inter Tight 900</strong> · ALL-CAPS · -0.045em tracking · 0.92 leading. Only voice for headlines.</td></tr>
+          <tr><td class="k">Body / UI</td><td><strong>Inter Tight 500</strong> · UPPERCASE for short labels · sentence case for paragraphs &gt; 1 line.</td></tr>
+          <tr><td class="k">Receipts</td><td><strong>JetBrains Mono 400/700</strong> · everywhere ROM speaks like an archive: episode numbers, plate IDs, timestamps, file paths.</td></tr>
+          <tr><td class="k">Sage usage</td><td>One word per frame · either color flip OR underline, never both.</td></tr>
+          <tr><td class="k">No serif</td><td>The italic editorial moments from C are removed. The system stays purely structural.</td></tr>
+          <tr><td class="k">No emoji</td><td>Mono symbols only: <span style="font-family:JetBrains Mono">↗ ↑ ↓ · /</span>.</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- FRAMES -->
+  <div class="section">
+    <div class="label-row">
+      <div class="l">03 · APPLIED · 9:16 CAPTION + 16:9 DECK + LOWER-THIRD</div>
+      <div class="l-r">Same content as the previous comparison</div>
+    </div>
+    <div class="frames">
+
+      <!-- 9:16 -->
+      <div class="caption">
+        <div class="top"><span>RANK ON MAPS</span><span>022 / 0:08</span></div>
+        <div class="body">YOU DON'T<br/>LOSE TO<br/><span class="sage">COMPETITORS.</span><br/>YOU LOSE<br/>TO SILENCE.</div>
+        <div class="bottom"><span>↗ RANKONMAPS.IO</span><span>FIG. 022</span></div>
+      </div>
+
+      <!-- Right column: deck + lower-third stacked -->
+      <div style="display: grid; gap: 24px;">
+        <div class="deck">
+          <div class="left">
+            <div class="num">03 · METHOD</div>
+            <div class="h">WE BUILD<br/>LOCAL<br/>AUTHORITY.</div>
+            <div class="meta">RANK ON MAPS · 2026</div>
+          </div>
+          <div class="right">
+            <div class="num">RESULT</div>
+            <div class="h">The way Google rewards it. Proof. Signals. Compounding consistency.</div>
+            <div class="meta">↗ RANKONMAPS.IO</div>
+          </div>
+        </div>
+
+        <div class="lt-frame">
+          <div class="lt-tag">LOCAL SEO · LIVE</div>
+          <div class="lt">
+            <div class="stripe"></div>
+            <div>
+              <div class="name">DANIEL GIRMAY</div>
+              <div class="role">Founder · Rank On Maps</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NOTES -->
+  <div class="notes">
+    <h3>What changes vs. current kit</h3>
+    <ul>
+      <li><span class="k">Palette</span><span>Page shifts from cool bone <span style="font-family:JBMono,monospace">#F4F5F2</span> → warm-quiet <span style="font-family:JBMono,monospace">#F1EFE9</span>. Anchor green deepens to sage forest <span style="font-family:JBMono,monospace">#1F4D3C</span>. Bright Maps Green is removed entirely. Tone <span style="font-family:JBMono,monospace">#D9D4C5</span> replaces "second color" · it's a temperature, not a hue.</span></li>
+      <li><span class="k">Type</span><span>Big Shoulders (sporty/condensed) is replaced by Inter Tight 900 (neutral/structural). All-caps everywhere for display. JetBrains Mono present in every frame · corner timestamps, fig numbers, file paths. No serif.</span></li>
+      <li><span class="k">Layout</span><span>Hairline rules become a primary structural element. Plate numbers (FIG. 022) and episode codes appear on every short-form export. The system feels like an archive.</span></li>
+      <li><span class="k">Pace</span><span>Cut cadence on talking-head slows from 1.5–2.5 s → 3–4 s. Lower-third holds extend. Single-frame green flash transitions are removed.</span></li>
+      <li><span class="k">Lower-third</span><span>Bone bar becomes Paper bar. Stripe shifts from bright Maps Green to Sage Forest. Tag chip becomes mono-set, smaller.</span></li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>

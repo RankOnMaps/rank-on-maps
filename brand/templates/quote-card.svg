@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" role="img" aria-label="Editorial quote card, 9:16">
+  <rect width="1080" height="1920" fill="#FAF8F2"/>
+
+  <!-- Hairline structural rules -->
+  <line x1="60" y1="180" x2="1020" y2="180" stroke="#1A1F1B" stroke-opacity="0.18" stroke-width="1"/>
+  <line x1="60" y1="1740" x2="1020" y2="1740" stroke="#1A1F1B" stroke-opacity="0.18" stroke-width="1"/>
+
+  <!-- Top mono receipt -->
+  <text x="60"   y="140" font-family="JetBrains Mono, Menlo, monospace" font-size="22" fill="#1A1F1B" letter-spacing="6">RANK ON MAPS · ED. 014</text>
+  <text x="1020" y="140" text-anchor="end" font-family="JetBrains Mono, Menlo, monospace" font-size="22" fill="#5C6A5F" letter-spacing="6">FIG. 09 / QUOTE</text>
+
+  <!-- Section eyebrow -->
+  <text x="60" y="380" font-family="JetBrains Mono, Menlo, monospace" font-size="20" fill="#1F4D3C" letter-spacing="6">ON LOCAL AUTHORITY</text>
+
+  <!-- The italic serif quote · the rare moment -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="400" fill="#1A1F1B">
+    <text x="60" y="640"  font-size="92">"Most agencies sell</text>
+    <text x="60" y="760"  font-size="92">traffic. We deliver</text>
+    <text x="60" y="880"  font-size="92" fill="#1F4D3C">phone calls:</text>
+    <text x="60" y="1000" font-size="92">measured, attributed,</text>
+    <text x="60" y="1120" font-size="92">recurring."</text>
+  </g>
+
+  <!-- Attribution -->
+  <line x1="60" y1="1280" x2="200" y2="1280" stroke="#1A1F1B" stroke-width="2"/>
+  <text x="60" y="1340" font-family="Helvetica, Arial, sans-serif" font-weight="900"
+        font-size="36" fill="#1A1F1B" letter-spacing="-1">DANIEL GIRMAY</text>
+  <text x="60" y="1390" font-family="JetBrains Mono, Menlo, monospace" font-size="20"
+        fill="#5C6A5F" letter-spacing="3">FOUNDER · RANK ON MAPS</text>
+
+  <!-- Pin watermark + outro -->
+  <g transform="translate(60 1780) scale(0.10)">
+    <path fill="#1A1F1B" d="M256 56c-66.3 0-120 53.7-120 120 0 24 7 46.4 19.2 65.2L256 388l100.8-146.8C369 222.4 376 200 376 176c0-66.3-53.7-120-120-120zm0 162c-23.2 0-42-18.8-42-42s18.8-42 42-42 42 18.8 42 42-18.8 42-42 42z"/>
+  </g>
+  <text x="120"  y="1830" font-family="JetBrains Mono, Menlo, monospace" font-size="20" fill="#1A1F1B" letter-spacing="4">↗ RANKONMAPS.IO</text>
+  <text x="1020" y="1830" text-anchor="end" font-family="JetBrains Mono, Menlo, monospace" font-size="20" fill="#5C6A5F" letter-spacing="4">EDITORIAL · 1 OF 12</text>
+</svg>

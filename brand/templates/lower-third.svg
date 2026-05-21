@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="Lower-third template, Rank On Maps">
+  <defs>
+    <linearGradient id="vid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1B2A36"/>
+      <stop offset="100%" stop-color="#0F1418"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#vid)"/>
+
+  <!-- Tag chip -->
+  <rect x="80" y="800" width="240" height="40" fill="#1F4D3C"/>
+  <text x="100" y="827" font-family="JetBrains Mono, Menlo, monospace" font-weight="700"
+        font-size="18" fill="#FAF8F2" letter-spacing="4">LOCAL SEO · LIVE</text>
+
+  <!-- Lower-third bar -->
+  <rect x="80" y="860" width="900" height="120" fill="#FAF8F2"/>
+  <rect x="80" y="860" width="14"  height="120" fill="#1F4D3C"/>
+
+  <!-- Pin mark -->
+  <g transform="translate(120 880) scale(0.16)">
+    <path fill="#1F4D3C" d="M256 56c-66.3 0-120 53.7-120 120 0 24 7 46.4 19.2 65.2L256 388l100.8-146.8C369 222.4 376 200 376 176c0-66.3-53.7-120-120-120zm0 162c-23.2 0-42-18.8-42-42s18.8-42 42-42 42 18.8 42 42-18.8 42-42 42z"/>
+  </g>
+
+  <text x="220" y="912" font-family="Helvetica, Arial, sans-serif" font-weight="900"
+        font-size="44" fill="#1A1F1B" letter-spacing="-1">DANIEL GIRMAY</text>
+  <text x="220" y="954" font-family="JetBrains Mono, Menlo, monospace" font-weight="400"
+        font-size="18" fill="#5C6A5F" letter-spacing="3">FOUNDER · RANK ON MAPS</text>
+
+  <!-- Top-right mono receipt -->
+  <text x="1840" y="80" text-anchor="end"
+        font-family="JetBrains Mono, Menlo, monospace" font-size="18"
+        fill="#FAF8F2" fill-opacity="0.4" letter-spacing="3">EP. 014 / 04:38 · ROM</text>
+</svg>

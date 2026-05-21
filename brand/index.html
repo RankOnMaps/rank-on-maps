@@ -1,0 +1,1156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Rank On Maps · Brand Kit</title>
+<meta name="description" content="Rank On Maps · premium brand guidelines and editor pack."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Inter+Tight:wght@400;500;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+
+<style>
+/* ─── LOCAL FONT FALLBACK ──────────────────────────────────────────────── */
+@font-face { font-family: "InstrumentSans"; src: url("fonts/InstrumentSans-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "InstrumentSans"; src: url("fonts/InstrumentSans-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "InstrumentSerifIt"; src: url("fonts/InstrumentSerif-Italic.ttf") format("truetype"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "JBMono"; src: url("fonts/JetBrainsMono-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "JBMono"; src: url("fonts/JetBrainsMono-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+
+/* ─── TOKENS · DIRECTION D ─────────────────────────────────────────────── */
+:root {
+  --page:       #F1EFE9;   /* warm-quiet background */
+  --paper:      #FAF8F2;   /* cards / surfaces */
+  --tone:       #D9D4C5;   /* neutral accent · replaces "second color" */
+  --sage:       #1F4D3C;   /* anchor */
+  --sage-soft:  #3A6E5A;   /* secondary green */
+  --ink:        #1A1F1B;   /* text */
+  --ink-2:      #5C6A5F;   /* secondary text */
+  --rule:       rgba(26,31,27,0.10);
+  --rule-strong:rgba(26,31,27,0.20);
+
+  --display: "Inter Tight", "InstrumentSans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --body:    "Inter Tight", "InstrumentSans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --serif:   "Fraunces", "InstrumentSerifIt", Georgia, "Times New Roman", serif;
+  --mono:    "JetBrains Mono", "JBMono", ui-monospace, Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--body);
+  background: var(--page);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; }
+
+/* ─── PASSWORD GATE ────────────────────────────────────────────────────── */
+body:not(.unlocked) > *:not(.auth-gate) { display: none !important; }
+.auth-gate {
+  position: fixed; inset: 0; z-index: 1000;
+  background: var(--page);
+  display: flex; align-items: center; justify-content: center;
+  padding: 32px;
+}
+body.unlocked .auth-gate { display: none; }
+.auth-gate .panel {
+  width: 100%; max-width: 420px;
+  display: flex; flex-direction: column; gap: 28px;
+}
+.auth-gate .pin { width: 36px; height: 36px; color: var(--sage); }
+.auth-gate .kicker {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.32em;
+  color: var(--ink-2); text-transform: uppercase;
+}
+.auth-gate h1 {
+  font-family: var(--display); font-weight: 900;
+  font-size: 56px; letter-spacing: -0.04em; line-height: 0.9;
+  text-transform: uppercase; color: var(--ink);
+}
+.auth-gate p {
+  font-size: 14px; color: var(--ink-2); max-width: 36ch;
+}
+.auth-gate form { display: flex; flex-direction: column; gap: 12px; }
+.auth-gate input {
+  font-family: var(--mono); font-size: 14px; letter-spacing: 0.04em;
+  padding: 14px 16px;
+  background: var(--paper); border: 1px solid var(--rule-strong);
+  color: var(--ink); outline: none;
+}
+.auth-gate input:focus { border-color: var(--sage); }
+.auth-gate button {
+  font-family: var(--display); font-weight: 900;
+  font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 14px 16px; cursor: pointer;
+  background: var(--sage); color: var(--paper); border: 0;
+  transition: background 120ms ease;
+}
+.auth-gate button:hover { background: #163827; }
+.auth-gate .err {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: #8C2C1E;
+  min-height: 16px;
+}
+.auth-gate .receipt {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--ink-2);
+  padding-top: 16px; border-top: 1px solid var(--rule);
+  display: flex; justify-content: space-between;
+}
+.auth-gate label.remember {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+  color: var(--ink-2); text-transform: uppercase; cursor: pointer;
+}
+.auth-gate label.remember input { margin: 0; width: 14px; height: 14px; }
+
+/* Utilities */
+.mono { font-family: var(--mono); letter-spacing: 0.04em; }
+.kicker { font-family: var(--mono); font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink-2); }
+
+/* ─── LAYOUT ───────────────────────────────────────────────────────────── */
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+section { padding: 96px 0; border-top: 1px solid var(--rule); }
+section:first-of-type { border-top: 0; }
+
+h1, h2, h3, h4 { margin: 0; font-family: var(--display); }
+.h-section {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(56px, 9vw, 128px);
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+.h-sub {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-top: 32px;
+}
+p.lead {
+  font-size: 18px;
+  max-width: 64ch;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+
+/* ─── NAV ──────────────────────────────────────────────────────────────── */
+.topnav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(241,239,233,0.88);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--rule);
+}
+.topnav .wrap { display: flex; align-items: center; gap: 24px; padding-top: 14px; padding-bottom: 14px; }
+.topnav .brand { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 900; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; }
+.topnav svg.mark { width: 22px; height: 22px; color: var(--sage); }
+.topnav .links { margin-left: auto; display: flex; gap: 4px; flex-wrap: wrap; }
+.topnav .links a {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+  text-decoration: none; padding: 8px 12px; color: var(--ink-2);
+  text-transform: uppercase;
+}
+.topnav .links a:hover { background: var(--paper); color: var(--ink); }
+
+/* ─── HERO ─────────────────────────────────────────────────────────────── */
+.hero {
+  padding: 96px 0 112px;
+  background: var(--page);
+  border-bottom: 1px solid var(--rule);
+}
+.hero .grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 64px; align-items: end; }
+.hero h1 {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(96px, 16vw, 240px);
+  line-height: 0.86;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+.hero h1 .sage { color: var(--sage); }
+.hero .meta { display: flex; flex-direction: column; gap: 12px; }
+.hero .meta .row {
+  display: flex; gap: 16px; align-items: baseline;
+  border-top: 1px solid var(--rule); padding-top: 12px;
+}
+.hero .meta .k {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.24em;
+  color: var(--ink-2); text-transform: uppercase; min-width: 110px;
+}
+.hero .meta .v { font-size: 14px; }
+.hero .receipt-row {
+  margin-top: 56px;
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 24px; border-top: 1px solid var(--rule-strong);
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.28em;
+  color: var(--ink); text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .hero .grid { grid-template-columns: 1fr; }
+}
+
+/* ─── PILLARS ──────────────────────────────────────────────────────────── */
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; border-top: 1px solid var(--rule-strong); border-bottom: 1px solid var(--rule-strong); }
+.pillar {
+  padding: 36px 32px;
+  border-right: 1px solid var(--rule);
+  position: relative;
+}
+.pillar:last-child { border-right: 0; }
+.pillar .num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.32em; color: var(--sage); text-transform: uppercase; margin-bottom: 24px; }
+.pillar h3 {
+  font-family: var(--display); font-weight: 900;
+  font-size: 28px; letter-spacing: -0.025em; line-height: 1.0;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+.pillar p { color: var(--ink-2); font-size: 14px; margin: 0; line-height: 1.6; }
+@media (max-width: 800px) { .pillars { grid-template-columns: 1fr; } .pillar { border-right: 0; border-bottom: 1px solid var(--rule); } .pillar:last-child { border-bottom: 0; } }
+
+/* ─── LOGO ─────────────────────────────────────────────────────────────── */
+.logo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 48px; border: 1px solid var(--rule-strong); }
+.logo-card {
+  aspect-ratio: 1/1;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; padding: 16%;
+  border-right: 1px solid var(--rule);
+}
+.logo-card:last-child { border-right: 0; }
+.logo-card.dark   { background: var(--ink); }
+.logo-card.sage   { background: var(--sage); }
+.logo-card.paper  { background: var(--paper); }
+.logo-card.page   { background: var(--page); }
+.logo-card .label {
+  position: absolute; bottom: 12px; left: 14px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--ink-2);
+}
+.logo-card.dark .label, .logo-card.sage .label { color: rgba(250,248,242,0.55); }
+
+.logo-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 0; border: 1px solid var(--rule-strong); border-top: 0; }
+.logo-pair .logo-card { aspect-ratio: 1/1; }
+
+.logo-rules { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+.rule-card {
+  background: var(--paper); border: 1px solid var(--rule); padding: 28px;
+}
+.rule-card h4 {
+  font-family: var(--display); font-weight: 900;
+  font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px;
+}
+.rule-card ul { padding-left: 20px; margin: 0; color: var(--ink-2); font-size: 14px; }
+.rule-card li { margin: 8px 0; line-height: 1.55; }
+.rule-card.dont h4 { color: #8C2C1E; }
+.rule-card.do  h4 { color: var(--sage); }
+@media (max-width: 800px) { .logo-grid { grid-template-columns: 1fr 1fr; } .logo-pair { grid-template-columns: 1fr; } }
+
+/* ─── COLOR ────────────────────────────────────────────────────────────── */
+.swatches {
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 0;
+  margin-top: 48px;
+  border: 1px solid var(--rule-strong);
+}
+.swatch {
+  cursor: pointer; user-select: none;
+  border-right: 1px solid var(--rule);
+  position: relative;
+}
+.swatch:last-child { border-right: 0; }
+.swatch .chip {
+  aspect-ratio: 1/1.1;
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 14px 16px;
+}
+.swatch .chip .top {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 0.24em;
+  text-transform: uppercase; opacity: 0.7;
+}
+.swatch .chip .name {
+  font-family: var(--display); font-weight: 900;
+  font-size: 14px; letter-spacing: -0.01em; text-transform: uppercase;
+}
+.swatch .chip .hex {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; margin-top: 2px;
+}
+.swatch .meta {
+  padding: 10px 16px 16px;
+  font-family: var(--mono); font-size: 10px; line-height: 1.7;
+  color: var(--ink-2); border-top: 1px solid var(--rule);
+}
+.swatch.copied::after {
+  content: "COPIED";
+  position: absolute; right: 14px; top: 14px;
+  font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em;
+  padding: 3px 7px; background: var(--ink); color: var(--page);
+}
+
+@media (max-width: 1000px) { .swatches { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px)  { .swatches { grid-template-columns: repeat(2, 1fr); } }
+
+.ratio-bar { display: flex; height: 56px; margin-top: 32px; border: 1px solid var(--rule-strong); }
+.ratio-bar > div {
+  display: flex; align-items: center; padding: 0 14px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.20em;
+  text-transform: uppercase;
+}
+
+/* ─── TYPE ─────────────────────────────────────────────────────────────── */
+.type-block {
+  background: var(--paper); border: 1px solid var(--rule);
+  padding: 36px; margin-top: 16px;
+}
+.type-block .meta {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--ink-2);
+  margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--rule);
+}
+.type-block .sample-display {
+  font-family: var(--display); font-weight: 900;
+  font-size: clamp(56px, 9vw, 130px);
+  line-height: 0.9; letter-spacing: -0.045em;
+  text-transform: uppercase;
+}
+.type-block .sample-display .sage { color: var(--sage); }
+.type-block .sample-body {
+  font-family: var(--body); font-weight: 500;
+  font-size: 16px; line-height: 1.6; color: var(--ink-2);
+  text-transform: uppercase; letter-spacing: 0.02em;
+  max-width: 60ch;
+}
+.type-block .sample-body-sentence {
+  font-family: var(--body); font-weight: 400;
+  font-size: 16px; line-height: 1.6; color: var(--ink-2);
+  margin-top: 16px; max-width: 60ch;
+}
+.type-block .sample-mono {
+  font-family: var(--mono); font-size: 14px; line-height: 1.85;
+  color: var(--ink); margin-top: 24px; padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  letter-spacing: 0.04em;
+}
+.type-block .sample-mono .dim { color: var(--ink-2); }
+
+/* Editorial / serif italic block */
+.type-block.editorial { background: var(--page); }
+.type-block.editorial .quote {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.18; letter-spacing: -0.015em;
+  color: var(--ink);
+  max-width: 28ch;
+}
+.type-block.editorial .quote .sage { color: var(--sage); }
+.type-block.editorial .attr {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--ink-2);
+  margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--rule);
+  display: flex; justify-content: space-between;
+}
+
+/* ─── VIDEO TEMPLATES ──────────────────────────────────────────────────── */
+.tpl-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 48px; }
+.tpl { background: var(--paper); border: 1px solid var(--rule); padding: 24px; }
+.tpl .frame { background: var(--ink); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.tpl .frame img { width: 100%; height: auto; display: block; }
+.tpl .frame.r9x16 { aspect-ratio: 9/16; max-height: 600px; margin: 0 auto; }
+.tpl .frame.r16x9 { aspect-ratio: 16/9; }
+.tpl h4 {
+  margin-top: 20px; font-family: var(--display); font-weight: 900;
+  font-size: 18px; letter-spacing: -0.01em; text-transform: uppercase;
+}
+.tpl .specs {
+  font-family: var(--mono); font-size: 11px; line-height: 1.85;
+  color: var(--ink-2); margin-top: 8px; letter-spacing: 0.04em;
+}
+@media (max-width: 800px) { .tpl-grid { grid-template-columns: 1fr; } }
+
+/* ─── RECIPE TABLES ────────────────────────────────────────────────────── */
+.recipe { background: var(--paper); border: 1px solid var(--rule); margin-top: 24px; overflow: hidden; }
+.recipe table { width: 100%; border-collapse: collapse; }
+.recipe th, .recipe td {
+  padding: 14px 18px; text-align: left;
+  font-size: 13px; line-height: 1.55;
+  border-bottom: 1px solid var(--rule); vertical-align: top;
+}
+.recipe th {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--ink-2);
+  background: var(--page);
+}
+.recipe td.k {
+  font-family: var(--mono); color: var(--ink); width: 220px;
+  text-transform: uppercase; letter-spacing: 0.06em; font-size: 11px;
+}
+.recipe tr:last-child td { border-bottom: 0; }
+
+/* ─── DO/DONT ──────────────────────────────────────────────────────────── */
+.do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+@media (max-width: 800px) { .do-dont { grid-template-columns: 1fr; } }
+
+/* ─── CHECKLIST ────────────────────────────────────────────────────────── */
+.checklist { columns: 2; column-gap: 32px; margin-top: 24px; }
+.checklist .item {
+  break-inside: avoid; padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+  display: grid; grid-template-columns: 14px 1fr; gap: 14px;
+  align-items: flex-start;
+}
+.checklist .item .box {
+  width: 14px; height: 14px;
+  border: 1.5px solid var(--ink); margin-top: 4px;
+}
+.checklist .item .t { font-size: 14px; line-height: 1.55; }
+.checklist .item .t small {
+  display: block; color: var(--ink-2);
+  font-size: 12px; margin-top: 4px;
+}
+@media (max-width: 700px) { .checklist { columns: 1; } }
+
+/* ─── FOOTER ───────────────────────────────────────────────────────────── */
+footer { padding: 80px 0 64px; background: var(--ink); color: var(--page); }
+footer .wrap { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; }
+footer .big {
+  font-family: var(--display); font-weight: 900;
+  font-size: clamp(72px, 12vw, 200px);
+  line-height: 0.86; letter-spacing: -0.05em; text-transform: uppercase;
+}
+footer .big .sage { color: var(--tone); }
+footer .meta {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.20em;
+  text-transform: uppercase; color: rgba(241,239,233,0.55);
+  line-height: 2;
+}
+
+/* ─── PRINT ────────────────────────────────────────────────────────────── */
+@media print {
+  .topnav { display: none; }
+  body { background: white; }
+  section { page-break-inside: avoid; padding: 32px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── PASSWORD GATE ───────────────────────────────────────────────────── -->
+<div class="auth-gate" id="authGate">
+  <div class="panel">
+    <svg class="pin" viewBox="0 0 512 512" aria-hidden="true">
+      <path fill="currentColor" d="M256 56c-66.3 0-120 53.7-120 120 0 24 7 46.4 19.2 65.2L256 388l100.8-146.8C369 222.4 376 200 376 176c0-66.3-53.7-120-120-120zm0 162c-23.2 0-42-18.8-42-42s18.8-42 42-42 42 18.8 42 42-18.8 42-42 42z"/>
+    </svg>
+    <div>
+      <div class="kicker">Internal · Restricted</div>
+      <h1 style="margin-top: 8px;">Rank On Maps<br/>Brand Kit.</h1>
+      <p style="margin-top: 14px;">For team and editor access only. Enter the access code to continue.</p>
+    </div>
+    <form id="authForm" autocomplete="off">
+      <input type="password" id="authInput" placeholder="ACCESS CODE" autofocus aria-label="Access code"/>
+      <label class="remember"><input type="checkbox" id="authRemember" checked/> Remember on this device</label>
+      <button type="submit">Enter</button>
+      <div class="err" id="authError">&nbsp;</div>
+    </form>
+    <div class="receipt">
+      <span>RANKONMAPS.IO</span>
+      <span>BRAND KIT V2.0 · 2026</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─── TOP NAV ─────────────────────────────────────────────────────────── -->
+<nav class="topnav">
+  <div class="wrap">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 512 512" aria-hidden="true">
+        <path fill="currentColor" d="M256 56c-66.3 0-120 53.7-120 120 0 24 7 46.4 19.2 65.2L256 388l100.8-146.8C369 222.4 376 200 376 176c0-66.3-53.7-120-120-120zm0 162c-23.2 0-42-18.8-42-42s18.8-42 42-42 42 18.8 42 42-18.8 42-42 42z"/>
+      </svg>
+      <span>Rank On Maps · Brand Kit</span>
+    </div>
+    <div class="links">
+      <a href="#essence">Essence</a>
+      <a href="#logo">Logo</a>
+      <a href="#color">Color</a>
+      <a href="#type">Type</a>
+      <a href="#editorial">Editorial</a>
+      <a href="#shortform">Short-form</a>
+      <a href="#longform">Long-form</a>
+      <a href="#podcast">Podcast</a>
+      <a href="#deck">Decks</a>
+      <a href="#motion">Motion</a>
+      <a href="#color-grade">Grade</a>
+      <a href="#do-dont">Do / Don't</a>
+      <a href="#checklist">Checklist</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── HERO ────────────────────────────────────────────────────────────── -->
+<header class="hero">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="kicker">Brand kit · v2.0 · 2026</div>
+        <h1 style="margin-top: 24px;">Rank<br/>On <span class="sage">Maps.</span></h1>
+        <p class="lead" style="margin-top: 32px;">
+          A premium local-SEO operator. Quiet authority on a warm page. Built so editors, designers, and the founder can ship work that compounds · not noise that decays.
+        </p>
+      </div>
+      <div class="meta">
+        <div class="row"><span class="k">Domain</span><span class="v mono">rankonmaps.io</span></div>
+        <div class="row"><span class="k">Personality</span><span class="v">Authoritative · Considered · Structured</span></div>
+        <div class="row"><span class="k">Use</span><span class="v">Decks · Reels / TikTok / Shorts · YouTube · Podcast</span></div>
+        <div class="row"><span class="k">Logo</span><span class="v">Icon-led / app-icon</span></div>
+        <div class="row"><span class="k">Color depth</span><span class="v">Anchor + neutrals · no second color</span></div>
+        <div class="row"><span class="k">Type voice</span><span class="v">Inter Tight 900 · all-caps · no emoji</span></div>
+      </div>
+    </div>
+    <div class="receipt-row">
+      <span>RANK ON MAPS</span>
+      <span>·</span>
+      <span>FIG. 00 · COVER PLATE</span>
+      <span>·</span>
+      <span>EDITION 2026</span>
+      <span>·</span>
+      <span>↗ RANKONMAPS.IO</span>
+    </div>
+  </div>
+</header>
+
+<!-- ─── ESSENCE ─────────────────────────────────────────────────────────── -->
+<section id="essence">
+  <div class="wrap">
+    <div class="kicker">01 · Essence</div>
+    <h2 class="h-section" style="margin-top: 16px;">Three lines.<br/>Hold them.</h2>
+    <p class="lead" style="margin-top: 32px;">Every frame, every slide, every caption resolves to one of these. If it doesn't, it isn't Rank On Maps · it's noise.</p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="num">01 · PROOF</div>
+        <h3>Real proof,<br/>not promises.</h3>
+        <p>Show the dashboard, the call volume, the map. Numbers and screenshots out-perform adjectives. Editors: build around the artifact, not the claim.</p>
+      </div>
+      <div class="pillar">
+        <div class="num">02 · GEOGRAPHY</div>
+        <h3>The map is<br/>the protagonist.</h3>
+        <p>Local search is geography. Pins, radii, drive-time rings, and 3-pack frames anchor the visual world. When in doubt · show the map.</p>
+      </div>
+      <div class="pillar">
+        <div class="num">03 · VOICE</div>
+        <h3>Authority<br/>spoken plain.</h3>
+        <p>Punchy headlines, short sentences, blunt verbs. We sound like a senior operator on a Tuesday · not a marketing deck on Friday.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LOGO ────────────────────────────────────────────────────────────── -->
+<section id="logo">
+  <div class="wrap">
+    <div class="kicker">02 · Logo</div>
+    <h2 class="h-section" style="margin-top: 16px;">Icon-led.<br/>Always.</h2>
+    <p class="lead" style="margin-top: 32px;">The pin is the brand. It carries the system on its own. The horizon under the pin signals geography; never remove it.</p>
+
+    <div class="logo-grid">
+      <div class="logo-card page"><img src="logo/logo-mark-ink.svg" alt="Ink mark on page"/><span class="label">01 · INK ON PAGE</span></div>
+      <div class="logo-card dark"><img src="logo/logo-mark-paper.svg" alt="Paper mark on ink"/><span class="label">02 · PAPER ON INK</span></div>
+      <div class="logo-card sage"><img src="logo/logo-mark-paper.svg" alt="Paper mark on sage"/><span class="label">03 · PAPER ON SAGE</span></div>
+      <div class="logo-card paper"><img src="logo/logo-mark-sage.svg" alt="Sage mark on paper"/><span class="label">04 · SAGE ON PAPER</span></div>
+    </div>
+
+    <div class="logo-pair">
+      <div class="logo-card page" style="aspect-ratio: 1/1; padding: 16%;">
+        <img src="logo/app-icon.svg" alt="App icon, sage gradient"/>
+        <span class="label">APP ICON · SAGE GRADIENT</span>
+      </div>
+      <div class="logo-card paper" style="aspect-ratio: 1/1; padding: 16%;">
+        <img src="logo/app-icon-light.svg" alt="App icon, light"/>
+        <span class="label">APP ICON · LIGHT</span>
+      </div>
+    </div>
+
+    <div class="logo-rules">
+      <div class="rule-card do">
+        <h4>Do</h4>
+        <ul>
+          <li>Keep clear-space ≥ the height of the pin's circular cutout on every side.</li>
+          <li>Pin must always sit above the horizon line · never floating without it.</li>
+          <li>Minimum size: 32 px on screen, 12 mm in print.</li>
+          <li>Use the paper mark on any photographic or sage background to preserve contrast.</li>
+        </ul>
+      </div>
+      <div class="rule-card dont">
+        <h4>Don't</h4>
+        <ul>
+          <li>No gradients, glows, or shadows on the pin (except the official app icon).</li>
+          <li>No rotation, skew, or stretch · ever.</li>
+          <li>No recolor outside the official palette.</li>
+          <li>No wordmark pairing · this kit is icon-only.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── COLOR ───────────────────────────────────────────────────────────── -->
+<section id="color">
+  <div class="wrap">
+    <div class="kicker">03 · Color</div>
+    <h2 class="h-section" style="margin-top: 16px;">One green.<br/>And air.</h2>
+    <p class="lead" style="margin-top: 32px;">A single sage forest anchors the system. There is no second color · only a warm tone neutral that handles what an accent normally would. Everything else is structure.</p>
+
+    <div class="swatches">
+      <div class="swatch" data-copy="#F1EFE9">
+        <div class="chip" style="background:#F1EFE9; color:#1A1F1B;">
+          <div class="top">PAGE</div>
+          <div><div class="name">Warm-quiet</div><div class="hex">#F1EFE9</div></div>
+        </div>
+        <div class="meta">RGB 241·239·233<br/>HSL 41·26·93<br/>CMYK 4·4·9·0<br/>PMS Warm Gray 1</div>
+      </div>
+      <div class="swatch" data-copy="#FAF8F2">
+        <div class="chip" style="background:#FAF8F2; color:#1A1F1B;">
+          <div class="top">PAPER</div>
+          <div><div class="name">Paper</div><div class="hex">#FAF8F2</div></div>
+        </div>
+        <div class="meta">RGB 250·248·242<br/>HSL 45·40·96<br/>CMYK 2·2·6·0<br/>PMS Warm Gray 1</div>
+      </div>
+      <div class="swatch" data-copy="#D9D4C5">
+        <div class="chip" style="background:#D9D4C5; color:#1A1F1B;">
+          <div class="top">TONE</div>
+          <div><div class="name">Tone</div><div class="hex">#D9D4C5</div></div>
+        </div>
+        <div class="meta">RGB 217·212·197<br/>HSL 45·19·81<br/>CMYK 12·12·22·0<br/>PMS 7527</div>
+      </div>
+      <div class="swatch" data-copy="#1F4D3C">
+        <div class="chip" style="background:#1F4D3C; color:#FAF8F2;">
+          <div class="top">ANCHOR</div>
+          <div><div class="name">Sage Forest</div><div class="hex">#1F4D3C</div></div>
+        </div>
+        <div class="meta">RGB 31·77·60<br/>HSL 158·43·21<br/>CMYK 80·40·70·45<br/>PMS 5535</div>
+      </div>
+      <div class="swatch" data-copy="#3A6E5A">
+        <div class="chip" style="background:#3A6E5A; color:#FAF8F2;">
+          <div class="top">SOFT</div>
+          <div><div class="name">Sage Soft</div><div class="hex">#3A6E5A</div></div>
+        </div>
+        <div class="meta">RGB 58·110·90<br/>HSL 157·31·33<br/>CMYK 70·30·60·30<br/>PMS 5535 (75%)</div>
+      </div>
+      <div class="swatch" data-copy="#1A1F1B">
+        <div class="chip" style="background:#1A1F1B; color:#FAF8F2;">
+          <div class="top">INK</div>
+          <div><div class="name">Ink</div><div class="hex">#1A1F1B</div></div>
+        </div>
+        <div class="meta">RGB 26·31·27<br/>HSL 132·9·11<br/>CMYK 80·65·70·85</div>
+      </div>
+    </div>
+
+    <p class="kicker" style="margin-top: 14px;">Click a swatch to copy the hex.</p>
+
+    <h3 class="h-sub">Ratio</h3>
+    <p style="color: var(--ink-2); max-width: 64ch; font-size: 14px;">60 / 25 / 10 / 5. The page does most of the work. Sage anchors. Tone is the rare temperature change. Ink lands the punctuation.</p>
+
+    <div class="ratio-bar">
+      <div style="background: var(--page); flex: 60; color: var(--ink-2);">PAGE · 60%</div>
+      <div style="background: var(--sage); flex: 25; color: var(--paper);">SAGE FOREST · 25%</div>
+      <div style="background: var(--tone); flex: 10; color: var(--ink);">TONE · 10%</div>
+      <div style="background: var(--ink); flex: 5; color: var(--page);">INK · 5%</div>
+    </div>
+
+    <h3 class="h-sub">Pairings</h3>
+    <div class="recipe">
+      <table>
+        <thead><tr><th>Pairing</th><th>Use it for</th><th>Avoid for</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Sage Forest · Page</strong></td><td>Most things · decks, headlines, lower-thirds.</td><td>Nothing · this is the default.</td></tr>
+          <tr><td><strong>Ink · Page</strong></td><td>Long-form text, podcast captions, any neutral surface.</td><td>Logos at small size · use Sage.</td></tr>
+          <tr><td><strong>Page · Tone</strong></td><td>Subtle separations between zones in decks; podcast cover backplates.</td><td>Backgrounds for short-form video · too soft to read.</td></tr>
+          <tr><td><strong>Sage Forest · Paper</strong></td><td>End cards, inverted slides, app icon, podcast cover.</td><td>Body text · contrast is high but reading is heavy.</td></tr>
+          <tr><td><strong>Sage Soft · anything</strong></td><td>Secondary marks: waveforms, charts, sub-rules. Never headline.</td><td>Headline color · feels weaker than Sage Forest.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TYPE ────────────────────────────────────────────────────────────── -->
+<section id="type">
+  <div class="wrap">
+    <div class="kicker">04 · Typography</div>
+    <h2 class="h-section" style="margin-top: 16px;">One family.<br/>Mono for receipts.</h2>
+    <p class="lead" style="margin-top: 32px;">A single typeface · Inter Tight · handles every voice on the page. JetBrains Mono carries the receipts: timestamps, plate numbers, file paths, episode codes. The system feels like an archive, not a brochure.</p>
+
+    <div class="type-block">
+      <div class="meta">
+        <span>Display · Inter Tight 900</span>
+        <span>Free · Google Fonts</span>
+        <span>Weights 900 / 800 / 500 / 400</span>
+        <span>Use 100%</span>
+      </div>
+      <div class="sample-display">RANK<br/>WHERE<br/><span class="sage">IT MATTERS.</span></div>
+      <div class="sample-body" style="margin-top: 32px;">LOCAL SEO · SERVICE-AREA BUSINESSES · ENGINEERED FOR THE CALL, NOT THE CLICK.</div>
+      <p class="sample-body-sentence">Body copy in the same family runs in sentence case at 400–500 weight, with letter-spacing at 0 and line-height around 1.55. The discipline is one family across every voice · different weights and case do all the work.</p>
+      <div class="sample-mono">
+        ROM · CASE 014 · 04:38<br/>
+        <span class="dim">↑</span> 213% CALL VOLUME · 22 DAYS<br/>
+        47 PIN PLACEMENTS · 14 KEYWORDS<br/>
+        <span class="dim">↗</span> RANKONMAPS.IO
+      </div>
+    </div>
+
+    <h3 class="h-sub">Editor cheat sheet · short-form caption type</h3>
+    <div class="recipe">
+      <table>
+        <tbody>
+          <tr><td class="k">Family</td><td>Inter Tight, weight 900</td></tr>
+          <tr><td class="k">Size (1080×1920)</td><td>110–130 px (single-line headline)</td></tr>
+          <tr><td class="k">Tracking</td><td>-45 (After Effects) · -0.045em (web)</td></tr>
+          <tr><td class="k">Leading</td><td>0.90 · tight</td></tr>
+          <tr><td class="k">Case</td><td>UPPERCASE</td></tr>
+          <tr><td class="k">Color hierarchy</td><td>Ink for body · Sage Forest for the one word that lands · optional 6 px Sage underline on that word</td></tr>
+          <tr><td class="k">Stroke / shadow</td><td>None. If readability fails on photo b-roll, drop a 6 px Ink underlay; never a glow.</td></tr>
+          <tr><td class="k">Highlight rule</td><td>Either color flip <em>or</em> underline · not both.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EDITORIAL ───────────────────────────────────────────────────────── -->
+<section id="editorial">
+  <div class="wrap">
+    <div class="kicker">05 · The editorial moment</div>
+    <h2 class="h-section" style="margin-top: 16px;">One italic line.<br/>Used rarely.</h2>
+    <p class="lead" style="margin-top: 32px;">A single italic serif appears as the brand's whisper · not its voice. Reserved for quote pulls, podcast title cards, deck transitions, and editorial moments where authority sounds better written than declared. Less than 2% of frames.</p>
+
+    <div class="type-block editorial">
+      <div class="meta">
+        <span>Editorial · Fraunces Italic 400</span>
+        <span>Free · Google Fonts</span>
+        <span>Use ≤ 2%</span>
+        <span>Quote pulls · podcast titles · transitions</span>
+      </div>
+      <div class="quote">"Most agencies sell traffic. We deliver <span class="sage">phone calls:</span> measured, attributed, recurring."</div>
+      <div class="attr">
+        <span>DANIEL GIRMAY · FOUNDER</span>
+        <span>FIG. 09 · QUOTE 03</span>
+      </div>
+    </div>
+
+    <h3 class="h-sub">Where editorial is allowed</h3>
+    <div class="recipe">
+      <table>
+        <thead><tr><th>Surface</th><th>Allowed</th><th>Forbidden</th></tr></thead>
+        <tbody>
+          <tr><td>9:16 quote card</td><td>Pulled quote attributed to a person.</td><td>Hooks, CTAs, sales claims.</td></tr>
+          <tr><td>Podcast episode title card</td><td>Episode subtitle in italic · the line that goes on Apple Podcasts.</td><td>The episode number or main title (Inter Tight 900 only).</td></tr>
+          <tr><td>Deck transition / divider</td><td>One line of italic between major sections to slow the reader down.</td><td>Body text on any deck slide.</td></tr>
+          <tr><td>Long-form opener</td><td>Editorial subtitle under a YouTube title · the "what this is really about" line.</td><td>Standalone CTAs or headlines.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="kicker" style="margin-top: 24px;">The italic earns its presence by rarity. If editors find themselves using it more than once or twice per piece, something is wrong.</p>
+  </div>
+</section>
+
+<!-- ─── SHORT-FORM ──────────────────────────────────────────────────────── -->
+<section id="shortform">
+  <div class="wrap">
+    <div class="kicker">06 · Short-form video · 1080 × 1920</div>
+    <h2 class="h-section" style="margin-top: 16px;">Reels.<br/>TikTok.<br/>Shorts.</h2>
+    <p class="lead" style="margin-top: 32px;">Built to the title-safe zone. One thought per beat, one accent moment per piece (not per frame), one pin per piece. The pace slows; the type does the punching.</p>
+
+    <div class="tpl-grid">
+      <div class="tpl">
+        <div class="frame r9x16"><img src="templates/9x16-safezone.svg" alt="9:16 safe zones"/></div>
+        <h4>Safe-zone reference</h4>
+        <div class="specs">
+          1080 × 1920 · 30 fps<br/>
+          Title-safe inset: 60 px sides · 220 px top · 360 px bottom<br/>
+          Right-rail (Reels/TikTok): keep last 180 px clear from y=800<br/>
+          1:1 center crop: y=420–1500 (repurpose to feed)
+        </div>
+      </div>
+      <div class="tpl">
+        <div class="frame r9x16"><img src="templates/caption-style.svg" alt="Caption style"/></div>
+        <h4>Caption frame</h4>
+        <div class="specs">
+          One thought per card · 5–7 words per line max<br/>
+          Inter Tight 900 · 130 px · ALL CAPS<br/>
+          Ink body · Sage Forest punch word · Sage 6 px underline<br/>
+          Mono receipt top + bottom (FIG · timestamp)
+        </div>
+      </div>
+      <div class="tpl">
+        <div class="frame r9x16"><img src="templates/podcast-clip.svg" alt="Podcast clip frame"/></div>
+        <h4>Podcast clip</h4>
+        <div class="specs">
+          Sage gradient bg #1F4D3C → #0F2E22<br/>
+          Video well 60–1020 / 220–1180<br/>
+          Mono receipt top-left + top-right (EP / TIME)<br/>
+          Caption block 4 lines · final line in Tone
+        </div>
+      </div>
+      <div class="tpl">
+        <div class="frame r9x16"><img src="templates/quote-card.svg" alt="Editorial quote card"/></div>
+        <h4>Editorial quote card</h4>
+        <div class="specs">
+          Paper #FAF8F2 background<br/>
+          Fraunces Italic 92 px · ink + sage emphasis<br/>
+          Hairline rules top + bottom · attribution in mono<br/>
+          Use rarely · &lt; 2% of short-form output
+        </div>
+      </div>
+    </div>
+
+    <h3 class="h-sub">Cuts, transitions, sound</h3>
+    <div class="recipe">
+      <table>
+        <tbody>
+          <tr><td class="k">Cut cadence</td><td>3–4 s per cut on talking-head; 1.0–1.5 s on b-roll montages. Slower than the previous kit on purpose.</td></tr>
+          <tr><td class="k">Transitions</td><td>Hard cuts default. No green flash, no whip-pans, no glitches. A single 6-frame cross-dissolve allowed at chapter breaks only.</td></tr>
+          <tr><td class="k">Captions</td><td>Word-by-word reveal, 4-frame hold per word. Always burned in.</td></tr>
+          <tr><td class="k">Music</td><td>Low-key drum-or-piano beds, 80–100 BPM. Duck to -20 dB under voice. No EDM.</td></tr>
+          <tr><td class="k">Loud accent</td><td>One sub-thump or low whoosh per video at the punch beat. Never more.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LONG-FORM ───────────────────────────────────────────────────────── -->
+<section id="longform">
+  <div class="wrap">
+    <div class="kicker">07 · Long-form video · 1920 × 1080</div>
+    <h2 class="h-section" style="margin-top: 16px;">YouTube.</h2>
+    <p class="lead" style="margin-top: 32px;">Long-form earns trust. Slower pacing, more white space, more proof artifacts on screen. Headlines stay heavy and structural · the surroundings calm down further.</p>
+
+    <div class="tpl-grid">
+      <div class="tpl">
+        <div class="frame r16x9"><img src="templates/title-card-16x9.svg" alt="Title card"/></div>
+        <h4>Title card</h4>
+        <div class="specs">
+          Paper #FAF8F2 background · hairline top &amp; bottom rules<br/>
+          Headline 200 px Inter Tight 900 · 2 lines max<br/>
+          One word optionally in Sage Forest<br/>
+          Mono receipts in all four corners
+        </div>
+      </div>
+      <div class="tpl">
+        <div class="frame r16x9"><img src="templates/lower-third.svg" alt="Lower third"/></div>
+        <h4>Lower-third</h4>
+        <div class="specs">
+          900 × 120 box · y=860 · Paper bg · 14 px Sage stripe<br/>
+          Name 44 px Inter Tight 900 · role in mono<br/>
+          Optional tag chip y=800: Sage bg · uppercase mono<br/>
+          Hold 4 s on first appearance, 2.5 s on returns
+        </div>
+      </div>
+      <div class="tpl">
+        <div class="frame r16x9"><img src="templates/end-card-16x9.svg" alt="End card"/></div>
+        <h4>End card</h4>
+        <div class="specs">
+          Sage Forest field · 8% paper grid<br/>
+          Two 640 × 360 slots · "next episode" + "subscribe"<br/>
+          Pin in Paper · "RANKONMAPS.IO" mono bottom-right<br/>
+          Hold 14–18 s · subtle BGM tail
+        </div>
+      </div>
+      <div class="tpl">
+        <div class="frame r16x9" style="background: var(--page); border: 1px solid var(--rule); padding: 32px; align-items: flex-start;">
+          <div>
+            <p class="kicker">YouTube delivery</p>
+            <ul style="margin-top: 12px; font-size: 13px; line-height: 1.85; padding-left: 18px;">
+              <li><strong>Codec:</strong> H.264 · 1080p · 16–24 Mbps · AAC 320 kbps</li>
+              <li><strong>Thumbnail:</strong> 1280×720 · headline 1–4 words · face + map artifact</li>
+              <li><strong>Chapters:</strong> always. 5–8 chapters on a 6–12 min video.</li>
+              <li><strong>Title:</strong> no clickbait. Format "<em>Result</em> for <em>Niche</em> in <em>Time</em>".</li>
+              <li><strong>End-screen:</strong> last 18 s · Subscribe + next episode.</li>
+            </ul>
+          </div>
+        </div>
+        <h4>Delivery checklist</h4>
+        <div class="specs">Reusable export preset. Don't deviate per episode.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PODCAST ─────────────────────────────────────────────────────────── -->
+<section id="podcast">
+  <div class="wrap">
+    <div class="kicker">08 · Podcast clips</div>
+    <h2 class="h-section" style="margin-top: 16px;">Clip the moment.</h2>
+    <p class="lead" style="margin-top: 32px;">Each clip stands alone · a Reel that happens to come from a podcast. The Sage gradient is the show's signature; everything else is the same kit.</p>
+
+    <div class="recipe">
+      <table>
+        <tbody>
+          <tr><td class="k">Format</td><td>1080 × 1920 (primary) · 1080 × 1080 (LinkedIn) · 1920 × 1080 (YouTube)</td></tr>
+          <tr><td class="k">Background</td><td>Linear gradient #1F4D3C → #0F2E22, top-to-bottom</td></tr>
+          <tr><td class="k">Speaker well</td><td>Rounded square · 24 px radius · centered horizontally · 50–55% of canvas height</td></tr>
+          <tr><td class="k">Caption block</td><td>4 lines max · 120 px Inter Tight 900 · final or hook line in Tone</td></tr>
+          <tr><td class="k">Waveform</td><td>Sage Soft #3A6E5A · 18–20 vertical bars · animate on RMS, not peak</td></tr>
+          <tr><td class="k">Mono receipts</td><td>Top-left "EP.014 / CLIP 03" · top-right timestamp · bottom-right URL</td></tr>
+          <tr><td class="k">Title card (optional)</td><td>Use the editorial quote-card pattern with the episode subtitle in Fraunces Italic.</td></tr>
+          <tr><td class="k">Outro</td><td>Last 1.5 s: speaker fades, mark + "RANKONMAPS.IO" lands centered.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ─── DECK ────────────────────────────────────────────────────────────── -->
+<section id="deck">
+  <div class="wrap">
+    <div class="kicker">09 · Sales decks · Pitches</div>
+    <h2 class="h-section" style="margin-top: 16px;">Slides<br/>that close.</h2>
+    <p class="lead" style="margin-top: 32px;">A pitch deck is a prosecution. Each slide a single exhibit. Page backgrounds, generous margins, one idea per slide, one number per slide. Inter Tight 900 carries the weight; mono carries the receipts.</p>
+
+    <div class="recipe">
+      <table>
+        <thead><tr><th>Slide</th><th>Layout</th><th>Type</th><th>Color</th></tr></thead>
+        <tbody>
+          <tr><td>Cover</td><td>Pin top-left · client name 200 px on Page · date in mono</td><td>Inter Tight 900</td><td>Page + Ink</td></tr>
+          <tr><td>The pain</td><td>Single sentence, 140 px, dead-centered</td><td>Inter Tight 900</td><td>Page + one Sage word + Sage underline</td></tr>
+          <tr><td>Proof</td><td>Screenshot full-bleed left · 3-line callout right</td><td>Inter Tight 500 sentence case</td><td>Paper</td></tr>
+          <tr><td>Stat slide</td><td>One number 360 px · label in mono 24 px under</td><td>Inter Tight 900 + JBMono</td><td>Sage Forest field · Paper number</td></tr>
+          <tr><td>Process</td><td>3 columns, hairline-divided · sage numerals</td><td>Inter Tight 500</td><td>Paper + Sage</td></tr>
+          <tr><td>Editorial transition</td><td>Single italic line dead-centered, 56 px Fraunces Italic</td><td>Fraunces Italic 400</td><td>Paper + one Sage emphasis</td></tr>
+          <tr><td>Offer</td><td>Two-up: low ticket · full stack. Price in mono 80 px.</td><td>Inter Tight 900 + JBMono</td><td>Page + Sage Forest panel</td></tr>
+          <tr><td>Close</td><td>Pin centered · "RANK WHERE IT MATTERS." 220 px · CTA in mono</td><td>Inter Tight 900</td><td>Sage Forest field + Tone accent</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="lead" style="margin-top: 24px;">16:9 at 1920 × 1080. Margins: 80 px sides, 64 px top/bottom. Never more than 24 words on a slide.</p>
+  </div>
+</section>
+
+<!-- ─── MOTION ──────────────────────────────────────────────────────────── -->
+<section id="motion">
+  <div class="wrap">
+    <div class="kicker">10 · Motion language</div>
+    <h2 class="h-section" style="margin-top: 16px;">Move with intent.</h2>
+    <p class="lead" style="margin-top: 32px;">Motion is structural, not decorative. Every move means something · a beat, a reveal, a transition between thoughts. If a move doesn't earn its presence, cut it.</p>
+
+    <div class="recipe">
+      <table>
+        <tbody>
+          <tr><td class="k">Default easing</td><td>Cubic out · After Effects: ease-out 67% · ease-in 33%</td></tr>
+          <tr><td class="k">Type entrance</td><td>Up-from-baseline · 12 px travel · 320 ms</td></tr>
+          <tr><td class="k">Word highlight</td><td>Color flip Ink → Sage Forest · 100 ms · no scale</td></tr>
+          <tr><td class="k">Underline draw</td><td>Left-to-right wipe · 280 ms · ease-out</td></tr>
+          <tr><td class="k">Frame change</td><td>Hard cut. 6-frame dissolve only at narrative chapter breaks.</td></tr>
+          <tr><td class="k">Stat reveal</td><td>Numeric tween 1000 ms · ease-out · slight blur 0→0 px</td></tr>
+          <tr><td class="k">Logo land</td><td>Pin drops 24 px · 320 ms · horizon scales 0→1 width · 360 ms</td></tr>
+          <tr><td class="k">Editorial italic</td><td>Letter-by-letter fade-up · 60 ms per word · italic settles last</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ─── COLOR GRADE ─────────────────────────────────────────────────────── -->
+<section id="color-grade">
+  <div class="wrap">
+    <div class="kicker">11 · B-roll color treatment</div>
+    <h2 class="h-section" style="margin-top: 16px;">A consistent grade.</h2>
+    <p class="lead" style="margin-top: 32px;">All ROM-shot footage moves through the same grade. Clean, modern, slightly cool in the shadows, warm in the skin midtones. Not cinematic teal-and-orange · confident broadcast on a warm page.</p>
+
+    <div class="recipe">
+      <table>
+        <tbody>
+          <tr><td class="k">White balance</td><td>Slightly cool · 4900–5200K</td></tr>
+          <tr><td class="k">Lift (shadows)</td><td>Cyan +4 · luma -3</td></tr>
+          <tr><td class="k">Gamma (mids)</td><td>Warm +2 · luma +2 · saturation -4</td></tr>
+          <tr><td class="k">Gain (highlights)</td><td>Neutral · luma -2 · soft roll-off</td></tr>
+          <tr><td class="k">Saturation</td><td>Master 0.90 · greens lifted +6 (nature reads ROM)</td></tr>
+          <tr><td class="k">Contrast</td><td>S-curve gentle · pivot 0.42</td></tr>
+          <tr><td class="k">Grain</td><td>None on screen recordings · 0.6% on talking-head</td></tr>
+          <tr><td class="k">LUT name</td><td>ROM_Sage_v2.cube · bake into Premiere/Resolve preset</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ─── DO / DONT ───────────────────────────────────────────────────────── -->
+<section id="do-dont">
+  <div class="wrap">
+    <div class="kicker">12 · Do · Don't</div>
+    <h2 class="h-section" style="margin-top: 16px;">The line is clear.</h2>
+
+    <div class="do-dont">
+      <div class="rule-card do">
+        <h4>Do</h4>
+        <ul>
+          <li>Default to Page #F1EFE9 backgrounds with Ink type · most things look better there.</li>
+          <li>Use Sage Forest as the only color event. One word, one frame.</li>
+          <li>Use the underline rule under the sage word · or color-flip it. Never both.</li>
+          <li>Show real maps, real dashboards, real call counts.</li>
+          <li>Run mono receipts in every corner · timestamps, fig numbers, file paths.</li>
+          <li>Reserve the italic serif for ≤ 2% of frames · quote pulls, podcast titles, deck transitions.</li>
+          <li>Burn captions into short-form. Always.</li>
+          <li>Pin watermark on every short-form export · no exceptions.</li>
+        </ul>
+      </div>
+      <div class="rule-card dont">
+        <h4>Don't</h4>
+        <ul>
+          <li>No second color. No bright greens, no terracotta, no amber. Tone replaces accent.</li>
+          <li>No emoji. Use mono symbols only: ↗ ↑ ↓ · /</li>
+          <li>No drop shadows or gradients on the pin (except the official app icon).</li>
+          <li>No italic serif outside its allowed surfaces. Don't let editors discover it.</li>
+          <li>No SCIO references in any user-facing material.</li>
+          <li>No glitches, whips, or flash transitions. Hard cuts only.</li>
+          <li>No icon-plus-wordmark lockups · this kit is icon-led.</li>
+          <li>No filler stats, no decorative icons, no stock photo "inspiration" images.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CHECKLIST ───────────────────────────────────────────────────────── -->
+<section id="checklist">
+  <div class="wrap">
+    <div class="kicker">13 · Editor checklist</div>
+    <h2 class="h-section" style="margin-top: 16px;">Before you export.</h2>
+    <p class="lead" style="margin-top: 32px;">Run every short-form and long-form deliverable against this list. If a box doesn't get checked, the file doesn't ship.</p>
+
+    <div class="checklist">
+      <div class="item"><div class="box"></div><div class="t">Resolution matches platform · 1080×1920 or 1920×1080.<small>30 fps unless specifically requested otherwise.</small></div></div>
+      <div class="item"><div class="box"></div><div class="t">Title-safe and right-rail clearances respected.<small>Check on real device, not just preview.</small></div></div>
+      <div class="item"><div class="box"></div><div class="t">Captions burned in, word-by-word, on every short-form.<small>Inter Tight 900 · 130 px · Ink with Sage punch word.</small></div></div>
+      <div class="item"><div class="box"></div><div class="t">Sage event happens at most twice per piece.<small>One color flip, one underline. Never decorative.</small></div></div>
+      <div class="item"><div class="box"></div><div class="t">Mono receipts in at least two corners on every frame.<small>FIG number, timestamp, episode code, or file path.</small></div></div>
+      <div class="item"><div class="box"></div><div class="t">Pin watermark present (bottom-right or bottom-left, 14% scale, 55% opacity).<small>Skip only on title cards where the pin is already on screen.</small></div></div>
+      <div class="item"><div class="box"></div><div class="t">Italic serif used 0–1 times in this piece.<small>If it appears, it's a quote, a transition, or a podcast title.</small></div></div>
+      <div class="item"><div class="box"></div><div class="t">Color grade applied · ROM_Sage_v2.<small>Re-check skin tone and greens.</small></div></div>
+      <div class="item"><div class="box"></div><div class="t">Audio normalized to -16 LUFS short-form, -14 LUFS YouTube.<small>True peak ≤ -1.5 dB.</small></div></div>
+      <div class="item"><div class="box"></div><div class="t">No emoji anywhere on screen.<small>Mono symbols only: ↗ ↑ ↓ · /</small></div></div>
+      <div class="item"><div class="box"></div><div class="t">Lower-thirds use Paper bar with Sage stripe.<small>Hold 4 s first appearance, 2.5 s returns.</small></div></div>
+      <div class="item"><div class="box"></div><div class="t">End card / CTA matches kit (RANKONMAPS.IO + pin).<small>Long-form holds 14–18 s.</small></div></div>
+      <div class="item"><div class="box"></div><div class="t">File name follows: ROM_[type]_[topic]_[YYMMDD]_v##.mp4<small>Example: ROM_Reel_3PackTeardown_260502_v02.mp4</small></div></div>
+      <div class="item"><div class="box"></div><div class="t">Codec: H.264 · 16–24 Mbps · AAC 320 kbps.<small>Higher only if delivery spec requires it.</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ASSETS ──────────────────────────────────────────────────────────── -->
+<section id="assets">
+  <div class="wrap">
+    <div class="kicker">14 · Asset map</div>
+    <h2 class="h-section" style="margin-top: 16px;">What's in the folder.</h2>
+    <div class="recipe">
+      <table>
+        <thead><tr><th>Path</th><th>What it is</th></tr></thead>
+        <tbody>
+          <tr><td class="k">logo/logo-mark-ink.svg</td><td>Pin in Ink · for Page / Paper backgrounds</td></tr>
+          <tr><td class="k">logo/logo-mark-paper.svg</td><td>Pin in Paper · for Ink / Sage / photo backgrounds</td></tr>
+          <tr><td class="k">logo/logo-mark-sage.svg</td><td>Pin in Sage Forest · for monochrome moments on Paper</td></tr>
+          <tr><td class="k">logo/app-icon.svg</td><td>iOS / Android app icon · Sage gradient + Paper pin</td></tr>
+          <tr><td class="k">logo/app-icon-light.svg</td><td>Light variant for white-mode launchers</td></tr>
+          <tr><td class="k">templates/9x16-safezone.svg</td><td>Reels / TikTok / Shorts safe-zone template</td></tr>
+          <tr><td class="k">templates/lower-third.svg</td><td>YouTube / podcast lower-third</td></tr>
+          <tr><td class="k">templates/title-card-16x9.svg</td><td>YouTube long-form title card</td></tr>
+          <tr><td class="k">templates/end-card-16x9.svg</td><td>YouTube end card with subscribe + next slot</td></tr>
+          <tr><td class="k">templates/podcast-clip.svg</td><td>Podcast clip frame (9:16)</td></tr>
+          <tr><td class="k">templates/caption-style.svg</td><td>Reference frame for short-form caption styling</td></tr>
+          <tr><td class="k">templates/quote-card.svg</td><td>Editorial quote card · Fraunces Italic · &lt; 2% use</td></tr>
+          <tr><td class="k">fonts/</td><td>Local fallback fonts (Instrument Sans, Instrument Serif Italic, JetBrains Mono)</td></tr>
+          <tr><td class="k">explorations/</td><td>Direction comparison + merged direction (history)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="h-sub">Required fonts</h3>
+    <p class="lead" style="margin-top: 12px;">Editors should install these system-wide for After Effects, Premiere, Figma, Keynote.</p>
+    <div class="recipe">
+      <table>
+        <thead><tr><th>Family</th><th>Where to get it</th><th>Weights</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Inter Tight</strong></td><td>fonts.google.com/specimen/Inter+Tight</td><td>900 · 800 · 500 · 400</td></tr>
+          <tr><td><strong>Fraunces</strong> (italic only)</td><td>fonts.google.com/specimen/Fraunces</td><td>400 italic · 600 italic</td></tr>
+          <tr><td><strong>JetBrains Mono</strong></td><td>fonts.google.com/specimen/JetBrains+Mono</td><td>700 · 400</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ──────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="wrap">
+    <div class="big">Rank where<br/>it <span class="sage">matters.</span></div>
+    <div class="meta">
+      RANK ON MAPS · RANKONMAPS.IO<br/>
+      BRAND KIT V2.0 · 2026 · DIRECTION D<br/>
+      SHIP SIGNAL, NOT NOISE.
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ─── PASSWORD GATE ─────────────────────────────────────────────────────
+   To change the password: open set-password.html, type the new password,
+   copy the resulting hash, paste it as PASSWORD_HASH below.
+─────────────────────────────────────────────────────────────────────── */
+const PASSWORD_HASH = '74211262d98fb52c7620525dea3bb985d06f1ce858cedc67d1948785e4ca3ec2';
+const STORAGE_KEY = 'rom_brand_unlocked';
+
+async function sha256(s) {
+  const buf = new TextEncoder().encode(s);
+  const h = await crypto.subtle.digest('SHA-256', buf);
+  return Array.from(new Uint8Array(h)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function unlock() {
+  document.body.classList.add('unlocked');
+}
+
+if (sessionStorage.getItem(STORAGE_KEY) === '1' || localStorage.getItem(STORAGE_KEY) === '1') {
+  unlock();
+}
+
+const authForm = document.getElementById('authForm');
+const authInput = document.getElementById('authInput');
+const authError = document.getElementById('authError');
+const authRemember = document.getElementById('authRemember');
+
+authForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  authError.textContent = ' ';
+  const candidate = authInput.value.trim();
+  if (!candidate) return;
+  const hash = await sha256(candidate);
+  if (hash === PASSWORD_HASH) {
+    sessionStorage.setItem(STORAGE_KEY, '1');
+    if (authRemember.checked) localStorage.setItem(STORAGE_KEY, '1');
+    unlock();
+  } else {
+    authError.textContent = 'Incorrect access code.';
+    authInput.value = '';
+    authInput.focus();
+  }
+});
+
+/* ─── SWATCH COPY ─────────────────────────────────────────────────────── */
+document.querySelectorAll('.swatch').forEach(s => {
+  s.addEventListener('click', async () => {
+    const v = s.dataset.copy;
+    try { await navigator.clipboard.writeText(v); } catch (e) {}
+    s.classList.add('copied');
+    setTimeout(() => s.classList.remove('copied'), 1100);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="Rank On Maps app icon, light">
+  <rect x="0" y="0" width="1024" height="1024" rx="229" ry="229" fill="#FAF8F2"/>
+  <g transform="translate(256 168)">
+    <path fill="#1F4D3C"
+          d="M256 0c-110 0-200 90-200 200 0 40 12 78 32 109L256 580l168-271c20-31 32-69 32-109 0-110-90-200-200-200zm0 270c-39 0-70-31-70-70s31-70 70-70 70 31 70 70-31 70-70 70z"/>
+  </g>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" role="img" aria-label="9:16 safe zones for Reels / Shorts / TikTok">
+  <rect width="1080" height="1920" fill="#F1EFE9"/>
+
+  <rect x="0" y="0" width="1080" height="1920" fill="none" stroke="#1A1F1B" stroke-width="2"/>
+
+  <!-- Title-safe -->
+  <rect x="60" y="220" width="960" height="1340" fill="none"
+        stroke="#1F4D3C" stroke-width="3" stroke-dasharray="14 10"/>
+
+  <!-- Platform UI overlap zones -->
+  <rect x="0" y="0"     width="1080" height="220"  fill="#1A1F1B" fill-opacity="0.05"/>
+  <rect x="0" y="1560"  width="1080" height="360"  fill="#1A1F1B" fill-opacity="0.05"/>
+  <rect x="900" y="800" width="180"  height="760"  fill="#1A1F1B" fill-opacity="0.05"/>
+
+  <!-- 1:1 center crop -->
+  <rect x="0" y="420" width="1080" height="1080" fill="none"
+        stroke="#3A6E5A" stroke-width="2" stroke-dasharray="6 8"/>
+
+  <g font-family="Helvetica, Arial, sans-serif" fill="#1A1F1B">
+    <text x="60"  y="44"   font-size="22" letter-spacing="2">UI / STATUS BAR · KEEP CLEAR</text>
+    <text x="60"  y="1604" font-size="22" font-weight="900" letter-spacing="2">CAPTION + HANDLES · KEEP CLEAR</text>
+    <text x="916" y="824"  font-size="18" letter-spacing="2">RIGHT-RAIL ICONS</text>
+    <text x="60"  y="200"  font-size="22" font-weight="900" fill="#1F4D3C" letter-spacing="2">TITLE-SAFE</text>
+    <text x="60"  y="412"  font-size="22" font-weight="900" fill="#3A6E5A" letter-spacing="2">1:1 CENTER CROP · REPURPOSE</text>
+  </g>
+
+  <!-- Brand mark watermark slot -->
+  <rect x="60" y="1450" width="200" height="80" fill="none" stroke="#1A1F1B" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="70" y="1500" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="900" fill="#1A1F1B" letter-spacing="2">LOGO LOCK</text>
+
+  <!-- Mono receipt corner -->
+  <text x="60" y="100" font-family="JetBrains Mono, Menlo, monospace" font-size="18" fill="#5C6A5F" letter-spacing="2">FIG. 9X16 · ROM REFERENCE PLATE</text>
+</svg>
