@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Builders Collective — First Appointment Pack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Inter+Tight:wght@400;500;700;900&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --forest:      #0F3D20;
+    --forest-deep: #08291A;
+    --paper:       #F8F6F1;
+    --cream:       #EFEAD8;
+    --stone:       #1A1A1A;
+    --stone-2:     rgba(26,26,26,0.65);
+    --stone-soft:  rgba(26,26,26,0.5);
+    --spark:       #E8FB94;
+    --rule:        rgba(26,26,26,0.12);
+    --rule-strong: rgba(26,26,26,0.22);
+    --rule-light:  rgba(248,246,241,0.18);
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html, body {
+    width: 210mm;
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--paper);
+    color: var(--stone);
+    font-size: 11pt;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* PAGE WRAPPER — each .page is one A4 sheet */
+  .page {
+    width: 210mm;
+    height: 297mm;
+    page-break-after: always;
+    page-break-inside: avoid;
+    position: relative;
+    overflow: hidden;
+    padding: 24mm;
+  }
+
+  .page:last-child { page-break-after: auto; }
+
+  .page.forest {
+    background: var(--forest);
+    color: var(--paper);
+  }
+
+  .page.cream { background: var(--cream); }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, rgba(248,246,241,0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(248,246,241,0.05) 1px, transparent 1px);
+    background-size: 14mm 14mm;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .grid-bg.dark-paper {
+    background-image:
+      linear-gradient(to right, rgba(26,26,26,0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26,26,26,0.04) 1px, transparent 1px);
+  }
+
+  /* TYPE UTILS */
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--stone-soft);
+    font-weight: 500;
+  }
+
+  .page.forest .mono { color: rgba(248,246,241,0.55); }
+
+  .italic {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--forest);
+    text-transform: none;
+    letter-spacing: -0.005em;
+  }
+
+  .page.forest .italic { color: var(--spark); }
+
+  /* APEX */
+  .apex {
+    width: 14mm;
+    height: 7mm;
+    background: var(--spark);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  }
+
+  /* PAGE HEADER (every page) */
+  .page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 6mm;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+
+  .page.forest .page-header { border-bottom-color: var(--rule-light); }
+
+  .page-header .wordmark-mini {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .page-header .wordmark-mini .b {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 13pt;
+    letter-spacing: -0.035em;
+    line-height: 0.82;
+  }
+
+  .page-header .wordmark-mini .c {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 11pt;
+    margin-top: 1px;
+    letter-spacing: -0.02em;
+  }
+
+  .page-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--stone-soft);
+  }
+
+  .page.forest .page-num { color: rgba(248,246,241,0.5); }
+
+  /* PAGE FOOTER (receipt row) */
+  .page-footer {
+    position: absolute;
+    bottom: 16mm;
+    left: 24mm;
+    right: 24mm;
+    padding-top: 6mm;
+    border-top: 1px solid var(--rule);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--stone-soft);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .page.forest .page-footer {
+    border-top-color: var(--rule-light);
+    color: rgba(248,246,241,0.5);
+  }
+
+  /* CONTENT AREA */
+  .page-content {
+    position: relative;
+    padding: 12mm 0 0;
+  }
+
+  h1 {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 56pt;
+    letter-spacing: -0.035em;
+    line-height: 0.86;
+  }
+
+  h2 {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 32pt;
+    letter-spacing: -0.025em;
+    line-height: 0.95;
+    margin-bottom: 8mm;
+    max-width: 18ch;
+  }
+
+  h2 .italic { font-weight: 300; }
+
+  h3 {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 18pt;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 4mm;
+  }
+
+  p {
+    font-size: 11pt;
+    color: var(--stone-2);
+    margin-bottom: 4mm;
+    max-width: 60ch;
+    line-height: 1.65;
+  }
+
+  .page.forest p { color: rgba(248,246,241,0.85); }
+
+  p.lead {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 18pt;
+    color: var(--stone);
+    line-height: 1.35;
+    margin-bottom: 8mm;
+    max-width: 24ch;
+    letter-spacing: -0.01em;
+  }
+
+  .page.forest p.lead { color: var(--paper); }
+
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--stone-soft);
+    margin-bottom: 4mm;
+  }
+
+  .page.forest .section-num { color: rgba(248,246,241,0.55); }
+
+  /* COVER (page 1) */
+  .cover-content {
+    height: calc(297mm - 48mm);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .cover-apex {
+    width: 28mm;
+    height: 14mm;
+    background: var(--spark);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    margin-bottom: 6mm;
+  }
+
+  .cover-wordmark .b {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 64pt;
+    letter-spacing: -0.035em;
+    line-height: 0.82;
+    color: var(--paper);
+  }
+
+  .cover-wordmark .c {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 42pt;
+    line-height: 1;
+    margin-top: 2mm;
+    letter-spacing: -0.02em;
+    color: var(--paper);
+  }
+
+  .cover-tagline {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 24pt;
+    line-height: 1.3;
+    color: var(--paper);
+    max-width: 28ch;
+    margin-top: 16mm;
+    letter-spacing: -0.01em;
+  }
+
+  .cover-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8mm;
+    padding-top: 8mm;
+    border-top: 1px solid var(--rule-light);
+  }
+
+  .cover-meta .row .k {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5pt;
+    letter-spacing: 0.18em;
+    color: rgba(248,246,241,0.55);
+    text-transform: uppercase;
+    margin-bottom: 2mm;
+  }
+
+  .cover-meta .row .v {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 11pt;
+    color: var(--paper);
+    line-height: 1.3;
+  }
+
+  .cover-meta .row .v.mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    font-size: 10pt;
+    letter-spacing: 0.04em;
+  }
+
+  /* TWO COL */
+  .col-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12mm;
+    margin-top: 8mm;
+  }
+
+  .col-2-narrow {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 12mm;
+    margin-top: 8mm;
+  }
+
+  /* CALLOUT (spark) */
+  .callout-spark {
+    background: var(--spark);
+    color: var(--stone);
+    padding: 8mm 10mm;
+    margin: 6mm 0;
+  }
+
+  .callout-spark .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 3mm;
+    font-weight: 700;
+  }
+
+  .callout-spark .text {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 17pt;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--stone);
+    max-width: 28ch;
+  }
+
+  .callout-spark .text .italic {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--forest);
+  }
+
+  /* NUMBERS GRID */
+  .numbers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--rule-light);
+    margin-top: 12mm;
+    padding-top: 8mm;
+  }
+
+  .page.forest .numbers { border-top-color: var(--rule-light); }
+
+  .num-cell { border-right: 1px solid var(--rule-light); padding: 0 6mm; }
+  .num-cell:first-child { padding-left: 0; }
+  .num-cell:last-child { border-right: 0; padding-right: 0; }
+
+  .num-cell .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(248,246,241,0.55);
+    margin-bottom: 4mm;
+  }
+
+  .num-cell .value {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 36pt;
+    letter-spacing: -0.025em;
+    line-height: 0.95;
+    color: var(--paper);
+    margin-bottom: 2mm;
+  }
+
+  .num-cell .sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(248,246,241,0.55);
+  }
+
+  /* MYTH LIST */
+  .myth {
+    padding: 6mm 0;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 28mm 1fr;
+    gap: 8mm;
+    align-items: start;
+  }
+
+  .myth:last-child { border-bottom: 0; }
+
+  .myth-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    letter-spacing: 0.18em;
+    color: var(--forest);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .myth h5 {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 13pt;
+    letter-spacing: -0.015em;
+    margin-bottom: 2mm;
+  }
+
+  .myth p {
+    font-size: 10.5pt;
+    color: var(--stone-2);
+    margin: 0;
+    max-width: 50ch;
+  }
+
+  /* STEP CARDS */
+  .step-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6mm;
+    margin: 8mm 0;
+  }
+
+  .step-card {
+    background: var(--cream);
+    padding: 8mm 8mm 10mm;
+    min-height: 110mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .step-card.active {
+    background: var(--forest);
+    color: var(--paper);
+  }
+
+  .step-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    letter-spacing: 0.18em;
+    color: var(--forest);
+    text-transform: uppercase;
+    margin-bottom: 6mm;
+    font-weight: 700;
+  }
+
+  .step-card.active .step-num { color: var(--spark); }
+
+  .step-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 18pt;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 5mm;
+  }
+
+  .step-body {
+    font-size: 10pt;
+    color: var(--stone-2);
+    line-height: 1.55;
+  }
+
+  .step-card.active .step-body { color: rgba(248,246,241,0.85); }
+
+  /* COST ROWS */
+  .cost-table {
+    border-top: 1px solid var(--rule-strong);
+    margin-top: 6mm;
+  }
+
+  .cost-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 4mm 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+
+  .cost-row .label {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 500;
+    font-size: 11.5pt;
+  }
+
+  .cost-row .label .sub {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5pt;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--stone-soft);
+    margin-top: 1mm;
+    font-weight: 400;
+  }
+
+  .cost-row .value {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 16pt;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .cost-row.total .value { color: var(--forest); font-size: 22pt; }
+
+  /* SHORTLIST */
+  .shortlist {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+    border: 1px solid var(--rule);
+    margin: 6mm 0;
+  }
+
+  .shortlist > div {
+    padding: 4mm 5mm;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .shortlist > div:nth-child(5n) { border-right: 0; }
+  .shortlist > div:nth-last-child(-n+5) { border-bottom: 0; }
+
+  .shortlist .sh-header {
+    background: var(--forest);
+    color: var(--paper);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5pt;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .shortlist .sh-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 11.5pt;
+    letter-spacing: -0.01em;
+  }
+
+  .shortlist .sh-cell {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5pt;
+    letter-spacing: 0.02em;
+  }
+
+  .shortlist .sh-row.pick { background: var(--spark); }
+  .shortlist .sh-row.pick > div { font-weight: 500; }
+
+  /* FLOW STEPS */
+  .flow-steps {
+    list-style: none;
+    margin-top: 6mm;
+    border-top: 1px solid var(--rule);
+  }
+
+  .flow-steps li {
+    display: grid;
+    grid-template-columns: 14mm 1fr;
+    gap: 4mm;
+    padding: 4mm 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    align-items: start;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .flow-steps li:last-child { border-bottom: 0; }
+
+  .flow-steps li .step {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    letter-spacing: 0.18em;
+    color: var(--forest);
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-top: 1mm;
+  }
+
+  /* WHAT YOU GET CARDS */
+  .get-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6mm;
+    margin: 6mm 0;
+  }
+
+  .get-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 8mm;
+  }
+
+  .get-card.active {
+    background: var(--forest);
+    color: var(--paper);
+    border-color: var(--forest);
+  }
+
+  .get-card .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--stone-soft);
+    margin-bottom: 4mm;
+    font-weight: 600;
+  }
+
+  .get-card.active .label { color: var(--spark); }
+
+  .get-card .head {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 16pt;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 4mm;
+  }
+
+  .get-card p {
+    font-size: 10pt;
+    margin: 0;
+    color: var(--stone-2);
+    line-height: 1.6;
+  }
+
+  .get-card.active p { color: rgba(248,246,241,0.85); }
+
+  /* CONTACT CARD (last page) */
+  .contact-card {
+    background: var(--paper);
+    color: var(--stone);
+    padding: 14mm;
+    margin-top: 16mm;
+    border: 1px solid var(--rule);
+    position: relative;
+  }
+
+  .contact-card .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    letter-spacing: 0.22em;
+    color: var(--forest);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 6mm;
+  }
+
+  .contact-card h2 {
+    font-size: 28pt;
+    margin-bottom: 6mm;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8mm;
+    padding-top: 6mm;
+    border-top: 1px solid var(--rule);
+    margin-top: 6mm;
+  }
+
+  .contact-grid .row {
+    padding: 3mm 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .contact-grid .row:last-child, .contact-grid .row:nth-last-child(2) { border-bottom: 0; }
+
+  .contact-grid .k {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--stone-soft);
+    margin-bottom: 1mm;
+  }
+
+  .contact-grid .v {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 12pt;
+    letter-spacing: -0.01em;
+  }
+
+  /* SPEC STRIP (cover) */
+  .spec-strip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(248,246,241,0.55);
+    display: flex;
+    gap: 6mm;
+    flex-wrap: wrap;
+    padding-top: 6mm;
+    border-top: 1px solid var(--rule-light);
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- PAGE 01 — COVER                              -->
+<!-- ============================================ -->
+<div class="page forest">
+  <div class="grid-bg"></div>
+  <div class="cover-content">
+    <div class="cover-top">
+      <div class="mono">FIRST APPOINTMENT PACK · 2026</div>
+      <div class="mono">FOR · [CLIENT FIRST NAME]</div>
+    </div>
+
+    <div>
+      <div class="cover-apex"></div>
+      <div class="cover-wordmark">
+        <div class="b">BUILDERS</div>
+        <div class="c">Collective</div>
+      </div>
+      <div class="cover-tagline">
+        Everything you need to know <span class="italic">before</span> you build.
+      </div>
+    </div>
+
+    <div>
+      <div class="cover-meta">
+        <div class="row">
+          <div class="k">Prepared for</div>
+          <div class="v">[Client name]</div>
+        </div>
+        <div class="row">
+          <div class="k">Prepared by</div>
+          <div class="v">[Founder name]</div>
+        </div>
+        <div class="row">
+          <div class="k">Edition</div>
+          <div class="v mono">2026 · v1.0</div>
+        </div>
+      </div>
+      <div class="spec-strip">
+        <span>PERTH · WA</span>
+        <span>·</span>
+        <span>BUILDING BROKER</span>
+        <span>·</span>
+        <span>↗ BUILDERSCOLLECTIVE.AU</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- PAGE 02 — WHO WE ARE                         -->
+<!-- ============================================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="wordmark-mini">
+      <div class="apex"></div>
+      <div>
+        <div class="b" style="font-family:'Inter Tight';font-weight:900;font-size:13pt;letter-spacing:-0.035em;line-height:0.82;">BUILDERS</div>
+        <div class="c" style="font-family:'Fraunces';font-style:italic;font-weight:300;font-size:11pt;margin-top:1px;letter-spacing:-0.02em;">Collective</div>
+      </div>
+    </div>
+    <div class="page-num">02 · WHO WE ARE</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-num">CHAPTER · 01</div>
+    <h2>Building brokers,<br><span class="italic">on your side.</span></h2>
+
+    <p class="lead">We match Perth families to vetted home builders — and then make sure those builders do right by you.</p>
+
+    <p>Builders Collective is run by four founders — David, Hasib, Abdullah and Masih. Between us we've spent years watching what goes wrong when people build in Perth. Quotes that start low and end high. Builders that go under mid-build. Contracts written to confuse, not clarify.</p>
+
+    <p>So we built the thing we'd want if we were the ones signing the contract: someone who reads the fine print before you do, sends an independent inspector through your build, and is contractually accountable to <strong>you</strong>, not the builder.</p>
+
+    <div class="callout-spark">
+      <div class="label">★ The promise, in one line</div>
+      <div class="text">Same price as walking into a display village direct. <span class="italic">Massively</span> more protection.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>BUILDERS COLLECTIVE</span>
+    <span>FIRST APPOINTMENT PACK</span>
+    <span>02 OF 11</span>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- PAGE 03 — WHY WE EXIST                       -->
+<!-- ============================================ -->
+<div class="page cream">
+  <div class="page-header">
+    <div class="wordmark-mini">
+      <div class="apex"></div>
+      <div>
+        <div style="font-family:'Inter Tight';font-weight:900;font-size:13pt;letter-spacing:-0.035em;line-height:0.82;">BUILDERS</div>
+        <div style="font-family:'Fraunces';font-style:italic;font-weight:300;font-size:11pt;margin-top:1px;letter-spacing:-0.02em;">Collective</div>
+      </div>
+    </div>
+    <div class="page-num">03 · WHY WE EXIST</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-num">CHAPTER · 02</div>
+    <h2>The problem<br><span class="italic">we solve.</span></h2>
+
+    <p class="lead">Most people who build in Perth get burned by one of four things. We exist to make sure none of them happen to you.</p>
+
+    <div class="myth">
+      <div class="myth-num">PROBLEM · 01</div>
+      <div>
+        <h5>Builders going under mid-build</h5>
+        <p>Household-name WA builders have collapsed in the last two years. Deposits gone, builds half-finished, families stuck paying rent and a mortgage. We vet builder financial health <em>before</em> they go on your shortlist.</p>
+      </div>
+    </div>
+    <div class="myth">
+      <div class="myth-num">PROBLEM · 02</div>
+      <div>
+        <h5>Quotes that start at $299K and end at $420K</h5>
+        <p>Site costs. Fill. Retaining walls. "Promotional inclusions" that aren't actually included. We decode every quote so you see the real price before you sign.</p>
+      </div>
+    </div>
+    <div class="myth">
+      <div class="myth-num">PROBLEM · 03</div>
+      <div>
+        <h5>Quotes designed to be uncomparable</h5>
+        <p>No two builder quotes are structured the same way — by design. We line them up apples-to-apples so you can actually choose.</p>
+      </div>
+    </div>
+    <div class="myth">
+      <div class="myth-num">PROBLEM · 04</div>
+      <div>
+        <h5>No one watching the build</h5>
+        <p>Most buyers find out about issues after handover. We send a third-party building inspector to your site during construction. Random visits. Issues caught early.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>BUILDERS COLLECTIVE</span>
+    <span>FIRST APPOINTMENT PACK</span>
+    <span>03 OF 11</span>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- PAGE 04 — THE NUMBERS                        -->
+<!-- ============================================ -->
+<div class="page forest">
+  <div class="grid-bg"></div>
+  <div class="page-header">
+    <div class="wordmark-mini">
+      <div class="apex"></div>
+      <div>
+        <div style="font-family:'Inter Tight';font-weight:900;font-size:13pt;letter-spacing:-0.035em;line-height:0.82;color:var(--paper);">BUILDERS</div>
+        <div style="font-family:'Fraunces';font-style:italic;font-weight:300;font-size:11pt;margin-top:1px;letter-spacing:-0.02em;color:var(--paper);">Collective</div>
+      </div>
+    </div>
+    <div class="page-num">04 · THE NUMBERS</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-num">CHAPTER · 03</div>
+    <h2 style="color:var(--paper);">The numbers,<br><span class="italic">simply.</span></h2>
+
+    <p class="lead" style="color:var(--paper);">A snapshot of what Perth builds look like right now and why timing matters.</p>
+
+    <div class="numbers">
+      <div class="num-cell">
+        <div class="label">Avg build price</div>
+        <div class="value">$485K</div>
+        <div class="sub">Single-storey · 4×2 · 2026</div>
+      </div>
+      <div class="num-cell">
+        <div class="label">Site cost gap</div>
+        <div class="value">$28K</div>
+        <div class="sub">Avg hidden in quotes</div>
+      </div>
+      <div class="num-cell">
+        <div class="label">Build time</div>
+        <div class="value">12 mo</div>
+        <div class="sub">New home · post-PPA</div>
+      </div>
+      <div class="num-cell">
+        <div class="label">FHB grant</div>
+        <div class="value">$10K</div>
+        <div class="sub">+ stamp duty concession</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 16mm; padding-top: 8mm; border-top: 1px solid var(--rule-light);">
+      <div class="mono" style="margin-bottom: 4mm;">WHY THIS MATTERS</div>
+      <p style="color:rgba(248,246,241,0.92);max-width:55ch;">Build prices in WA have climbed every year for four years. The good corridors are selling out within weeks. The grants and concessions are still in play — for now. The cost of not knowing your real number is far higher than the cost of asking.</p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>BUILDERS COLLECTIVE</span>
+    <span>FIRST APPOINTMENT PACK</span>
+    <span>04 OF 11</span>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- PAGE 05 — OUR PROCESS                        -->
+<!-- ============================================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="wordmark-mini">
+      <div class="apex"></div>
+      <div>
+        <div style="font-family:'Inter Tight';font-weight:900;font-size:13pt;letter-spacing:-0.035em;line-height:0.82;">BUILDERS</div>
+        <div style="font-family:'Fraunces';font-style:italic;font-weight:300;font-size:11pt;margin-top:1px;letter-spacing:-0.02em;">Collective</div>
+      </div>
+    </div>
+    <div class="page-num">05 · OUR PROCESS</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-num">CHAPTER · 04</div>
+    <h2>Three steps,<br><span class="italic">no surprises.</span></h2>
+
+    <p class="lead">From first conversation to keys in hand — here's how we work with every client.</p>
+
+    <div class="step-cards">
+      <div class="step-card">
+        <div>
+          <div class="step-num">STEP · 01</div>
+          <div class="step-title">Match</div>
+        </div>
+        <div class="step-body">We work out your real budget, your block needs, and what you actually want to build. Then we shortlist 2-3 vetted builders who fit. No paying us to do this.</div>
+      </div>
+      <div class="step-card active">
+        <div>
+          <div class="step-num">STEP · 02</div>
+          <div class="step-title">Audit</div>
+        </div>
+        <div class="step-body">We read your build contract before you sign it. Flag the gaps, the hidden costs, the clauses that don't favour you. You sign with confidence.</div>
+      </div>
+      <div class="step-card">
+        <div>
+          <div class="step-num">STEP · 03</div>
+          <div class="step-title">Inspect</div>
+        </div>
+        <div class="step-body">During the build, we send an independent inspector to your site at random points. Slab, frame, lockup, fixing. Every report goes to you.</div>
+      </div>
+    </div>
+
+    <div class="callout-spark">
+      <div class="label">★ The independent inspector</div>
+      <div class="text">Not the builder's mate. Not arranged through them. Our inspector reports to <span class="italic">you</span>, in writing.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>BUILDERS COLLECTIVE</span>
+    <span>FIRST APPOINTMENT PACK</span>
+    <span>05 OF 11</span>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- PAGE 06 — WHAT IT COSTS YOU                  -->
+<!-- ============================================ -->
+<div class="page cream">
+  <div class="page-header">
+    <div class="wordmark-mini">
+      <div class="apex"></div>
+      <div>
+        <div style="font-family:'Inter Tight';font-weight:900;font-size:13pt;letter-spacing:-0.035em;line-height:0.82;">BUILDERS</div>
+        <div style="font-family:'Fraunces';font-style:italic;font-weight:300;font-size:11pt;margin-top:1px;letter-spacing:-0.02em;">Collective</div>
+      </div>
+    </div>
+    <div class="page-num">06 · WHAT IT COSTS</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-num">CHAPTER · 05</div>
+    <h2>What it costs<br><span class="italic">you.</span></h2>
+
+    <p class="lead">Short answer — nothing. Long answer — same price as walking into a display village direct, plus everything we throw in.</p>
+
+    <div class="cost-table">
+      <div class="cost-row">
+        <div class="label">Our service fee
+          <span class="sub">Match · audit · inspect</span>
+        </div>
+        <div class="value">$0</div>
+      </div>
+      <div class="cost-row">
+        <div class="label">The builder's price
+          <span class="sub">Same as walk-in direct</span>
+        </div>
+        <div class="value">No markup</div>
+      </div>
+      <div class="cost-row">
+        <div class="label">Independent inspector fee
+          <span class="sub">Built into the package</span>
+        </div>
+        <div class="value">Included</div>
+      </div>
+      <div class="cost-row">
+        <div class="label">Contract review
+          <span class="sub">Before you sign anything</span>
+        </div>
+        <div class="value">Included</div>
+      </div>
+      <div class="cost-row total">
+        <div class="label">Total cost to you</div>
+        <div class="value">$0</div>
+      </div>
+    </div>
+
+    <p style="margin-top: 8mm;"><strong>How we get paid:</strong> the builder pays us a referral fee after your PPA is signed — the same way every other broker in Perth gets paid. The difference is what we do with it.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>BUILDERS COLLECTIVE</span>
+    <span>FIRST APPOINTMENT PACK</span>
+    <span>06 OF 11</span>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- PAGE 07 — SAMPLE SHORTLIST                   -->
+<!-- ============================================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="wordmark-mini">
+      <div class="apex"></div>
+      <div>
+        <div style="font-family:'Inter Tight';font-weight:900;font-size:13pt;letter-spacing:-0.035em;line-height:0.82;">BUILDERS</div>
+        <div style="font-family:'Fraunces';font-style:italic;font-weight:300;font-size:11pt;margin-top:1px;letter-spacing:-0.02em;">Collective</div>
+      </div>
+    </div>
+    <div class="page-num">07 · SAMPLE SHORTLIST</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-num">CHAPTER · 06</div>
+    <h2>What a shortlist<br><span class="italic">looks like.</span></h2>
+
+    <p class="lead">After your first call, you'll get a shortlist that looks something like this. Apples-to-apples. No marketing fluff.</p>
+
+    <div class="shortlist">
+      <div class="sh-header">BUILDER</div>
+      <div class="sh-header">FIXED PRICE</div>
+      <div class="sh-header">SITE COSTS</div>
+      <div class="sh-header">BUILD TIME</div>
+      <div class="sh-header">OUR PICK</div>
+
+      <div class="sh-row pick">
+        <div class="sh-name">[Builder A]</div>
+        <div class="sh-cell">$465K</div>
+        <div class="sh-cell">$22K fixed</div>
+        <div class="sh-cell">11 mo</div>
+        <div class="sh-cell">★ Best fit</div>
+      </div>
+      <div class="sh-row">
+        <div class="sh-name">[Builder B]</div>
+        <div class="sh-cell">$472K</div>
+        <div class="sh-cell">$28K range</div>
+        <div class="sh-cell">12 mo</div>
+        <div class="sh-cell">Strong</div>
+      </div>
+      <div class="sh-row">
+        <div class="sh-name">[Builder C]</div>
+        <div class="sh-cell">$458K</div>
+        <div class="sh-cell">$35K range</div>
+        <div class="sh-cell">14 mo</div>
+        <div class="sh-cell">Watch site cost</div>
+      </div>
+    </div>
+
+    <div class="callout-spark">
+      <div class="label">★ How we pick "best fit"</div>
+      <div class="text">Not the cheapest. Not the biggest. The one whose finances, history, and contract structure <span class="italic">match</span> your situation.</div>
+    </div>
+
+    <p style="margin-top: 4mm;font-size:10pt;color:var(--stone-soft);">Illustrative example. Your actual shortlist will reflect builders matched to your block, budget, finance situation and timeline.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>BUILDERS COLLECTIVE</span>
+    <span>FIRST APPOINTMENT PACK</span>
+    <span>07 OF 11</span>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- PAGE 08 — THE BUILD JOURNEY                  -->
+<!-- ============================================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="wordmark-mini">
+      <div class="apex"></div>
+      <div>
+        <div style="font-family:'Inter Tight';font-weight:900;font-size:13pt;letter-spacing:-0.035em;line-height:0.82;">BUILDERS</div>
+        <div style="font-family:'Fraunces';font-style:italic;font-weight:300;font-size:11pt;margin-top:1px;letter-spacing:-0.02em;">Collective</div>
+      </div>
+    </div>
+    <div class="page-num">08 · BUILD JOURNEY</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-num">CHAPTER · 07</div>
+    <h2>From PPA<br>to <span class="italic">handover.</span></h2>
+
+    <p class="lead">Here's exactly what happens between signing the preliminary agreement and getting your keys.</p>
+
+    <ol class="flow-steps">
+      <li><span class="step">01 · PPA</span><span><strong>Preliminary Property Agreement signed.</strong> Small deposit ($1-3K) locks in your price. Builder draws up plans.</span></li>
+      <li><span class="step">02 · PLANS</span><span><strong>Plans finalised + specs locked.</strong> Typically 4-8 weeks. You sign off on everything.</span></li>
+      <li><span class="step">03 · FINANCE</span><span><strong>Formal finance approval.</strong> Confirmed with your lender. Pre-approval converted to actual.</span></li>
+      <li><span class="step">04 · CONTRACT</span><span><strong>Full HIA building contract signed.</strong> We audit it before you sign. Inspector is engaged.</span></li>
+      <li><span class="step">05 · SLAB</span><span><strong>Site works + slab pour.</strong> First independent inspection. Report sent to you.</span></li>
+      <li><span class="step">06 · FRAME</span><span><strong>Frame up.</strong> Second inspection. Catches structural issues early.</span></li>
+      <li><span class="step">07 · LOCKUP</span><span><strong>Roof, windows, doors in.</strong> Third inspection. Weatherproofing checked.</span></li>
+      <li><span class="step">08 · FIXING</span><span><strong>Internal fit-off.</strong> Fourth inspection. Finishes checked.</span></li>
+      <li><span class="step">09 · HANDOVER</span><span><strong>Keys delivered.</strong> Final inspection. Defects list. You move in.</span></li>
+    </ol>
+  </div>
+
+  <div class="page-footer">
+    <span>BUILDERS COLLECTIVE</span>
+    <span>FIRST APPOINTMENT PACK</span>
+    <span>08 OF 11</span>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- PAGE 09 — WHAT YOU GET                       -->
+<!-- ============================================ -->
+<div class="page cream">
+  <div class="page-header">
+    <div class="wordmark-mini">
+      <div class="apex"></div>
+      <div>
+        <div style="font-family:'Inter Tight';font-weight:900;font-size:13pt;letter-spacing:-0.035em;line-height:0.82;">BUILDERS</div>
+        <div style="font-family:'Fraunces';font-style:italic;font-weight:300;font-size:11pt;margin-top:1px;letter-spacing:-0.02em;">Collective</div>
+      </div>
+    </div>
+    <div class="page-num">09 · EVEN IF YOU DON'T BUILD WITH US</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-num">CHAPTER · 08</div>
+    <h2>What you get<br><span class="italic">either way.</span></h2>
+
+    <p class="lead">If you decide we're not the right fit — totally fine. Here's what's still yours from the conversation.</p>
+
+    <div class="get-cards">
+      <div class="get-card">
+        <div class="label">01 · CLARITY</div>
+        <div class="head">Your real number</div>
+        <p>A clear, honest read on what your budget actually buys in Perth right now. Including the costs nobody talks about up front.</p>
+      </div>
+      <div class="get-card">
+        <div class="label">02 · RED FLAGS</div>
+        <div class="head">What to watch for</div>
+        <p>A list of red flags to spot with any builder, even if you go to a display village direct. The contract clauses worth pushing back on.</p>
+      </div>
+      <div class="get-card active">
+        <div class="label">03 · HONESTY</div>
+        <div class="head">Build vs. buy</div>
+        <p>An honest answer on whether building actually makes sense for you right now — or whether buying established is the smarter play.</p>
+      </div>
+      <div class="get-card">
+        <div class="label">04 · TIME</div>
+        <div class="head">15 minutes</div>
+        <p>That's all the first call takes. No pitch, no hard sell, no follow-up army. We mean it.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>BUILDERS COLLECTIVE</span>
+    <span>FIRST APPOINTMENT PACK</span>
+    <span>09 OF 11</span>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- PAGE 10 — NEXT STEPS                         -->
+<!-- ============================================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="wordmark-mini">
+      <div class="apex"></div>
+      <div>
+        <div style="font-family:'Inter Tight';font-weight:900;font-size:13pt;letter-spacing:-0.035em;line-height:0.82;">BUILDERS</div>
+        <div style="font-family:'Fraunces';font-style:italic;font-weight:300;font-size:11pt;margin-top:1px;letter-spacing:-0.02em;">Collective</div>
+      </div>
+    </div>
+    <div class="page-num">10 · NEXT STEPS</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-num">CHAPTER · 09</div>
+    <h2>What happens<br><span class="italic">next.</span></h2>
+
+    <p class="lead">If you want to move forward, here's what the next few weeks look like with us.</p>
+
+    <ol class="flow-steps">
+      <li><span class="step">01 · THIS WEEK</span><span><strong>Quick chat — 15 minutes.</strong> We confirm your budget, block, finance and timeline. No prep needed.</span></li>
+      <li><span class="step">02 · WITHIN 7 DAYS</span><span><strong>Vetted shortlist delivered.</strong> 2-3 builders matched to your situation. Quote requests sent on your behalf.</span></li>
+      <li><span class="step">03 · WEEK 2</span><span><strong>Quote review session.</strong> We walk you through each quote, decoded apples-to-apples. You decide which builder.</span></li>
+      <li><span class="step">04 · WEEK 3-4</span><span><strong>PPA signed.</strong> Inspector engaged. Plans drawing process begins with the builder.</span></li>
+      <li><span class="step">05 · ONGOING</span><span><strong>Build oversight.</strong> Inspections, reports, contract questions — we're your point of contact through to handover.</span></li>
+    </ol>
+
+    <div class="callout-spark">
+      <div class="label">★ Your move</div>
+      <div class="text">Book your discovery call at <span class="italic">builderscollective.au</span> — or just reply to the email this came in on.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>BUILDERS COLLECTIVE</span>
+    <span>FIRST APPOINTMENT PACK</span>
+    <span>10 OF 11</span>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- PAGE 11 — CONTACT                            -->
+<!-- ============================================ -->
+<div class="page forest">
+  <div class="grid-bg"></div>
+  <div class="page-header">
+    <div class="wordmark-mini">
+      <div class="apex"></div>
+      <div>
+        <div style="font-family:'Inter Tight';font-weight:900;font-size:13pt;letter-spacing:-0.035em;line-height:0.82;color:var(--paper);">BUILDERS</div>
+        <div style="font-family:'Fraunces';font-style:italic;font-weight:300;font-size:11pt;margin-top:1px;letter-spacing:-0.02em;color:var(--paper);">Collective</div>
+      </div>
+    </div>
+    <div class="page-num">11 · CONTACT</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-num">END · CONTACT</div>
+    <h2 style="color:var(--paper);">Talk to us.<br><span class="italic">No pressure.</span></h2>
+
+    <p class="lead" style="color:var(--paper);max-width:32ch;">We're here whenever you're ready. Whether that's this week, this year, or never.</p>
+
+    <div class="contact-card">
+      <div class="label">★ BUILDERS COLLECTIVE · PERTH WA</div>
+      <h2 style="font-size:28pt;color:var(--stone);">Let's build, <span class="italic">properly.</span></h2>
+
+      <div class="contact-grid">
+        <div class="row">
+          <div class="k">Website</div>
+          <div class="v">builderscollective.au</div>
+        </div>
+        <div class="row">
+          <div class="k">Office</div>
+          <div class="v">3/186 Main Street, Osborne Park</div>
+        </div>
+        <div class="row">
+          <div class="k">David Cho</div>
+          <div class="v">david@builderscollective.au</div>
+        </div>
+        <div class="row">
+          <div class="k">Hasib Rafatee</div>
+          <div class="v">hasib@builderscollective.au</div>
+        </div>
+        <div class="row">
+          <div class="k">Abdullah Rafatee</div>
+          <div class="v">raf@builderscollective.au</div>
+        </div>
+        <div class="row">
+          <div class="k">Masih</div>
+          <div class="v">masih@builderscollective.au</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>BUILDERS COLLECTIVE</span>
+    <span>FIRST APPOINTMENT PACK · v1.0 · 2026</span>
+    <span>11 OF 11</span>
+  </div>
+</div>
+
+</body>
+</html>
