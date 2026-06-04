@@ -3,255 +3,324 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>You're in — Builders Collective</title>
-<meta name="description" content="Your eligibility check is in. Here's what happens next.">
+<title>You're booked — Builders Collective</title>
+<meta name="description" content="Your discovery call is locked in. Here's what to do before we speak.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Fraunces:ital,wght@1,300;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --forest:#0F3D20; --paper:#F8F6F1; --cream:#EFEAD8; --stone:#1A1A1A; --spark:#E8FB94;
-    --muted:#6B6B6B; --line:rgba(15,61,32,0.12);
+    --forest:#0F3D20; --forest-2:#143A1F; --paper:#F8F6F1; --cream:#EFEAD8; --stone:#1A1A1A; --spark:#E8FB94;
+    --muted:#6B6B6B; --line:rgba(15,61,32,0.12); --warm:#C2410C;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{background:var(--paper);color:var(--stone);font-family:'Inter Tight',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+  html,body{background:var(--paper);color:var(--stone);font-family:'Inter Tight',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55}
   img,video{max-width:100%;display:block}
-  a{color:inherit}
+  a{color:inherit;text-decoration:none}
   .mono{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.15em;font-size:11px;font-weight:500}
   .italic{font-family:'Fraunces',serif;font-style:italic;font-weight:300}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border-radius:8px;font-weight:700;font-size:15px;letter-spacing:0.01em;cursor:pointer;border:0;transition:transform 0.15s,opacity 0.15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-spark{background:var(--spark);color:var(--stone)}
+  .btn-ghost{background:transparent;color:var(--cream);border:1px solid rgba(255,255,255,0.25)}
+  .btn-stone{background:var(--stone);color:#fff}
 
-  /* TOP BAR */
-  .topbar{background:var(--forest);color:var(--cream);padding:14px 20px;text-align:center}
-  .topbar .mono{color:var(--spark)}
+  /* CONFIRMATION BAR */
+  .confirm-bar{background:var(--forest);color:var(--spark);padding:14px 20px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;font-weight:600}
+  .confirm-bar .check{display:inline-block;background:var(--spark);color:var(--forest);width:18px;height:18px;border-radius:50%;text-align:center;line-height:18px;font-weight:900;margin-right:8px;font-family:'Inter Tight';font-size:13px}
 
   /* HERO */
-  .hero{background:var(--stone);padding:32px 20px 0;color:#fff}
-  .hero-inner{max-width:1100px;margin:0 auto}
-  .badge{display:inline-flex;align-items:center;gap:8px;background:var(--spark);color:var(--stone);padding:8px 14px;border-radius:999px;margin-bottom:20px}
-  .badge .dot{width:8px;height:8px;background:var(--forest);border-radius:50%;animation:pulse 2s infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
-  h1.hero-h{font-size:clamp(34px,6vw,68px);font-weight:900;letter-spacing:-0.02em;line-height:1.05;margin-bottom:18px}
-  h1.hero-h .italic{font-weight:300;font-style:italic;font-family:'Fraunces',serif;color:var(--spark)}
-  .hero-sub{font-size:clamp(16px,2vw,20px);color:#cfd4cf;max-width:640px;margin-bottom:28px}
-  .video-wrap{position:relative;background:#000;border-radius:14px;overflow:hidden;aspect-ratio:16/9;max-width:1100px;margin:0 auto;box-shadow:0 30px 80px rgba(0,0,0,0.35)}
+  .hero{background:linear-gradient(180deg, var(--forest) 0%, var(--forest-2) 100%);color:#fff;padding:60px 24px 80px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(232,251,148,0.12) 0%,transparent 70%);pointer-events:none}
+  .hero-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:48px;position:relative;z-index:1}
+  .hero-eyebrow{color:var(--spark);margin-bottom:16px}
+  h1{font-size:clamp(40px,7vw,84px);font-weight:900;letter-spacing:-0.025em;line-height:1.0;margin-bottom:24px}
+  h1 .italic{font-weight:300;color:var(--spark);display:inline-block}
+  .hero-sub{font-size:clamp(17px,2vw,21px);color:#cfd4cf;max-width:640px;margin-bottom:36px;line-height:1.5}
+  .hero-name{font-weight:800;color:#fff}
+
+  /* APPOINTMENT CARD */
+  .appt-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:18px;padding:32px;backdrop-filter:blur(10px);max-width:560px}
+  .appt-eyebrow{color:var(--spark);margin-bottom:14px}
+  .appt-time{font-size:clamp(24px,3vw,32px);font-weight:800;letter-spacing:-0.01em;margin-bottom:8px;color:#fff}
+  .appt-detail{color:#cfd4cf;font-size:15px;margin-bottom:24px}
+  .appt-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+  /* VIDEO SECTION */
+  .video-section{background:var(--stone);padding:80px 24px;color:#fff}
+  .video-head{max-width:1100px;margin:0 auto 40px}
+  .video-eyebrow{color:var(--spark);margin-bottom:14px}
+  .video-h{font-size:clamp(34px,5vw,56px);font-weight:900;letter-spacing:-0.02em;line-height:1.05;max-width:780px}
+  .video-h .italic{color:var(--spark);font-family:'Fraunces',serif;font-weight:300;font-style:italic}
+  .video-sub{color:#cfd4cf;font-size:17px;margin-top:18px;max-width:580px}
+  .video-wrap{position:relative;background:#000;border-radius:16px;overflow:hidden;aspect-ratio:16/9;max-width:1100px;margin:0 auto;box-shadow:0 40px 100px rgba(0,0,0,0.5)}
   .video-wrap video{width:100%;height:100%;object-fit:cover}
-  .play-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);cursor:pointer;transition:background 0.2s;z-index:2}
-  .play-overlay:hover{background:rgba(0,0,0,0.1)}
+  .play-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.3);cursor:pointer;transition:background 0.2s;z-index:2}
+  .play-overlay:hover{background:rgba(0,0,0,0.15)}
   .play-overlay.hidden{display:none}
-  .play-btn{width:90px;height:90px;border-radius:50%;background:var(--spark);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 40px rgba(232,251,148,0.4)}
-  .play-btn svg{width:32px;height:32px;fill:var(--forest);margin-left:4px}
-  .hero-pad{height:48px}
+  .play-btn{width:110px;height:110px;border-radius:50%;background:var(--spark);display:flex;align-items:center;justify-content:center;box-shadow:0 15px 50px rgba(232,251,148,0.5)}
+  .play-btn svg{width:42px;height:42px;fill:var(--forest);margin-left:6px}
+  .video-cta{text-align:center;margin-top:32px;color:#cfd4cf;font-size:14px}
+  .video-cta .mono{color:var(--spark)}
 
-  /* NEXT STEPS */
-  .next{padding:80px 20px;background:var(--paper)}
-  .next-inner{max-width:1100px;margin:0 auto}
+  /* PREP SECTION */
+  .prep{padding:90px 24px;background:var(--paper)}
   .section-eyebrow{margin-bottom:14px;color:var(--forest)}
-  .section-h{font-size:clamp(30px,4.5vw,46px);font-weight:900;letter-spacing:-0.015em;line-height:1.1;margin-bottom:48px;max-width:760px}
-  .section-h .italic{font-weight:300;font-style:italic;font-family:'Fraunces',serif}
-  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
-  .step{background:#fff;padding:32px 28px;border-radius:14px;border:1px solid var(--line);position:relative}
-  .step-num{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--forest);font-weight:600;margin-bottom:18px}
-  .step-h{font-size:22px;font-weight:800;margin-bottom:10px;letter-spacing:-0.01em}
-  .step-p{color:var(--muted);font-size:15px;line-height:1.6}
+  .section-h{font-size:clamp(32px,5vw,52px);font-weight:900;letter-spacing:-0.02em;line-height:1.05;margin-bottom:14px;max-width:780px}
+  .section-h .italic{font-weight:300;color:var(--forest);font-family:'Fraunces',serif;font-style:italic}
+  .section-sub{color:var(--muted);font-size:17px;max-width:620px;margin-bottom:56px}
+  .prep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .prep-card{background:#fff;padding:36px 30px;border-radius:16px;border:1px solid var(--line);position:relative;transition:transform 0.2s,border-color 0.2s}
+  .prep-card:hover{transform:translateY(-4px);border-color:var(--forest)}
+  .prep-num{position:absolute;top:24px;right:28px;font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:46px;color:var(--cream);line-height:1}
+  .prep-icon{width:48px;height:48px;background:var(--forest);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;color:var(--spark)}
+  .prep-icon svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .prep-h{font-size:22px;font-weight:800;margin-bottom:10px;letter-spacing:-0.01em;line-height:1.2}
+  .prep-p{color:var(--muted);font-size:15px;line-height:1.65}
 
-  /* BOOK NOW */
-  .book{background:var(--forest);padding:80px 20px;color:#fff}
-  .book-inner{max-width:1100px;margin:0 auto;text-align:center}
-  .book-eyebrow{color:var(--spark);margin-bottom:14px}
-  .book-h{font-size:clamp(32px,5vw,54px);font-weight:900;letter-spacing:-0.02em;line-height:1.1;margin-bottom:18px}
-  .book-h .italic{font-weight:300;color:var(--spark);font-style:italic;font-family:'Fraunces',serif}
-  .book-sub{color:#cfd4cf;font-size:18px;max-width:600px;margin:0 auto 36px}
-  .calendar-frame{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.3);max-width:900px;margin:0 auto}
-  .calendar-frame iframe{width:100%;border:0;display:block;min-height:680px}
+  /* VALUE STACK */
+  .stack{background:var(--cream);padding:90px 24px}
+  .stack-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:780px;margin:0 auto}
+  .stack-item{background:#fff;padding:24px 28px;border-radius:12px;display:flex;align-items:center;gap:20px;border-left:4px solid var(--forest);transition:transform 0.2s}
+  .stack-item:hover{transform:translateX(6px)}
+  .stack-check{flex-shrink:0;width:34px;height:34px;background:var(--forest);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--spark);font-weight:900;font-size:18px}
+  .stack-text{flex:1}
+  .stack-h{font-weight:800;font-size:17px;margin-bottom:2px}
+  .stack-sub{color:var(--muted);font-size:14px}
+  .stack-value{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--forest);letter-spacing:0.08em}
+  .stack-total{margin-top:24px;background:var(--forest);color:#fff;padding:28px 30px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+  .stack-total-label{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.12em;font-size:12px;color:var(--spark);margin-bottom:4px}
+  .stack-total-h{font-size:22px;font-weight:800}
+  .stack-total-num{font-size:38px;font-weight:900;color:var(--spark);letter-spacing:-0.02em;font-family:'Inter Tight'}
+  .stack-total-strike{text-decoration:line-through;color:#cfd4cf;font-size:18px;margin-right:10px;font-weight:600}
 
-  /* FOUNDERS */
-  .founders{padding:80px 20px;background:var(--cream)}
-  .founders-inner{max-width:1100px;margin:0 auto}
-  .founders-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:36px}
-  .founder{text-align:left}
-  .founder-photo{width:100%;aspect-ratio:1;background:var(--forest);border-radius:14px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;color:var(--spark);font-family:'Inter Tight';font-weight:900;font-size:64px;letter-spacing:-0.02em}
-  .founder-name{font-size:20px;font-weight:800;margin-bottom:4px}
-  .founder-role{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--forest);font-weight:600}
+  /* FOUNDERS — REAL PORTRAIT */
+  .founders{padding:90px 24px;background:var(--paper)}
+  .founders-grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center;max-width:1100px;margin:0 auto}
+  .founders-img-wrap{position:relative;border-radius:16px;overflow:hidden;background:var(--cream)}
+  .founders-img-wrap img{width:100%;display:block}
+  .founders-img-wrap::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 70%,rgba(15,61,32,0.15) 100%);pointer-events:none}
+  .founders-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:36px}
+  .founder-card{background:#fff;padding:24px;border-radius:12px;border:1px solid var(--line)}
+  .founder-name{font-size:18px;font-weight:800;margin-bottom:2px}
+  .founder-role{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--forest);font-weight:600;margin-bottom:12px}
+  .founder-bio{font-size:13px;color:var(--muted);line-height:1.55}
+  @media (min-width:900px){
+    .founders-grid{grid-template-columns:1fr 1.3fr;gap:64px}
+    .founders-cards{margin-top:0}
+  }
 
-  /* REVIEWS */
-  .reviews{padding:80px 20px;background:var(--paper)}
-  .reviews-inner{max-width:1100px;margin:0 auto}
-  .reviews-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:48px}
-  .reviews-meta{display:flex;align-items:center;gap:16px}
-  .reviews-stars{font-size:24px;color:#FFB400;letter-spacing:2px}
-  .reviews-num{font-size:32px;font-weight:900;letter-spacing:-0.01em}
-  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-  .review{background:#fff;padding:32px 28px;border-radius:14px;border:1px solid var(--line)}
-  .review-stars{color:#FFB400;font-size:16px;letter-spacing:2px;margin-bottom:14px}
-  .review-body{font-size:15px;line-height:1.7;color:var(--stone);margin-bottom:20px}
-  .review-author{display:flex;align-items:center;gap:12px}
-  .review-avatar{width:40px;height:40px;border-radius:50%;background:var(--forest);color:var(--spark);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
-  .review-name{font-weight:700;font-size:14px}
-  .review-date{font-size:12px;color:var(--muted);font-family:'JetBrains Mono',monospace}
+  /* AUTHORITY STRIP */
+  .authority{background:var(--stone);color:#fff;padding:80px 24px;position:relative;overflow:hidden}
+  .authority::before{content:"";position:absolute;top:0;right:0;width:60%;height:100%;background:radial-gradient(ellipse at right,rgba(232,251,148,0.08) 0%,transparent 70%);pointer-events:none}
+  .authority-inner{max-width:1100px;margin:0 auto;position:relative}
+  .authority-head{text-align:center;margin-bottom:56px}
+  .authority-eyebrow{color:var(--spark);margin-bottom:14px}
+  .authority-h{font-size:clamp(30px,4vw,46px);font-weight:900;letter-spacing:-0.02em;line-height:1.1;color:#fff}
+  .authority-h .italic{color:var(--spark);font-weight:300;font-style:italic;font-family:'Fraunces',serif}
+  .authority-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;text-align:center}
+  .auth-num{font-size:clamp(44px,6vw,72px);font-weight:900;color:var(--spark);letter-spacing:-0.025em;line-height:1;font-family:'Inter Tight'}
+  .auth-label{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.12em;font-size:11px;color:#cfd4cf;margin-top:12px;line-height:1.5}
 
-  /* TRUST STRIP */
-  .trust{background:var(--stone);color:#fff;padding:64px 20px}
-  .trust-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;text-align:center}
-  .trust-num{font-size:clamp(40px,5vw,64px);font-weight:900;color:var(--spark);letter-spacing:-0.02em;line-height:1}
-  .trust-label{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.12em;font-size:11px;color:#cfd4cf;margin-top:10px}
+  /* FAQ */
+  .faq{padding:90px 24px;background:var(--paper)}
+  .faq-list{max-width:780px;margin:0 auto}
+  details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;transition:border-color 0.2s}
+  details[open]{border-color:var(--forest)}
+  summary{padding:24px 28px;cursor:pointer;font-weight:700;font-size:17px;display:flex;justify-content:space-between;align-items:center;letter-spacing:-0.005em;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:24px;color:var(--forest);font-weight:300;transition:transform 0.2s;line-height:1}
+  details[open] summary::after{transform:rotate(45deg)}
+  .faq-a{padding:0 28px 24px;color:var(--muted);font-size:15px;line-height:1.7}
+
+  /* REFER */
+  .refer{padding:90px 24px;background:var(--forest);color:#fff;text-align:center}
+  .refer-inner{max-width:780px;margin:0 auto}
+  .refer-eyebrow{color:var(--spark);margin-bottom:14px}
+  .refer-h{font-size:clamp(30px,4.5vw,52px);font-weight:900;letter-spacing:-0.02em;line-height:1.1;margin-bottom:18px;color:#fff}
+  .refer-h .italic{color:var(--spark);font-weight:300;font-style:italic;font-family:'Fraunces',serif}
+  .refer-sub{color:#cfd4cf;font-size:17px;margin-bottom:36px;line-height:1.55}
+  .refer-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 
   /* FOOTER */
-  footer{background:var(--forest);color:var(--cream);padding:40px 20px}
-  .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;font-size:13px}
+  footer{background:var(--forest-2);color:var(--cream);padding:48px 24px;text-align:center}
+  .footer-logo{font-size:13px;letter-spacing:0.04em;margin-bottom:12px}
+  .footer-logo strong{font-weight:900}
+  .footer-meta{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.15em;font-size:10px;color:rgba(255,255,255,0.55)}
 
-  /* STICKY BOTTOM CTA (mobile) */
-  .sticky-cta{position:fixed;bottom:0;left:0;right:0;background:var(--forest);padding:14px 20px;display:none;z-index:50;border-top:2px solid var(--spark);box-shadow:0 -10px 30px rgba(0,0,0,0.15)}
-  .sticky-cta a{display:flex;align-items:center;justify-content:center;background:var(--spark);color:var(--stone);padding:16px;border-radius:8px;text-decoration:none;font-weight:800;letter-spacing:0.02em;font-size:16px}
+  /* STICKY MOBILE CTA */
+  .sticky-cta{position:fixed;bottom:0;left:0;right:0;background:var(--forest);padding:14px 20px;display:none;z-index:50;border-top:2px solid var(--spark);box-shadow:0 -12px 40px rgba(0,0,0,0.25)}
+  .sticky-cta a{display:flex;align-items:center;justify-content:center;background:var(--spark);color:var(--stone);padding:16px;border-radius:10px;font-weight:800;letter-spacing:0.01em;font-size:15px}
 
   @media (max-width:720px){
     .sticky-cta{display:block}
-    body{padding-bottom:80px}
-    .hero{padding:24px 16px 0}
-    .next,.book,.founders,.reviews{padding:56px 16px}
-    .trust{padding:48px 16px}
-    .step{padding:28px 22px}
-    .review{padding:26px 22px}
+    body{padding-bottom:78px}
+    .hero{padding:48px 20px 64px}
+    .video-section,.prep,.stack,.founders,.faq,.refer{padding:64px 20px}
+    .appt-card{padding:24px}
+    .prep-card{padding:30px 24px}
+    .stack-total{padding:24px}
+    .stack-total-num{font-size:30px}
   }
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  <span class="mono">✓ Your details are in · Next step below</span>
-</div>
+<div class="confirm-bar"><span class="check">✓</span> Your discovery call is confirmed</div>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
-    <div class="badge">
-      <span class="dot"></span>
-      <span class="mono">Eligibility check received</span>
-    </div>
-    <h1 class="hero-h">You're in.<br><span class="italic">Now watch this.</span></h1>
-    <p class="hero-sub">Before we call you back — 3 minutes from the boys on what makes Builders Collective different. The grants, the incentives, and how we save first home buyers $20K+ on their build.</p>
+  <div class="hero-grid">
+    <div>
+      <div class="mono hero-eyebrow">Step 1 of 3 complete</div>
+      <h1>You're in, <span class="hero-name" id="firstName">mate</span>.<br><span class="italic">Now the fun starts.</span></h1>
+      <p class="hero-sub">In <strong style="color:#fff">15 minutes on your call</strong>, the founder you're matched with is going to walk you through every grant and incentive you qualify for, and map out your build options for free. Below is exactly how to get the most out of it.</p>
 
-    <div class="video-wrap" id="videoWrap">
-      <video id="vsl" poster="./bc-vsl-poster.jpg" controls playsinline preload="metadata" muted>
-        <source src="./bc-vsl.mp4" type="video/mp4">
-      </video>
-      <div class="play-overlay" id="playOverlay">
-        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-      </div>
-    </div>
-    <div class="hero-pad"></div>
-  </div>
-</section>
-
-<section class="next">
-  <div class="next-inner">
-    <div class="mono section-eyebrow">What happens next</div>
-    <h2 class="section-h">Three steps. <span class="italic">No pressure.</span></h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-h">We call you back</div>
-        <div class="step-p">Within one business day. One of the founders — David, Abdullah, Hasib, or Masih — gets in touch personally to talk through what you're looking to build.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-h">We pull your eligibility</div>
-        <div class="step-p">First Home Owner Grant, stamp duty concession, Keystart, FHBAS — we map every incentive you qualify for so you know exactly what's on the table.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-h">We match you to a builder</div>
-        <div class="step-p">From our 60+ vetted WA builder network. Right fit for your block, your budget, your timeline. We negotiate. You don't.</div>
+      <div class="appt-card">
+        <div class="mono appt-eyebrow">Your discovery call</div>
+        <div class="appt-time" id="apptTime">Within 1 business day</div>
+        <div class="appt-detail" id="apptDetail">One of our 4 founders will call you on the number you provided. If you want to lock in a specific time, use the link below.</div>
+        <div class="appt-actions">
+          <a class="btn btn-spark" href="https://api.leadconnectorhq.com/widget/booking/WOcI06zQQm4gE3CcNRMc" target="_blank">📅 Pick your slot</a>
+          <a class="btn btn-ghost" href="mailto:hello@builderscollective.au?subject=Question%20before%20my%20Builders%20Collective%20call">Send a question</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="book">
-  <div class="book-inner">
-    <div class="mono book-eyebrow">Skip the wait</div>
-    <h2 class="book-h">Lock in your call <span class="italic">now.</span></h2>
-    <p class="book-sub">Pick a 15-minute slot that works. We'll come prepared with your eligibility breakdown ready to walk through.</p>
-    <div class="calendar-frame">
-      <iframe src="https://api.leadconnectorhq.com/widget/booking/WOcI06zQQm4gE3CcNRMc" scrolling="no" title="Book Discovery Call"></iframe>
+<!-- VIDEO -->
+<section class="video-section">
+  <div class="video-head">
+    <div class="mono video-eyebrow">⏵ Watch before we speak · 3 mins</div>
+    <h2 class="video-h">First, watch this. <span class="italic">It saves us 10 mins on the call.</span></h2>
+    <p class="video-sub">The boys filmed this 3-min walkthrough so you know exactly how Builders Collective works, what we don't do, and why every first home buyer in Perth should at minimum get a second opinion before signing with a builder.</p>
+  </div>
+  <div class="video-wrap" id="videoWrap">
+    <video id="vsl" poster="./bc-vsl-poster.jpg" controls playsinline preload="metadata" muted>
+      <source src="./bc-vsl.mp4" type="video/mp4">
+    </video>
+    <div class="play-overlay" id="playOverlay">
+      <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+  </div>
+  <div class="video-cta"><span class="mono">↑ Pro tip:</span> watch this BEFORE the call and you'll get more out of the 15 mins.</div>
+</section>
+
+<!-- PREP -->
+<section class="prep">
+  <div class="container">
+    <div class="mono section-eyebrow">Before we call</div>
+    <h2 class="section-h">3 things to think about. <span class="italic">Takes 5 minutes.</span></h2>
+    <p class="section-sub">You don't need to have everything figured out. But the more clarity you bring to the call, the more we can pack into the 15 minutes.</p>
+    <div class="prep-grid">
+      <div class="prep-card">
+        <div class="prep-num">01</div>
+        <div class="prep-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M3 7l9-4 9 4M5 21V11m14 10V11M9 21v-6h6v6"/></svg></div>
+        <div class="prep-h">Where you want to build</div>
+        <div class="prep-p">Got a block already? Awesome — have the address handy. Still looking? List 2-3 suburbs you're considering and your max travel time to work.</div>
+      </div>
+      <div class="prep-card">
+        <div class="prep-num">02</div>
+        <div class="prep-icon"><svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="prep-h">Your budget honestly</div>
+        <div class="prep-p">No need for an exact number — a range works (e.g. "$400-500K all-in"). If you've spoken to a broker or bank, jot down your pre-approval. If not, we'll point you at someone good.</div>
+      </div>
+      <div class="prep-card">
+        <div class="prep-num">03</div>
+        <div class="prep-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg></div>
+        <div class="prep-h">Your non-negotiables</div>
+        <div class="prep-p">Double garage? Granny flat capability? Solar-ready? Open plan? Two storeys? Write down 3-5 must-haves so we don't waste time on builders who can't deliver them.</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="founders">
-  <div class="founders-inner">
-    <div class="mono section-eyebrow">Who you're talking to</div>
-    <h2 class="section-h">The four founders. <span class="italic">All hands on.</span></h2>
-    <div class="founders-grid">
-      <div class="founder">
-        <div class="founder-photo">DC</div>
-        <div class="founder-name">David Cho</div>
-        <div class="founder-role">Co-Founder</div>
+<!-- VALUE STACK -->
+<section class="stack">
+  <div class="container">
+    <div class="mono section-eyebrow">What you walk away with</div>
+    <h2 class="section-h">$2,500+ in free value. <span class="italic">From one 15-min call.</span></h2>
+    <p class="section-sub">This isn't a sales pitch disguised as a consultation. By the end of the call, you'll have actual deliverables — and a clear answer on whether we're worth working with or not.</p>
+    <div class="stack-grid">
+      <div class="stack-item">
+        <div class="stack-check">✓</div>
+        <div class="stack-text">
+          <div class="stack-h">Full grant + incentive audit</div>
+          <div class="stack-sub">First Home Owner Grant, FHBAS, Keystart, stamp duty — what you actually qualify for in WA</div>
+        </div>
+        <div class="stack-value">$750 value</div>
       </div>
-      <div class="founder">
-        <div class="founder-photo">AR</div>
-        <div class="founder-name">Abdullah Rafatee</div>
-        <div class="founder-role">Co-Founder</div>
+      <div class="stack-item">
+        <div class="stack-check">✓</div>
+        <div class="stack-text">
+          <div class="stack-h">Builder shortlist matched to you</div>
+          <div class="stack-sub">From our 60+ vetted WA network — based on your budget, block, and must-haves</div>
+        </div>
+        <div class="stack-value">$1,000 value</div>
       </div>
-      <div class="founder">
-        <div class="founder-photo">HR</div>
-        <div class="founder-name">Hasib Rafatee</div>
-        <div class="founder-role">Co-Founder</div>
+      <div class="stack-item">
+        <div class="stack-check">✓</div>
+        <div class="stack-text">
+          <div class="stack-h">Honest budget reality-check</div>
+          <div class="stack-sub">What your money can actually buy in Perth today — no fluff, no upsell</div>
+        </div>
+        <div class="stack-value">$500 value</div>
       </div>
-      <div class="founder">
-        <div class="founder-photo">MR</div>
-        <div class="founder-name">Masih Rafatee</div>
-        <div class="founder-role">Co-Founder</div>
+      <div class="stack-item">
+        <div class="stack-check">✓</div>
+        <div class="stack-text">
+          <div class="stack-h">The 5 questions to ask every builder</div>
+          <div class="stack-sub">Our cheat-sheet for ripping apart any builder's quote — yours to keep</div>
+        </div>
+        <div class="stack-value">$250 value</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="reviews">
-  <div class="reviews-inner">
-    <div class="reviews-head">
-      <div>
-        <div class="mono section-eyebrow">What clients say</div>
-        <h2 class="section-h" style="margin-bottom:0">Don't take our word for it.</h2>
-      </div>
-      <div class="reviews-meta">
-        <div class="reviews-stars">★★★★★</div>
+      <div class="stack-total">
         <div>
-          <div class="reviews-num">5.0</div>
-          <div class="mono" style="color:var(--muted)">Google Reviews</div>
+          <div class="stack-total-label">Your investment</div>
+          <div class="stack-total-h">15 minutes on the phone</div>
+        </div>
+        <div>
+          <span class="stack-total-strike">$2,500</span>
+          <span class="stack-total-num">Free</span>
         </div>
       </div>
     </div>
-    <div class="reviews-grid">
-      <!-- TBC: real reviews to be pulled from BC Google Business Profile -->
-      <div class="review">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-body">[Real review from BC GBP — pending Daniel pasting GBP URL]</div>
-        <div class="review-author">
-          <div class="review-avatar">?</div>
-          <div>
-            <div class="review-name">[Reviewer name]</div>
-            <div class="review-date">[Date]</div>
-          </div>
-        </div>
+  </div>
+</section>
+
+<!-- FOUNDERS -->
+<section class="founders">
+  <div class="container">
+    <div class="founders-grid">
+      <div class="founders-img-wrap">
+        <img src="./founders.png" alt="The four Builders Collective founders" loading="lazy">
       </div>
-      <div class="review">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-body">[Real review from BC GBP — pending Daniel pasting GBP URL]</div>
-        <div class="review-author">
-          <div class="review-avatar">?</div>
-          <div>
-            <div class="review-name">[Reviewer name]</div>
-            <div class="review-date">[Date]</div>
+      <div>
+        <div class="mono section-eyebrow">Who's on the other end of the call</div>
+        <h2 class="section-h" style="margin-bottom:14px">Four founders. <span class="italic">All hands on.</span></h2>
+        <p class="section-sub" style="margin-bottom:32px">No call centre. No junior. One of the four people who built this company is going to pick up the phone — and they've collectively been doing this for 40+ years.</p>
+        <div class="founders-cards">
+          <div class="founder-card">
+            <div class="founder-name">David Cho</div>
+            <div class="founder-role">Co-Founder · Director</div>
+            <div class="founder-bio">Building broker + property investor. Multi-award winner. Specialises in first home buyers and investors.</div>
           </div>
-        </div>
-      </div>
-      <div class="review">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-body">[Real review from BC GBP — pending Daniel pasting GBP URL]</div>
-        <div class="review-author">
-          <div class="review-avatar">?</div>
-          <div>
-            <div class="review-name">[Reviewer name]</div>
-            <div class="review-date">[Date]</div>
+          <div class="founder-card">
+            <div class="founder-name">Abdullah "Raf" Rafatee</div>
+            <div class="founder-role">Co-Founder · Director</div>
+            <div class="founder-bio">10+ years in construction. Commercial (hospitals, schools) + residential. Multi-award winner.</div>
+          </div>
+          <div class="founder-card">
+            <div class="founder-name">Hasib Rafatee</div>
+            <div class="founder-role">Co-Founder · Director</div>
+            <div class="founder-bio">Decade+ in Perth building. Construction management + economics background. Builder-agnostic by design.</div>
+          </div>
+          <div class="founder-card">
+            <div class="founder-name">Masih Rafatee</div>
+            <div class="founder-role">Co-Founder · Director</div>
+            <div class="founder-bio">Developer + Sales Rep of the Year. Chemical engineering degree. Residential construction specialist.</div>
           </div>
         </div>
       </div>
@@ -259,39 +328,108 @@
   </div>
 </section>
 
-<section class="trust">
-  <div class="trust-inner">
-    <div>
-      <div class="trust-num">60+</div>
-      <div class="trust-label">WA Builders Vetted</div>
+<!-- AUTHORITY -->
+<section class="authority">
+  <div class="authority-inner">
+    <div class="authority-head">
+      <div class="mono authority-eyebrow">By the numbers</div>
+      <h2 class="authority-h">The reason we don't <span class="italic">need to oversell.</span></h2>
     </div>
-    <div>
-      <div class="trust-num">40+</div>
-      <div class="trust-label">Years Combined Experience</div>
+    <div class="authority-grid">
+      <div>
+        <div class="auth-num">60+</div>
+        <div class="auth-label">WA builders<br>in our network</div>
+      </div>
+      <div>
+        <div class="auth-num">40+</div>
+        <div class="auth-label">Years combined<br>industry experience</div>
+      </div>
+      <div>
+        <div class="auth-num">$20K+</div>
+        <div class="auth-label">Avg saved per build<br>vs going direct</div>
+      </div>
+      <div>
+        <div class="auth-num">$0</div>
+        <div class="auth-label">Cost to you<br>(builders pay us)</div>
+      </div>
     </div>
-    <div>
-      <div class="trust-num">$20K+</div>
-      <div class="trust-label">Avg Saved Per Build</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="mono section-eyebrow">Before you hop on</div>
+    <h2 class="section-h" style="margin-bottom:36px">Common questions. <span class="italic">Quick answers.</span></h2>
+    <div class="faq-list">
+      <details>
+        <summary>Do I have to pay anything for this call?</summary>
+        <div class="faq-a">No. The call is free, and there's no fee to use Builders Collective. We're paid by the builder when we successfully match a client — never by you. You get an independent advocate at zero cost.</div>
+      </details>
+      <details>
+        <summary>What if I've already spoken to a builder?</summary>
+        <div class="faq-a">Even better. Bring their quote and we'll tear through it for free — we'll tell you exactly what's missing, what's overpriced, and whether you're getting a fair deal. Most clients save $15-30K just from getting a second opinion.</div>
+      </details>
+      <details>
+        <summary>What if I don't have a block yet?</summary>
+        <div class="faq-a">Perfectly fine. About 40% of our clients come to us before buying land. We'll help you understand what's available, what to look for, and which suburbs match your build vision and budget.</div>
+      </details>
+      <details>
+        <summary>How long until I can move in?</summary>
+        <div class="faq-a">Typically 12 months for a new home from contract sign, 8 months for a granny flat. Faster if your block is ready, slower if you need approvals. We'll give you a realistic timeline on the call.</div>
+      </details>
+      <details>
+        <summary>What if I'm not ready for another 6 months?</summary>
+        <div class="faq-a">Still take the call. The earlier you understand your options, grants, and budget, the better positioned you'll be when you ARE ready. We can also keep you updated as new builder offers come up.</div>
+      </details>
+      <details>
+        <summary>Can I bring my partner?</summary>
+        <div class="faq-a">Please do. Building decisions almost always involve two people — we'd rather have both of you on the line than redo the conversation twice. Just let us know when we call.</div>
+      </details>
     </div>
-    <div>
-      <div class="trust-num">100s</div>
-      <div class="trust-label">First Home Buyers Helped</div>
+  </div>
+</section>
+
+<!-- REFER -->
+<section class="refer">
+  <div class="refer-inner">
+    <div class="mono refer-eyebrow">One more thing</div>
+    <h2 class="refer-h">Know someone else building? <span class="italic">Send them this.</span></h2>
+    <p class="refer-sub">If you've got a mate, sibling, or workmate thinking about a new build — do them a solid. We'll save them tens of thousands too, and they'll thank you for it.</p>
+    <div class="refer-actions">
+      <a class="btn btn-spark" href="https://wa.me/?text=Hey%20—%20just%20booked%20a%20free%20call%20with%20Builders%20Collective.%20They%20match%20you%20to%20the%20right%20WA%20builder%20%26%20save%20you%20$20K%2B.%20Worth%20a%20look%3A%20https%3A%2F%2Fbuilderscollective.au" target="_blank">📱 Send via WhatsApp</a>
+      <a class="btn btn-ghost" href="sms:?body=Hey%20—%20just%20booked%20a%20free%20call%20with%20Builders%20Collective.%20They%20match%20you%20to%20the%20right%20WA%20builder%20and%20save%20you%20$20K%2B.%20https%3A%2F%2Fbuilderscollective.au">💬 Send via SMS</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-inner">
-    <div>© Builders Collective · 3/186 Main Street, Osborne Park WA</div>
-    <div class="mono">builderscollective.au</div>
-  </div>
+  <div class="footer-logo"><strong>Builders Collective</strong></div>
+  <div class="footer-meta">3/186 Main Street · Osborne Park WA · builderscollective.au</div>
 </footer>
 
 <div class="sticky-cta">
-  <a href="#book">Book your call now →</a>
+  <a href="#video-section" id="stickyCta">▶ Watch the 3-min video now</a>
 </div>
 
 <script>
+  // Pull first name + appt time from URL params (GHL passes these post-booking)
+  const params = new URLSearchParams(location.search);
+  const firstName = params.get('first_name') || params.get('contact.first_name') || params.get('name');
+  if (firstName) document.getElementById('firstName').textContent = firstName;
+
+  const apptStart = params.get('start_time') || params.get('appointment_start');
+  if (apptStart) {
+    try {
+      const d = new Date(apptStart);
+      const opts = {weekday:'long', month:'long', day:'numeric'};
+      const tOpts = {hour:'numeric', minute:'2-digit', hour12:true};
+      document.getElementById('apptTime').textContent = d.toLocaleDateString('en-AU', opts) + ' at ' + d.toLocaleTimeString('en-AU', tOpts);
+      document.getElementById('apptDetail').textContent = "Add it to your calendar so you don't miss it. One of the four founders will give you a call at this time.";
+    } catch(e){}
+  }
+
+  // Video play overlay
   const video = document.getElementById('vsl');
   const overlay = document.getElementById('playOverlay');
   overlay.addEventListener('click', () => {
@@ -302,10 +440,10 @@
   video.addEventListener('play', () => overlay.classList.add('hidden'));
   video.addEventListener('pause', () => { if (!video.ended) overlay.classList.remove('hidden'); });
 
-  // Sticky CTA scrolls to calendar
-  document.querySelector('.sticky-cta a').addEventListener('click', e => {
+  // Sticky CTA smooth scroll
+  document.getElementById('stickyCta').addEventListener('click', e => {
     e.preventDefault();
-    document.querySelector('.book').scrollIntoView({behavior:'smooth'});
+    document.querySelector('.video-section').scrollIntoView({behavior:'smooth'});
   });
 </script>
 
