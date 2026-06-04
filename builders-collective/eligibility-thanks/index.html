@@ -440,6 +440,33 @@
   video.addEventListener('play', () => overlay.classList.add('hidden'));
   video.addEventListener('pause', () => { if (!video.ended) overlay.classList.remove('hidden'); });
 
+  // VSL watch tracker → posts back to GHL inbound webhook
+  // Ron: create an inbound webhook trigger in a workflow + replace BC_VSL_WATCH_WEBHOOK below
+  const VSL_WEBHOOK = "REPLACE_WITH_GHL_INBOUND_WEBHOOK_URL";
+  const contactEmail = params.get('email') || params.get('contact.email');
+  const contactId = params.get('contact_id') || params.get('id');
+  let firedPartial = false, firedFull = false;
+  function postWatch(status){
+    if (VSL_WEBHOOK.startsWith("REPLACE")) return;
+    if (!contactEmail && !contactId) return;
+    fetch(VSL_WEBHOOK, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        email: contactEmail,
+        contact_id: contactId,
+        watched_vsl_video: status,
+        watched_at: new Date().toISOString(),
+        page: 'eligibility-thanks'
+      })
+    }).catch(()=>{});
+  }
+  video.addEventListener('timeupdate', () => {
+    const pct = (video.currentTime / video.duration) * 100;
+    if (pct >= 50 && !firedPartial) { firedPartial = true; postWatch('Partial'); }
+    if (pct >= 90 && !firedFull) { firedFull = true; postWatch('Yes'); }
+  });
+
   // Sticky CTA smooth scroll
   document.getElementById('stickyCta').addEventListener('click', e => {
     e.preventDefault();
