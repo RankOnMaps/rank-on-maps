@@ -1,0 +1,133 @@
+{
+  "generated_at": "2026-06-24T23:53:08.238963+00:00",
+  "totals": {
+    "total_leads": 261,
+    "leads_30d": 219,
+    "total_opps": 194,
+    "calls_booked": 33,
+    "ppas_signed": 5,
+    "pipeline_value": 180000
+  },
+  "by_source": {
+    "Eligibility": 20,
+    "REA": 190,
+    "Other": 49,
+    "ContactUs": 2
+  },
+  "by_stage": {
+    "New Lead": 101,
+    "Booked": 10,
+    "Lost": 49,
+    "Site Visit Scheduled": 7,
+    "Nurturing": 4,
+    "Showed Up": 2,
+    "Qualified": 6,
+    "Won \u2014 Build Confirmed": 5,
+    "Not Yet Ready": 7,
+    "Builder Shortlist Sent": 3
+  },
+  "per_rep": {
+    "nNlkTC2z33NTPyxTxdE8": {
+      "name": "David",
+      "initial": "D",
+      "leads_30d": 48,
+      "leads_total": 48,
+      "opps_total": 46,
+      "opps_new_lead": 11,
+      "opps_qualified": 6,
+      "opps_site_visit": 1,
+      "opps_won": 1,
+      "opps_contract_review": 0,
+      "opps_not_yet_ready": 2,
+      "opps_lost": 19,
+      "leads_by_source": {
+        "Eligibility": 5,
+        "REA": 39,
+        "Other": 4
+      }
+    },
+    "94SP86nEZ9qrsSTJB2Qe": {
+      "name": "Abdullah",
+      "initial": "A",
+      "leads_30d": 49,
+      "leads_total": 49,
+      "opps_total": 47,
+      "opps_new_lead": 12,
+      "opps_qualified": 0,
+      "opps_site_visit": 2,
+      "opps_won": 2,
+      "opps_contract_review": 0,
+      "opps_not_yet_ready": 0,
+      "opps_lost": 27,
+      "leads_by_source": {
+        "Eligibility": 6,
+        "REA": 39,
+        "ContactUs": 1,
+        "Other": 3
+      }
+    },
+    "aWX3pK2BGS2WMaZzN5T4": {
+      "name": "Hasib",
+      "initial": "H",
+      "leads_30d": 71,
+      "leads_total": 72,
+      "opps_total": 60,
+      "opps_new_lead": 43,
+      "opps_qualified": 0,
+      "opps_site_visit": 4,
+      "opps_won": 2,
+      "opps_contract_review": 0,
+      "opps_not_yet_ready": 5,
+      "opps_lost": 2,
+      "leads_by_source": {
+        "REA": 66,
+        "Eligibility": 6
+      }
+    },
+    "L3j2TVvp2VBUFZG6qP1l": {
+      "name": "Masih",
+      "initial": "M",
+      "leads_30d": 51,
+      "leads_total": 52,
+      "opps_total": 41,
+      "opps_new_lead": 35,
+      "opps_qualified": 0,
+      "opps_site_visit": 0,
+      "opps_won": 0,
+      "opps_contract_review": 0,
+      "opps_not_yet_ready": 0,
+      "opps_lost": 1,
+      "leads_by_source": {
+        "REA": 46,
+        "Eligibility": 3,
+        "ContactUs": 1,
+        "Other": 2
+      }
+    }
+  },
+  "round_robin": {
+    "last12": [
+      "Abdullah",
+      "David",
+      "Hasib",
+      "Masih",
+      "David",
+      "Hasib",
+      "Masih",
+      "Abdullah",
+      "David",
+      "Hasib",
+      "Masih",
+      "Abdullah"
+    ],
+    "balance": {
+      "Abdullah": 3,
+      "David": 3,
+      "Hasib": 3,
+      "Masih": 3
+    },
+    "max_deviation": 0.0,
+    "health": "healthy",
+    "sequence_arrow": "Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah"
+  }
+}
