@@ -1,36 +1,36 @@
 {
-  "generated_at": "2026-06-25T03:35:57.346651+00:00",
+  "generated_at": "2026-06-25T04:06:12.523730+00:00",
   "totals": {
-    "total_leads": 261,
-    "leads_30d": 259,
+    "total_leads": 262,
+    "leads_30d": 260,
     "total_opps": 194,
-    "calls_booked": 33,
-    "ppas_signed": 5,
+    "calls_booked": 32,
+    "ppas_signed": 4,
     "pipeline_value": 180000
   },
   "channels_30d": {
+    "REA": 191,
     "Eligibility": 19,
-    "REA": 190,
     "Other": 48,
     "Contact": 2
   },
   "channels_total": {
+    "REA": 191,
     "Eligibility": 20,
-    "REA": 190,
     "Other": 49,
     "Contact": 2
   },
   "stages": {
     "New Lead": 101,
     "Booked": 10,
-    "Lost": 49,
-    "Site Visit Scheduled": 7,
+    "Lost": 50,
+    "Site Visit Scheduled": 6,
     "Nurturing": 4,
     "Showed Up": 2,
+    "Builder Shortlist Sent": 4,
     "Qualified": 6,
-    "Won \u2014 Build Confirmed": 5,
-    "Not Yet Ready": 7,
-    "Builder Shortlist Sent": 3
+    "Won \u2014 Build Confirmed": 4,
+    "Not Yet Ready": 7
   },
   "stage_top_deals": {
     "New Lead": [
@@ -553,10 +553,6 @@
         0.0
       ],
       [
-        "jason morrison \u2014 REA",
-        0.0
-      ],
-      [
         "Stephen Devisoe",
         0.0
       ],
@@ -573,6 +569,10 @@
       [
         "Shynae Otway",
         25000.0
+      ],
+      [
+        "jason morrison \u2014 REA",
+        0.0
       ],
       [
         "Denzil Stephens ",
@@ -592,10 +592,6 @@
       [
         "Keah Hall",
         25000.0
-      ],
-      [
-        "jamie joseph \u2014 REA",
-        0.0
       ],
       [
         "Omar Al Doski",
@@ -790,6 +786,10 @@
         0.0
       ],
       [
+        "jamie joseph \u2014 REA",
+        0.0
+      ],
+      [
         "tina allen \u2014 REA",
         0.0
       ],
@@ -838,10 +838,10 @@
     "Site Visit Scheduled": 50000.0,
     "Nurturing": 0.0,
     "Showed Up": 0.0,
+    "Builder Shortlist Sent": 50000.0,
     "Qualified": 0.0,
     "Won \u2014 Build Confirmed": 80000.0,
-    "Not Yet Ready": 0.0,
-    "Builder Shortlist Sent": 50000.0
+    "Not Yet Ready": 0.0
   },
   "per_rep": {
     "nNlkTC2z33NTPyxTxdE8": {
@@ -856,8 +856,8 @@
     "94SP86nEZ9qrsSTJB2Qe": {
       "name": "Abdullah",
       "initial": "A",
-      "leads_30d": 49,
-      "leads_total": 49,
+      "leads_30d": 50,
+      "leads_total": 50,
       "opps_total": 47,
       "opps_qualified": 0,
       "opps_won": 2
@@ -869,7 +869,7 @@
       "leads_total": 72,
       "opps_total": 60,
       "opps_qualified": 0,
-      "opps_won": 2
+      "opps_won": 1
     },
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
