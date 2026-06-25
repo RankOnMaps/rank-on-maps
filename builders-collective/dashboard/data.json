@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-25T04:36:27.455190+00:00",
+  "generated_at": "2026-06-25T05:06:41.778262+00:00",
   "totals": {
     "total_leads": 262,
     "leads_30d": 260,
-    "total_opps": 194,
+    "total_opps": 195,
     "calls_booked": 32,
     "ppas_signed": 4,
     "pipeline_value": 180000
@@ -21,7 +21,7 @@
     "Contact": 2
   },
   "stages": {
-    "New Lead": 101,
+    "New Lead": 102,
     "Booked": 10,
     "Lost": 50,
     "Site Visit Scheduled": 6,
@@ -34,6 +34,10 @@
   },
   "stage_top_deals": {
     "New Lead": [
+      [
+        "Sarah Oldfield",
+        0.0
+      ],
       [
         "Maria Farano",
         0.0
@@ -858,7 +862,7 @@
       "initial": "A",
       "leads_30d": 50,
       "leads_total": 50,
-      "opps_total": 47,
+      "opps_total": 48,
       "opps_qualified": 0,
       "opps_won": 2
     },
