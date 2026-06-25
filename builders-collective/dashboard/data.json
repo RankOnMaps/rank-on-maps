@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-25T09:25:40.891361+00:00",
+  "generated_at": "2026-06-25T09:55:54.709268+00:00",
   "totals": {
     "total_leads": 264,
     "leads_30d": 262,
@@ -22,11 +22,11 @@
   },
   "stages": {
     "New Lead": 103,
-    "Booked": 10,
+    "Booked": 9,
     "Lost": 50,
     "Site Visit Scheduled": 6,
     "Nurturing": 4,
-    "Showed Up": 2,
+    "Showed Up": 3,
     "Builder Shortlist Sent": 4,
     "Qualified": 6,
     "Won \u2014 Build Confirmed": 4,
@@ -483,10 +483,6 @@
         0.0
       ],
       [
-        "ashley brunette \u2014 REA",
-        0.0
-      ],
-      [
         "anil maurya \u2014 REA",
         0.0
       ],
@@ -510,6 +506,10 @@
     "Showed Up": [
       [
         "hardik sood \u2014 REA",
+        0.0
+      ],
+      [
+        "ashley brunette \u2014 REA",
         0.0
       ],
       [
