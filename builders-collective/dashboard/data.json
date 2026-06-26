@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T02:34:21.303670+00:00",
+  "generated_at": "2026-06-26T03:04:35.439635+00:00",
   "totals": {
     "total_leads": 268,
     "leads_30d": 266,
@@ -21,9 +21,9 @@
     "Contact": 2
   },
   "stages": {
-    "New Lead": 103,
+    "New Lead": 102,
     "Booked": 9,
-    "Lost": 50,
+    "Lost": 51,
     "Site Visit Scheduled": 6,
     "Nurturing": 4,
     "Showed Up": 3,
@@ -356,10 +356,6 @@
       ],
       [
         "sameh hammam \u2014 REA",
-        0.0
-      ],
-      [
-        "monica messer \u2014 REA",
         0.0
       ],
       [
@@ -799,6 +795,10 @@
       ],
       [
         "tina allen \u2014 REA",
+        0.0
+      ],
+      [
+        "monica messer \u2014 REA",
         0.0
       ],
       [
