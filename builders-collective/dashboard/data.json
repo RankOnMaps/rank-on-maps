@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-26T03:34:50.584932+00:00",
+  "generated_at": "2026-06-26T04:05:06.209385+00:00",
   "totals": {
     "total_leads": 268,
     "leads_30d": 266,
-    "total_opps": 198,
+    "total_opps": 199,
     "calls_booked": 31,
     "ppas_signed": 4,
     "pipeline_value": 180000
@@ -22,12 +22,12 @@
   },
   "stages": {
     "New Lead": 104,
+    "Lost": 53,
     "Booked": 8,
-    "Lost": 52,
-    "Site Visit Scheduled": 6,
+    "Site Visit Scheduled": 5,
     "Nurturing": 4,
     "Showed Up": 3,
-    "Builder Shortlist Sent": 4,
+    "Builder Shortlist Sent": 5,
     "Qualified": 6,
     "Won \u2014 Build Confirmed": 4,
     "Not Yet Ready": 7
@@ -35,7 +35,7 @@
   "stage_top_deals": {
     "New Lead": [
       [
-        "Aly Sinclair",
+        "Atefa",
         0.0
       ],
       [
@@ -549,10 +549,6 @@
         25000.0
       ],
       [
-        "Lee Anne Boon \u2014 Eligibility",
-        25000.0
-      ],
-      [
         "Jasmin Kirov",
         0.0
       ],
@@ -576,6 +572,10 @@
       ],
       [
         "Shynae Otway",
+        25000.0
+      ],
+      [
+        "Lee Anne Boon \u2014 Eligibility",
         25000.0
       ],
       [
@@ -637,6 +637,10 @@
       ]
     ],
     "Lost": [
+      [
+        "Aly Sinclair",
+        0.0
+      ],
       [
         "Christian",
         0.0
@@ -849,12 +853,12 @@
   },
   "stage_pipeline_value": {
     "New Lead": 0.0,
-    "Booked": 0.0,
     "Lost": 0.0,
-    "Site Visit Scheduled": 50000.0,
+    "Booked": 0.0,
+    "Site Visit Scheduled": 25000.0,
     "Nurturing": 0.0,
     "Showed Up": 0.0,
-    "Builder Shortlist Sent": 50000.0,
+    "Builder Shortlist Sent": 75000.0,
     "Qualified": 0.0,
     "Won \u2014 Build Confirmed": 80000.0,
     "Not Yet Ready": 0.0
@@ -865,7 +869,7 @@
       "initial": "D",
       "leads_30d": 49,
       "leads_total": 49,
-      "opps_total": 46,
+      "opps_total": 47,
       "opps_qualified": 6,
       "opps_won": 1
     },
