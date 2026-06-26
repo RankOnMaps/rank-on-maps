@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T04:05:06.209385+00:00",
+  "generated_at": "2026-06-26T04:50:52.036991+00:00",
   "totals": {
     "total_leads": 268,
     "leads_30d": 266,
@@ -21,8 +21,8 @@
     "Contact": 2
   },
   "stages": {
-    "New Lead": 104,
-    "Lost": 53,
+    "New Lead": 102,
+    "Lost": 55,
     "Booked": 8,
     "Site Visit Scheduled": 5,
     "Nurturing": 4,
@@ -84,14 +84,6 @@
       ],
       [
         "Hanna Zurub",
-        0.0
-      ],
-      [
-        "Chris Brookes",
-        0.0
-      ],
-      [
-        "Alicia Sorgiovanni",
         0.0
       ],
       [
@@ -643,6 +635,14 @@
       ],
       [
         "Christian",
+        0.0
+      ],
+      [
+        "Chris Brookes",
+        0.0
+      ],
+      [
+        "Alicia Sorgiovanni",
         0.0
       ],
       [
