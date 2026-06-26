@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-26T03:04:35.439635+00:00",
+  "generated_at": "2026-06-26T03:34:50.584932+00:00",
   "totals": {
     "total_leads": 268,
     "leads_30d": 266,
-    "total_opps": 196,
-    "calls_booked": 32,
+    "total_opps": 198,
+    "calls_booked": 31,
     "ppas_signed": 4,
     "pipeline_value": 180000
   },
@@ -21,9 +21,9 @@
     "Contact": 2
   },
   "stages": {
-    "New Lead": 102,
-    "Booked": 9,
-    "Lost": 51,
+    "New Lead": 104,
+    "Booked": 8,
+    "Lost": 52,
     "Site Visit Scheduled": 6,
     "Nurturing": 4,
     "Showed Up": 3,
@@ -34,6 +34,14 @@
   },
   "stage_top_deals": {
     "New Lead": [
+      [
+        "Aly Sinclair",
+        0.0
+      ],
+      [
+        "Genevieve Iones",
+        0.0
+      ],
       [
         "Sitti Salwah B Sinwan",
         0.0
@@ -479,10 +487,6 @@
         0.0
       ],
       [
-        "anil maurya \u2014 REA",
-        0.0
-      ],
-      [
         "ann castro \u2014 REA",
         0.0
       ],
@@ -798,6 +802,10 @@
         0.0
       ],
       [
+        "anil maurya \u2014 REA",
+        0.0
+      ],
+      [
         "monica messer \u2014 REA",
         0.0
       ],
@@ -866,7 +874,7 @@
       "initial": "A",
       "leads_30d": 53,
       "leads_total": 53,
-      "opps_total": 49,
+      "opps_total": 51,
       "opps_qualified": 0,
       "opps_won": 2
     },
