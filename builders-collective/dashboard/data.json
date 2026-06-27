@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-06-27T02:10:44.757070+00:00",
+  "generated_at": "2026-06-27T02:40:48.337050+00:00",
   "totals": {
-    "total_leads": 274,
-    "leads_30d": 271,
-    "total_opps": 201,
+    "total_leads": 275,
+    "leads_30d": 272,
+    "total_opps": 202,
     "calls_booked": 31,
     "ppas_signed": 4,
     "pipeline_value": 180000
   },
   "channels_30d": {
-    "Eligibility": 22,
+    "Eligibility": 23,
     "REA": 200,
     "Other": 47,
     "Contact": 2
   },
   "channels_total": {
-    "Eligibility": 23,
+    "Eligibility": 24,
     "REA": 200,
     "Other": 49,
     "Contact": 2
   },
   "stages": {
-    "New Lead": 104,
+    "New Lead": 105,
     "Lost": 55,
     "Booked": 8,
     "Site Visit Scheduled": 5,
@@ -34,6 +34,10 @@
   },
   "stage_top_deals": {
     "New Lead": [
+      [
+        "Mathias  Buko",
+        0.0
+      ],
       [
         "Gema Kapetanakis ",
         0.0
@@ -902,16 +906,15 @@
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 54,
-      "leads_total": 55,
-      "opps_total": 41,
+      "leads_30d": 55,
+      "leads_total": 56,
+      "opps_total": 42,
       "opps_qualified": 0,
       "opps_won": 0
     }
   },
   "round_robin": {
     "last12": [
-      "Masih",
       "David",
       "Hasib",
       "Masih",
@@ -922,15 +925,16 @@
       "Abdullah",
       "Abdullah",
       "David",
-      "Hasib"
+      "Hasib",
+      "Masih"
     ],
     "balance": {
-      "Masih": 3,
       "David": 3,
       "Hasib": 3,
+      "Masih": 3,
       "Abdullah": 3
     },
     "health": "healthy",
-    "sequence_arrow": "Masih \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 Abdullah \u2192 David \u2192 Hasib"
+    "sequence_arrow": "David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih"
   }
 }
