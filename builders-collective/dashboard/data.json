@@ -1,35 +1,35 @@
 {
-  "generated_at": "2026-06-27T05:00:09.665816+00:00",
+  "generated_at": "2026-06-27T05:30:13.270345+00:00",
   "totals": {
-    "total_leads": 275,
-    "leads_30d": 272,
-    "total_opps": 204,
-    "calls_booked": 33,
-    "ppas_signed": 4,
+    "total_leads": 276,
+    "leads_30d": 273,
+    "total_opps": 205,
+    "calls_booked": 34,
+    "ppas_signed": 5,
     "pipeline_value": 180000
   },
   "channels_30d": {
+    "Other": 48,
     "Eligibility": 23,
     "REA": 200,
-    "Other": 47,
     "Contact": 2
   },
   "channels_total": {
+    "Other": 50,
     "Eligibility": 24,
     "REA": 200,
-    "Other": 49,
     "Contact": 2
   },
   "stages": {
+    "Booked": 11,
     "New Lead": 105,
-    "Booked": 10,
     "Lost": 55,
     "Site Visit Scheduled": 5,
     "Nurturing": 4,
     "Showed Up": 3,
-    "Builder Shortlist Sent": 5,
+    "Builder Shortlist Sent": 4,
     "Qualified": 6,
-    "Won \u2014 Build Confirmed": 4,
+    "Won \u2014 Build Confirmed": 5,
     "Not Yet Ready": 7
   },
   "stage_top_deals": {
@@ -475,6 +475,10 @@
     ],
     "Booked": [
       [
+        "Maritsa",
+        0.0
+      ],
+      [
         "Mathias  Buko",
         0.0
       ],
@@ -579,10 +583,6 @@
     ],
     "Builder Shortlist Sent": [
       [
-        "James Bismard",
-        25000.0
-      ],
-      [
         "Shynae Otway",
         25000.0
       ],
@@ -604,6 +604,10 @@
       [
         "Junclar Curit",
         30000.0
+      ],
+      [
+        "James Bismard",
+        25000.0
       ],
       [
         "Arskie David",
@@ -872,15 +876,15 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 0.0,
     "Booked": 0.0,
+    "New Lead": 0.0,
     "Lost": 0.0,
     "Site Visit Scheduled": 25000.0,
     "Nurturing": 0.0,
     "Showed Up": 0.0,
-    "Builder Shortlist Sent": 75000.0,
+    "Builder Shortlist Sent": 50000.0,
     "Qualified": 0.0,
-    "Won \u2014 Build Confirmed": 80000.0,
+    "Won \u2014 Build Confirmed": 105000.0,
     "Not Yet Ready": 0.0
   },
   "per_rep": {
@@ -898,9 +902,9 @@
       "initial": "A",
       "leads_30d": 53,
       "leads_total": 53,
-      "opps_total": 52,
+      "opps_total": 53,
       "opps_qualified": 0,
-      "opps_won": 2
+      "opps_won": 3
     },
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
