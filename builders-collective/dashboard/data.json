@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-27T02:40:48.337050+00:00",
+  "generated_at": "2026-06-27T03:14:15.986006+00:00",
   "totals": {
     "total_leads": 275,
     "leads_30d": 272,
     "total_opps": 202,
-    "calls_booked": 31,
+    "calls_booked": 32,
     "ppas_signed": 4,
     "pipeline_value": 180000
   },
@@ -21,9 +21,9 @@
     "Contact": 2
   },
   "stages": {
-    "New Lead": 105,
+    "Booked": 9,
+    "New Lead": 104,
     "Lost": 55,
-    "Booked": 8,
     "Site Visit Scheduled": 5,
     "Nurturing": 4,
     "Showed Up": 3,
@@ -34,10 +34,6 @@
   },
   "stage_top_deals": {
     "New Lead": [
-      [
-        "Mathias  Buko",
-        0.0
-      ],
       [
         "Gema Kapetanakis ",
         0.0
@@ -475,6 +471,10 @@
     ],
     "Booked": [
       [
+        "Mathias  Buko",
+        0.0
+      ],
+      [
         "Bailey  Anderson",
         0.0
       ],
@@ -864,9 +864,9 @@
     ]
   },
   "stage_pipeline_value": {
+    "Booked": 0.0,
     "New Lead": 0.0,
     "Lost": 0.0,
-    "Booked": 0.0,
     "Site Visit Scheduled": 25000.0,
     "Nurturing": 0.0,
     "Showed Up": 0.0,
