@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-06-29T04:55:38.846350+00:00",
+  "generated_at": "2026-06-29T05:46:04.715410+00:00",
   "totals": {
-    "total_leads": 281,
-    "leads_30d": 277,
-    "total_opps": 207,
+    "total_leads": 282,
+    "leads_30d": 278,
+    "total_opps": 208,
     "calls_booked": 34,
     "ppas_signed": 5,
     "pipeline_value": 180000
   },
   "channels_30d": {
+    "Contact": 3,
     "REA": 204,
     "Eligibility": 23,
-    "Other": 48,
-    "Contact": 2
+    "Other": 48
   },
   "channels_total": {
+    "Contact": 3,
     "REA": 204,
     "Eligibility": 25,
-    "Other": 50,
-    "Contact": 2
+    "Other": 50
   },
   "stages": {
-    "New Lead": 107,
+    "New Lead": 108,
     "Booked": 11,
     "Lost": 55,
     "Site Visit Scheduled": 5,
@@ -34,6 +34,10 @@
   },
   "stage_top_deals": {
     "New Lead": [
+      [
+        "Tharindi Fernando",
+        0.0
+      ],
       [
         "Lesley Klem",
         0.0
@@ -917,9 +921,9 @@
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 74,
-      "leads_total": 75,
-      "opps_total": 60,
+      "leads_30d": 75,
+      "leads_total": 76,
+      "opps_total": 61,
       "opps_qualified": 0,
       "opps_won": 1
     },
