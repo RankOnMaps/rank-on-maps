@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-29T02:19:25.699945+00:00",
+  "generated_at": "2026-06-29T02:55:09.874568+00:00",
   "totals": {
     "total_leads": 280,
     "leads_30d": 276,
-    "total_opps": 206,
+    "total_opps": 207,
     "calls_booked": 34,
     "ppas_signed": 5,
     "pipeline_value": 180000
@@ -21,7 +21,7 @@
     "Contact": 2
   },
   "stages": {
-    "New Lead": 106,
+    "New Lead": 107,
     "Booked": 11,
     "Lost": 55,
     "Site Visit Scheduled": 5,
@@ -34,6 +34,10 @@
   },
   "stage_top_deals": {
     "New Lead": [
+      [
+        "Lesley Klem",
+        0.0
+      ],
       [
         "Usama Riaz",
         0.0
@@ -906,7 +910,7 @@
       "initial": "A",
       "leads_30d": 54,
       "leads_total": 55,
-      "opps_total": 54,
+      "opps_total": 55,
       "opps_qualified": 0,
       "opps_won": 3
     },
