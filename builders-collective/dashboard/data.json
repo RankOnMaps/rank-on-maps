@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T06:46:15.732618+00:00",
+  "generated_at": "2026-06-29T07:16:19.799370+00:00",
   "totals": {
     "total_leads": 282,
     "leads_30d": 278,
@@ -21,9 +21,9 @@
     "Other": 50
   },
   "stages": {
-    "New Lead": 108,
+    "New Lead": 107,
     "Booked": 11,
-    "Lost": 55,
+    "Lost": 56,
     "Site Visit Scheduled": 5,
     "Nurturing": 4,
     "Showed Up": 3,
@@ -44,10 +44,6 @@
       ],
       [
         "Usama Riaz",
-        0.0
-      ],
-      [
-        "laya joymon",
         0.0
       ],
       [
@@ -665,6 +661,10 @@
       ]
     ],
     "Lost": [
+      [
+        "laya joymon",
+        0.0
+      ],
       [
         "Aly Sinclair",
         0.0
