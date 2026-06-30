@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-30T06:03:25.493767+00:00",
+  "generated_at": "2026-06-30T06:59:06.400975+00:00",
   "totals": {
     "total_leads": 287,
     "leads_30d": 283,
     "total_opps": 213,
     "calls_booked": 35,
-    "ppas_signed": 5,
+    "ppas_signed": 6,
     "pipeline_value": 180000
   },
   "channels_30d": {
@@ -27,9 +27,9 @@
     "Site Visit Scheduled": 5,
     "Nurturing": 4,
     "Showed Up": 3,
-    "Builder Shortlist Sent": 4,
+    "Builder Shortlist Sent": 3,
     "Qualified": 6,
-    "Won \u2014 Build Confirmed": 5,
+    "Won \u2014 Build Confirmed": 6,
     "Not Yet Ready": 7
   },
   "stage_top_deals": {
@@ -615,10 +615,6 @@
         25000.0
       ],
       [
-        "Lee Anne Boon \u2014 Eligibility",
-        25000.0
-      ],
-      [
         "jason morrison \u2014 REA",
         0.0
       ],
@@ -643,6 +639,10 @@
       ],
       [
         "Keah Hall",
+        25000.0
+      ],
+      [
+        "Lee Anne Boon \u2014 Eligibility",
         25000.0
       ],
       [
@@ -914,9 +914,9 @@
     "Site Visit Scheduled": 25000.0,
     "Nurturing": 0.0,
     "Showed Up": 0.0,
-    "Builder Shortlist Sent": 50000.0,
+    "Builder Shortlist Sent": 25000.0,
     "Qualified": 0.0,
-    "Won \u2014 Build Confirmed": 105000.0,
+    "Won \u2014 Build Confirmed": 130000.0,
     "Not Yet Ready": 0.0
   },
   "per_rep": {
@@ -936,7 +936,7 @@
       "leads_total": 56,
       "opps_total": 56,
       "opps_qualified": 0,
-      "opps_won": 3
+      "opps_won": 4
     },
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
