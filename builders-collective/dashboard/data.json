@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-06-30T04:26:09.729678+00:00",
+  "generated_at": "2026-06-30T04:56:25.419150+00:00",
   "totals": {
-    "total_leads": 285,
-    "leads_30d": 281,
-    "total_opps": 211,
+    "total_leads": 286,
+    "leads_30d": 282,
+    "total_opps": 212,
     "calls_booked": 34,
     "ppas_signed": 5,
     "pipeline_value": 180000
   },
   "channels_30d": {
+    "Other": 49,
     "Eligibility": 26,
     "Contact": 3,
-    "REA": 204,
-    "Other": 48
+    "REA": 204
   },
   "channels_total": {
+    "Other": 51,
     "Eligibility": 28,
     "Contact": 3,
-    "REA": 204,
-    "Other": 50
+    "REA": 204
   },
   "stages": {
-    "New Lead": 110,
+    "New Lead": 111,
     "Booked": 11,
     "Lost": 56,
     "Site Visit Scheduled": 5,
@@ -34,6 +34,10 @@
   },
   "stage_top_deals": {
     "New Lead": [
+      [
+        "Nathalya Kennedy",
+        0.0
+      ],
       [
         " Stella Panucci",
         0.0
@@ -915,9 +919,9 @@
     "nNlkTC2z33NTPyxTxdE8": {
       "name": "David",
       "initial": "D",
-      "leads_30d": 53,
-      "leads_total": 54,
-      "opps_total": 51,
+      "leads_30d": 54,
+      "leads_total": 55,
+      "opps_total": 52,
       "opps_qualified": 6,
       "opps_won": 1
     },
@@ -942,8 +946,8 @@
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 57,
-      "leads_total": 58,
+      "leads_30d": 56,
+      "leads_total": 57,
       "opps_total": 43,
       "opps_qualified": 0,
       "opps_won": 0
