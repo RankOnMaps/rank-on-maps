@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-06-30T09:30:42.490463+00:00",
+  "generated_at": "2026-06-30T10:01:05.013952+00:00",
   "totals": {
-    "total_leads": 288,
-    "leads_30d": 284,
-    "total_opps": 213,
+    "total_leads": 290,
+    "leads_30d": 286,
+    "total_opps": 214,
     "calls_booked": 35,
     "ppas_signed": 6,
     "pipeline_value": 180000
   },
   "channels_30d": {
-    "REA": 205,
+    "Contact": 4,
+    "REA": 206,
     "Eligibility": 27,
-    "Other": 49,
-    "Contact": 3
+    "Other": 49
   },
   "channels_total": {
-    "REA": 205,
+    "Contact": 4,
+    "REA": 206,
     "Eligibility": 29,
-    "Other": 51,
-    "Contact": 3
+    "Other": 51
   },
   "stages": {
-    "New Lead": 111,
+    "New Lead": 112,
     "Booked": 10,
     "Lost": 56,
     "Site Visit Scheduled": 5,
@@ -34,6 +34,10 @@
   },
   "stage_top_deals": {
     "New Lead": [
+      [
+        "Studio Floki",
+        0.0
+      ],
       [
         "Shannon Freeman",
         0.0
@@ -941,8 +945,8 @@
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 76,
-      "leads_total": 77,
+      "leads_30d": 77,
+      "leads_total": 78,
       "opps_total": 62,
       "opps_qualified": 0,
       "opps_won": 1
@@ -950,9 +954,9 @@
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 57,
-      "leads_total": 58,
-      "opps_total": 43,
+      "leads_30d": 58,
+      "leads_total": 59,
+      "opps_total": 44,
       "opps_qualified": 2,
       "opps_won": 0
     }
