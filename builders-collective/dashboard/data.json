@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-07-01T07:30:21.997213+00:00",
+  "generated_at": "2026-07-01T08:00:57.629255+00:00",
   "totals": {
-    "total_leads": 294,
-    "leads_30d": 290,
-    "total_opps": 215,
+    "total_leads": 296,
+    "leads_30d": 292,
+    "total_opps": 217,
     "calls_booked": 33,
     "ppas_signed": 7,
     "pipeline_value": 81030000
   },
   "channels_30d": {
-    "Eligibility": 28,
+    "Eligibility": 30,
     "REA": 209,
     "Contact": 4,
     "Other": 49
   },
   "channels_total": {
-    "Eligibility": 30,
+    "Eligibility": 32,
     "REA": 209,
     "Contact": 4,
     "Other": 51
   },
   "stages": {
-    "New Lead": 110,
+    "New Lead": 112,
     "Booked": 10,
     "Lost": 61,
     "Qualified": 8,
@@ -297,6 +297,14 @@
       [
         "Dechen Wangmo",
         325000.0
+      ],
+      [
+        "Test Dees",
+        0.0
+      ],
+      [
+        "Test  Deez",
+        0.0
       ],
       [
         "Sarah Boustead",
@@ -949,26 +957,24 @@
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 74,
-      "leads_total": 75,
-      "opps_total": 62,
+      "leads_30d": 75,
+      "leads_total": 76,
+      "opps_total": 63,
       "opps_qualified": 0,
       "opps_won": 2
     },
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 61,
-      "leads_total": 62,
-      "opps_total": 44,
+      "leads_30d": 62,
+      "leads_total": 63,
+      "opps_total": 45,
       "opps_qualified": 2,
       "opps_won": 0
     }
   },
   "round_robin": {
     "last12": [
-      "Masih",
-      "Abdullah",
       "Abdullah",
       "David",
       "Hasib",
@@ -978,16 +984,18 @@
       "Hasib",
       "Masih",
       "Abdullah",
-      "David"
+      "David",
+      "Hasib",
+      "Masih"
     ],
     "balance": {
-      "Masih": 3,
-      "Abdullah": 4,
+      "Abdullah": 3,
       "David": 3,
-      "Hasib": 2
+      "Hasib": 3,
+      "Masih": 3
     },
     "health": "healthy",
-    "sequence_arrow": "Masih \u2192 Abdullah \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David"
+    "sequence_arrow": "Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih"
   },
   "appointments": []
 }
