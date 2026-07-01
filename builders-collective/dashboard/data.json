@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-01T05:41:22.805572+00:00",
+  "generated_at": "2026-07-01T06:29:16.699395+00:00",
   "totals": {
     "total_leads": 293,
     "leads_30d": 289,
     "total_opps": 214,
-    "calls_booked": 36,
+    "calls_booked": 35,
     "ppas_signed": 7,
-    "pipeline_value": 81630000
+    "pipeline_value": 81030000
   },
   "channels_30d": {
     "REA": 209,
@@ -23,12 +23,12 @@
   "stages": {
     "New Lead": 109,
     "Booked": 10,
-    "Lost": 58,
+    "Lost": 59,
     "Site Visit Scheduled": 5,
     "Qualified": 8,
     "Nurturing": 4,
     "Showed Up": 3,
-    "Builder Shortlist Sent": 3,
+    "Builder Shortlist Sent": 2,
     "Won \u2014 Build Confirmed": 7,
     "Not Yet Ready": 7
   },
@@ -609,21 +609,17 @@
       [
         "Shynae Otway",
         25000.0
-      ],
-      [
-        "Denzil Stephens ",
-        0.0
       ]
     ],
     "Contract Review": [],
     "Won \u2014 Build Confirmed": [
       [
-        "sameh hammam \u2014 REA",
-        625000.0
-      ],
-      [
         "Junclar Curit",
         30000.0
+      ],
+      [
+        "sameh hammam \u2014 REA",
+        25000.0
       ],
       [
         "James Bismard",
@@ -898,6 +894,10 @@
         0.0
       ],
       [
+        "Denzil Stephens ",
+        0.0
+      ],
+      [
         "Mandeep Gill",
         0.0
       ],
@@ -920,7 +920,7 @@
     "Nurturing": 1550000.0,
     "Showed Up": 1400000.0,
     "Builder Shortlist Sent": 650000.0,
-    "Won \u2014 Build Confirmed": 755000.0,
+    "Won \u2014 Build Confirmed": 155000.0,
     "Not Yet Ready": 1400000.0
   },
   "per_rep": {
