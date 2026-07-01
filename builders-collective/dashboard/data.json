@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-01T05:38:34.360634+00:00",
+  "generated_at": "2026-07-01T05:41:22.805572+00:00",
   "totals": {
     "total_leads": 293,
     "leads_30d": 289,
     "total_opps": 214,
-    "calls_booked": 35,
-    "ppas_signed": 6,
+    "calls_booked": 36,
+    "ppas_signed": 7,
     "pipeline_value": 81630000
   },
   "channels_30d": {
@@ -21,15 +21,15 @@
     "Other": 51
   },
   "stages": {
-    "New Lead": 112,
+    "New Lead": 109,
     "Booked": 10,
-    "Lost": 56,
+    "Lost": 58,
     "Site Visit Scheduled": 5,
     "Qualified": 8,
     "Nurturing": 4,
     "Showed Up": 3,
     "Builder Shortlist Sent": 3,
-    "Won \u2014 Build Confirmed": 6,
+    "Won \u2014 Build Confirmed": 7,
     "Not Yet Ready": 7
   },
   "stage_top_deals": {
@@ -271,10 +271,6 @@
         625000.0
       ],
       [
-        "sameh hammam \u2014 REA",
-        625000.0
-      ],
-      [
         "fuatai williams \u2014 REA",
         625000.0
       ],
@@ -459,19 +455,11 @@
         0.0
       ],
       [
-        "Michael  Allia ",
-        0.0
-      ],
-      [
         "Gabriel Purea",
         0.0
       ],
       [
         "G Singh",
-        0.0
-      ],
-      [
-        "Kate De Guzman \u2014 Eligibility",
         0.0
       ],
       [
@@ -629,6 +617,10 @@
     ],
     "Contract Review": [],
     "Won \u2014 Build Confirmed": [
+      [
+        "sameh hammam \u2014 REA",
+        625000.0
+      ],
       [
         "Junclar Curit",
         30000.0
@@ -902,17 +894,25 @@
         0.0
       ],
       [
+        "Michael  Allia ",
+        0.0
+      ],
+      [
         "Mandeep Gill",
         0.0
       ],
       [
         "Maria Polson \u2014 Eligibility",
         0.0
+      ],
+      [
+        "Kate De Guzman \u2014 Eligibility",
+        0.0
       ]
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 46225000.0,
+    "New Lead": 45600000.0,
     "Booked": 3100000.0,
     "Lost": 24050000.0,
     "Site Visit Scheduled": 2200000.0,
@@ -920,7 +920,7 @@
     "Nurturing": 1550000.0,
     "Showed Up": 1400000.0,
     "Builder Shortlist Sent": 650000.0,
-    "Won \u2014 Build Confirmed": 130000.0,
+    "Won \u2014 Build Confirmed": 755000.0,
     "Not Yet Ready": 1400000.0
   },
   "per_rep": {
@@ -949,7 +949,7 @@
       "leads_total": 75,
       "opps_total": 62,
       "opps_qualified": 0,
-      "opps_won": 1
+      "opps_won": 2
     },
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
