@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-01T09:32:36.671276+00:00",
+  "generated_at": "2026-07-01T10:03:10.462666+00:00",
   "totals": {
     "total_leads": 298,
     "leads_30d": 294,
-    "total_opps": 217,
-    "calls_booked": 33,
+    "total_opps": 218,
+    "calls_booked": 34,
     "ppas_signed": 7,
     "pipeline_value": 81030000
   },
@@ -21,8 +21,8 @@
     "Contact": 4
   },
   "stages": {
+    "Booked": 11,
     "New Lead": 112,
-    "Booked": 10,
     "Lost": 61,
     "Qualified": 8,
     "Nurturing": 4,
@@ -519,6 +519,10 @@
         625000.0
       ],
       [
+        "Scott",
+        0.0
+      ],
+      [
         "Usama Riaz",
         0.0
       ],
@@ -924,8 +928,8 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 45600000.0,
     "Booked": 3100000.0,
+    "New Lead": 45600000.0,
     "Lost": 25600000.0,
     "Qualified": 925000.0,
     "Nurturing": 1550000.0,
@@ -950,7 +954,7 @@
       "initial": "A",
       "leads_30d": 61,
       "leads_total": 62,
-      "opps_total": 56,
+      "opps_total": 57,
       "opps_qualified": 0,
       "opps_won": 4
     },
