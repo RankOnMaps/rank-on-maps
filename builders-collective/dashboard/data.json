@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-07-02T04:25:16.036812+00:00",
+  "generated_at": "2026-07-02T04:55:24.286753+00:00",
   "totals": {
-    "total_leads": 300,
-    "leads_30d": 296,
-    "total_opps": 219,
+    "total_leads": 301,
+    "leads_30d": 297,
+    "total_opps": 221,
     "calls_booked": 34,
     "ppas_signed": 7,
-    "pipeline_value": 81030000
+    "pipeline_value": 81805000
   },
   "channels_30d": {
+    "Other": 51,
     "Eligibility": 31,
     "REA": 211,
-    "Other": 50,
     "Contact": 4
   },
   "channels_total": {
+    "Other": 53,
     "Eligibility": 33,
     "REA": 211,
-    "Other": 52,
     "Contact": 4
   },
   "stages": {
-    "New Lead": 113,
+    "New Lead": 115,
     "Booked": 11,
     "Lost": 61,
     "Qualified": 8,
@@ -57,6 +57,10 @@
       [
         "Divya patel",
         925000.0
+      ],
+      [
+        "Charlotte Ambrose",
+        775000.0
       ],
       [
         "faseeh ahmed",
@@ -297,6 +301,10 @@
       [
         "Dechen Wangmo",
         325000.0
+      ],
+      [
+        "Kirsten Silvey",
+        0.0
       ],
       [
         "Josh  Watson",
@@ -932,7 +940,7 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 45600000.0,
+    "New Lead": 46375000.0,
     "Booked": 3100000.0,
     "Lost": 25600000.0,
     "Qualified": 925000.0,
@@ -958,7 +966,7 @@
       "initial": "A",
       "leads_30d": 63,
       "leads_total": 64,
-      "opps_total": 58,
+      "opps_total": 60,
       "opps_qualified": 0,
       "opps_won": 4
     },
