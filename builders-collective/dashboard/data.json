@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-02T07:09:49.076245+00:00",
+  "generated_at": "2026-07-02T07:39:56.539590+00:00",
   "totals": {
     "total_leads": 301,
     "leads_30d": 297,
     "total_opps": 221,
-    "calls_booked": 36,
+    "calls_booked": 37,
     "ppas_signed": 9,
     "pipeline_value": 80600000
   },
@@ -21,10 +21,10 @@
     "Contact": 4
   },
   "stages": {
-    "New Lead": 105,
-    "Booked": 12,
+    "New Lead": 103,
+    "Booked": 13,
     "Site Visit Scheduled": 4,
-    "Lost": 61,
+    "Lost": 62,
     "Qualified": 8,
     "Nurturing": 4,
     "Showed Up": 2,
@@ -76,10 +76,6 @@
       ],
       [
         "SUDIPTA BANDYOPADHYAY",
-        775000.0
-      ],
-      [
-        "helen smith \u2014 REA",
         775000.0
       ],
       [
@@ -299,10 +295,6 @@
         0.0
       ],
       [
-        "Shannon Freeman",
-        0.0
-      ],
-      [
         " Stella Panucci",
         0.0
       ],
@@ -496,6 +488,10 @@
       ],
       [
         "Scott",
+        0.0
+      ],
+      [
+        "Shannon Freeman",
         0.0
       ],
       [
@@ -730,6 +726,10 @@
         775000.0
       ],
       [
+        "helen smith \u2014 REA",
+        775000.0
+      ],
+      [
         "subrojit baul \u2014 REA",
         775000.0
       ],
@@ -940,10 +940,10 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 42475000.0,
+    "New Lead": 41700000.0,
     "Booked": 3725000.0,
     "Site Visit Scheduled": 650000.0,
-    "Lost": 25600000.0,
+    "Lost": 26375000.0,
     "Qualified": 925000.0,
     "Nurturing": 1550000.0,
     "Showed Up": 775000.0,
