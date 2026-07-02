@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-02T06:39:41.577908+00:00",
+  "generated_at": "2026-07-02T07:09:49.076245+00:00",
   "totals": {
     "total_leads": 301,
     "leads_30d": 297,
     "total_opps": 221,
-    "calls_booked": 35,
-    "ppas_signed": 7,
-    "pipeline_value": 81805000
+    "calls_booked": 36,
+    "ppas_signed": 9,
+    "pipeline_value": 80600000
   },
   "channels_30d": {
     "Other": 51,
@@ -21,16 +21,16 @@
     "Contact": 4
   },
   "stages": {
-    "New Lead": 114,
+    "New Lead": 105,
     "Booked": 12,
+    "Site Visit Scheduled": 4,
     "Lost": 61,
     "Qualified": 8,
     "Nurturing": 4,
-    "Site Visit Scheduled": 4,
     "Showed Up": 2,
-    "Builder Shortlist Sent": 2,
-    "Won \u2014 Build Confirmed": 7,
-    "Not Yet Ready": 7
+    "Won \u2014 Build Confirmed": 9,
+    "Not Yet Ready": 15,
+    "Builder Shortlist Sent": 1
   },
   "stage_top_deals": {
     "New Lead": [
@@ -100,10 +100,6 @@
       ],
       [
         "josephine mah \u2014 REA",
-        775000.0
-      ],
-      [
-        "amandeep kaur \u2014 REA",
         775000.0
       ],
       [
@@ -183,23 +179,11 @@
         625000.0
       ],
       [
-        "dylan millman \u2014 REA",
-        625000.0
-      ],
-      [
         "charlene reid \u2014 REA",
         625000.0
       ],
       [
         "stuart spence \u2014 REA",
-        625000.0
-      ],
-      [
-        "jigneshkumar shah \u2014 REA",
-        625000.0
-      ],
-      [
-        "kiralee holcombe \u2014 REA",
         625000.0
       ],
       [
@@ -275,10 +259,6 @@
         625000.0
       ],
       [
-        "Andrew Tan",
-        625000.0
-      ],
-      [
         "Sheenu Chitra",
         625000.0
       ],
@@ -308,10 +288,6 @@
       ],
       [
         "Test Dees",
-        0.0
-      ],
-      [
-        "Test  Deez",
         0.0
       ],
       [
@@ -419,14 +395,6 @@
         0.0
       ],
       [
-        "coleen claire \u2014 REA",
-        0.0
-      ],
-      [
-        "chaeha lee \u2014 REA",
-        0.0
-      ],
-      [
         "sammy nira \u2014 REA",
         0.0
       ],
@@ -484,10 +452,6 @@
       ],
       [
         "Cherith Ferguson \u2014 Eligibility",
-        0.0
-      ],
-      [
-        "Nic Shields \u2014 Eligibility",
         0.0
       ]
     ],
@@ -609,12 +573,12 @@
         625000.0
       ],
       [
-        "Stephen Devisoe",
-        625000.0
-      ],
-      [
         "Codey Stewart",
         25000.0
+      ],
+      [
+        "Test  Deez",
+        0.0
       ],
       [
         "Omar autelitano",
@@ -622,10 +586,6 @@
       ]
     ],
     "Builder Shortlist Sent": [
-      [
-        "jason morrison \u2014 REA",
-        625000.0
-      ],
       [
         "Shynae Otway",
         25000.0
@@ -636,6 +596,10 @@
       [
         "Junclar Curit",
         30000.0
+      ],
+      [
+        "jason morrison \u2014 REA",
+        25000.0
       ],
       [
         "sameh hammam \u2014 REA",
@@ -658,18 +622,50 @@
         25000.0
       ],
       [
+        "Stephen Devisoe",
+        20000.0
+      ],
+      [
         "Omar Al Doski",
         0.0
       ]
     ],
     "Not Yet Ready": [
       [
+        "amandeep kaur \u2014 REA",
+        775000.0
+      ],
+      [
         "Abhi Prasad",
         775000.0
       ],
       [
+        "dylan millman \u2014 REA",
+        625000.0
+      ],
+      [
+        "jigneshkumar shah \u2014 REA",
+        625000.0
+      ],
+      [
+        "kiralee holcombe \u2014 REA",
+        625000.0
+      ],
+      [
         "hasna adheeb",
         625000.0
+      ],
+      [
+        "Andrew Tan",
+        625000.0
+      ],
+      [
+        "coleen claire \u2014 REA",
+        0.0
+      ],
+      [
+        "chaeha lee \u2014 REA",
+        0.0
       ],
       [
         "Jason Williams",
@@ -689,6 +685,10 @@
       ],
       [
         "Rico",
+        0.0
+      ],
+      [
+        "Nic Shields \u2014 Eligibility",
         0.0
       ]
     ],
@@ -940,16 +940,16 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 45750000.0,
+    "New Lead": 42475000.0,
     "Booked": 3725000.0,
+    "Site Visit Scheduled": 650000.0,
     "Lost": 25600000.0,
     "Qualified": 925000.0,
     "Nurturing": 1550000.0,
-    "Site Visit Scheduled": 1275000.0,
     "Showed Up": 775000.0,
-    "Builder Shortlist Sent": 650000.0,
-    "Won \u2014 Build Confirmed": 155000.0,
-    "Not Yet Ready": 1400000.0
+    "Won \u2014 Build Confirmed": 200000.0,
+    "Not Yet Ready": 4675000.0,
+    "Builder Shortlist Sent": 25000.0
   },
   "per_rep": {
     "nNlkTC2z33NTPyxTxdE8": {
@@ -977,7 +977,7 @@
       "leads_total": 76,
       "opps_total": 63,
       "opps_qualified": 0,
-      "opps_won": 2
+      "opps_won": 4
     },
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
