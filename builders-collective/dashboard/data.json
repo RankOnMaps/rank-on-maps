@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-02T05:25:32.933619+00:00",
+  "generated_at": "2026-07-02T06:09:33.993788+00:00",
   "totals": {
     "total_leads": 301,
     "leads_30d": 297,
     "total_opps": 221,
-    "calls_booked": 34,
+    "calls_booked": 35,
     "ppas_signed": 7,
     "pipeline_value": 81805000
   },
@@ -21,8 +21,8 @@
     "Contact": 4
   },
   "stages": {
-    "New Lead": 115,
-    "Booked": 11,
+    "New Lead": 114,
+    "Booked": 12,
     "Lost": 61,
     "Qualified": 8,
     "Nurturing": 4,
@@ -153,10 +153,6 @@
       [
         "Balamurugan Arumugam",
         775000.0
-      ],
-      [
-        "Lesley Klem",
-        625000.0
       ],
       [
         "maryanne giacoppo \u2014 REA",
@@ -525,6 +521,10 @@
       [
         "Nassa Atekhis",
         775000.0
+      ],
+      [
+        "Lesley Klem",
+        625000.0
       ],
       [
         "Katharine Roberts",
@@ -940,8 +940,8 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 46375000.0,
-    "Booked": 3100000.0,
+    "New Lead": 45750000.0,
+    "Booked": 3725000.0,
     "Lost": 25600000.0,
     "Qualified": 925000.0,
     "Nurturing": 1550000.0,
