@@ -1,26 +1,27 @@
 {
-  "generated_at": "2026-07-03T04:28:48.487117+00:00",
+  "generated_at": "2026-07-03T04:58:56.726647+00:00",
   "totals": {
-    "total_leads": 304,
-    "leads_30d": 300,
-    "total_opps": 221,
-    "calls_booked": 36,
-    "ppas_signed": 9,
-    "pipeline_value": 80600000
+    "total_leads": 305,
+    "leads_30d": 301,
+    "total_opps": 222,
+    "calls_booked": 37,
+    "ppas_signed": 10,
+    "pipeline_value": 80618000
   },
   "channels_30d": {
-    "Other": 52,
+    "Other": 53,
     "REA": 213,
     "Eligibility": 31,
     "Contact": 4
   },
   "channels_total": {
-    "Other": 54,
+    "Other": 55,
     "REA": 213,
     "Eligibility": 33,
     "Contact": 4
   },
   "stages": {
+    "Won \u2014 Build Confirmed": 10,
     "New Lead": 103,
     "Booked": 13,
     "Site Visit Scheduled": 3,
@@ -28,7 +29,6 @@
     "Qualified": 8,
     "Nurturing": 4,
     "Showed Up": 2,
-    "Won \u2014 Build Confirmed": 9,
     "Not Yet Ready": 16,
     "Builder Shortlist Sent": 1
   },
@@ -618,6 +618,10 @@
         20000.0
       ],
       [
+        "maddison ",
+        18000.0
+      ],
+      [
         "Omar Al Doski",
         0.0
       ]
@@ -940,6 +944,7 @@
     ]
   },
   "stage_pipeline_value": {
+    "Won \u2014 Build Confirmed": 218000.0,
     "New Lead": 41700000.0,
     "Booked": 3725000.0,
     "Site Visit Scheduled": 650000.0,
@@ -947,7 +952,6 @@
     "Qualified": 925000.0,
     "Nurturing": 1550000.0,
     "Showed Up": 775000.0,
-    "Won \u2014 Build Confirmed": 200000.0,
     "Not Yet Ready": 4675000.0,
     "Builder Shortlist Sent": 25000.0
   },
@@ -975,9 +979,9 @@
       "initial": "H",
       "leads_30d": 75,
       "leads_total": 76,
-      "opps_total": 63,
+      "opps_total": 64,
       "opps_qualified": 0,
-      "opps_won": 4
+      "opps_won": 5
     },
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
