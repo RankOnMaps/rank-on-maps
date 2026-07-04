@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T05:45:45.569433+00:00",
+  "generated_at": "2026-07-04T06:16:22.055050+00:00",
   "totals": {
     "total_leads": 306,
     "leads_30d": 302,
@@ -22,10 +22,10 @@
   },
   "stages": {
     "Won \u2014 Build Confirmed": 10,
-    "New Lead": 103,
+    "New Lead": 102,
+    "Lost": 63,
     "Booked": 13,
     "Site Visit Scheduled": 3,
-    "Lost": 62,
     "Qualified": 8,
     "Nurturing": 4,
     "Showed Up": 2,
@@ -276,10 +276,6 @@
       ],
       [
         "Kirsten Silvey",
-        0.0
-      ],
-      [
-        "Josh  Watson",
         0.0
       ],
       [
@@ -834,6 +830,10 @@
         625000.0
       ],
       [
+        "Josh  Watson",
+        0.0
+      ],
+      [
         "Chris Brookes",
         0.0
       ],
@@ -946,9 +946,9 @@
   "stage_pipeline_value": {
     "Won \u2014 Build Confirmed": 218000.0,
     "New Lead": 41700000.0,
+    "Lost": 26375000.0,
     "Booked": 3725000.0,
     "Site Visit Scheduled": 650000.0,
-    "Lost": 26375000.0,
     "Qualified": 925000.0,
     "Nurturing": 1550000.0,
     "Showed Up": 775000.0,
