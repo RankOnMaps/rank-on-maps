@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-07-06T11:54:14.977384+00:00",
+  "generated_at": "2026-07-06T12:24:29.841511+00:00",
   "totals": {
-    "total_leads": 333,
-    "leads_30d": 318,
-    "total_opps": 224,
+    "total_leads": 334,
+    "leads_30d": 319,
+    "total_opps": 225,
     "calls_booked": 37,
     "ppas_signed": 10,
     "pipeline_value": 80618000
   },
   "channels_30d": {
-    "Eligibility": 30,
+    "Eligibility": 31,
     "Contact": 5,
     "REA": 233,
     "Other": 50
   },
   "channels_total": {
-    "Eligibility": 34,
+    "Eligibility": 35,
     "Contact": 5,
     "REA": 236,
     "Other": 58
   },
   "stages": {
-    "New Lead": 104,
+    "New Lead": 105,
     "Won \u2014 Build Confirmed": 10,
     "Lost": 63,
     "Booked": 13,
@@ -273,6 +273,10 @@
       [
         "Dechen Wangmo",
         325000.0
+      ],
+      [
+        "Herman Wessels",
+        0.0
       ],
       [
         "Sarah Cole",
@@ -967,9 +971,9 @@
     "nNlkTC2z33NTPyxTxdE8": {
       "name": "David",
       "initial": "D",
-      "leads_30d": 62,
-      "leads_total": 66,
-      "opps_total": 55,
+      "leads_30d": 63,
+      "leads_total": 67,
+      "opps_total": 56,
       "opps_qualified": 6,
       "opps_won": 1
     },
@@ -1003,7 +1007,6 @@
   },
   "round_robin": {
     "last12": [
-      "Hasib",
       "Masih",
       "Abdullah",
       "David",
@@ -1014,16 +1017,17 @@
       "Hasib",
       "Masih",
       "Abdullah",
+      "David",
       "David"
     ],
     "balance": {
-      "Hasib": 3,
       "Masih": 3,
       "Abdullah": 3,
-      "David": 3
+      "David": 4,
+      "Hasib": 2
     },
     "health": "healthy",
-    "sequence_arrow": "Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David"
+    "sequence_arrow": "Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 David"
   },
   "appointments": []
 }
