@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-07-06T11:24:04.946567+00:00",
+  "generated_at": "2026-07-06T11:54:14.977384+00:00",
   "totals": {
-    "total_leads": 331,
-    "leads_30d": 316,
-    "total_opps": 222,
+    "total_leads": 333,
+    "leads_30d": 318,
+    "total_opps": 224,
     "calls_booked": 37,
     "ppas_signed": 10,
     "pipeline_value": 80618000
   },
   "channels_30d": {
+    "Eligibility": 30,
+    "Contact": 5,
     "REA": 233,
-    "Other": 50,
-    "Eligibility": 29,
-    "Contact": 4
+    "Other": 50
   },
   "channels_total": {
+    "Eligibility": 34,
+    "Contact": 5,
     "REA": 236,
-    "Other": 58,
-    "Eligibility": 33,
-    "Contact": 4
+    "Other": 58
   },
   "stages": {
+    "New Lead": 104,
     "Won \u2014 Build Confirmed": 10,
-    "New Lead": 102,
     "Lost": 63,
     "Booked": 13,
     "Site Visit Scheduled": 3,
@@ -273,6 +273,14 @@
       [
         "Dechen Wangmo",
         325000.0
+      ],
+      [
+        "Sarah Cole",
+        0.0
+      ],
+      [
+        "Krishnee",
+        0.0
       ],
       [
         "Kirsten Silvey",
@@ -944,8 +952,8 @@
     ]
   },
   "stage_pipeline_value": {
-    "Won \u2014 Build Confirmed": 218000.0,
     "New Lead": 41700000.0,
+    "Won \u2014 Build Confirmed": 218000.0,
     "Lost": 26375000.0,
     "Booked": 3725000.0,
     "Site Visit Scheduled": 650000.0,
@@ -959,9 +967,9 @@
     "nNlkTC2z33NTPyxTxdE8": {
       "name": "David",
       "initial": "D",
-      "leads_30d": 60,
-      "leads_total": 64,
-      "opps_total": 53,
+      "leads_30d": 62,
+      "leads_total": 66,
+      "opps_total": 55,
       "opps_qualified": 6,
       "opps_won": 1
     },
@@ -995,7 +1003,6 @@
   },
   "round_robin": {
     "last12": [
-      "Masih",
       "Hasib",
       "Masih",
       "Abdullah",
@@ -1006,16 +1013,17 @@
       "David",
       "Hasib",
       "Masih",
-      "Abdullah"
+      "Abdullah",
+      "David"
     ],
     "balance": {
-      "Masih": 4,
       "Hasib": 3,
+      "Masih": 3,
       "Abdullah": 3,
-      "David": 2
+      "David": 3
     },
     "health": "healthy",
-    "sequence_arrow": "Masih \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah"
+    "sequence_arrow": "Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David"
   },
   "appointments": []
 }
