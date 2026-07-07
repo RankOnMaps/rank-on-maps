@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-07-07T04:36:21.861427+00:00",
+  "generated_at": "2026-07-07T05:21:30.505927+00:00",
   "totals": {
-    "total_leads": 337,
-    "leads_30d": 322,
-    "total_opps": 226,
+    "total_leads": 338,
+    "leads_30d": 323,
+    "total_opps": 229,
     "calls_booked": 37,
     "ppas_signed": 10,
-    "pipeline_value": 80618000
+    "pipeline_value": 81543000
   },
   "channels_30d": {
+    "Other": 51,
     "Eligibility": 32,
     "REA": 235,
-    "Contact": 5,
-    "Other": 50
+    "Contact": 5
   },
   "channels_total": {
+    "Other": 59,
     "Eligibility": 36,
     "REA": 238,
-    "Contact": 5,
-    "Other": 58
+    "Contact": 5
   },
   "stages": {
-    "New Lead": 106,
+    "New Lead": 109,
     "Won \u2014 Build Confirmed": 10,
     "Lost": 63,
     "Booked": 13,
@@ -34,6 +34,10 @@
   },
   "stage_top_deals": {
     "New Lead": [
+      [
+        "Chameera Jayatilaka",
+        925000.0
+      ],
       [
         "Nathalya Kennedy",
         925000.0
@@ -273,6 +277,14 @@
       [
         "Dechen Wangmo",
         325000.0
+      ],
+      [
+        "Himanshi Babbar",
+        0.0
+      ],
+      [
+        "Mohammed Eissa",
+        0.0
       ],
       [
         "Neil Keiles",
@@ -960,7 +972,7 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 41700000.0,
+    "New Lead": 42625000.0,
     "Won \u2014 Build Confirmed": 218000.0,
     "Lost": 26375000.0,
     "Booked": 3725000.0,
@@ -975,8 +987,8 @@
     "nNlkTC2z33NTPyxTxdE8": {
       "name": "David",
       "initial": "D",
-      "leads_30d": 62,
-      "leads_total": 66,
+      "leads_30d": 63,
+      "leads_total": 67,
       "opps_total": 55,
       "opps_qualified": 6,
       "opps_won": 1
@@ -986,7 +998,7 @@
       "initial": "A",
       "leads_30d": 63,
       "leads_total": 70,
-      "opps_total": 60,
+      "opps_total": 63,
       "opps_qualified": 0,
       "opps_won": 4
     },
