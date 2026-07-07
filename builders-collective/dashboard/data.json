@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-07T04:06:13.433774+00:00",
+  "generated_at": "2026-07-07T04:36:21.861427+00:00",
   "totals": {
     "total_leads": 337,
     "leads_30d": 322,
@@ -975,9 +975,9 @@
     "nNlkTC2z33NTPyxTxdE8": {
       "name": "David",
       "initial": "D",
-      "leads_30d": 63,
-      "leads_total": 67,
-      "opps_total": 56,
+      "leads_30d": 62,
+      "leads_total": 66,
+      "opps_total": 55,
       "opps_qualified": 6,
       "opps_won": 1
     },
@@ -1002,9 +1002,9 @@
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 76,
-      "leads_total": 77,
-      "opps_total": 45,
+      "leads_30d": 77,
+      "leads_total": 78,
+      "opps_total": 46,
       "opps_qualified": 2,
       "opps_won": 0
     }
@@ -1021,17 +1021,17 @@
       "Masih",
       "Abdullah",
       "David",
-      "David",
+      "Masih",
       "Hasib"
     ],
     "balance": {
       "Abdullah": 3,
-      "David": 4,
+      "David": 3,
       "Hasib": 3,
-      "Masih": 2
+      "Masih": 3
     },
     "health": "healthy",
-    "sequence_arrow": "Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 David \u2192 Hasib"
+    "sequence_arrow": "Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Masih \u2192 Hasib"
   },
   "appointments": []
 }
