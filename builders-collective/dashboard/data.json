@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-07T05:21:30.505927+00:00",
+  "generated_at": "2026-07-07T05:51:57.514146+00:00",
   "totals": {
     "total_leads": 338,
     "leads_30d": 323,
-    "total_opps": 229,
+    "total_opps": 230,
     "calls_booked": 37,
     "ppas_signed": 10,
-    "pipeline_value": 81543000
+    "pipeline_value": 82618000
   },
   "channels_30d": {
     "Other": 51,
@@ -21,7 +21,7 @@
     "Contact": 5
   },
   "stages": {
-    "New Lead": 109,
+    "New Lead": 110,
     "Won \u2014 Build Confirmed": 10,
     "Lost": 63,
     "Booked": 13,
@@ -34,6 +34,10 @@
   },
   "stage_top_deals": {
     "New Lead": [
+      [
+        "Eddy Gaidzionis",
+        1075000.0
+      ],
       [
         "Chameera Jayatilaka",
         925000.0
@@ -972,7 +976,7 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 42625000.0,
+    "New Lead": 43700000.0,
     "Won \u2014 Build Confirmed": 218000.0,
     "Lost": 26375000.0,
     "Booked": 3725000.0,
@@ -998,7 +1002,7 @@
       "initial": "A",
       "leads_30d": 63,
       "leads_total": 70,
-      "opps_total": 63,
+      "opps_total": 64,
       "opps_qualified": 0,
       "opps_won": 4
     },
