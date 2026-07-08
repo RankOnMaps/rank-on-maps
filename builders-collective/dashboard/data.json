@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-08T16:05:47.203097+00:00",
+  "generated_at": "2026-07-08T16:36:05.288728+00:00",
   "totals": {
-    "total_leads": 348,
+    "total_leads": 349,
     "leads_30d": 325,
-    "total_opps": 233,
+    "total_opps": 234,
     "calls_booked": 37,
     "ppas_signed": 10,
     "pipeline_value": 82618000
@@ -15,13 +15,13 @@
     "Contact": 5
   },
   "channels_total": {
-    "Eligibility": 39,
+    "Eligibility": 40,
     "REA": 245,
     "Other": 59,
     "Contact": 5
   },
   "stages": {
-    "New Lead": 113,
+    "New Lead": 114,
     "Won \u2014 Build Confirmed": 10,
     "Lost": 63,
     "Booked": 13,
@@ -281,6 +281,10 @@
       [
         "Dechen Wangmo",
         325000.0
+      ],
+      [
+        "Morgan  Fromant",
+        0.0
       ],
       [
         "Michelle Kho",
@@ -1012,7 +1016,7 @@
     "94SP86nEZ9qrsSTJB2Qe": {
       "name": "Abdullah",
       "initial": "A",
-      "leads_30d": 64,
+      "leads_30d": 63,
       "leads_total": 71,
       "opps_total": 65,
       "opps_qualified": 0,
@@ -1021,9 +1025,9 @@
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 85,
-      "leads_total": 87,
-      "opps_total": 65,
+      "leads_30d": 86,
+      "leads_total": 88,
+      "opps_total": 66,
       "opps_qualified": 0,
       "opps_won": 5
     },
@@ -1039,7 +1043,6 @@
   },
   "round_robin": {
     "last12": [
-      "Masih",
       "Abdullah",
       "David",
       "Hasib",
@@ -1050,16 +1053,17 @@
       "Hasib",
       "Masih",
       "Abdullah",
-      "David"
+      "David",
+      "Hasib"
     ],
     "balance": {
-      "Masih": 4,
       "Abdullah": 3,
       "David": 3,
-      "Hasib": 2
+      "Hasib": 3,
+      "Masih": 3
     },
     "health": "healthy",
-    "sequence_arrow": "Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Masih \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David"
+    "sequence_arrow": "Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Masih \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib"
   },
   "appointments": []
 }
