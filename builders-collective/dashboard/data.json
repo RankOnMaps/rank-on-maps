@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-07-09T13:43:56.717054+00:00",
+  "generated_at": "2026-07-09T14:32:38.779845+00:00",
   "totals": {
-    "total_leads": 354,
-    "leads_30d": 210,
-    "total_opps": 236,
+    "total_leads": 356,
+    "leads_30d": 212,
+    "total_opps": 237,
     "calls_booked": 36,
     "ppas_signed": 10,
     "pipeline_value": 82618000
   },
   "channels_30d": {
-    "REA": 120,
-    "Eligibility": 35,
+    "REA": 121,
+    "Eligibility": 36,
     "Other": 50,
     "Contact": 5
   },
   "channels_total": {
-    "REA": 248,
-    "Eligibility": 42,
+    "REA": 249,
+    "Eligibility": 43,
     "Other": 59,
     "Contact": 5
   },
   "stages": {
-    "New Lead": 115,
+    "New Lead": 116,
     "Won \u2014 Build Confirmed": 10,
     "Lost": 64,
     "Booked": 12,
@@ -281,6 +281,10 @@
       [
         "Dechen Wangmo",
         325000.0
+      ],
+      [
+        "Rachel Statham",
+        0.0
       ],
       [
         "Thomas Waratini",
@@ -1015,9 +1019,9 @@
     "nNlkTC2z33NTPyxTxdE8": {
       "name": "David",
       "initial": "D",
-      "leads_30d": 43,
-      "leads_total": 70,
-      "opps_total": 55,
+      "leads_30d": 44,
+      "leads_total": 71,
+      "opps_total": 56,
       "opps_qualified": 6,
       "opps_won": 1
     },
@@ -1033,8 +1037,8 @@
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 39,
-      "leads_total": 88,
+      "leads_30d": 40,
+      "leads_total": 89,
       "opps_total": 66,
       "opps_qualified": 0,
       "opps_won": 5
@@ -1051,7 +1055,6 @@
   },
   "round_robin": {
     "last12": [
-      "Hasib",
       "Masih",
       "Abdullah",
       "David",
@@ -1062,16 +1065,17 @@
       "David",
       "Hasib",
       "Masih",
-      "Abdullah"
+      "Abdullah",
+      "David"
     ],
     "balance": {
-      "Hasib": 3,
       "Masih": 4,
       "Abdullah": 3,
-      "David": 2
+      "David": 3,
+      "Hasib": 2
     },
     "health": "healthy",
-    "sequence_arrow": "Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Masih \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah"
+    "sequence_arrow": "Masih \u2192 Abdullah \u2192 David \u2192 Masih \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David"
   },
   "appointments": []
 }
