@@ -1,36 +1,35 @@
 {
-  "generated_at": "2026-07-10T06:24:12.212681+00:00",
+  "generated_at": "2026-07-10T06:54:52.139620+00:00",
   "totals": {
-    "total_leads": 361,
-    "leads_30d": 215,
-    "total_opps": 239,
-    "calls_booked": 38,
+    "total_leads": 363,
+    "leads_30d": 217,
+    "total_opps": 240,
+    "calls_booked": 37,
     "ppas_signed": 10,
-    "pipeline_value": 82618000
+    "pipeline_value": 82668000
   },
   "channels_30d": {
+    "Other": 53,
     "REA": 122,
-    "Other": 51,
     "Eligibility": 37,
     "Contact": 5
   },
   "channels_total": {
+    "Other": 62,
     "REA": 252,
-    "Other": 60,
     "Eligibility": 44,
     "Contact": 5
   },
   "stages": {
-    "Lost": 65,
+    "Showed Up": 5,
+    "Lost": 67,
     "New Lead": 115,
-    "Booked": 14,
+    "Booked": 9,
     "Won \u2014 Build Confirmed": 10,
-    "Site Visit Scheduled": 3,
+    "Site Visit Scheduled": 5,
     "Qualified": 8,
     "Nurturing": 4,
-    "Not Yet Ready": 17,
-    "Showed Up": 2,
-    "Builder Shortlist Sent": 1
+    "Not Yet Ready": 17
   },
   "stage_top_deals": {
     "New Lead": [
@@ -527,31 +526,11 @@
         775000.0
       ],
       [
-        "Lesley Klem",
-        625000.0
-      ],
-      [
         "Herman Wessels",
         0.0
       ],
       [
-        "Scott",
-        0.0
-      ],
-      [
-        "Shannon Freeman",
-        0.0
-      ],
-      [
         "Tharindi Fernando",
-        0.0
-      ],
-      [
-        "Usama Riaz",
-        0.0
-      ],
-      [
-        "Maritsa",
         0.0
       ],
       [
@@ -575,6 +554,18 @@
       [
         "Hermann Kengwah Kinfer",
         775000.0
+      ],
+      [
+        "Tendayi",
+        0.0
+      ],
+      [
+        "Scott",
+        0.0
+      ],
+      [
+        "Usama Riaz",
+        0.0
       ],
       [
         "hardik sood \u2014 REA",
@@ -621,6 +612,14 @@
         625000.0
       ],
       [
+        "Shannon Freeman",
+        25000.0
+      ],
+      [
+        "Maritsa",
+        25000.0
+      ],
+      [
         "Codey Stewart",
         25000.0
       ],
@@ -629,12 +628,7 @@
         0.0
       ]
     ],
-    "Builder Shortlist Sent": [
-      [
-        "Shynae Otway",
-        25000.0
-      ]
-    ],
+    "Builder Shortlist Sent": [],
     "Contract Review": [],
     "Won \u2014 Build Confirmed": [
       [
@@ -846,6 +840,10 @@
         775000.0
       ],
       [
+        "Lesley Klem",
+        625000.0
+      ],
+      [
         "jeremie siki \u2014 REA",
         625000.0
       ],
@@ -888,6 +886,10 @@
       [
         "tina allen \u2014 REA",
         625000.0
+      ],
+      [
+        "Shynae Otway",
+        25000.0
       ],
       [
         "Enayat Mousavi",
@@ -1012,16 +1014,15 @@
     ]
   },
   "stage_pipeline_value": {
-    "Lost": 26375000.0,
+    "Showed Up": 775000.0,
+    "Lost": 27025000.0,
     "New Lead": 43700000.0,
-    "Booked": 3100000.0,
+    "Booked": 2475000.0,
     "Won \u2014 Build Confirmed": 218000.0,
-    "Site Visit Scheduled": 650000.0,
+    "Site Visit Scheduled": 700000.0,
     "Qualified": 925000.0,
     "Nurturing": 1550000.0,
-    "Not Yet Ready": 5300000.0,
-    "Showed Up": 775000.0,
-    "Builder Shortlist Sent": 25000.0
+    "Not Yet Ready": 5300000.0
   },
   "per_rep": {
     "nNlkTC2z33NTPyxTxdE8": {
@@ -1036,8 +1037,8 @@
     "94SP86nEZ9qrsSTJB2Qe": {
       "name": "Abdullah",
       "initial": "A",
-      "leads_30d": 36,
-      "leads_total": 72,
+      "leads_30d": 37,
+      "leads_total": 73,
       "opps_total": 66,
       "opps_qualified": 0,
       "opps_won": 4
