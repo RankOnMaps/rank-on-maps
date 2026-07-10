@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T06:54:52.139620+00:00",
+  "generated_at": "2026-07-10T07:25:33.305345+00:00",
   "totals": {
     "total_leads": 363,
     "leads_30d": 217,
@@ -22,8 +22,8 @@
   },
   "stages": {
     "Showed Up": 5,
-    "Lost": 67,
-    "New Lead": 115,
+    "Lost": 68,
+    "New Lead": 114,
     "Booked": 9,
     "Won \u2014 Build Confirmed": 10,
     "Site Visit Scheduled": 5,
@@ -33,10 +33,6 @@
   },
   "stage_top_deals": {
     "New Lead": [
-      [
-        "Eddy Gaidzionis",
-        1075000.0
-      ],
       [
         "Chameera Jayatilaka",
         925000.0
@@ -744,6 +740,10 @@
     ],
     "Lost": [
       [
+        "Eddy Gaidzionis",
+        1075000.0
+      ],
+      [
         "jesse sullivan \u2014 REA",
         1075000.0
       ],
@@ -1015,8 +1015,8 @@
   },
   "stage_pipeline_value": {
     "Showed Up": 775000.0,
-    "Lost": 27025000.0,
-    "New Lead": 43700000.0,
+    "Lost": 28100000.0,
+    "New Lead": 42625000.0,
     "Booked": 2475000.0,
     "Won \u2014 Build Confirmed": 218000.0,
     "Site Visit Scheduled": 700000.0,
