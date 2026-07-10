@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-07-10T07:25:33.305345+00:00",
+  "generated_at": "2026-07-10T09:01:55.192202+00:00",
   "totals": {
-    "total_leads": 363,
-    "leads_30d": 217,
-    "total_opps": 240,
+    "total_leads": 365,
+    "leads_30d": 219,
+    "total_opps": 245,
     "calls_booked": 37,
     "ppas_signed": 10,
-    "pipeline_value": 82668000
+    "pipeline_value": 84218000
   },
   "channels_30d": {
+    "Eligibility": 38,
+    "REA": 123,
     "Other": 53,
-    "REA": 122,
-    "Eligibility": 37,
     "Contact": 5
   },
   "channels_total": {
+    "Eligibility": 45,
+    "REA": 253,
     "Other": 62,
-    "REA": 252,
-    "Eligibility": 44,
     "Contact": 5
   },
   "stages": {
+    "New Lead": 118,
+    "Lost": 69,
     "Showed Up": 5,
-    "Lost": 68,
-    "New Lead": 114,
     "Booked": 9,
     "Won \u2014 Build Confirmed": 10,
     "Site Visit Scheduled": 5,
@@ -60,6 +60,14 @@
       [
         "Divya patel",
         925000.0
+      ],
+      [
+        "Arati Desai",
+        775000.0
+      ],
+      [
+        "Arinah Zain",
+        775000.0
       ],
       [
         "Charlotte Ambrose",
@@ -276,6 +284,14 @@
       [
         "Dechen Wangmo",
         325000.0
+      ],
+      [
+        "Dharsana Sudarsanan",
+        0.0
+      ],
+      [
+        "Nur Malik",
+        0.0
       ],
       [
         "Kulie Lane",
@@ -892,6 +908,10 @@
         25000.0
       ],
       [
+        "Andrew Tawadrous",
+        0.0
+      ],
+      [
         "Enayat Mousavi",
         0.0
       ],
@@ -1014,9 +1034,9 @@
     ]
   },
   "stage_pipeline_value": {
-    "Showed Up": 775000.0,
+    "New Lead": 44175000.0,
     "Lost": 28100000.0,
-    "New Lead": 42625000.0,
+    "Showed Up": 775000.0,
     "Booked": 2475000.0,
     "Won \u2014 Build Confirmed": 218000.0,
     "Site Visit Scheduled": 700000.0,
@@ -1030,7 +1050,7 @@
       "initial": "D",
       "leads_30d": 44,
       "leads_total": 71,
-      "opps_total": 56,
+      "opps_total": 60,
       "opps_qualified": 6,
       "opps_won": 1
     },
@@ -1046,8 +1066,8 @@
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 41,
-      "leads_total": 91,
+      "leads_30d": 42,
+      "leads_total": 92,
       "opps_total": 68,
       "opps_qualified": 0,
       "opps_won": 5
@@ -1055,16 +1075,15 @@
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 56,
-      "leads_total": 88,
-      "opps_total": 49,
+      "leads_30d": 57,
+      "leads_total": 89,
+      "opps_total": 50,
       "opps_qualified": 2,
       "opps_won": 0
     }
   },
   "round_robin": {
     "last12": [
-      "Abdullah",
       "David",
       "Masih",
       "Hasib",
@@ -1075,16 +1094,17 @@
       "Masih",
       "Abdullah",
       "David",
-      "Hasib"
+      "Hasib",
+      "Masih"
     ],
     "balance": {
-      "Abdullah": 3,
       "David": 3,
-      "Masih": 3,
-      "Hasib": 3
+      "Masih": 4,
+      "Hasib": 3,
+      "Abdullah": 2
     },
     "health": "healthy",
-    "sequence_arrow": "Abdullah \u2192 David \u2192 Masih \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib"
+    "sequence_arrow": "David \u2192 Masih \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih"
   },
   "appointments": []
 }
