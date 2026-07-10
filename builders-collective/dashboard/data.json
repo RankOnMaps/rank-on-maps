@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-10T03:04:29.421515+00:00",
+  "generated_at": "2026-07-10T03:35:07.561895+00:00",
   "totals": {
     "total_leads": 360,
     "leads_30d": 214,
-    "total_opps": 238,
+    "total_opps": 239,
     "calls_booked": 37,
     "ppas_signed": 10,
     "pipeline_value": 82618000
@@ -21,10 +21,10 @@
     "Contact": 5
   },
   "stages": {
+    "Lost": 65,
     "New Lead": 116,
     "Booked": 13,
     "Won \u2014 Build Confirmed": 10,
-    "Lost": 64,
     "Site Visit Scheduled": 3,
     "Qualified": 8,
     "Nurturing": 4,
@@ -890,6 +890,10 @@
         625000.0
       ],
       [
+        "Enayat Mousavi",
+        0.0
+      ],
+      [
         "Josh  Watson",
         0.0
       ],
@@ -1008,10 +1012,10 @@
     ]
   },
   "stage_pipeline_value": {
+    "Lost": 26375000.0,
     "New Lead": 43700000.0,
     "Booked": 3100000.0,
     "Won \u2014 Build Confirmed": 218000.0,
-    "Lost": 26375000.0,
     "Site Visit Scheduled": 650000.0,
     "Qualified": 925000.0,
     "Nurturing": 1550000.0,
@@ -1043,7 +1047,7 @@
       "initial": "H",
       "leads_30d": 41,
       "leads_total": 91,
-      "opps_total": 67,
+      "opps_total": 68,
       "opps_qualified": 0,
       "opps_won": 5
     },
