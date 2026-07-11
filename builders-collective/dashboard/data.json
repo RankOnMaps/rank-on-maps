@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-11T05:24:36.955237+00:00",
+  "generated_at": "2026-07-11T07:24:46.714541+00:00",
   "totals": {
     "total_leads": 370,
-    "leads_30d": 220,
+    "leads_30d": 219,
     "total_opps": 250,
     "calls_booked": 35,
     "ppas_signed": 10,
@@ -11,7 +11,7 @@
   "channels_30d": {
     "Eligibility": 40,
     "REA": 125,
-    "Other": 50,
+    "Other": 49,
     "Contact": 5
   },
   "channels_total": {
