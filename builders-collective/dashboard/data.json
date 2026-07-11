@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-11T03:46:49.864435+00:00",
+  "generated_at": "2026-07-11T04:17:00.435413+00:00",
   "totals": {
     "total_leads": 370,
     "leads_30d": 220,
     "total_opps": 250,
-    "calls_booked": 34,
+    "calls_booked": 35,
     "ppas_signed": 10,
     "pipeline_value": 86993000
   },
@@ -21,10 +21,10 @@
     "Contact": 5
   },
   "stages": {
-    "New Lead": 122,
+    "New Lead": 121,
+    "Booked": 10,
     "Showed Up": 6,
     "Lost": 70,
-    "Booked": 9,
     "Won \u2014 Build Confirmed": 10,
     "Site Visit Scheduled": 5,
     "Qualified": 4,
@@ -160,10 +160,6 @@
       [
         "Balamurugan Arumugam",
         775000.0
-      ],
-      [
-        "Daw Zam",
-        625000.0
       ],
       [
         "maryanne giacoppo \u2014 REA",
@@ -552,6 +548,10 @@
       [
         "Nassa Atekhis",
         775000.0
+      ],
+      [
+        "Daw Zam",
+        625000.0
       ],
       [
         "Herman Wessels",
@@ -1054,10 +1054,10 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 45875000.0,
+    "New Lead": 45250000.0,
+    "Booked": 3100000.0,
     "Showed Up": 1850000.0,
     "Lost": 29025000.0,
-    "Booked": 2475000.0,
     "Won \u2014 Build Confirmed": 218000.0,
     "Site Visit Scheduled": 700000.0,
     "Qualified": 0.0,
