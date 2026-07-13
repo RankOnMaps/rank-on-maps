@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-13T09:39:51.989536+00:00",
+  "generated_at": "2026-07-13T10:10:00.625765+00:00",
   "totals": {
     "total_leads": 393,
     "leads_30d": 217,
     "total_opps": 260,
-    "calls_booked": 37,
+    "calls_booked": 38,
     "ppas_signed": 10,
     "pipeline_value": 90243000
   },
@@ -21,8 +21,8 @@
     "Contact": 5
   },
   "stages": {
-    "New Lead": 126,
-    "Booked": 13,
+    "New Lead": 125,
+    "Booked": 14,
     "Lost": 72,
     "Showed Up": 5,
     "Won \u2014 Build Confirmed": 10,
@@ -303,10 +303,6 @@
       ],
       [
         "Isioma Onyemgba",
-        0.0
-      ],
-      [
-        "Rebecca Riley",
         0.0
       ],
       [
@@ -591,6 +587,10 @@
       ],
       [
         "Jo Semmens",
+        0.0
+      ],
+      [
+        "Rebecca Riley",
         0.0
       ],
       [
