@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-13T06:54:04.938517+00:00",
+  "generated_at": "2026-07-13T07:35:33.287642+00:00",
   "totals": {
     "total_leads": 392,
     "leads_30d": 216,
-    "total_opps": 258,
+    "total_opps": 259,
     "calls_booked": 36,
     "ppas_signed": 10,
-    "pipeline_value": 89468000
+    "pipeline_value": 90243000
   },
   "channels_30d": {
     "Eligibility": 44,
@@ -21,7 +21,7 @@
     "Contact": 5
   },
   "stages": {
-    "New Lead": 125,
+    "New Lead": 126,
     "Booked": 12,
     "Lost": 72,
     "Showed Up": 5,
@@ -64,6 +64,10 @@
       [
         "Divya patel",
         925000.0
+      ],
+      [
+        "Ivy Lam",
+        775000.0
       ],
       [
         "Arati Desai",
@@ -1086,7 +1090,7 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 45250000.0,
+    "New Lead": 46025000.0,
     "Booked": 4500000.0,
     "Lost": 31175000.0,
     "Showed Up": 775000.0,
@@ -1102,7 +1106,7 @@
       "initial": "D",
       "leads_30d": 49,
       "leads_total": 86,
-      "opps_total": 67,
+      "opps_total": 68,
       "opps_qualified": 2,
       "opps_won": 1
     },
