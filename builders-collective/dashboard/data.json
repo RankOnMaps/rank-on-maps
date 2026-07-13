@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-13T07:35:33.287642+00:00",
+  "generated_at": "2026-07-13T08:05:42.208479+00:00",
   "totals": {
     "total_leads": 392,
     "leads_30d": 216,
     "total_opps": 259,
-    "calls_booked": 36,
+    "calls_booked": 37,
     "ppas_signed": 10,
     "pipeline_value": 90243000
   },
@@ -21,8 +21,8 @@
     "Contact": 5
   },
   "stages": {
-    "New Lead": 126,
-    "Booked": 12,
+    "Booked": 13,
+    "New Lead": 125,
     "Lost": 72,
     "Showed Up": 5,
     "Won \u2014 Build Confirmed": 10,
@@ -64,10 +64,6 @@
       [
         "Divya patel",
         925000.0
-      ],
-      [
-        "Ivy Lam",
-        775000.0
       ],
       [
         "Arati Desai",
@@ -564,6 +560,10 @@
       [
         "sarah iddamalgoda \u2014 REA",
         925000.0
+      ],
+      [
+        "Ivy Lam",
+        775000.0
       ],
       [
         "Taufiq Suthar",
@@ -1090,8 +1090,8 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 46025000.0,
-    "Booked": 4500000.0,
+    "Booked": 5275000.0,
+    "New Lead": 45250000.0,
     "Lost": 31175000.0,
     "Showed Up": 775000.0,
     "Won \u2014 Build Confirmed": 218000.0,
