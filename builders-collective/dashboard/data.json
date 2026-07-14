@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-07-14T17:28:25.296086+00:00",
+  "generated_at": "2026-07-14T18:29:46.398240+00:00",
   "totals": {
-    "total_leads": 405,
-    "leads_30d": 218,
-    "total_opps": 272,
+    "total_leads": 406,
+    "leads_30d": 219,
+    "total_opps": 273,
     "calls_booked": 41,
     "ppas_signed": 10,
     "pipeline_value": 90868000
   },
   "channels_30d": {
+    "Eligibility": 51,
     "REA": 126,
-    "Eligibility": 50,
     "Other": 38,
     "Contact": 4
   },
   "channels_total": {
+    "Eligibility": 60,
     "REA": 277,
-    "Eligibility": 59,
     "Other": 64,
     "Contact": 5
   },
   "stages": {
-    "New Lead": 128,
+    "New Lead": 129,
     "Booked": 17,
     "Showed Up": 5,
     "Lost": 78,
@@ -280,6 +280,10 @@
       [
         "Dechen Wangmo",
         325000.0
+      ],
+      [
+        "Olivia Hall",
+        0.0
       ],
       [
         "Suka Nguyen",
@@ -1183,16 +1187,15 @@
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 58,
-      "leads_total": 98,
-      "opps_total": 53,
+      "leads_30d": 59,
+      "leads_total": 99,
+      "opps_total": 54,
       "opps_qualified": 2,
       "opps_won": 0
     }
   },
   "round_robin": {
     "last12": [
-      "Hasib",
       "Masih",
       "Hasib",
       "Abdullah",
@@ -1203,16 +1206,17 @@
       "David",
       "Hasib",
       "Masih",
-      "Abdullah"
+      "Abdullah",
+      "Masih"
     ],
     "balance": {
-      "Hasib": 4,
-      "Masih": 3,
+      "Masih": 4,
+      "Hasib": 3,
       "Abdullah": 3,
       "David": 2
     },
     "health": "healthy",
-    "sequence_arrow": "Hasib \u2192 Masih \u2192 Hasib \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah"
+    "sequence_arrow": "Masih \u2192 Hasib \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 Masih"
   },
   "appointments": []
 }
