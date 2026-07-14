@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-07-14T23:03:36.533700+00:00",
+  "generated_at": "2026-07-14T23:34:06.217377+00:00",
   "totals": {
-    "total_leads": 406,
-    "leads_30d": 219,
+    "total_leads": 405,
+    "leads_30d": 216,
     "total_opps": 273,
     "calls_booked": 41,
     "ppas_signed": 10,
     "pipeline_value": 90868000
   },
   "channels_30d": {
-    "Eligibility": 51,
+    "Eligibility": 50,
     "REA": 126,
-    "Other": 38,
+    "Other": 36,
     "Contact": 4
   },
   "channels_total": {
     "Eligibility": 60,
     "REA": 277,
-    "Other": 64,
+    "Other": 63,
     "Contact": 5
   },
   "stages": {
@@ -1160,7 +1160,7 @@
     "nNlkTC2z33NTPyxTxdE8": {
       "name": "David",
       "initial": "D",
-      "leads_30d": 48,
+      "leads_30d": 47,
       "leads_total": 88,
       "opps_total": 73,
       "opps_qualified": 2,
@@ -1187,7 +1187,7 @@
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 59,
+      "leads_30d": 58,
       "leads_total": 99,
       "opps_total": 54,
       "opps_qualified": 2,
