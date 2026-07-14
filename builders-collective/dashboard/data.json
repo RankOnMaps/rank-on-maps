@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T06:26:54.405801+00:00",
+  "generated_at": "2026-07-14T06:57:10.383793+00:00",
   "totals": {
     "total_leads": 403,
     "leads_30d": 220,
@@ -21,10 +21,10 @@
     "Contact": 5
   },
   "stages": {
-    "New Lead": 128,
+    "New Lead": 124,
     "Booked": 16,
     "Showed Up": 5,
-    "Lost": 74,
+    "Lost": 78,
     "Won \u2014 Build Confirmed": 10,
     "Site Visit Scheduled": 5,
     "Qualified": 4,
@@ -67,10 +67,6 @@
       ],
       [
         "Arinah Zain",
-        775000.0
-      ],
-      [
-        "Charlotte Ambrose",
         775000.0
       ],
       [
@@ -119,10 +115,6 @@
       ],
       [
         "art tesico \u2014 REA",
-        775000.0
-      ],
-      [
-        "errol isova \u2014 REA",
         775000.0
       ],
       [
@@ -386,10 +378,6 @@
         0.0
       ],
       [
-        "Kirsten Silvey",
-        0.0
-      ],
-      [
         "Test Dees",
         0.0
       ],
@@ -439,10 +427,6 @@
       ],
       [
         "Rowan ",
-        0.0
-      ],
-      [
-        "John Saad",
         0.0
       ],
       [
@@ -864,6 +848,10 @@
         925000.0
       ],
       [
+        "Charlotte Ambrose",
+        775000.0
+      ],
+      [
         "laya joymon",
         775000.0
       ],
@@ -921,6 +909,10 @@
       ],
       [
         "john van zetten \u2014 REA",
+        775000.0
+      ],
+      [
+        "errol isova \u2014 REA",
         775000.0
       ],
       [
@@ -1000,6 +992,10 @@
         0.0
       ],
       [
+        "Kirsten Silvey",
+        0.0
+      ],
+      [
         "Josh  Watson",
         0.0
       ],
@@ -1009,6 +1005,10 @@
       ],
       [
         "Usama Riaz",
+        0.0
+      ],
+      [
+        "John Saad",
         0.0
       ],
       [
@@ -1122,10 +1122,10 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 44175000.0,
+    "New Lead": 42625000.0,
     "Booked": 5275000.0,
     "Showed Up": 775000.0,
-    "Lost": 32250000.0,
+    "Lost": 33800000.0,
     "Won \u2014 Build Confirmed": 218000.0,
     "Site Visit Scheduled": 700000.0,
     "Qualified": 0.0,
