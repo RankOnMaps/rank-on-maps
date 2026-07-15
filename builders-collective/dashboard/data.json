@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-15T03:38:19.544720+00:00",
+  "generated_at": "2026-07-15T04:08:53.167632+00:00",
   "totals": {
     "total_leads": 406,
     "leads_30d": 215,
-    "total_opps": 274,
+    "total_opps": 275,
     "calls_booked": 41,
     "ppas_signed": 10,
-    "pipeline_value": 90868000
+    "pipeline_value": 91643000
   },
   "channels_30d": {
     "Eligibility": 51,
@@ -21,10 +21,10 @@
     "Contact": 5
   },
   "stages": {
+    "Lost": 80,
     "New Lead": 129,
     "Booked": 17,
     "Showed Up": 5,
-    "Lost": 79,
     "Won \u2014 Build Confirmed": 10,
     "Site Visit Scheduled": 5,
     "Qualified": 4,
@@ -872,6 +872,10 @@
         925000.0
       ],
       [
+        "Riana Venter",
+        775000.0
+      ],
+      [
         "Charlotte Ambrose",
         775000.0
       ],
@@ -1150,10 +1154,10 @@
     ]
   },
   "stage_pipeline_value": {
+    "Lost": 34575000.0,
     "New Lead": 43250000.0,
     "Booked": 5275000.0,
     "Showed Up": 775000.0,
-    "Lost": 33800000.0,
     "Won \u2014 Build Confirmed": 218000.0,
     "Site Visit Scheduled": 700000.0,
     "Qualified": 0.0,
@@ -1175,7 +1179,7 @@
       "initial": "A",
       "leads_30d": 35,
       "leads_total": 78,
-      "opps_total": 73,
+      "opps_total": 74,
       "opps_qualified": 0,
       "opps_won": 4
     },
