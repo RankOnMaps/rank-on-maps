@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T05:40:02.009595+00:00",
+  "generated_at": "2026-07-15T06:10:33.380030+00:00",
   "totals": {
     "total_leads": 406,
     "leads_30d": 215,
@@ -21,8 +21,8 @@
     "Contact": 5
   },
   "stages": {
-    "Lost": 80,
-    "New Lead": 129,
+    "Lost": 82,
+    "New Lead": 127,
     "Booked": 17,
     "Showed Up": 5,
     "Won \u2014 Build Confirmed": 10,
@@ -148,10 +148,6 @@
       [
         "Balamurugan Arumugam",
         775000.0
-      ],
-      [
-        "Maddi Lamaro",
-        625000.0
       ],
       [
         "maryanne giacoppo \u2014 REA",
@@ -379,10 +375,6 @@
       ],
       [
         "Himanshi Babbar",
-        0.0
-      ],
-      [
-        "Mohammed Eissa",
         0.0
       ],
       [
@@ -960,6 +952,10 @@
         775000.0
       ],
       [
+        "Maddi Lamaro",
+        625000.0
+      ],
+      [
         "Lesley Klem",
         625000.0
       ],
@@ -1021,6 +1017,10 @@
       ],
       [
         "Enayat Mousavi",
+        0.0
+      ],
+      [
+        "Mohammed Eissa",
         0.0
       ],
       [
@@ -1154,8 +1154,8 @@
     ]
   },
   "stage_pipeline_value": {
-    "Lost": 34575000.0,
-    "New Lead": 43250000.0,
+    "Lost": 35200000.0,
+    "New Lead": 42625000.0,
     "Booked": 5275000.0,
     "Showed Up": 775000.0,
     "Won \u2014 Build Confirmed": 218000.0,
