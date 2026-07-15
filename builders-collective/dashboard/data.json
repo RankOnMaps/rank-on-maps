@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-07-15T06:10:33.380030+00:00",
+  "generated_at": "2026-07-15T06:40:51.584734+00:00",
   "totals": {
     "total_leads": 406,
     "leads_30d": 215,
     "total_opps": 275,
-    "calls_booked": 41,
+    "calls_booked": 43,
     "ppas_signed": 10,
-    "pipeline_value": 91643000
+    "pipeline_value": 92568000
   },
   "channels_30d": {
-    "Eligibility": 51,
-    "REA": 124,
+    "Eligibility": 50,
+    "REA": 125,
     "Other": 36,
     "Contact": 4
   },
   "channels_total": {
-    "Eligibility": 61,
-    "REA": 277,
+    "Eligibility": 60,
+    "REA": 278,
     "Other": 63,
     "Contact": 5
   },
   "stages": {
     "Lost": 82,
-    "New Lead": 127,
-    "Booked": 17,
-    "Showed Up": 5,
+    "Booked": 18,
+    "New Lead": 125,
+    "Showed Up": 6,
     "Won \u2014 Build Confirmed": 10,
     "Site Visit Scheduled": 5,
     "Qualified": 4,
@@ -33,6 +33,10 @@
   },
   "stage_top_deals": {
     "New Lead": [
+      [
+        "Michelle Atkinson ",
+        925000.0
+      ],
       [
         "Chameera Jayatilaka",
         925000.0
@@ -278,10 +282,6 @@
         325000.0
       ],
       [
-        "Yow Srilak",
-        0.0
-      ],
-      [
         "Olivia Hall",
         0.0
       ],
@@ -314,10 +314,6 @@
         0.0
       ],
       [
-        "Michelle Atkinson ",
-        0.0
-      ],
-      [
         "Chloe Rowett",
         0.0
       ],
@@ -343,10 +339,6 @@
       ],
       [
         "Nur Malik",
-        0.0
-      ],
-      [
-        "Kulie Lane",
         0.0
       ],
       [
@@ -594,6 +586,10 @@
         625000.0
       ],
       [
+        "Yow Srilak",
+        0.0
+      ],
+      [
         "Karim Elgawady",
         0.0
       ],
@@ -610,15 +606,15 @@
         0.0
       ],
       [
+        "Kulie Lane",
+        0.0
+      ],
+      [
         "Sam Black",
         0.0
       ],
       [
         "Herman Wessels",
-        0.0
-      ],
-      [
-        "Tharindi Fernando",
         0.0
       ],
       [
@@ -649,6 +645,10 @@
       ],
       [
         "Scott",
+        0.0
+      ],
+      [
+        "Tharindi Fernando",
         0.0
       ],
       [
@@ -1155,8 +1155,8 @@
   },
   "stage_pipeline_value": {
     "Lost": 35200000.0,
-    "New Lead": 42625000.0,
     "Booked": 5275000.0,
+    "New Lead": 43550000.0,
     "Showed Up": 775000.0,
     "Won \u2014 Build Confirmed": 218000.0,
     "Site Visit Scheduled": 700000.0,
@@ -1204,12 +1204,12 @@
   },
   "round_robin": {
     "last12": [
+      "Masih",
       "Hasib",
       "Abdullah",
       "David",
       "Hasib",
       "Masih",
-      "Abdullah",
       "David",
       "Hasib",
       "Masih",
@@ -1218,13 +1218,13 @@
       "Hasib"
     ],
     "balance": {
+      "Masih": 4,
       "Hasib": 4,
-      "Abdullah": 3,
-      "David": 2,
-      "Masih": 3
+      "Abdullah": 2,
+      "David": 2
     },
     "health": "healthy",
-    "sequence_arrow": "Hasib \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 Masih \u2192 Hasib"
+    "sequence_arrow": "Masih \u2192 Hasib \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 Masih \u2192 Hasib"
   },
   "appointments": []
 }
