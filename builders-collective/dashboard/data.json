@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-07-15T07:41:28.009070+00:00",
+  "generated_at": "2026-07-15T08:11:41.722794+00:00",
   "totals": {
-    "total_leads": 406,
-    "leads_30d": 215,
-    "total_opps": 275,
+    "total_leads": 407,
+    "leads_30d": 216,
+    "total_opps": 276,
     "calls_booked": 44,
     "ppas_signed": 10,
     "pipeline_value": 92568000
   },
   "channels_30d": {
+    "Other": 37,
     "Eligibility": 50,
     "REA": 125,
-    "Other": 36,
     "Contact": 4
   },
   "channels_total": {
+    "Other": 64,
     "Eligibility": 60,
     "REA": 278,
-    "Other": 63,
     "Contact": 5
   },
   "stages": {
-    "Lost": 86,
+    "Lost": 87,
     "Booked": 18,
     "New Lead": 120,
     "Showed Up": 6,
@@ -1006,6 +1006,10 @@
         25000.0
       ],
       [
+        "Ron Rom",
+        0.0
+      ],
+      [
         "Emily Kerr",
         0.0
       ],
@@ -1171,9 +1175,9 @@
     "nNlkTC2z33NTPyxTxdE8": {
       "name": "David",
       "initial": "D",
-      "leads_30d": 46,
-      "leads_total": 88,
-      "opps_total": 73,
+      "leads_30d": 47,
+      "leads_total": 89,
+      "opps_total": 74,
       "opps_qualified": 2,
       "opps_won": 1
     },
