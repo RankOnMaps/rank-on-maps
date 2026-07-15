@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-07-15T08:41:55.096052+00:00",
+  "generated_at": "2026-07-15T10:56:11.138536+00:00",
   "totals": {
-    "total_leads": 407,
-    "leads_30d": 216,
-    "total_opps": 276,
-    "calls_booked": 44,
+    "total_leads": 408,
+    "leads_30d": 215,
+    "total_opps": 277,
+    "calls_booked": 45,
     "ppas_signed": 10,
     "pipeline_value": 92568000
   },
   "channels_30d": {
+    "Eligibility": 51,
     "Other": 37,
-    "Eligibility": 50,
-    "REA": 125,
+    "REA": 123,
     "Contact": 4
   },
   "channels_total": {
+    "Eligibility": 61,
     "Other": 64,
-    "Eligibility": 60,
     "REA": 278,
     "Contact": 5
   },
   "stages": {
-    "Lost": 87,
-    "Booked": 18,
     "New Lead": 120,
+    "Lost": 87,
+    "Booked": 19,
     "Showed Up": 6,
     "Won \u2014 Build Confirmed": 10,
     "Site Visit Scheduled": 5,
@@ -267,6 +267,10 @@
         325000.0
       ],
       [
+        "Greg P",
+        0.0
+      ],
+      [
         "Olivia Hall",
         0.0
       ],
@@ -288,10 +292,6 @@
       ],
       [
         "Shaun Edwards",
-        0.0
-      ],
-      [
-        "Mike Berg",
         0.0
       ],
       [
@@ -572,6 +572,10 @@
       ],
       [
         "Karim Elgawady",
+        0.0
+      ],
+      [
+        "Mike Berg",
         0.0
       ],
       [
@@ -1160,9 +1164,9 @@
     ]
   },
   "stage_pipeline_value": {
+    "New Lead": 41050000.0,
     "Lost": 37075000.0,
     "Booked": 5275000.0,
-    "New Lead": 41050000.0,
     "Showed Up": 775000.0,
     "Won \u2014 Build Confirmed": 218000.0,
     "Site Visit Scheduled": 700000.0,
@@ -1184,7 +1188,7 @@
     "94SP86nEZ9qrsSTJB2Qe": {
       "name": "Abdullah",
       "initial": "A",
-      "leads_30d": 35,
+      "leads_30d": 34,
       "leads_total": 77,
       "opps_total": 74,
       "opps_qualified": 0,
@@ -1193,7 +1197,7 @@
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 47,
+      "leads_30d": 46,
       "leads_total": 100,
       "opps_total": 73,
       "opps_qualified": 0,
@@ -1202,16 +1206,15 @@
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 58,
-      "leads_total": 100,
-      "opps_total": 54,
+      "leads_30d": 59,
+      "leads_total": 101,
+      "opps_total": 55,
       "opps_qualified": 2,
       "opps_won": 0
     }
   },
   "round_robin": {
     "last12": [
-      "Masih",
       "Hasib",
       "Abdullah",
       "David",
@@ -1222,16 +1225,17 @@
       "Masih",
       "Abdullah",
       "Masih",
-      "Hasib"
+      "Hasib",
+      "Masih"
     ],
     "balance": {
-      "Masih": 4,
       "Hasib": 4,
       "Abdullah": 2,
-      "David": 2
+      "David": 2,
+      "Masih": 4
     },
     "health": "healthy",
-    "sequence_arrow": "Masih \u2192 Hasib \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 Masih \u2192 Hasib"
+    "sequence_arrow": "Hasib \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 Masih \u2192 Hasib \u2192 Masih"
   },
   "appointments": []
 }
