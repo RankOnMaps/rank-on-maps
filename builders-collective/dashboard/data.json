@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-15T01:36:05.932425+00:00",
+  "generated_at": "2026-07-15T02:06:44.643254+00:00",
   "totals": {
     "total_leads": 406,
-    "leads_30d": 216,
+    "leads_30d": 215,
     "total_opps": 274,
     "calls_booked": 41,
     "ppas_signed": 10,
@@ -10,7 +10,7 @@
   },
   "channels_30d": {
     "Eligibility": 51,
-    "REA": 125,
+    "REA": 124,
     "Other": 36,
     "Contact": 4
   },
@@ -21,10 +21,10 @@
     "Contact": 5
   },
   "stages": {
-    "New Lead": 130,
+    "New Lead": 129,
     "Booked": 17,
     "Showed Up": 5,
-    "Lost": 78,
+    "Lost": 79,
     "Won \u2014 Build Confirmed": 10,
     "Site Visit Scheduled": 5,
     "Qualified": 4,
@@ -323,10 +323,6 @@
       ],
       [
         "Chloe Rowett",
-        0.0
-      ],
-      [
-        "Emily Kerr",
         0.0
       ],
       [
@@ -1012,6 +1008,10 @@
         25000.0
       ],
       [
+        "Emily Kerr",
+        0.0
+      ],
+      [
         "Andrew Tawadrous",
         0.0
       ],
@@ -1164,7 +1164,7 @@
     "nNlkTC2z33NTPyxTxdE8": {
       "name": "David",
       "initial": "D",
-      "leads_30d": 47,
+      "leads_30d": 46,
       "leads_total": 88,
       "opps_total": 73,
       "opps_qualified": 2,
