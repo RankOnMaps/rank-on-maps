@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-15T07:11:13.939077+00:00",
+  "generated_at": "2026-07-15T07:41:28.009070+00:00",
   "totals": {
     "total_leads": 406,
     "leads_30d": 215,
     "total_opps": 275,
-    "calls_booked": 43,
+    "calls_booked": 44,
     "ppas_signed": 10,
     "pipeline_value": 92568000
   },
@@ -21,15 +21,16 @@
     "Contact": 5
   },
   "stages": {
-    "Lost": 82,
+    "Lost": 86,
     "Booked": 18,
-    "New Lead": 125,
+    "New Lead": 120,
     "Showed Up": 6,
     "Won \u2014 Build Confirmed": 10,
     "Site Visit Scheduled": 5,
     "Qualified": 4,
     "Nurturing": 5,
-    "Not Yet Ready": 20
+    "Not Yet Ready": 20,
+    "Builder Shortlist Sent": 1
   },
   "stage_top_deals": {
     "New Lead": [
@@ -79,10 +80,6 @@
       ],
       [
         "Atefa",
-        775000.0
-      ],
-      [
-        "Wendy Wan",
         775000.0
       ],
       [
@@ -139,10 +136,6 @@
       ],
       [
         "bhupinder singh \u2014 REA",
-        775000.0
-      ],
-      [
-        "milan dahal \u2014 REA",
         775000.0
       ],
       [
@@ -262,10 +255,6 @@
         625000.0
       ],
       [
-        "Sheenu Chitra",
-        625000.0
-      ],
-      [
         "tina and shaun tink \u2014 REA",
         475000.0
       ],
@@ -275,10 +264,6 @@
       ],
       [
         "shiju naroth \u2014 REA",
-        325000.0
-      ],
-      [
-        "Dechen Wangmo",
         325000.0
       ],
       [
@@ -467,10 +452,6 @@
       ],
       [
         "pragati bhadauria \u2014 REA",
-        0.0
-      ],
-      [
-        "michael lopez \u2014 REA",
         0.0
       ],
       [
@@ -696,7 +677,12 @@
         0.0
       ]
     ],
-    "Builder Shortlist Sent": [],
+    "Builder Shortlist Sent": [
+      [
+        "Sheenu Chitra",
+        625000.0
+      ]
+    ],
     "Contract Review": [],
     "Won \u2014 Build Confirmed": [
       [
@@ -880,6 +866,10 @@
         775000.0
       ],
       [
+        "Wendy Wan",
+        775000.0
+      ],
+      [
         "Christian",
         775000.0
       ],
@@ -944,6 +934,10 @@
         775000.0
       ],
       [
+        "milan dahal \u2014 REA",
+        775000.0
+      ],
+      [
         "Charles Mavinyu",
         775000.0
       ],
@@ -1004,6 +998,10 @@
         625000.0
       ],
       [
+        "Dechen Wangmo",
+        325000.0
+      ],
+      [
         "Shynae Otway",
         25000.0
       ],
@@ -1061,6 +1059,10 @@
       ],
       [
         "james smith \u2014 REA",
+        0.0
+      ],
+      [
+        "michael lopez \u2014 REA",
         0.0
       ],
       [
@@ -1154,15 +1156,16 @@
     ]
   },
   "stage_pipeline_value": {
-    "Lost": 35200000.0,
+    "Lost": 37075000.0,
     "Booked": 5275000.0,
-    "New Lead": 43550000.0,
+    "New Lead": 41050000.0,
     "Showed Up": 775000.0,
     "Won \u2014 Build Confirmed": 218000.0,
     "Site Visit Scheduled": 700000.0,
     "Qualified": 0.0,
     "Nurturing": 1550000.0,
-    "Not Yet Ready": 5300000.0
+    "Not Yet Ready": 5300000.0,
+    "Builder Shortlist Sent": 625000.0
   },
   "per_rep": {
     "nNlkTC2z33NTPyxTxdE8": {
@@ -1178,7 +1181,7 @@
       "name": "Abdullah",
       "initial": "A",
       "leads_30d": 35,
-      "leads_total": 78,
+      "leads_total": 77,
       "opps_total": 74,
       "opps_qualified": 0,
       "opps_won": 4
@@ -1196,7 +1199,7 @@
       "name": "Masih",
       "initial": "M",
       "leads_30d": 58,
-      "leads_total": 99,
+      "leads_total": 100,
       "opps_total": 54,
       "opps_qualified": 2,
       "opps_won": 0
