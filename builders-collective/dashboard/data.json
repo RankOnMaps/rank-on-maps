@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T07:34:37.710979+00:00",
+  "generated_at": "2026-07-16T08:04:49.776667+00:00",
   "totals": {
     "total_leads": 417,
     "leads_30d": 216,
@@ -22,10 +22,10 @@
   },
   "stages": {
     "Booked": 18,
-    "New Lead": 121,
+    "New Lead": 120,
     "Lost": 88,
+    "Nurturing": 7,
     "Showed Up": 7,
-    "Nurturing": 6,
     "Won \u2014 Build Confirmed": 10,
     "Site Visit Scheduled": 5,
     "Qualified": 4,
@@ -291,10 +291,6 @@
         0.0
       ],
       [
-        "Kelly Winrow",
-        0.0
-      ],
-      [
         "Shaun Edwards",
         0.0
       ],
@@ -527,6 +523,10 @@
       [
         "Laura Soucek",
         625000.0
+      ],
+      [
+        "Kelly Winrow",
+        0.0
       ],
       [
         "Kulie Lane",
@@ -1179,8 +1179,8 @@
     "Booked": 5275000.0,
     "New Lead": 40125000.0,
     "Lost": 38000000.0,
-    "Showed Up": 775000.0,
     "Nurturing": 1550000.0,
+    "Showed Up": 775000.0,
     "Won \u2014 Build Confirmed": 218000.0,
     "Site Visit Scheduled": 700000.0,
     "Qualified": 0.0,
