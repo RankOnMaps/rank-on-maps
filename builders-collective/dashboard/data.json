@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-07-16T05:03:30.019660+00:00",
+  "generated_at": "2026-07-16T05:33:43.397051+00:00",
   "totals": {
-    "total_leads": 415,
-    "leads_30d": 215,
+    "total_leads": 416,
+    "leads_30d": 216,
     "total_opps": 280,
     "calls_booked": 45,
     "ppas_signed": 10,
     "pipeline_value": 92568000
   },
   "channels_30d": {
+    "REA": 126,
     "Eligibility": 54,
-    "REA": 125,
     "Other": 32,
     "Contact": 4
   },
   "channels_total": {
+    "REA": 282,
     "Eligibility": 64,
-    "REA": 281,
     "Other": 65,
     "Contact": 5
   },
   "stages": {
     "Booked": 18,
-    "New Lead": 122,
-    "Lost": 87,
+    "New Lead": 121,
+    "Lost": 88,
     "Showed Up": 7,
     "Nurturing": 6,
     "Won \u2014 Build Confirmed": 10,
@@ -34,10 +34,6 @@
   },
   "stage_top_deals": {
     "New Lead": [
-      [
-        "Michelle Atkinson ",
-        925000.0
-      ],
       [
         "Chameera Jayatilaka",
         925000.0
@@ -846,6 +842,10 @@
         1075000.0
       ],
       [
+        "Michelle Atkinson ",
+        925000.0
+      ],
+      [
         "Jasmin Kirov",
         925000.0
       ],
@@ -1177,8 +1177,8 @@
   },
   "stage_pipeline_value": {
     "Booked": 5275000.0,
-    "New Lead": 41050000.0,
-    "Lost": 37075000.0,
+    "New Lead": 40125000.0,
+    "Lost": 38000000.0,
     "Showed Up": 775000.0,
     "Nurturing": 1550000.0,
     "Won \u2014 Build Confirmed": 218000.0,
@@ -1209,8 +1209,8 @@
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 47,
-      "leads_total": 101,
+      "leads_30d": 48,
+      "leads_total": 102,
       "opps_total": 74,
       "opps_qualified": 0,
       "opps_won": 5
