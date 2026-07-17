@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-07-17T01:54:54.380054+00:00",
+  "generated_at": "2026-07-17T02:28:26.303394+00:00",
   "totals": {
     "total_leads": 420,
-    "leads_30d": 213,
+    "leads_30d": 212,
     "total_opps": 282,
-    "calls_booked": 45,
+    "calls_booked": 46,
     "ppas_signed": 10,
     "pipeline_value": 92568000
   },
   "channels_30d": {
     "Other": 31,
     "Eligibility": 56,
-    "REA": 123,
+    "REA": 122,
     "Contact": 3
   },
   "channels_total": {
@@ -21,8 +21,8 @@
     "Contact": 5
   },
   "stages": {
-    "New Lead": 122,
-    "Booked": 18,
+    "New Lead": 121,
+    "Booked": 19,
     "Lost": 88,
     "Nurturing": 7,
     "Showed Up": 7,
@@ -264,10 +264,6 @@
       ],
       [
         "Mariam Bajrai",
-        0.0
-      ],
-      [
-        "Taj R",
         0.0
       ],
       [
@@ -581,6 +577,10 @@
       [
         "Daw Zam",
         625000.0
+      ],
+      [
+        "Taj R",
+        0.0
       ],
       [
         "Eleanor McCabe ",
@@ -1208,7 +1208,7 @@
     "94SP86nEZ9qrsSTJB2Qe": {
       "name": "Abdullah",
       "initial": "A",
-      "leads_30d": 35,
+      "leads_30d": 34,
       "leads_total": 79,
       "opps_total": 76,
       "opps_qualified": 0,
