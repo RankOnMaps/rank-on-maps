@@ -1,36 +1,36 @@
 {
-  "generated_at": "2026-07-17T02:59:56.105371+00:00",
+  "generated_at": "2026-07-17T07:41:00.541381+00:00",
   "totals": {
-    "total_leads": 420,
-    "leads_30d": 212,
-    "total_opps": 282,
-    "calls_booked": 46,
-    "ppas_signed": 10,
-    "pipeline_value": 92568000
+    "total_leads": 421,
+    "leads_30d": 213,
+    "total_opps": 283,
+    "calls_booked": 48,
+    "ppas_signed": 11,
+    "pipeline_value": 92623000
   },
   "channels_30d": {
-    "Other": 31,
+    "Other": 32,
     "Eligibility": 56,
     "REA": 122,
     "Contact": 3
   },
   "channels_total": {
-    "Other": 66,
+    "Other": 67,
     "Eligibility": 66,
     "REA": 283,
     "Contact": 5
   },
   "stages": {
-    "New Lead": 121,
-    "Booked": 19,
-    "Lost": 88,
+    "Builder Shortlist Sent": 5,
+    "Lost": 90,
+    "Booked": 20,
+    "New Lead": 118,
     "Nurturing": 7,
-    "Showed Up": 7,
-    "Won \u2014 Build Confirmed": 10,
-    "Site Visit Scheduled": 5,
+    "Showed Up": 6,
+    "Won \u2014 Build Confirmed": 11,
+    "Site Visit Scheduled": 2,
     "Qualified": 4,
-    "Not Yet Ready": 20,
-    "Builder Shortlist Sent": 1
+    "Not Yet Ready": 20
   },
   "stage_top_deals": {
     "New Lead": [
@@ -263,19 +263,7 @@
         325000.0
       ],
       [
-        "Mariam Bajrai",
-        0.0
-      ],
-      [
         "Carne  Gibbs",
-        0.0
-      ],
-      [
-        "Irwan Hasballah ",
-        0.0
-      ],
-      [
-        "Greg P",
         0.0
       ],
       [
@@ -587,6 +575,10 @@
         0.0
       ],
       [
+        "Greg P",
+        0.0
+      ],
+      [
         "Yow Srilak",
         0.0
       ],
@@ -641,10 +633,6 @@
         0.0
       ],
       [
-        "Tendayi",
-        0.0
-      ],
-      [
         "Scott",
         0.0
       ],
@@ -681,7 +669,21 @@
         625000.0
       ],
       [
-        "Shannon Freeman",
+        "Test  Deez",
+        0.0
+      ]
+    ],
+    "Builder Shortlist Sent": [
+      [
+        "Sheenu Chitra",
+        625000.0
+      ],
+      [
+        "Levi Mccalman",
+        25000.0
+      ],
+      [
+        "Tendayi",
         25000.0
       ],
       [
@@ -691,20 +693,14 @@
       [
         "Codey Stewart",
         25000.0
-      ],
-      [
-        "Test  Deez",
-        0.0
-      ]
-    ],
-    "Builder Shortlist Sent": [
-      [
-        "Sheenu Chitra",
-        625000.0
       ]
     ],
     "Contract Review": [],
     "Won \u2014 Build Confirmed": [
+      [
+        "Shannon Freeman",
+        30000.0
+      ],
       [
         "Junclar Curit",
         30000.0
@@ -1030,6 +1026,14 @@
         25000.0
       ],
       [
+        "Mariam Bajrai",
+        0.0
+      ],
+      [
+        "Irwan Hasballah ",
+        0.0
+      ],
+      [
         "Ron Rom",
         0.0
       ],
@@ -1184,16 +1188,16 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 40125000.0,
-    "Booked": 5275000.0,
+    "Builder Shortlist Sent": 725000.0,
     "Lost": 38000000.0,
+    "Booked": 5275000.0,
+    "New Lead": 40125000.0,
     "Nurturing": 1550000.0,
     "Showed Up": 775000.0,
-    "Won \u2014 Build Confirmed": 218000.0,
-    "Site Visit Scheduled": 700000.0,
+    "Won \u2014 Build Confirmed": 248000.0,
+    "Site Visit Scheduled": 625000.0,
     "Qualified": 0.0,
-    "Not Yet Ready": 5300000.0,
-    "Builder Shortlist Sent": 625000.0
+    "Not Yet Ready": 5300000.0
   },
   "per_rep": {
     "nNlkTC2z33NTPyxTxdE8": {
@@ -1210,9 +1214,9 @@
       "initial": "A",
       "leads_30d": 34,
       "leads_total": 79,
-      "opps_total": 76,
+      "opps_total": 77,
       "opps_qualified": 0,
-      "opps_won": 4
+      "opps_won": 5
     },
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
