@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-20T20:16:55.996202+00:00",
+  "generated_at": "2026-07-20T20:47:11.776602+00:00",
   "totals": {
     "total_leads": 457,
     "leads_30d": 225,
-    "total_opps": 310,
-    "calls_booked": 48,
-    "ppas_signed": 12,
-    "pipeline_value": 96948000
+    "total_opps": 300,
+    "calls_booked": 44,
+    "ppas_signed": 9,
+    "pipeline_value": 96073000
   },
   "channels_30d": {
     "Eligibility": 67,
@@ -21,17 +21,17 @@
     "Contact": 5
   },
   "stages": {
-    "New Lead": 137,
+    "New Lead": 136,
     "Booked": 17,
     "Contract Review": 1,
-    "Lost": 95,
-    "Won \u2014 Build Confirmed": 12,
+    "Lost": 94,
+    "Won \u2014 Build Confirmed": 9,
     "Nurturing": 10,
-    "Showed Up": 8,
+    "Showed Up": 7,
     "Builder Shortlist Sent": 4,
     "Site Visit Scheduled": 2,
     "Qualified": 4,
-    "Not Yet Ready": 20
+    "Not Yet Ready": 16
   },
   "stage_top_deals": {
     "New Lead": [
@@ -578,10 +578,6 @@
       [
         "G Singh",
         0.0
-      ],
-      [
-        "Cherith Ferguson \u2014 Eligibility",
-        0.0
       ]
     ],
     "Nurturing": [
@@ -698,10 +694,6 @@
     ],
     "Showed Up": [
       [
-        "Hermann Kengwah Kinfer",
-        775000.0
-      ],
-      [
         "Daw Zam",
         625000.0
       ],
@@ -808,18 +800,6 @@
         25000.0
       ],
       [
-        "Arskie David",
-        25000.0
-      ],
-      [
-        "Keah Hall",
-        25000.0
-      ],
-      [
-        "Lee Anne Boon \u2014 Eligibility",
-        25000.0
-      ],
-      [
         "Stephen Devisoe",
         20000.0
       ],
@@ -895,22 +875,6 @@
       ],
       [
         "Omar autelitano",
-        0.0
-      ],
-      [
-        "Rico",
-        0.0
-      ],
-      [
-        "Andrej and Donna ",
-        0.0
-      ],
-      [
-        "Nic Shields \u2014 Eligibility",
-        0.0
-      ],
-      [
-        "Promise Nechikwira",
         0.0
       ]
     ],
@@ -1120,10 +1084,6 @@
         325000.0
       ],
       [
-        "Shynae Otway",
-        25000.0
-      ],
-      [
         "Brett Walsh",
         0.0
       ],
@@ -1301,10 +1261,10 @@
     "New Lead": 42125000.0,
     "Booked": 3250000.0,
     "Contract Review": 0.0,
-    "Lost": 39550000.0,
-    "Won \u2014 Build Confirmed": 273000.0,
+    "Lost": 39525000.0,
+    "Won \u2014 Build Confirmed": 198000.0,
     "Nurturing": 3725000.0,
-    "Showed Up": 1400000.0,
+    "Showed Up": 625000.0,
     "Builder Shortlist Sent": 700000.0,
     "Site Visit Scheduled": 625000.0,
     "Qualified": 0.0,
@@ -1316,7 +1276,7 @@
       "initial": "D",
       "leads_30d": 59,
       "leads_total": 107,
-      "opps_total": 84,
+      "opps_total": 80,
       "opps_qualified": 2,
       "opps_won": 1
     },
@@ -1325,16 +1285,16 @@
       "initial": "A",
       "leads_30d": 37,
       "leads_total": 86,
-      "opps_total": 84,
+      "opps_total": 80,
       "opps_qualified": 0,
-      "opps_won": 6
+      "opps_won": 3
     },
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
       "leads_30d": 52,
       "leads_total": 113,
-      "opps_total": 81,
+      "opps_total": 80,
       "opps_qualified": 0,
       "opps_won": 5
     },
@@ -1343,7 +1303,7 @@
       "initial": "M",
       "leads_30d": 57,
       "leads_total": 106,
-      "opps_total": 59,
+      "opps_total": 58,
       "opps_qualified": 2,
       "opps_won": 0
     }
