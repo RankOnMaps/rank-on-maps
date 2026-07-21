@@ -1,46 +1,42 @@
 {
-  "generated_at": "2026-07-21T05:49:27.576332+00:00",
+  "generated_at": "2026-07-21T14:56:10.559331+00:00",
   "totals": {
-    "total_leads": 461,
-    "leads_30d": 225,
-    "total_opps": 314,
+    "total_leads": 464,
+    "leads_30d": 227,
+    "total_opps": 315,
     "calls_booked": 45,
     "ppas_signed": 12,
     "pipeline_value": 96948000
   },
   "channels_30d": {
-    "Other": 31,
+    "REA": 123,
     "Eligibility": 70,
-    "REA": 121,
+    "Other": 31,
     "Contact": 3
   },
   "channels_total": {
+    "REA": 300,
+    "Eligibility": 85,
     "Other": 74,
-    "Eligibility": 84,
-    "REA": 298,
     "Contact": 5
   },
   "stages": {
-    "New Lead": 141,
-    "Booked": 17,
-    "Lost": 97,
+    "New Lead": 123,
+    "Lost": 100,
+    "Not Yet Ready": 26,
+    "Booked": 16,
     "Won \u2014 Build Confirmed": 12,
-    "Nurturing": 10,
+    "Nurturing": 21,
     "Showed Up": 8,
     "Builder Shortlist Sent": 3,
     "Site Visit Scheduled": 2,
-    "Qualified": 3,
-    "Not Yet Ready": 21
+    "Qualified": 4
   },
   "stage_top_deals": {
     "New Lead": [
       [
         "Adam Haller",
         1225000.0
-      ],
-      [
-        "Karla McKay",
-        925000.0
       ],
       [
         "Chameera Jayatilaka",
@@ -179,14 +175,6 @@
         625000.0
       ],
       [
-        "charlene reid \u2014 REA",
-        625000.0
-      ],
-      [
-        "stuart spence \u2014 REA",
-        625000.0
-      ],
-      [
         "logan sullivan \u2014 REA",
         625000.0
       ],
@@ -271,11 +259,11 @@
         325000.0
       ],
       [
-        "Christian Martinez",
+        "Emily Peel",
         0.0
       ],
       [
-        "Neho Test",
+        "Christian Martinez",
         0.0
       ],
       [
@@ -288,18 +276,6 @@
       ],
       [
         "Gultana Julie Dzemailoski",
-        0.0
-      ],
-      [
-        "Jessica Harpur",
-        0.0
-      ],
-      [
-        "babak gol",
-        0.0
-      ],
-      [
-        "dawa",
         0.0
       ],
       [
@@ -395,10 +371,6 @@
         0.0
       ],
       [
-        "Isioma Onyemgba",
-        0.0
-      ],
-      [
         "Lachlan  Bassula ",
         0.0
       ],
@@ -411,19 +383,11 @@
         0.0
       ],
       [
-        "Nur Malik",
-        0.0
-      ],
-      [
         "Rachel Statham",
         0.0
       ],
       [
         "Thomas Waratini",
-        0.0
-      ],
-      [
-        "Joshua Endersby",
         0.0
       ],
       [
@@ -463,14 +427,6 @@
         0.0
       ],
       [
-        " Stella Panucci",
-        0.0
-      ],
-      [
-        "Zhen Loo",
-        0.0
-      ],
-      [
         "Jordan Mitchell",
         0.0
       ],
@@ -487,19 +443,7 @@
         0.0
       ],
       [
-        "Sarah Oldfield",
-        0.0
-      ],
-      [
-        "Maria Farano",
-        0.0
-      ],
-      [
         "Melissa Lewis",
-        0.0
-      ],
-      [
-        "Peter  Haydon-Wood ",
         0.0
       ],
       [
@@ -508,18 +452,6 @@
       ],
       [
         "Cheyanne Love ",
-        0.0
-      ],
-      [
-        "Hanna Zurub",
-        0.0
-      ],
-      [
-        "Emma James",
-        0.0
-      ],
-      [
-        "Courtney Fear",
         0.0
       ],
       [
@@ -587,10 +519,6 @@
         0.0
       ],
       [
-        "Gabriel Purea",
-        0.0
-      ],
-      [
         "G Singh",
         0.0
       ],
@@ -625,11 +553,51 @@
         0.0
       ],
       [
+        "Isioma Onyemgba",
+        0.0
+      ],
+      [
+        "Nur Malik",
+        0.0
+      ],
+      [
         "Kulie Lane",
         0.0
       ],
       [
+        "Joshua Endersby",
+        0.0
+      ],
+      [
+        " Stella Panucci",
+        0.0
+      ],
+      [
+        "Sarah Oldfield",
+        0.0
+      ],
+      [
+        "Peter  Haydon-Wood ",
+        0.0
+      ],
+      [
+        "Bailey  Anderson",
+        0.0
+      ],
+      [
         "Jaqui Mellington",
+        0.0
+      ],
+      [
+        "Hanna Zurub",
+        0.0
+      ],
+      [
+        "Emma James",
+        0.0
+      ],
+      [
+        "Courtney Fear",
         0.0
       ],
       [
@@ -638,6 +606,10 @@
       ],
       [
         "Primrose Ngwende",
+        0.0
+      ],
+      [
+        "Gabriel Purea",
         0.0
       ]
     ],
@@ -705,10 +677,6 @@
       [
         "Gema Kapetanakis ",
         0.0
-      ],
-      [
-        "Bailey  Anderson",
-        0.0
       ]
     ],
     "Showed Up": [
@@ -746,6 +714,10 @@
       ]
     ],
     "Qualified": [
+      [
+        "Zhen Loo",
+        0.0
+      ],
       [
         "Dakshitha Perera",
         0.0
@@ -852,6 +824,14 @@
         625000.0
       ],
       [
+        "charlene reid \u2014 REA",
+        625000.0
+      ],
+      [
+        "stuart spence \u2014 REA",
+        625000.0
+      ],
+      [
         "jigneshkumar shah \u2014 REA",
         625000.0
       ],
@@ -866,6 +846,18 @@
       [
         "Andrew Tan",
         625000.0
+      ],
+      [
+        "Jessica Harpur",
+        0.0
+      ],
+      [
+        "babak gol",
+        0.0
+      ],
+      [
+        "dawa",
+        0.0
       ],
       [
         "coleen claire \u2014 REA",
@@ -940,6 +932,10 @@
       [
         "jesse sullivan \u2014 REA",
         1075000.0
+      ],
+      [
+        "Karla McKay",
+        925000.0
       ],
       [
         "Michelle Atkinson ",
@@ -1134,6 +1130,10 @@
         25000.0
       ],
       [
+        "Neho Test",
+        0.0
+      ],
+      [
         "Surya Khademi",
         0.0
       ],
@@ -1187,6 +1187,10 @@
       ],
       [
         "Usama Riaz",
+        0.0
+      ],
+      [
+        "Maria Farano",
         0.0
       ],
       [
@@ -1312,24 +1316,24 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 42125000.0,
+    "New Lead": 39950000.0,
+    "Lost": 41100000.0,
+    "Not Yet Ready": 6550000.0,
     "Booked": 3250000.0,
-    "Lost": 40175000.0,
     "Won \u2014 Build Confirmed": 273000.0,
     "Nurturing": 3725000.0,
     "Showed Up": 1400000.0,
     "Builder Shortlist Sent": 75000.0,
     "Site Visit Scheduled": 625000.0,
-    "Qualified": 0.0,
-    "Not Yet Ready": 5300000.0
+    "Qualified": 0.0
   },
   "per_rep": {
     "nNlkTC2z33NTPyxTxdE8": {
       "name": "David",
       "initial": "D",
-      "leads_30d": 58,
-      "leads_total": 107,
-      "opps_total": 84,
+      "leads_30d": 56,
+      "leads_total": 106,
+      "opps_total": 83,
       "opps_qualified": 1,
       "opps_won": 1
     },
@@ -1337,33 +1341,32 @@
       "name": "Abdullah",
       "initial": "A",
       "leads_30d": 38,
-      "leads_total": 87,
-      "opps_total": 85,
+      "leads_total": 84,
+      "opps_total": 82,
       "opps_qualified": 0,
       "opps_won": 6
     },
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 52,
-      "leads_total": 115,
-      "opps_total": 83,
-      "opps_qualified": 0,
+      "leads_30d": 56,
+      "leads_total": 118,
+      "opps_total": 84,
+      "opps_qualified": 1,
       "opps_won": 5
     },
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
       "leads_30d": 57,
-      "leads_total": 107,
-      "opps_total": 60,
+      "leads_total": 111,
+      "opps_total": 64,
       "opps_qualified": 2,
       "opps_won": 0
     }
   },
   "round_robin": {
     "last12": [
-      "David",
       "Hasib",
       "Masih",
       "David",
@@ -1374,16 +1377,17 @@
       "David",
       "Hasib",
       "Hasib",
-      "Masih"
+      "Masih",
+      "Abdullah"
     ],
     "balance": {
-      "David": 4,
       "Hasib": 4,
       "Masih": 3,
-      "Abdullah": 1
+      "David": 3,
+      "Abdullah": 2
     },
-    "health": "skewed",
-    "sequence_arrow": "David \u2192 Hasib \u2192 Masih \u2192 David \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 David \u2192 Hasib \u2192 Hasib \u2192 Masih"
+    "health": "healthy",
+    "sequence_arrow": "Hasib \u2192 Masih \u2192 David \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 David \u2192 Hasib \u2192 Hasib \u2192 Masih \u2192 Abdullah"
   },
   "appointments": []
 }
