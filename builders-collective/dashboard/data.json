@@ -1,37 +1,36 @@
 {
-  "generated_at": "2026-07-21T02:14:34.762175+00:00",
+  "generated_at": "2026-07-21T03:41:20.575536+00:00",
   "totals": {
     "total_leads": 459,
-    "leads_30d": 224,
-    "total_opps": 312,
-    "calls_booked": 48,
+    "leads_30d": 223,
+    "total_opps": 313,
+    "calls_booked": 45,
     "ppas_signed": 12,
     "pipeline_value": 96948000
   },
   "channels_30d": {
-    "Eligibility": 68,
-    "REA": 122,
-    "Other": 31,
+    "Eligibility": 69,
+    "REA": 121,
+    "Other": 30,
     "Contact": 3
   },
   "channels_total": {
-    "Eligibility": 82,
+    "Eligibility": 83,
     "REA": 298,
-    "Other": 74,
+    "Other": 73,
     "Contact": 5
   },
   "stages": {
-    "New Lead": 139,
+    "New Lead": 140,
     "Booked": 17,
-    "Contract Review": 1,
-    "Lost": 95,
+    "Lost": 97,
     "Won \u2014 Build Confirmed": 12,
     "Nurturing": 10,
     "Showed Up": 8,
-    "Builder Shortlist Sent": 4,
+    "Builder Shortlist Sent": 3,
     "Site Visit Scheduled": 2,
-    "Qualified": 4,
-    "Not Yet Ready": 20
+    "Qualified": 3,
+    "Not Yet Ready": 21
   },
   "stage_top_deals": {
     "New Lead": [
@@ -270,6 +269,10 @@
       [
         "shiju naroth \u2014 REA",
         325000.0
+      ],
+      [
+        "Neho Test",
+        0.0
       ],
       [
         "Sofia Watt",
@@ -750,10 +753,6 @@
       [
         "Aleksandra Dimovski",
         0.0
-      ],
-      [
-        "Archit",
-        0.0
       ]
     ],
     "Site Visit Scheduled": [
@@ -768,10 +767,6 @@
     ],
     "Builder Shortlist Sent": [
       [
-        "Sheenu Chitra",
-        625000.0
-      ],
-      [
         "Tendayi",
         25000.0
       ],
@@ -784,12 +779,7 @@
         25000.0
       ]
     ],
-    "Contract Review": [
-      [
-        "Surya Khademi",
-        0.0
-      ]
-    ],
+    "Contract Review": [],
     "Won \u2014 Build Confirmed": [
       [
         "Shannon Freeman",
@@ -883,6 +873,10 @@
       ],
       [
         "celeste gimenez \u2014 REA",
+        0.0
+      ],
+      [
+        "Archit",
         0.0
       ],
       [
@@ -1124,12 +1118,20 @@
         625000.0
       ],
       [
+        "Sheenu Chitra",
+        625000.0
+      ],
+      [
         "Dechen Wangmo",
         325000.0
       ],
       [
         "Shynae Otway",
         25000.0
+      ],
+      [
+        "Surya Khademi",
+        0.0
       ],
       [
         "Brett Walsh",
@@ -1308,12 +1310,11 @@
   "stage_pipeline_value": {
     "New Lead": 42125000.0,
     "Booked": 3250000.0,
-    "Contract Review": 0.0,
-    "Lost": 39550000.0,
+    "Lost": 40175000.0,
     "Won \u2014 Build Confirmed": 273000.0,
     "Nurturing": 3725000.0,
     "Showed Up": 1400000.0,
-    "Builder Shortlist Sent": 700000.0,
+    "Builder Shortlist Sent": 75000.0,
     "Site Visit Scheduled": 625000.0,
     "Qualified": 0.0,
     "Not Yet Ready": 5300000.0
@@ -1325,22 +1326,22 @@
       "leads_30d": 58,
       "leads_total": 107,
       "opps_total": 84,
-      "opps_qualified": 2,
+      "opps_qualified": 1,
       "opps_won": 1
     },
     "94SP86nEZ9qrsSTJB2Qe": {
       "name": "Abdullah",
       "initial": "A",
-      "leads_30d": 37,
-      "leads_total": 86,
-      "opps_total": 84,
+      "leads_30d": 38,
+      "leads_total": 87,
+      "opps_total": 85,
       "opps_qualified": 0,
       "opps_won": 6
     },
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 53,
+      "leads_30d": 52,
       "leads_total": 115,
       "opps_total": 83,
       "opps_qualified": 0,
