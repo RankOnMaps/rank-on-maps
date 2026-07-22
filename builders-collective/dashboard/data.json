@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-22T05:03:12.426996+00:00",
+  "generated_at": "2026-07-22T05:33:24.061530+00:00",
   "totals": {
     "total_leads": 466,
     "leads_30d": 226,
     "total_opps": 317,
-    "calls_booked": 46,
+    "calls_booked": 47,
     "ppas_signed": 12,
     "pipeline_value": 96948000
   },
@@ -21,10 +21,10 @@
     "Contact": 5
   },
   "stages": {
-    "New Lead": 123,
+    "New Lead": 122,
     "Lost": 101,
     "Not Yet Ready": 26,
-    "Booked": 17,
+    "Booked": 18,
     "Won \u2014 Build Confirmed": 12,
     "Nurturing": 21,
     "Showed Up": 8,
@@ -399,10 +399,6 @@
         0.0
       ],
       [
-        "Enan Talukder",
-        0.0
-      ],
-      [
         "Himanshi Babbar",
         0.0
       ],
@@ -664,6 +660,10 @@
       ],
       [
         "Rebecca Riley",
+        0.0
+      ],
+      [
+        "Enan Talukder",
         0.0
       ],
       [
