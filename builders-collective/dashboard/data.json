@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-07-22T05:33:24.061530+00:00",
+  "generated_at": "2026-07-22T14:09:53.420051+00:00",
   "totals": {
-    "total_leads": 466,
-    "leads_30d": 226,
-    "total_opps": 317,
+    "total_leads": 469,
+    "leads_30d": 219,
+    "total_opps": 320,
     "calls_booked": 47,
     "ppas_signed": 12,
     "pipeline_value": 96948000
   },
   "channels_30d": {
-    "Eligibility": 72,
-    "REA": 121,
-    "Other": 30,
+    "REA": 117,
+    "Other": 28,
+    "Eligibility": 71,
     "Contact": 3
   },
   "channels_total": {
+    "REA": 302,
+    "Other": 75,
     "Eligibility": 87,
-    "REA": 300,
-    "Other": 74,
     "Contact": 5
   },
   "stages": {
-    "New Lead": 122,
-    "Lost": 101,
-    "Not Yet Ready": 26,
+    "New Lead": 119,
+    "Not Yet Ready": 29,
+    "Lost": 104,
     "Booked": 18,
     "Won \u2014 Build Confirmed": 12,
     "Nurturing": 21,
@@ -259,11 +259,19 @@
         325000.0
       ],
       [
-        "Kade Faas",
+        "Leo Teebag",
         0.0
       ],
       [
-        "Josiah",
+        "Michel Barbier",
+        0.0
+      ],
+      [
+        "Lakhvir Jagpal",
+        0.0
+      ],
+      [
+        "Kade Faas",
         0.0
       ],
       [
@@ -276,14 +284,6 @@
       ],
       [
         "Sofia Watt",
-        0.0
-      ],
-      [
-        "Harry  Hudson",
-        0.0
-      ],
-      [
-        "Gultana Julie Dzemailoski",
         0.0
       ],
       [
@@ -323,10 +323,6 @@
         0.0
       ],
       [
-        "Michael Khan",
-        0.0
-      ],
-      [
         "Jasmine Bennier",
         0.0
       ],
@@ -336,10 +332,6 @@
       ],
       [
         "Musse Goud",
-        0.0
-      ],
-      [
-        "Carne  Gibbs",
         0.0
       ],
       [
@@ -440,10 +432,6 @@
       ],
       [
         "Melissa Lewis",
-        0.0
-      ],
-      [
-        "Rowan ",
         0.0
       ],
       [
@@ -852,6 +840,14 @@
         625000.0
       ],
       [
+        "Josiah",
+        0.0
+      ],
+      [
+        "Harry  Hudson",
+        0.0
+      ],
+      [
         "Jessica Harpur",
         0.0
       ],
@@ -861,6 +857,10 @@
       ],
       [
         "dawa",
+        0.0
+      ],
+      [
+        "Rowan ",
         0.0
       ],
       [
@@ -1138,7 +1138,15 @@
         0.0
       ],
       [
+        "Gultana Julie Dzemailoski",
+        0.0
+      ],
+      [
         "Surya Khademi",
+        0.0
+      ],
+      [
+        "Michael Khan",
         0.0
       ],
       [
@@ -1151,6 +1159,10 @@
       ],
       [
         "Mariam Bajrai",
+        0.0
+      ],
+      [
+        "Carne  Gibbs",
         0.0
       ],
       [
@@ -1325,8 +1337,8 @@
   },
   "stage_pipeline_value": {
     "New Lead": 39950000.0,
-    "Lost": 41100000.0,
     "Not Yet Ready": 6550000.0,
+    "Lost": 41100000.0,
     "Booked": 3250000.0,
     "Won \u2014 Build Confirmed": 273000.0,
     "Nurturing": 3725000.0,
@@ -1339,16 +1351,16 @@
     "nNlkTC2z33NTPyxTxdE8": {
       "name": "David",
       "initial": "D",
-      "leads_30d": 55,
+      "leads_30d": 53,
       "leads_total": 107,
-      "opps_total": 84,
+      "opps_total": 83,
       "opps_qualified": 1,
       "opps_won": 1
     },
     "94SP86nEZ9qrsSTJB2Qe": {
       "name": "Abdullah",
       "initial": "A",
-      "leads_30d": 38,
+      "leads_30d": 37,
       "leads_total": 84,
       "opps_total": 82,
       "opps_qualified": 0,
@@ -1357,18 +1369,18 @@
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 56,
-      "leads_total": 119,
-      "opps_total": 85,
+      "leads_30d": 57,
+      "leads_total": 121,
+      "opps_total": 88,
       "opps_qualified": 1,
       "opps_won": 5
     },
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 57,
-      "leads_total": 111,
-      "opps_total": 64,
+      "leads_30d": 55,
+      "leads_total": 112,
+      "opps_total": 65,
       "opps_qualified": 2,
       "opps_won": 0
     }
