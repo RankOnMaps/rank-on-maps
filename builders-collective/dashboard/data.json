@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-22T01:46:48.128477+00:00",
+  "generated_at": "2026-07-22T02:16:59.782880+00:00",
   "totals": {
     "total_leads": 465,
     "leads_30d": 226,
     "total_opps": 316,
-    "calls_booked": 45,
+    "calls_booked": 46,
     "ppas_signed": 12,
     "pipeline_value": 96948000
   },
@@ -21,10 +21,10 @@
     "Contact": 5
   },
   "stages": {
-    "New Lead": 124,
+    "New Lead": 123,
     "Lost": 100,
     "Not Yet Ready": 26,
-    "Booked": 16,
+    "Booked": 17,
     "Won \u2014 Build Confirmed": 12,
     "Nurturing": 21,
     "Showed Up": 8,
@@ -312,10 +312,6 @@
       ],
       [
         "Miki Trbojevich",
-        0.0
-      ],
-      [
-        "Laura Boyle",
         0.0
       ],
       [
@@ -636,6 +632,10 @@
       ],
       [
         "Lauren Lang",
+        0.0
+      ],
+      [
+        "Laura Boyle",
         0.0
       ],
       [
