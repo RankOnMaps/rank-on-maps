@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-22T14:09:53.420051+00:00",
+  "generated_at": "2026-07-22T14:40:06.974480+00:00",
   "totals": {
     "total_leads": 469,
     "leads_30d": 219,
     "total_opps": 320,
     "calls_booked": 47,
     "ppas_signed": 12,
-    "pipeline_value": 96948000
+    "pipeline_value": 98198000
   },
   "channels_30d": {
     "REA": 117,
@@ -143,6 +143,14 @@
         775000.0
       ],
       [
+        "Michel Barbier",
+        625000.0
+      ],
+      [
+        "Lakhvir Jagpal",
+        625000.0
+      ],
+      [
         "Erin Corasaniti",
         625000.0
       ],
@@ -260,14 +268,6 @@
       ],
       [
         "Leo Teebag",
-        0.0
-      ],
-      [
-        "Michel Barbier",
-        0.0
-      ],
-      [
-        "Lakhvir Jagpal",
         0.0
       ],
       [
@@ -1336,7 +1336,7 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 39950000.0,
+    "New Lead": 41200000.0,
     "Not Yet Ready": 6550000.0,
     "Lost": 41100000.0,
     "Booked": 3250000.0,
