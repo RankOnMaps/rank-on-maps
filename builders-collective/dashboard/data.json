@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-07-23T04:35:01.491974+00:00",
+  "generated_at": "2026-07-23T14:00:53.489229+00:00",
   "totals": {
-    "total_leads": 474,
-    "leads_30d": 222,
-    "total_opps": 325,
-    "calls_booked": 47,
+    "total_leads": 477,
+    "leads_30d": 223,
+    "total_opps": 328,
+    "calls_booked": 48,
     "ppas_signed": 12,
     "pipeline_value": 99448000
   },
   "channels_30d": {
-    "Eligibility": 72,
-    "REA": 118,
     "Other": 29,
+    "Eligibility": 74,
+    "REA": 117,
     "Contact": 3
   },
   "channels_total": {
-    "Eligibility": 90,
+    "Other": 77,
+    "Eligibility": 92,
     "REA": 303,
-    "Other": 76,
     "Contact": 5
   },
   "stages": {
     "New Lead": 124,
-    "Not Yet Ready": 29,
-    "Lost": 104,
-    "Booked": 18,
+    "Booked": 19,
+    "Not Yet Ready": 30,
+    "Lost": 105,
     "Won \u2014 Build Confirmed": 12,
     "Nurturing": 21,
     "Showed Up": 8,
@@ -275,6 +275,18 @@
         325000.0
       ],
       [
+        "Isabel Hislop",
+        0.0
+      ],
+      [
+        "Sway Smith",
+        0.0
+      ],
+      [
+        "Noura Hamza",
+        0.0
+      ],
+      [
         "",
         0.0
       ],
@@ -283,19 +295,7 @@
         0.0
       ],
       [
-        "Nimisha Ravi",
-        0.0
-      ],
-      [
         "Leo Teebag",
-        0.0
-      ],
-      [
-        "Kade Faas",
-        0.0
-      ],
-      [
-        "Emily Peel",
         0.0
       ],
       [
@@ -635,6 +635,10 @@
         775000.0
       ],
       [
+        "Nimisha Ravi",
+        0.0
+      ],
+      [
         "Lauren Lang",
         0.0
       ],
@@ -858,6 +862,10 @@
       [
         "Andrew Tan",
         625000.0
+      ],
+      [
+        "Kade Faas",
+        0.0
       ],
       [
         "Josiah",
@@ -1154,6 +1162,10 @@
         25000.0
       ],
       [
+        "Emily Peel",
+        0.0
+      ],
+      [
         "Neho Test",
         0.0
       ],
@@ -1357,9 +1369,9 @@
   },
   "stage_pipeline_value": {
     "New Lead": 42450000.0,
+    "Booked": 3250000.0,
     "Not Yet Ready": 6550000.0,
     "Lost": 41100000.0,
-    "Booked": 3250000.0,
     "Won \u2014 Build Confirmed": 273000.0,
     "Nurturing": 3725000.0,
     "Showed Up": 1400000.0,
@@ -1380,18 +1392,18 @@
     "94SP86nEZ9qrsSTJB2Qe": {
       "name": "Abdullah",
       "initial": "A",
-      "leads_30d": 38,
-      "leads_total": 85,
-      "opps_total": 83,
+      "leads_30d": 39,
+      "leads_total": 86,
+      "opps_total": 84,
       "opps_qualified": 0,
       "opps_won": 6
     },
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 56,
-      "leads_total": 121,
-      "opps_total": 90,
+      "leads_30d": 57,
+      "leads_total": 122,
+      "opps_total": 91,
       "opps_qualified": 1,
       "opps_won": 5
     },
@@ -1399,16 +1411,14 @@
       "name": "Masih",
       "initial": "M",
       "leads_30d": 56,
-      "leads_total": 113,
-      "opps_total": 66,
+      "leads_total": 114,
+      "opps_total": 67,
       "opps_qualified": 2,
       "opps_won": 0
     }
   },
   "round_robin": {
     "last12": [
-      "Hasib",
-      "Masih",
       "David",
       "Hasib",
       "Hasib",
@@ -1418,16 +1428,18 @@
       "Hasib",
       "Masih",
       "Abdullah",
-      "David"
+      "David",
+      "Hasib",
+      "Masih"
     ],
     "balance": {
+      "David": 3,
       "Hasib": 4,
       "Masih": 3,
-      "David": 3,
       "Abdullah": 2
     },
     "health": "healthy",
-    "sequence_arrow": "Hasib \u2192 Masih \u2192 David \u2192 Hasib \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David"
+    "sequence_arrow": "David \u2192 Hasib \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih"
   },
   "appointments": []
 }
