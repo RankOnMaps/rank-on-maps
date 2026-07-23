@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-23T22:52:45.375233+00:00",
+  "generated_at": "2026-07-23T23:22:56.271861+00:00",
   "totals": {
     "total_leads": 477,
-    "leads_30d": 222,
+    "leads_30d": 221,
     "total_opps": 328,
     "calls_booked": 48,
     "ppas_signed": 12,
     "pipeline_value": 99448000
   },
   "channels_30d": {
-    "Other": 29,
+    "Other": 28,
     "Eligibility": 73,
     "REA": 117,
     "Contact": 3
