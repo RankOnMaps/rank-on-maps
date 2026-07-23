@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-23T03:32:06.918819+00:00",
+  "generated_at": "2026-07-23T04:35:01.491974+00:00",
   "totals": {
     "total_leads": 474,
     "leads_30d": 222,
-    "total_opps": 323,
+    "total_opps": 325,
     "calls_booked": 47,
     "ppas_signed": 12,
-    "pipeline_value": 98198000
+    "pipeline_value": 99448000
   },
   "channels_30d": {
     "Eligibility": 72,
@@ -21,7 +21,7 @@
     "Contact": 5
   },
   "stages": {
-    "New Lead": 122,
+    "New Lead": 124,
     "Not Yet Ready": 29,
     "Lost": 104,
     "Booked": 18,
@@ -141,6 +141,14 @@
       [
         "Balamurugan Arumugam",
         775000.0
+      ],
+      [
+        "Sangeetha Manian",
+        625000.0
+      ],
+      [
+        "Lap Kei (Terry) Chan",
+        625000.0
       ],
       [
         "Michel Barbier",
@@ -1348,7 +1356,7 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 41200000.0,
+    "New Lead": 42450000.0,
     "Not Yet Ready": 6550000.0,
     "Lost": 41100000.0,
     "Booked": 3250000.0,
@@ -1383,7 +1391,7 @@
       "initial": "H",
       "leads_30d": 56,
       "leads_total": 121,
-      "opps_total": 88,
+      "opps_total": 90,
       "opps_qualified": 1,
       "opps_won": 5
     },
