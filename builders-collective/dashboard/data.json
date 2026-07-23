@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-07-22T23:17:44.521634+00:00",
+  "generated_at": "2026-07-23T00:34:53.687752+00:00",
   "totals": {
-    "total_leads": 473,
-    "leads_30d": 222,
-    "total_opps": 322,
+    "total_leads": 474,
+    "leads_30d": 223,
+    "total_opps": 323,
     "calls_booked": 47,
     "ppas_signed": 12,
     "pipeline_value": 98198000
   },
   "channels_30d": {
-    "Eligibility": 72,
+    "Eligibility": 73,
     "REA": 118,
     "Other": 29,
     "Contact": 3
   },
   "channels_total": {
-    "Eligibility": 89,
+    "Eligibility": 90,
     "REA": 303,
     "Other": 76,
     "Contact": 5
   },
   "stages": {
-    "New Lead": 121,
+    "New Lead": 122,
     "Not Yet Ready": 29,
     "Lost": 104,
     "Booked": 18,
@@ -265,6 +265,10 @@
       [
         "shiju naroth \u2014 REA",
         325000.0
+      ],
+      [
+        "",
+        0.0
       ],
       [
         "Allysia Waddy",
@@ -1359,9 +1363,9 @@
     "nNlkTC2z33NTPyxTxdE8": {
       "name": "David",
       "initial": "D",
-      "leads_30d": 54,
-      "leads_total": 108,
-      "opps_total": 83,
+      "leads_30d": 55,
+      "leads_total": 109,
+      "opps_total": 84,
       "opps_qualified": 1,
       "opps_won": 1
     },
@@ -1395,7 +1399,6 @@
   },
   "round_robin": {
     "last12": [
-      "David",
       "Hasib",
       "Masih",
       "David",
@@ -1406,16 +1409,17 @@
       "David",
       "Hasib",
       "Masih",
-      "Abdullah"
+      "Abdullah",
+      "David"
     ],
     "balance": {
-      "David": 3,
       "Hasib": 4,
       "Masih": 3,
+      "David": 3,
       "Abdullah": 2
     },
     "health": "healthy",
-    "sequence_arrow": "David \u2192 Hasib \u2192 Masih \u2192 David \u2192 Hasib \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah"
+    "sequence_arrow": "Hasib \u2192 Masih \u2192 David \u2192 Hasib \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David"
   },
   "appointments": []
 }
