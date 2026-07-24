@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-24T04:32:17.619404+00:00",
+  "generated_at": "2026-07-24T05:02:58.759115+00:00",
   "totals": {
     "total_leads": 480,
-    "leads_30d": 224,
+    "leads_30d": 223,
     "total_opps": 331,
     "calls_booked": 51,
     "ppas_signed": 14,
@@ -10,7 +10,7 @@
   },
   "channels_30d": {
     "Other": 30,
-    "REA": 118,
+    "REA": 117,
     "Eligibility": 73,
     "Contact": 3
   },
@@ -21,13 +21,13 @@
     "Contact": 5
   },
   "stages": {
-    "New Lead": 123,
+    "New Lead": 122,
     "Showed Up": 10,
     "Builder Shortlist Sent": 4,
     "Won \u2014 Build Confirmed": 14,
     "Booked": 18,
     "Not Yet Ready": 31,
-    "Lost": 108,
+    "Lost": 109,
     "Nurturing": 18,
     "Site Visit Scheduled": 2,
     "Qualified": 3
@@ -37,10 +37,6 @@
       [
         "Adam Haller",
         1225000.0
-      ],
-      [
-        "Chameera Jayatilaka",
-        925000.0
       ],
       [
         "Nathalya Kennedy",
@@ -974,6 +970,10 @@
         925000.0
       ],
       [
+        "Chameera Jayatilaka",
+        925000.0
+      ],
+      [
         "Jasmin Kirov",
         925000.0
       ],
@@ -1380,13 +1380,13 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 41675000.0,
+    "New Lead": 40750000.0,
     "Showed Up": 2175000.0,
     "Builder Shortlist Sent": 100000.0,
     "Won \u2014 Build Confirmed": 273000.0,
     "Booked": 2475000.0,
     "Not Yet Ready": 6550000.0,
-    "Lost": 43425000.0,
+    "Lost": 44350000.0,
     "Nurturing": 2175000.0,
     "Site Visit Scheduled": 625000.0,
     "Qualified": 0.0
@@ -1404,7 +1404,7 @@
     "94SP86nEZ9qrsSTJB2Qe": {
       "name": "Abdullah",
       "initial": "A",
-      "leads_30d": 39,
+      "leads_30d": 38,
       "leads_total": 86,
       "opps_total": 87,
       "opps_qualified": 0,
