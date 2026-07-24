@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-24T03:31:30.272882+00:00",
+  "generated_at": "2026-07-24T04:01:45.020946+00:00",
   "totals": {
     "total_leads": 477,
     "leads_30d": 221,
     "total_opps": 328,
-    "calls_booked": 48,
-    "ppas_signed": 12,
+    "calls_booked": 49,
+    "ppas_signed": 14,
     "pipeline_value": 99448000
   },
   "channels_30d": {
@@ -21,16 +21,16 @@
     "Contact": 5
   },
   "stages": {
-    "New Lead": 124,
-    "Booked": 19,
-    "Not Yet Ready": 30,
-    "Lost": 105,
-    "Won \u2014 Build Confirmed": 12,
-    "Nurturing": 21,
-    "Showed Up": 8,
+    "New Lead": 123,
+    "Won \u2014 Build Confirmed": 14,
+    "Booked": 18,
+    "Not Yet Ready": 31,
+    "Lost": 107,
+    "Showed Up": 9,
+    "Nurturing": 18,
     "Builder Shortlist Sent": 3,
     "Site Visit Scheduled": 2,
-    "Qualified": 4
+    "Qualified": 3
   },
   "stage_top_deals": {
     "New Lead": [
@@ -287,10 +287,6 @@
         0.0
       ],
       [
-        "",
-        0.0
-      ],
-      [
         "Allysia Waddy",
         0.0
       ],
@@ -533,10 +529,6 @@
     ],
     "Nurturing": [
       [
-        "Jinu George",
-        925000.0
-      ],
-      [
         "Ivy Lam",
         775000.0
       ],
@@ -546,10 +538,6 @@
       ],
       [
         "YORDANOS Tadese",
-        625000.0
-      ],
-      [
-        "Laura Soucek",
         625000.0
       ],
       [
@@ -585,10 +573,6 @@
         0.0
       ],
       [
-        "Bailey  Anderson",
-        0.0
-      ],
-      [
         "Jaqui Mellington",
         0.0
       ],
@@ -621,10 +605,6 @@
       [
         "sarah iddamalgoda \u2014 REA",
         925000.0
-      ],
-      [
-        "Malak Aly",
-        775000.0
       ],
       [
         "ann castro \u2014 REA",
@@ -697,6 +677,10 @@
     ],
     "Showed Up": [
       [
+        "Malak Aly",
+        775000.0
+      ],
+      [
         "Hermann Kengwah Kinfer",
         775000.0
       ],
@@ -740,10 +724,6 @@
       ],
       [
         "Bec Bennett",
-        0.0
-      ],
-      [
-        "Aleksandra Dimovski",
         0.0
       ]
     ],
@@ -818,6 +798,14 @@
         18000.0
       ],
       [
+        "",
+        0.0
+      ],
+      [
+        "Aleksandra Dimovski",
+        0.0
+      ],
+      [
         "Omar Al Doski",
         0.0
       ]
@@ -885,6 +873,10 @@
       ],
       [
         "dawa",
+        0.0
+      ],
+      [
+        "Bailey  Anderson",
         0.0
       ],
       [
@@ -987,6 +979,10 @@
       ],
       [
         "billy ollabis \u2014 REA",
+        925000.0
+      ],
+      [
+        "Jinu George",
         925000.0
       ],
       [
@@ -1147,6 +1143,10 @@
       ],
       [
         "tina allen \u2014 REA",
+        625000.0
+      ],
+      [
+        "Laura Soucek",
         625000.0
       ],
       [
@@ -1369,12 +1369,12 @@
   },
   "stage_pipeline_value": {
     "New Lead": 42450000.0,
-    "Booked": 3250000.0,
-    "Not Yet Ready": 6550000.0,
-    "Lost": 41100000.0,
     "Won \u2014 Build Confirmed": 273000.0,
-    "Nurturing": 3725000.0,
-    "Showed Up": 1400000.0,
+    "Booked": 2475000.0,
+    "Not Yet Ready": 6550000.0,
+    "Lost": 42650000.0,
+    "Showed Up": 2175000.0,
+    "Nurturing": 2175000.0,
     "Builder Shortlist Sent": 75000.0,
     "Site Visit Scheduled": 625000.0,
     "Qualified": 0.0
@@ -1386,8 +1386,8 @@
       "leads_30d": 53,
       "leads_total": 109,
       "opps_total": 84,
-      "opps_qualified": 1,
-      "opps_won": 1
+      "opps_qualified": 0,
+      "opps_won": 3
     },
     "94SP86nEZ9qrsSTJB2Qe": {
       "name": "Abdullah",
