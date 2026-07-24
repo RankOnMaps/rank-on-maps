@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-07-24T11:26:08.260259+00:00",
+  "generated_at": "2026-07-24T11:56:51.381797+00:00",
   "totals": {
-    "total_leads": 485,
-    "leads_30d": 227,
-    "total_opps": 332,
+    "total_leads": 486,
+    "leads_30d": 226,
+    "total_opps": 333,
     "calls_booked": 51,
     "ppas_signed": 14,
     "pipeline_value": 99473000
   },
   "channels_30d": {
-    "REA": 120,
+    "Other": 31,
+    "REA": 118,
     "Eligibility": 74,
-    "Other": 30,
     "Contact": 3
   },
   "channels_total": {
+    "Other": 80,
     "REA": 308,
     "Eligibility": 93,
-    "Other": 79,
     "Contact": 5
   },
   "stages": {
-    "New Lead": 123,
+    "New Lead": 124,
     "Showed Up": 10,
     "Builder Shortlist Sent": 4,
     "Won \u2014 Build Confirmed": 14,
@@ -265,6 +265,10 @@
       [
         "shiju naroth \u2014 REA",
         325000.0
+      ],
+      [
+        "Ranae Barrett",
+        0.0
       ],
       [
         "B W",
@@ -1399,9 +1403,9 @@
     "nNlkTC2z33NTPyxTxdE8": {
       "name": "David",
       "initial": "D",
-      "leads_30d": 53,
-      "leads_total": 109,
-      "opps_total": 84,
+      "leads_30d": 54,
+      "leads_total": 110,
+      "opps_total": 85,
       "opps_qualified": 0,
       "opps_won": 3
     },
@@ -1417,7 +1421,7 @@
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 59,
+      "leads_30d": 58,
       "leads_total": 125,
       "opps_total": 91,
       "opps_qualified": 1,
@@ -1426,7 +1430,7 @@
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 58,
+      "leads_30d": 57,
       "leads_total": 116,
       "opps_total": 67,
       "opps_qualified": 2,
