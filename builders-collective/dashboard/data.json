@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-25T03:47:37.364165+00:00",
+  "generated_at": "2026-07-25T04:17:51.813476+00:00",
   "totals": {
     "total_leads": 492,
     "leads_30d": 230,
     "total_opps": 337,
-    "calls_booked": 51,
+    "calls_booked": 52,
     "ppas_signed": 14,
     "pipeline_value": 100098000
   },
@@ -21,12 +21,12 @@
     "Contact": 5
   },
   "stages": {
-    "New Lead": 127,
-    "Lost": 110,
+    "New Lead": 125,
+    "Lost": 111,
     "Showed Up": 10,
     "Builder Shortlist Sent": 4,
     "Won \u2014 Build Confirmed": 14,
-    "Booked": 18,
+    "Booked": 19,
     "Not Yet Ready": 31,
     "Nurturing": 18,
     "Site Visit Scheduled": 2,
@@ -371,10 +371,6 @@
         0.0
       ],
       [
-        "Suka Nguyen",
-        0.0
-      ],
-      [
         "rhyse kohler",
         0.0
       ],
@@ -420,10 +416,6 @@
       ],
       [
         "Michelle Kho",
-        0.0
-      ],
-      [
-        "Himanshi Babbar",
         0.0
       ],
       [
@@ -656,6 +648,10 @@
       ],
       [
         "Yow Srilak",
+        0.0
+      ],
+      [
+        "Suka Nguyen",
         0.0
       ],
       [
@@ -1255,6 +1251,10 @@
       ],
       [
         "Enayat Mousavi",
+        0.0
+      ],
+      [
+        "Himanshi Babbar",
         0.0
       ],
       [
