@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-07-25T09:14:48.564250+00:00",
+  "generated_at": "2026-07-25T16:00:54.396507+00:00",
   "totals": {
-    "total_leads": 498,
-    "leads_30d": 234,
-    "total_opps": 341,
+    "total_leads": 504,
+    "leads_30d": 238,
+    "total_opps": 343,
     "calls_booked": 53,
     "ppas_signed": 14,
     "pipeline_value": 100423000
   },
   "channels_30d": {
-    "Eligibility": 77,
-    "REA": 122,
+    "REA": 124,
+    "Eligibility": 79,
     "Other": 32,
     "Contact": 3
   },
   "channels_total": {
-    "Eligibility": 98,
-    "REA": 314,
+    "REA": 318,
+    "Eligibility": 100,
     "Other": 81,
     "Contact": 5
   },
   "stages": {
-    "New Lead": 128,
+    "New Lead": 130,
     "Booked": 20,
     "Lost": 111,
     "Showed Up": 10,
@@ -273,6 +273,14 @@
       [
         "shiju naroth \u2014 REA",
         325000.0
+      ],
+      [
+        "Geir Cuizon",
+        0.0
+      ],
+      [
+        "Rarlond Eyban",
+        0.0
       ],
       [
         "Akhuar Akhuar ",
@@ -1444,8 +1452,8 @@
     "94SP86nEZ9qrsSTJB2Qe": {
       "name": "Abdullah",
       "initial": "A",
-      "leads_30d": 38,
-      "leads_total": 89,
+      "leads_30d": 37,
+      "leads_total": 90,
       "opps_total": 91,
       "opps_qualified": 0,
       "opps_won": 6
@@ -1453,26 +1461,24 @@
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 59,
-      "leads_total": 126,
-      "opps_total": 92,
+      "leads_30d": 60,
+      "leads_total": 127,
+      "opps_total": 93,
       "opps_qualified": 1,
       "opps_won": 5
     },
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 60,
-      "leads_total": 120,
-      "opps_total": 68,
+      "leads_30d": 64,
+      "leads_total": 124,
+      "opps_total": 69,
       "opps_qualified": 2,
       "opps_won": 0
     }
   },
   "round_robin": {
     "last12": [
-      "Hasib",
-      "Masih",
       "Abdullah",
       "David",
       "Hasib",
@@ -1482,16 +1488,18 @@
       "Hasib",
       "Masih",
       "Abdullah",
-      "David"
+      "David",
+      "Hasib",
+      "Masih"
     ],
     "balance": {
-      "Hasib": 3,
-      "Masih": 3,
       "Abdullah": 3,
-      "David": 3
+      "David": 3,
+      "Hasib": 3,
+      "Masih": 3
     },
     "health": "healthy",
-    "sequence_arrow": "Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David"
+    "sequence_arrow": "Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih"
   },
   "appointments": []
 }
