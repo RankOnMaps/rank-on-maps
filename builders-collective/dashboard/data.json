@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-07-26T03:46:48.361003+00:00",
+  "generated_at": "2026-07-26T04:17:00.329528+00:00",
   "totals": {
-    "total_leads": 506,
-    "leads_30d": 238,
-    "total_opps": 344,
+    "total_leads": 507,
+    "leads_30d": 239,
+    "total_opps": 345,
     "calls_booked": 53,
     "ppas_signed": 14,
     "pipeline_value": 100423000
   },
   "channels_30d": {
+    "Other": 33,
     "Eligibility": 80,
     "REA": 123,
-    "Other": 32,
     "Contact": 3
   },
   "channels_total": {
+    "Other": 82,
     "Eligibility": 101,
     "REA": 319,
-    "Other": 81,
     "Contact": 5
   },
   "stages": {
-    "New Lead": 131,
+    "New Lead": 132,
     "Booked": 20,
     "Lost": 111,
     "Showed Up": 10,
@@ -273,6 +273,10 @@
       [
         "shiju naroth \u2014 REA",
         325000.0
+      ],
+      [
+        "",
+        0.0
       ],
       [
         "Maya Sharpe",
@@ -1465,9 +1469,9 @@
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 60,
-      "leads_total": 128,
-      "opps_total": 93,
+      "leads_30d": 61,
+      "leads_total": 129,
+      "opps_total": 94,
       "opps_qualified": 1,
       "opps_won": 5
     },
