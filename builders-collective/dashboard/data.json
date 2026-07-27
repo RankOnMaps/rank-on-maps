@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-27T06:45:08.741558+00:00",
+  "generated_at": "2026-07-27T07:15:22.049081+00:00",
   "totals": {
     "total_leads": 510,
     "leads_30d": 234,
-    "total_opps": 347,
-    "calls_booked": 53,
+    "total_opps": 348,
+    "calls_booked": 54,
     "ppas_signed": 14,
-    "pipeline_value": 100423000
+    "pipeline_value": 101198000
   },
   "channels_30d": {
     "REA": 120,
@@ -23,7 +23,7 @@
   "stages": {
     "New Lead": 132,
     "Not Yet Ready": 33,
-    "Booked": 20,
+    "Booked": 21,
     "Lost": 111,
     "Showed Up": 10,
     "Builder Shortlist Sent": 4,
@@ -61,6 +61,10 @@
       [
         "Divya patel",
         925000.0
+      ],
+      [
+        "Miriam Igasan",
+        775000.0
       ],
       [
         "Arati Desai",
@@ -324,10 +328,6 @@
       ],
       [
         "Sway Smith",
-        0.0
-      ],
-      [
-        "Noura Hamza",
         0.0
       ],
       [
@@ -652,6 +652,10 @@
       ],
       [
         "Brenton Engelbrecht",
+        0.0
+      ],
+      [
+        "Noura Hamza",
         0.0
       ],
       [
@@ -1444,7 +1448,7 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 41700000.0,
+    "New Lead": 42475000.0,
     "Not Yet Ready": 6550000.0,
     "Booked": 2475000.0,
     "Lost": 44350000.0,
@@ -1470,7 +1474,7 @@
       "initial": "A",
       "leads_30d": 38,
       "leads_total": 91,
-      "opps_total": 92,
+      "opps_total": 93,
       "opps_qualified": 0,
       "opps_won": 6
     },
