@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-07-27T23:00:00.666082+00:00",
+  "generated_at": "2026-07-27T23:30:28.827877+00:00",
   "totals": {
-    "total_leads": 516,
-    "leads_30d": 240,
+    "total_leads": 517,
+    "leads_30d": 241,
     "total_opps": 349,
     "calls_booked": 53,
     "ppas_signed": 14,
-    "pipeline_value": 101198000
+    "pipeline_value": 101973000
   },
   "channels_30d": {
-    "REA": 125,
+    "REA": 126,
     "Other": 34,
     "Eligibility": 78,
     "Contact": 3
   },
   "channels_total": {
-    "REA": 325,
+    "REA": 326,
     "Other": 84,
     "Eligibility": 102,
     "Contact": 5
@@ -1138,6 +1138,10 @@
         775000.0
       ],
       [
+        "karen felton \u2014 REA",
+        775000.0
+      ],
+      [
         "lovemore rungwe \u2014 REA",
         775000.0
       ],
@@ -1390,10 +1394,6 @@
         0.0
       ],
       [
-        "karen felton \u2014 REA",
-        0.0
-      ],
-      [
         "diane parallag \u2014 REA",
         0.0
       ],
@@ -1456,7 +1456,7 @@
     "Not Yet Ready": 6550000.0,
     "Booked": 2475000.0,
     "Site Visit Scheduled": 1250000.0,
-    "Lost": 44350000.0,
+    "Lost": 45125000.0,
     "Showed Up": 775000.0,
     "Builder Shortlist Sent": 100000.0,
     "Won \u2014 Build Confirmed": 273000.0,
@@ -1494,8 +1494,8 @@
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 65,
-      "leads_total": 128,
+      "leads_30d": 66,
+      "leads_total": 129,
       "opps_total": 70,
       "opps_qualified": 2,
       "opps_won": 0
