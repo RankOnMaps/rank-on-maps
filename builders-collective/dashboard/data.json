@@ -1,33 +1,33 @@
 {
-  "generated_at": "2026-07-27T04:04:17.682930+00:00",
+  "generated_at": "2026-07-27T04:44:23.008275+00:00",
   "totals": {
-    "total_leads": 509,
-    "leads_30d": 234,
+    "total_leads": 510,
+    "leads_30d": 235,
     "total_opps": 347,
     "calls_booked": 53,
     "ppas_signed": 14,
     "pipeline_value": 100423000
   },
   "channels_30d": {
+    "REA": 120,
     "Eligibility": 78,
     "Other": 34,
-    "REA": 119,
     "Contact": 3
   },
   "channels_total": {
+    "REA": 320,
     "Eligibility": 102,
     "Other": 83,
-    "REA": 319,
     "Contact": 5
   },
   "stages": {
-    "New Lead": 134,
+    "New Lead": 132,
+    "Not Yet Ready": 33,
     "Booked": 20,
     "Lost": 111,
     "Showed Up": 10,
     "Builder Shortlist Sent": 4,
     "Won \u2014 Build Confirmed": 14,
-    "Not Yet Ready": 31,
     "Nurturing": 18,
     "Site Visit Scheduled": 2,
     "Qualified": 3
@@ -283,10 +283,6 @@
         0.0
       ],
       [
-        "",
-        0.0
-      ],
-      [
         "Maya Sharpe",
         0.0
       ],
@@ -304,10 +300,6 @@
       ],
       [
         "Peace Wilmot ",
-        0.0
-      ],
-      [
-        "Tylar Fermandez",
         0.0
       ],
       [
@@ -912,6 +904,14 @@
         625000.0
       ],
       [
+        "",
+        0.0
+      ],
+      [
+        "Tylar Fermandez",
+        0.0
+      ],
+      [
         "Kade Faas",
         0.0
       ],
@@ -1445,12 +1445,12 @@
   },
   "stage_pipeline_value": {
     "New Lead": 41700000.0,
+    "Not Yet Ready": 6550000.0,
     "Booked": 2475000.0,
     "Lost": 44350000.0,
     "Showed Up": 2175000.0,
     "Builder Shortlist Sent": 100000.0,
     "Won \u2014 Build Confirmed": 273000.0,
-    "Not Yet Ready": 6550000.0,
     "Nurturing": 2175000.0,
     "Site Visit Scheduled": 625000.0,
     "Qualified": 0.0
@@ -1486,8 +1486,8 @@
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 62,
-      "leads_total": 125,
+      "leads_30d": 63,
+      "leads_total": 126,
       "opps_total": 70,
       "opps_qualified": 2,
       "opps_won": 0
