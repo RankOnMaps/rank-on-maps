@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-07-27T12:02:45.002867+00:00",
+  "generated_at": "2026-07-27T12:32:55.031945+00:00",
   "totals": {
-    "total_leads": 513,
-    "leads_30d": 237,
-    "total_opps": 348,
+    "total_leads": 514,
+    "leads_30d": 238,
+    "total_opps": 349,
     "calls_booked": 53,
     "ppas_signed": 14,
     "pipeline_value": 101198000
   },
   "channels_30d": {
+    "Other": 34,
     "REA": 123,
     "Eligibility": 78,
-    "Other": 33,
     "Contact": 3
   },
   "channels_total": {
+    "Other": 84,
     "REA": 323,
     "Eligibility": 102,
-    "Other": 83,
     "Contact": 5
   },
   "stages": {
-    "New Lead": 131,
+    "New Lead": 132,
     "Not Yet Ready": 33,
     "Booked": 21,
     "Site Visit Scheduled": 3,
@@ -273,6 +273,10 @@
       [
         "shiju naroth \u2014 REA",
         325000.0
+      ],
+      [
+        "Riki Tai",
+        0.0
       ],
       [
         "Jo Iongi",
@@ -1472,9 +1476,9 @@
     "94SP86nEZ9qrsSTJB2Qe": {
       "name": "Abdullah",
       "initial": "A",
-      "leads_30d": 38,
-      "leads_total": 91,
-      "opps_total": 93,
+      "leads_30d": 39,
+      "leads_total": 92,
+      "opps_total": 94,
       "opps_qualified": 0,
       "opps_won": 6
     },
