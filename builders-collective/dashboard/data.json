@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-07-28T04:53:55.993874+00:00",
+  "generated_at": "2026-07-28T05:24:09.880867+00:00",
   "totals": {
-    "total_leads": 518,
-    "leads_30d": 241,
+    "total_leads": 519,
+    "leads_30d": 242,
     "total_opps": 349,
     "calls_booked": 54,
     "ppas_signed": 14,
     "pipeline_value": 101973000
   },
   "channels_30d": {
+    "Other": 35,
     "REA": 126,
-    "Other": 34,
     "Eligibility": 78,
     "Contact": 3
   },
   "channels_total": {
+    "Other": 85,
     "REA": 327,
-    "Other": 84,
     "Eligibility": 102,
     "Contact": 5
   },
@@ -24,11 +24,11 @@
     "New Lead": 130,
     "Not Yet Ready": 34,
     "Booked": 22,
-    "Site Visit Scheduled": 3,
+    "Site Visit Scheduled": 4,
     "Lost": 111,
-    "Showed Up": 8,
     "Builder Shortlist Sent": 4,
     "Won \u2014 Build Confirmed": 14,
+    "Showed Up": 7,
     "Nurturing": 20,
     "Qualified": 3
   },
@@ -733,10 +733,6 @@
         775000.0
       ],
       [
-        "Philip Mensah",
-        0.0
-      ],
-      [
         "Karim Elgawady",
         0.0
       ],
@@ -783,6 +779,10 @@
       [
         "paul farr \u2014 REA",
         625000.0
+      ],
+      [
+        "Philip Mensah",
+        0.0
       ],
       [
         "Test  Deez",
@@ -1457,9 +1457,9 @@
     "Booked": 2475000.0,
     "Site Visit Scheduled": 1250000.0,
     "Lost": 45125000.0,
-    "Showed Up": 775000.0,
     "Builder Shortlist Sent": 100000.0,
     "Won \u2014 Build Confirmed": 273000.0,
+    "Showed Up": 775000.0,
     "Nurturing": 3575000.0,
     "Qualified": 0.0
   },
