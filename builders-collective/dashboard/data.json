@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T02:26:05.918500+00:00",
+  "generated_at": "2026-07-29T03:01:33.599460+00:00",
   "totals": {
     "total_leads": 528,
     "leads_30d": 248,
@@ -21,9 +21,9 @@
     "Contact": 5
   },
   "stages": {
-    "New Lead": 135,
+    "New Lead": 134,
+    "Not Yet Ready": 35,
     "Contract Review": 1,
-    "Not Yet Ready": 34,
     "Booked": 22,
     "Lost": 112,
     "Site Visit Scheduled": 4,
@@ -285,10 +285,6 @@
       ],
       [
         "Mariam Atieh",
-        0.0
-      ],
-      [
-        "Noah Weston",
         0.0
       ],
       [
@@ -934,6 +930,10 @@
         625000.0
       ],
       [
+        "Noah Weston",
+        0.0
+      ],
+      [
         "",
         0.0
       ],
@@ -1483,8 +1483,8 @@
   },
   "stage_pipeline_value": {
     "New Lead": 42300000.0,
-    "Contract Review": 625000.0,
     "Not Yet Ready": 6550000.0,
+    "Contract Review": 625000.0,
     "Booked": 2475000.0,
     "Lost": 45450000.0,
     "Site Visit Scheduled": 1250000.0,
