@@ -1,32 +1,32 @@
 {
-  "generated_at": "2026-07-30T05:05:16.257124+00:00",
+  "generated_at": "2026-07-30T13:57:15.111404+00:00",
   "totals": {
-    "total_leads": 538,
-    "leads_30d": 251,
-    "total_opps": 362,
-    "calls_booked": 55,
+    "total_leads": 543,
+    "leads_30d": 252,
+    "total_opps": 363,
+    "calls_booked": 56,
     "ppas_signed": 15,
     "pipeline_value": 103403000
   },
   "channels_30d": {
-    "Contact": 3,
-    "Eligibility": 80,
-    "REA": 132,
-    "Other": 36
+    "REA": 133,
+    "Other": 37,
+    "Contact": 2,
+    "Eligibility": 80
   },
   "channels_total": {
+    "REA": 340,
+    "Other": 88,
     "Contact": 6,
-    "Eligibility": 109,
-    "REA": 336,
-    "Other": 87
+    "Eligibility": 109
   },
   "stages": {
-    "New Lead": 138,
+    "Booked": 24,
+    "New Lead": 136,
     "Nurturing": 21,
     "Not Yet Ready": 35,
     "Contract Review": 1,
-    "Booked": 23,
-    "Lost": 113,
+    "Lost": 115,
     "Site Visit Scheduled": 3,
     "Builder Shortlist Sent": 4,
     "Won \u2014 Build Confirmed": 15,
@@ -57,10 +57,6 @@
       ],
       [
         "bernie \u2014 REA",
-        925000.0
-      ],
-      [
-        "Divya patel",
         925000.0
       ],
       [
@@ -580,10 +576,6 @@
         0.0
       ],
       [
-        "G Singh",
-        0.0
-      ],
-      [
         "Cherith Ferguson \u2014 Eligibility",
         0.0
       ]
@@ -686,6 +678,10 @@
       [
         "Nassa Atekhis",
         775000.0
+      ],
+      [
+        "Manish Malla",
+        0.0
       ],
       [
         "Brenton Engelbrecht",
@@ -1108,6 +1104,10 @@
         925000.0
       ],
       [
+        "Divya patel",
+        925000.0
+      ],
+      [
         "Thida Aung",
         775000.0
       ],
@@ -1496,6 +1496,10 @@
         0.0
       ],
       [
+        "G Singh",
+        0.0
+      ],
+      [
         "Maria Polson \u2014 Eligibility",
         0.0
       ],
@@ -1506,12 +1510,12 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 42300000.0,
+    "Booked": 2475000.0,
+    "New Lead": 41375000.0,
     "Nurturing": 3575000.0,
     "Not Yet Ready": 6550000.0,
     "Contract Review": 625000.0,
-    "Booked": 2475000.0,
-    "Lost": 45450000.0,
+    "Lost": 46375000.0,
     "Site Visit Scheduled": 1250000.0,
     "Builder Shortlist Sent": 105000.0,
     "Won \u2014 Build Confirmed": 298000.0,
@@ -1531,7 +1535,7 @@
     "94SP86nEZ9qrsSTJB2Qe": {
       "name": "Abdullah",
       "initial": "A",
-      "leads_30d": 39,
+      "leads_30d": 38,
       "leads_total": 95,
       "opps_total": 97,
       "opps_qualified": 0,
@@ -1540,8 +1544,8 @@
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 62,
-      "leads_total": 135,
+      "leads_30d": 63,
+      "leads_total": 137,
       "opps_total": 99,
       "opps_qualified": 1,
       "opps_won": 5
@@ -1549,9 +1553,9 @@
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 71,
-      "leads_total": 137,
-      "opps_total": 73,
+      "leads_30d": 72,
+      "leads_total": 140,
+      "opps_total": 74,
       "opps_qualified": 2,
       "opps_won": 0
     }
