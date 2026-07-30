@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-07-30T01:15:05.800806+00:00",
+  "generated_at": "2026-07-30T01:45:16.866464+00:00",
   "totals": {
     "total_leads": 536,
-    "leads_30d": 252,
-    "total_opps": 359,
+    "leads_30d": 251,
+    "total_opps": 360,
     "calls_booked": 55,
     "ppas_signed": 15,
     "pipeline_value": 103403000
   },
   "channels_30d": {
     "REA": 132,
-    "Eligibility": 81,
+    "Eligibility": 80,
     "Other": 37,
     "Contact": 2
   },
@@ -21,7 +21,7 @@
     "Contact": 5
   },
   "stages": {
-    "New Lead": 135,
+    "New Lead": 136,
     "Nurturing": 21,
     "Not Yet Ready": 35,
     "Contract Review": 1,
@@ -274,6 +274,10 @@
       [
         "shiju naroth \u2014 REA",
         325000.0
+      ],
+      [
+        "Alexandra King",
+        0.0
       ],
       [
         "Casey Taylor",
@@ -1530,14 +1534,14 @@
       "initial": "H",
       "leads_30d": 62,
       "leads_total": 135,
-      "opps_total": 98,
+      "opps_total": 99,
       "opps_qualified": 1,
       "opps_won": 5
     },
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 71,
+      "leads_30d": 70,
       "leads_total": 136,
       "opps_total": 72,
       "opps_qualified": 2,
