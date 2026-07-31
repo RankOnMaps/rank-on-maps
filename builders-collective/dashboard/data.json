@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-07-31T03:57:09.245287+00:00",
+  "generated_at": "2026-07-31T04:27:34.952122+00:00",
   "totals": {
-    "total_leads": 545,
-    "leads_30d": 252,
+    "total_leads": 546,
+    "leads_30d": 253,
     "total_opps": 364,
     "calls_booked": 56,
     "ppas_signed": 15,
     "pipeline_value": 103403000
   },
   "channels_30d": {
+    "Other": 38,
     "REA": 132,
     "Contact": 3,
-    "Other": 37,
     "Eligibility": 80
   },
   "channels_total": {
+    "Other": 89,
     "REA": 341,
     "Contact": 7,
-    "Other": 88,
     "Eligibility": 109
   },
   "stages": {
