@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-07-31T04:57:48.759402+00:00",
+  "generated_at": "2026-07-31T08:17:47.377817+00:00",
   "totals": {
-    "total_leads": 546,
-    "leads_30d": 253,
-    "total_opps": 364,
-    "calls_booked": 56,
+    "total_leads": 100,
+    "leads_30d": 100,
+    "total_opps": 365,
+    "calls_booked": 57,
     "ppas_signed": 15,
-    "pipeline_value": 103403000
+    "pipeline_value": 104028000
   },
   "channels_30d": {
-    "Other": 38,
-    "REA": 132,
-    "Contact": 3,
-    "Eligibility": 80
+    "Other": 21,
+    "REA": 47,
+    "Contact": 2,
+    "Eligibility": 30
   },
   "channels_total": {
-    "Other": 89,
-    "REA": 341,
-    "Contact": 7,
-    "Eligibility": 109
+    "Other": 21,
+    "REA": 47,
+    "Contact": 2,
+    "Eligibility": 30
   },
   "stages": {
+    "Booked": 25,
     "New Lead": 138,
-    "Booked": 24,
     "Nurturing": 20,
     "Not Yet Ready": 35,
     "Contract Review": 1,
@@ -682,6 +682,10 @@
       [
         "Nassa Atekhis",
         775000.0
+      ],
+      [
+        "clement Mensah",
+        625000.0
       ],
       [
         "Manish Malla",
@@ -1514,8 +1518,8 @@
     ]
   },
   "stage_pipeline_value": {
+    "Booked": 3100000.0,
     "New Lead": 41375000.0,
-    "Booked": 2475000.0,
     "Nurturing": 3575000.0,
     "Not Yet Ready": 6550000.0,
     "Contract Review": 625000.0,
@@ -1530,17 +1534,17 @@
     "nNlkTC2z33NTPyxTxdE8": {
       "name": "David",
       "initial": "D",
-      "leads_30d": 60,
-      "leads_total": 122,
-      "opps_total": 91,
+      "leads_30d": 19,
+      "leads_total": 19,
+      "opps_total": 92,
       "opps_qualified": 0,
       "opps_won": 3
     },
     "94SP86nEZ9qrsSTJB2Qe": {
       "name": "Abdullah",
       "initial": "A",
-      "leads_30d": 38,
-      "leads_total": 95,
+      "leads_30d": 13,
+      "leads_total": 13,
       "opps_total": 97,
       "opps_qualified": 0,
       "opps_won": 6
@@ -1548,8 +1552,8 @@
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 63,
-      "leads_total": 138,
+      "leads_30d": 30,
+      "leads_total": 30,
       "opps_total": 100,
       "opps_qualified": 1,
       "opps_won": 5
@@ -1557,8 +1561,8 @@
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 72,
-      "leads_total": 140,
+      "leads_30d": 31,
+      "leads_total": 31,
       "opps_total": 74,
       "opps_qualified": 2,
       "opps_won": 0
