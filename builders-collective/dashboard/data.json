@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T02:20:26.182405+00:00",
+  "generated_at": "2026-07-31T02:50:42.574885+00:00",
   "totals": {
     "total_leads": 543,
     "leads_30d": 250,
@@ -22,8 +22,8 @@
   },
   "stages": {
     "Booked": 24,
-    "New Lead": 136,
-    "Nurturing": 21,
+    "New Lead": 137,
+    "Nurturing": 20,
     "Not Yet Ready": 35,
     "Contract Review": 1,
     "Lost": 115,
@@ -452,6 +452,10 @@
         0.0
       ],
       [
+        "Nur Malik",
+        0.0
+      ],
+      [
         "Rachel Statham",
         0.0
       ],
@@ -611,10 +615,6 @@
       ],
       [
         "Isioma Onyemgba",
-        0.0
-      ],
-      [
-        "Nur Malik",
         0.0
       ],
       [
