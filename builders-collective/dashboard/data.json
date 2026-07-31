@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-07-31T02:50:42.574885+00:00",
+  "generated_at": "2026-07-31T03:57:09.245287+00:00",
   "totals": {
-    "total_leads": 543,
-    "leads_30d": 250,
-    "total_opps": 363,
+    "total_leads": 545,
+    "leads_30d": 252,
+    "total_opps": 364,
     "calls_booked": 56,
     "ppas_signed": 15,
     "pipeline_value": 103403000
   },
   "channels_30d": {
-    "REA": 131,
+    "REA": 132,
+    "Contact": 3,
     "Other": 37,
-    "Contact": 2,
     "Eligibility": 80
   },
   "channels_total": {
-    "REA": 340,
+    "REA": 341,
+    "Contact": 7,
     "Other": 88,
-    "Contact": 6,
     "Eligibility": 109
   },
   "stages": {
+    "New Lead": 138,
     "Booked": 24,
-    "New Lead": 137,
     "Nurturing": 20,
     "Not Yet Ready": 35,
     "Contract Review": 1,
@@ -270,6 +270,10 @@
       [
         "shiju naroth \u2014 REA",
         325000.0
+      ],
+      [
+        "Mark Parikh",
+        0.0
       ],
       [
         "Lauren Athanasoff",
@@ -1510,8 +1514,8 @@
     ]
   },
   "stage_pipeline_value": {
-    "Booked": 2475000.0,
     "New Lead": 41375000.0,
+    "Booked": 2475000.0,
     "Nurturing": 3575000.0,
     "Not Yet Ready": 6550000.0,
     "Contract Review": 625000.0,
@@ -1526,8 +1530,8 @@
     "nNlkTC2z33NTPyxTxdE8": {
       "name": "David",
       "initial": "D",
-      "leads_30d": 59,
-      "leads_total": 121,
+      "leads_30d": 60,
+      "leads_total": 122,
       "opps_total": 91,
       "opps_qualified": 0,
       "opps_won": 3
@@ -1544,9 +1548,9 @@
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 62,
-      "leads_total": 137,
-      "opps_total": 99,
+      "leads_30d": 63,
+      "leads_total": 138,
+      "opps_total": 100,
       "opps_qualified": 1,
       "opps_won": 5
     },
