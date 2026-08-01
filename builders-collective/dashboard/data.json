@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-01T03:45:28.675224+00:00",
+  "generated_at": "2026-08-01T04:15:42.822796+00:00",
   "totals": {
     "total_leads": 549,
     "leads_30d": 249,
     "total_opps": 366,
     "calls_booked": 57,
-    "ppas_signed": 15,
-    "pipeline_value": 104028000
+    "ppas_signed": 17,
+    "pipeline_value": 104053000
   },
   "channels_30d": {
     "REA": 132,
@@ -22,14 +22,14 @@
   },
   "stages": {
     "New Lead": 138,
-    "Booked": 25,
+    "Booked": 24,
     "Nurturing": 20,
     "Not Yet Ready": 35,
     "Contract Review": 1,
+    "Builder Shortlist Sent": 3,
     "Lost": 116,
     "Site Visit Scheduled": 3,
-    "Builder Shortlist Sent": 4,
-    "Won \u2014 Build Confirmed": 15,
+    "Won \u2014 Build Confirmed": 17,
     "Showed Up": 6,
     "Qualified": 3
   },
@@ -692,10 +692,6 @@
         0.0
       ],
       [
-        "Brenton Engelbrecht",
-        0.0
-      ],
-      [
         "William Moir",
         0.0
       ],
@@ -832,15 +828,11 @@
         30000.0
       ],
       [
+        "Brenton Engelbrecht",
+        25000.0
+      ],
+      [
         "Brett Brownlow",
-        25000.0
-      ],
-      [
-        "Maritsa",
-        25000.0
-      ],
-      [
-        "Codey Stewart",
         25000.0
       ]
     ],
@@ -868,11 +860,19 @@
         25000.0
       ],
       [
+        "Maritsa",
+        25000.0
+      ],
+      [
         "jason morrison \u2014 REA",
         25000.0
       ],
       [
         "sameh hammam \u2014 REA",
+        25000.0
+      ],
+      [
+        "Codey Stewart",
         25000.0
       ],
       [
@@ -1527,10 +1527,10 @@
     "Nurturing": 3575000.0,
     "Not Yet Ready": 6550000.0,
     "Contract Review": 625000.0,
+    "Builder Shortlist Sent": 80000.0,
     "Lost": 46375000.0,
     "Site Visit Scheduled": 1250000.0,
-    "Builder Shortlist Sent": 105000.0,
-    "Won \u2014 Build Confirmed": 298000.0,
+    "Won \u2014 Build Confirmed": 348000.0,
     "Showed Up": 775000.0,
     "Qualified": 0.0
   },
@@ -1551,7 +1551,7 @@
       "leads_total": 96,
       "opps_total": 98,
       "opps_qualified": 0,
-      "opps_won": 6
+      "opps_won": 8
     },
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
