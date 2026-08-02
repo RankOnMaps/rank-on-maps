@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-08-02T02:24:11.476664+00:00",
+  "generated_at": "2026-08-02T02:54:24.109498+00:00",
   "totals": {
-    "total_leads": 551,
+    "total_leads": 552,
     "leads_30d": 249,
-    "total_opps": 367,
+    "total_opps": 368,
     "calls_booked": 57,
     "ppas_signed": 17,
     "pipeline_value": 104053000
   },
   "channels_30d": {
-    "REA": 132,
+    "Other": 37,
+    "REA": 131,
     "Eligibility": 78,
-    "Other": 36,
     "Contact": 3
   },
   "channels_total": {
+    "Other": 90,
     "REA": 344,
     "Eligibility": 111,
-    "Other": 89,
     "Contact": 7
   },
   "stages": {
-    "New Lead": 139,
+    "New Lead": 140,
     "Booked": 24,
     "Nurturing": 20,
     "Not Yet Ready": 35,
@@ -270,6 +270,10 @@
       [
         "shiju naroth \u2014 REA",
         325000.0
+      ],
+      [
+        "Nicole Murazvu",
+        0.0
       ],
       [
         "Megan Crossley",
@@ -1552,8 +1556,8 @@
       "name": "Abdullah",
       "initial": "A",
       "leads_30d": 38,
-      "leads_total": 97,
-      "opps_total": 99,
+      "leads_total": 98,
+      "opps_total": 100,
       "opps_qualified": 0,
       "opps_won": 8
     },
