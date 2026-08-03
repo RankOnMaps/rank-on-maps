@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T00:54:38.821549+00:00",
+  "generated_at": "2026-08-03T03:26:31.571752+00:00",
   "totals": {
     "total_leads": 557,
     "leads_30d": 251,
@@ -22,15 +22,15 @@
   },
   "stages": {
     "New Lead": 142,
-    "Booked": 24,
+    "Booked": 23,
     "Nurturing": 20,
     "Not Yet Ready": 35,
     "Contract Review": 1,
     "Builder Shortlist Sent": 3,
     "Lost": 116,
     "Site Visit Scheduled": 3,
+    "Showed Up": 7,
     "Won \u2014 Build Confirmed": 17,
-    "Showed Up": 6,
     "Qualified": 3
   },
   "stage_top_deals": {
@@ -712,10 +712,6 @@
         0.0
       ],
       [
-        "Megan Kjellgren",
-        0.0
-      ],
-      [
         "Noura Hamza",
         0.0
       ],
@@ -788,6 +784,10 @@
       [
         "Malak Aly",
         775000.0
+      ],
+      [
+        "Megan Kjellgren",
+        0.0
       ],
       [
         "Karim Elgawady",
@@ -1546,8 +1546,8 @@
     "Builder Shortlist Sent": 80000.0,
     "Lost": 46375000.0,
     "Site Visit Scheduled": 1250000.0,
-    "Won \u2014 Build Confirmed": 348000.0,
     "Showed Up": 775000.0,
+    "Won \u2014 Build Confirmed": 348000.0,
     "Qualified": 0.0
   },
   "per_rep": {
