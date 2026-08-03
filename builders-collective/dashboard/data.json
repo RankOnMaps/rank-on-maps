@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-08-03T05:00:48.691318+00:00",
+  "generated_at": "2026-08-03T05:36:47.006491+00:00",
   "totals": {
-    "total_leads": 100,
-    "leads_30d": 100,
+    "total_leads": 557,
+    "leads_30d": 251,
     "total_opps": 372,
-    "calls_booked": 55,
+    "calls_booked": 54,
     "ppas_signed": 15,
     "pipeline_value": 105128000
   },
   "channels_30d": {
-    "Eligibility": 32,
-    "REA": 49,
-    "Other": 17,
-    "Contact": 2
+    "Eligibility": 80,
+    "REA": 134,
+    "Other": 34,
+    "Contact": 3
   },
   "channels_total": {
-    "Eligibility": 32,
-    "REA": 49,
-    "Other": 17,
-    "Contact": 2
+    "Eligibility": 113,
+    "REA": 347,
+    "Other": 90,
+    "Contact": 7
   },
   "stages": {
-    "New Lead": 140,
+    "New Lead": 137,
     "Not Yet Ready": 37,
-    "Booked": 24,
-    "Lost": 120,
+    "Booked": 23,
+    "Lost": 124,
     "Nurturing": 20,
     "Contract Review": 1,
     "Builder Shortlist Sent": 3,
@@ -280,10 +280,6 @@
         0.0
       ],
       [
-        "Nicole Murazvu",
-        0.0
-      ],
-      [
         "Megan Crossley",
         0.0
       ],
@@ -336,10 +332,6 @@
         0.0
       ],
       [
-        "Maya Sharpe",
-        0.0
-      ],
-      [
         "Geir Cuizon",
         0.0
       ],
@@ -357,10 +349,6 @@
       ],
       [
         "B W",
-        0.0
-      ],
-      [
-        "Isabel Hislop",
         0.0
       ],
       [
@@ -704,6 +692,10 @@
         0.0
       ],
       [
+        "Maya Sharpe",
+        0.0
+      ],
+      [
         "William Moir",
         0.0
       ],
@@ -740,10 +732,6 @@
         0.0
       ],
       [
-        "Suka Nguyen",
-        0.0
-      ],
-      [
         "Mike Berg",
         0.0
       ],
@@ -753,10 +741,6 @@
       ],
       [
         "Rebecca Riley",
-        0.0
-      ],
-      [
-        "Enan Talukder",
         0.0
       ],
       [
@@ -1312,11 +1296,19 @@
         25000.0
       ],
       [
+        "Nicole Murazvu",
+        0.0
+      ],
+      [
         "Lauren Athanasoff",
         0.0
       ],
       [
         "Beckie Long",
+        0.0
+      ],
+      [
+        "Isabel Hislop",
         0.0
       ],
       [
@@ -1368,6 +1360,10 @@
         0.0
       ],
       [
+        "Suka Nguyen",
+        0.0
+      ],
+      [
         "Matthew Wynne",
         0.0
       ],
@@ -1389,6 +1385,10 @@
       ],
       [
         "Enayat Mousavi",
+        0.0
+      ],
+      [
+        "Enan Talukder",
         0.0
       ],
       [
@@ -1562,8 +1562,8 @@
     "nNlkTC2z33NTPyxTxdE8": {
       "name": "David",
       "initial": "D",
-      "leads_30d": 20,
-      "leads_total": 20,
+      "leads_30d": 63,
+      "leads_total": 126,
       "opps_total": 94,
       "opps_qualified": 0,
       "opps_won": 1
@@ -1571,8 +1571,8 @@
     "94SP86nEZ9qrsSTJB2Qe": {
       "name": "Abdullah",
       "initial": "A",
-      "leads_30d": 16,
-      "leads_total": 16,
+      "leads_30d": 39,
+      "leads_total": 99,
       "opps_total": 101,
       "opps_qualified": 0,
       "opps_won": 8
@@ -1580,8 +1580,8 @@
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 25,
-      "leads_total": 25,
+      "leads_30d": 63,
+      "leads_total": 139,
       "opps_total": 101,
       "opps_qualified": 1,
       "opps_won": 5
@@ -1589,8 +1589,8 @@
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 32,
-      "leads_total": 32,
+      "leads_30d": 71,
+      "leads_total": 142,
       "opps_total": 74,
       "opps_qualified": 2,
       "opps_won": 0
