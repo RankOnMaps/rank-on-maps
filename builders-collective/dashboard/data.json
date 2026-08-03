@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-03T03:26:31.571752+00:00",
+  "generated_at": "2026-08-03T03:59:21.074559+00:00",
   "totals": {
     "total_leads": 557,
     "leads_30d": 251,
     "total_opps": 370,
-    "calls_booked": 57,
-    "ppas_signed": 17,
+    "calls_booked": 55,
+    "ppas_signed": 15,
     "pipeline_value": 104053000
   },
   "channels_30d": {
@@ -21,16 +21,16 @@
     "Contact": 7
   },
   "stages": {
-    "New Lead": 142,
-    "Booked": 23,
+    "New Lead": 140,
+    "Booked": 24,
     "Nurturing": 20,
-    "Not Yet Ready": 35,
+    "Not Yet Ready": 36,
     "Contract Review": 1,
     "Builder Shortlist Sent": 3,
-    "Lost": 116,
-    "Site Visit Scheduled": 3,
+    "Lost": 119,
     "Showed Up": 7,
-    "Won \u2014 Build Confirmed": 17,
+    "Won \u2014 Build Confirmed": 15,
+    "Site Visit Scheduled": 2,
     "Qualified": 3
   },
   "stage_top_deals": {
@@ -276,10 +276,6 @@
         0.0
       ],
       [
-        "Jordan Bruce",
-        0.0
-      ],
-      [
         "Nicole Murazvu",
         0.0
       ],
@@ -321,10 +317,6 @@
       ],
       [
         "Michelle Walker",
-        0.0
-      ],
-      [
-        "Mariam Atieh",
         0.0
       ],
       [
@@ -704,6 +696,10 @@
         625000.0
       ],
       [
+        "Jordan Bruce",
+        0.0
+      ],
+      [
         "Manish Malla",
         0.0
       ],
@@ -826,10 +822,6 @@
     ],
     "Site Visit Scheduled": [
       [
-        "Tarlochan Singh Grewal",
-        625000.0
-      ],
-      [
         "paul farr \u2014 REA",
         625000.0
       ],
@@ -916,14 +908,6 @@
         18000.0
       ],
       [
-        "",
-        0.0
-      ],
-      [
-        "Aleksandra Dimovski",
-        0.0
-      ],
-      [
         "Omar Al Doski",
         0.0
       ]
@@ -968,6 +952,10 @@
       [
         "Andrew Tan",
         625000.0
+      ],
+      [
+        "Mariam Atieh",
+        0.0
       ],
       [
         "Noah Weston",
@@ -1244,6 +1232,10 @@
         775000.0
       ],
       [
+        "Tarlochan Singh Grewal",
+        625000.0
+      ],
+      [
         "Maddi Lamaro",
         625000.0
       ],
@@ -1317,6 +1309,10 @@
       ],
       [
         "Beckie Long",
+        0.0
+      ],
+      [
+        "",
         0.0
       ],
       [
@@ -1516,6 +1512,10 @@
         0.0
       ],
       [
+        "Aleksandra Dimovski",
+        0.0
+      ],
+      [
         "Denzil Stephens ",
         0.0
       ],
@@ -1544,10 +1544,10 @@
     "Not Yet Ready": 6550000.0,
     "Contract Review": 625000.0,
     "Builder Shortlist Sent": 80000.0,
-    "Lost": 46375000.0,
-    "Site Visit Scheduled": 1250000.0,
+    "Lost": 47000000.0,
     "Showed Up": 775000.0,
     "Won \u2014 Build Confirmed": 348000.0,
+    "Site Visit Scheduled": 625000.0,
     "Qualified": 0.0
   },
   "per_rep": {
@@ -1558,7 +1558,7 @@
       "leads_total": 126,
       "opps_total": 93,
       "opps_qualified": 0,
-      "opps_won": 3
+      "opps_won": 1
     },
     "94SP86nEZ9qrsSTJB2Qe": {
       "name": "Abdullah",
