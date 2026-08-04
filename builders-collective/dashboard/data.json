@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-04T04:11:52.640439+00:00",
+  "generated_at": "2026-08-04T04:44:38.796933+00:00",
   "totals": {
     "total_leads": 566,
     "leads_30d": 253,
     "total_opps": 375,
-    "calls_booked": 54,
+    "calls_booked": 55,
     "ppas_signed": 15,
     "pipeline_value": 105128000
   },
@@ -21,10 +21,10 @@
     "Contact": 7
   },
   "stages": {
-    "New Lead": 137,
+    "New Lead": 136,
     "Lost": 127,
     "Not Yet Ready": 37,
-    "Booked": 23,
+    "Booked": 24,
     "Nurturing": 20,
     "Contract Review": 1,
     "Builder Shortlist Sent": 3,
@@ -384,10 +384,6 @@
         0.0
       ],
       [
-        "Piya D D",
-        0.0
-      ],
-      [
         "Travis Mepham",
         0.0
       ],
@@ -705,6 +701,10 @@
       ],
       [
         "Nimisha Ravi",
+        0.0
+      ],
+      [
+        "Piya D D",
         0.0
       ],
       [
