@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T02:50:52.407896+00:00",
+  "generated_at": "2026-08-04T03:41:40.321121+00:00",
   "totals": {
     "total_leads": 566,
     "leads_30d": 253,
@@ -21,10 +21,10 @@
     "Contact": 7
   },
   "stages": {
-    "New Lead": 139,
+    "New Lead": 138,
+    "Lost": 126,
     "Not Yet Ready": 37,
     "Booked": 23,
-    "Lost": 125,
     "Nurturing": 20,
     "Contract Review": 1,
     "Builder Shortlist Sent": 3,
@@ -273,10 +273,6 @@
       ],
       [
         "Janelle Sim",
-        0.0
-      ],
-      [
-        "",
         0.0
       ],
       [
@@ -1304,6 +1300,10 @@
         25000.0
       ],
       [
+        "",
+        0.0
+      ],
+      [
         "Nicole Murazvu",
         0.0
       ],
@@ -1559,9 +1559,9 @@
   },
   "stage_pipeline_value": {
     "New Lead": 41375000.0,
+    "Lost": 47000000.0,
     "Not Yet Ready": 7625000.0,
     "Booked": 3100000.0,
-    "Lost": 47000000.0,
     "Nurturing": 3575000.0,
     "Contract Review": 625000.0,
     "Builder Shortlist Sent": 80000.0,
