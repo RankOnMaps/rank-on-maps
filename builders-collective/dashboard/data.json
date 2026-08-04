@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T03:41:40.321121+00:00",
+  "generated_at": "2026-08-04T04:11:52.640439+00:00",
   "totals": {
     "total_leads": 566,
     "leads_30d": 253,
@@ -21,8 +21,8 @@
     "Contact": 7
   },
   "stages": {
-    "New Lead": 138,
-    "Lost": 126,
+    "New Lead": 137,
+    "Lost": 127,
     "Not Yet Ready": 37,
     "Booked": 23,
     "Nurturing": 20,
@@ -153,10 +153,6 @@
       ],
       [
         "Lakhvir Jagpal",
-        625000.0
-      ],
-      [
-        "Erin Corasaniti",
         625000.0
       ],
       [
@@ -1228,6 +1224,10 @@
         625000.0
       ],
       [
+        "Erin Corasaniti",
+        625000.0
+      ],
+      [
         "Maddi Lamaro",
         625000.0
       ],
@@ -1558,8 +1558,8 @@
     ]
   },
   "stage_pipeline_value": {
-    "New Lead": 41375000.0,
-    "Lost": 47000000.0,
+    "New Lead": 40750000.0,
+    "Lost": 47625000.0,
     "Not Yet Ready": 7625000.0,
     "Booked": 3100000.0,
     "Nurturing": 3575000.0,
