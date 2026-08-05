@@ -1,34 +1,34 @@
 {
-  "generated_at": "2026-08-04T23:03:55.344709+00:00",
+  "generated_at": "2026-08-05T05:31:34.038312+00:00",
   "totals": {
-    "total_leads": 200,
-    "leads_30d": 200,
-    "total_opps": 378,
+    "total_leads": 569,
+    "leads_30d": 240,
+    "total_opps": 379,
     "calls_booked": 55,
     "ppas_signed": 15,
-    "pipeline_value": 105128000
+    "pipeline_value": 105903000
   },
   "channels_30d": {
-    "Eligibility": 71,
-    "Other": 31,
-    "REA": 96,
-    "Contact": 2
+    "Eligibility": 85,
+    "Other": 33,
+    "REA": 119,
+    "Contact": 3
   },
   "channels_total": {
-    "Eligibility": 71,
-    "Other": 31,
-    "REA": 96,
-    "Contact": 2
+    "Eligibility": 118,
+    "Other": 91,
+    "REA": 353,
+    "Contact": 7
   },
   "stages": {
+    "Showed Up": 9,
     "New Lead": 139,
     "Lost": 127,
     "Not Yet Ready": 37,
-    "Booked": 24,
-    "Nurturing": 20,
+    "Booked": 22,
+    "Nurturing": 21,
     "Contract Review": 1,
     "Builder Shortlist Sent": 3,
-    "Showed Up": 7,
     "Won \u2014 Build Confirmed": 15,
     "Site Visit Scheduled": 2,
     "Qualified": 3
@@ -618,6 +618,10 @@
         0.0
       ],
       [
+        "Lauren Lang",
+        0.0
+      ],
+      [
         "Kelly Winrow",
         0.0
       ],
@@ -688,10 +692,6 @@
         775000.0
       ],
       [
-        "clement Mensah",
-        625000.0
-      ],
-      [
         "Jordan Bruce",
         0.0
       ],
@@ -717,10 +717,6 @@
       ],
       [
         "Piya D D",
-        0.0
-      ],
-      [
-        "Lauren Lang",
         0.0
       ],
       [
@@ -774,8 +770,16 @@
     ],
     "Showed Up": [
       [
+        "Nicholas Mentiplay",
+        775000.0
+      ],
+      [
         "Malak Aly",
         775000.0
+      ],
+      [
+        "clement Mensah",
+        625000.0
       ],
       [
         "Megan Kjellgren",
@@ -1570,14 +1574,14 @@
     ]
   },
   "stage_pipeline_value": {
+    "Showed Up": 2175000.0,
     "New Lead": 40750000.0,
     "Lost": 47625000.0,
     "Not Yet Ready": 7625000.0,
-    "Booked": 3100000.0,
+    "Booked": 2475000.0,
     "Nurturing": 3575000.0,
     "Contract Review": 625000.0,
     "Builder Shortlist Sent": 80000.0,
-    "Showed Up": 775000.0,
     "Won \u2014 Build Confirmed": 348000.0,
     "Site Visit Scheduled": 625000.0,
     "Qualified": 0.0
@@ -1586,17 +1590,17 @@
     "nNlkTC2z33NTPyxTxdE8": {
       "name": "David",
       "initial": "D",
-      "leads_30d": 56,
-      "leads_total": 56,
-      "opps_total": 96,
+      "leads_30d": 66,
+      "leads_total": 130,
+      "opps_total": 97,
       "opps_qualified": 0,
       "opps_won": 1
     },
     "94SP86nEZ9qrsSTJB2Qe": {
       "name": "Abdullah",
       "initial": "A",
-      "leads_30d": 32,
-      "leads_total": 32,
+      "leads_30d": 36,
+      "leads_total": 101,
       "opps_total": 102,
       "opps_qualified": 0,
       "opps_won": 8
@@ -1604,8 +1608,8 @@
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 46,
-      "leads_total": 46,
+      "leads_30d": 58,
+      "leads_total": 140,
       "opps_total": 102,
       "opps_qualified": 1,
       "opps_won": 5
@@ -1613,8 +1617,8 @@
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 53,
-      "leads_total": 53,
+      "leads_30d": 67,
+      "leads_total": 147,
       "opps_total": 76,
       "opps_qualified": 2,
       "opps_won": 0
