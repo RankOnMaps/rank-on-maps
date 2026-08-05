@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-08-05T08:59:42.620972+00:00",
+  "generated_at": "2026-08-05T09:29:54.006725+00:00",
   "totals": {
     "total_leads": 569,
-    "leads_30d": 239,
+    "leads_30d": 238,
     "total_opps": 379,
     "calls_booked": 55,
-    "ppas_signed": 15,
+    "ppas_signed": 16,
     "pipeline_value": 105903000
   },
   "channels_30d": {
     "Eligibility": 85,
     "Other": 33,
-    "REA": 118,
+    "REA": 117,
     "Contact": 3
   },
   "channels_total": {
@@ -22,14 +22,14 @@
   },
   "stages": {
     "Showed Up": 9,
-    "New Lead": 138,
-    "Not Yet Ready": 38,
-    "Lost": 127,
     "Booked": 22,
+    "New Lead": 137,
+    "Not Yet Ready": 38,
+    "Lost": 128,
     "Nurturing": 21,
     "Contract Review": 1,
-    "Builder Shortlist Sent": 3,
-    "Won \u2014 Build Confirmed": 15,
+    "Builder Shortlist Sent": 2,
+    "Won \u2014 Build Confirmed": 16,
     "Site Visit Scheduled": 2,
     "Qualified": 3
   },
@@ -266,10 +266,6 @@
       [
         "shiju naroth \u2014 REA",
         325000.0
-      ],
-      [
-        "Leon Smith",
-        0.0
       ],
       [
         "Michael Rozic",
@@ -688,6 +684,10 @@
         775000.0
       ],
       [
+        "Leon Smith",
+        0.0
+      ],
+      [
         "Jordan Bruce",
         0.0
       ],
@@ -709,10 +709,6 @@
       ],
       [
         "Nimisha Ravi",
-        0.0
-      ],
-      [
-        "Piya D D",
         0.0
       ],
       [
@@ -834,10 +830,6 @@
       [
         "Brenton Engelbrecht",
         25000.0
-      ],
-      [
-        "Brett Brownlow",
-        25000.0
       ]
     ],
     "Contract Review": [
@@ -854,6 +846,10 @@
       [
         "Junclar Curit",
         30000.0
+      ],
+      [
+        "Brett Brownlow",
+        25000.0
       ],
       [
         "Levi Mccalman",
@@ -1360,6 +1356,10 @@
         0.0
       ],
       [
+        "Piya D D",
+        0.0
+      ],
+      [
         "Michael Khan",
         0.0
       ],
@@ -1575,14 +1575,14 @@
   },
   "stage_pipeline_value": {
     "Showed Up": 2175000.0,
+    "Booked": 2475000.0,
     "New Lead": 40750000.0,
     "Not Yet Ready": 7625000.0,
     "Lost": 47625000.0,
-    "Booked": 2475000.0,
     "Nurturing": 3575000.0,
     "Contract Review": 625000.0,
-    "Builder Shortlist Sent": 80000.0,
-    "Won \u2014 Build Confirmed": 348000.0,
+    "Builder Shortlist Sent": 55000.0,
+    "Won \u2014 Build Confirmed": 373000.0,
     "Site Visit Scheduled": 625000.0,
     "Qualified": 0.0
   },
@@ -1603,12 +1603,12 @@
       "leads_total": 101,
       "opps_total": 102,
       "opps_qualified": 0,
-      "opps_won": 8
+      "opps_won": 9
     },
     "aWX3pK2BGS2WMaZzN5T4": {
       "name": "Hasib",
       "initial": "H",
-      "leads_30d": 58,
+      "leads_30d": 57,
       "leads_total": 140,
       "opps_total": 102,
       "opps_qualified": 1,
