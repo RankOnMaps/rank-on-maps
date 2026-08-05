@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-05T08:29:29.302411+00:00",
+  "generated_at": "2026-08-05T08:59:42.620972+00:00",
   "totals": {
     "total_leads": 569,
-    "leads_30d": 240,
+    "leads_30d": 239,
     "total_opps": 379,
     "calls_booked": 55,
     "ppas_signed": 15,
@@ -11,7 +11,7 @@
   "channels_30d": {
     "Eligibility": 85,
     "Other": 33,
-    "REA": 119,
+    "REA": 118,
     "Contact": 3
   },
   "channels_total": {
@@ -22,9 +22,9 @@
   },
   "stages": {
     "Showed Up": 9,
-    "New Lead": 139,
+    "New Lead": 138,
+    "Not Yet Ready": 38,
     "Lost": 127,
-    "Not Yet Ready": 37,
     "Booked": 22,
     "Nurturing": 21,
     "Contract Review": 1,
@@ -277,10 +277,6 @@
       ],
       [
         "Simeon Omonze ",
-        0.0
-      ],
-      [
-        "Janelle Sim",
         0.0
       ],
       [
@@ -958,6 +954,10 @@
         625000.0
       ],
       [
+        "Janelle Sim",
+        0.0
+      ],
+      [
         "Mariam Atieh",
         0.0
       ],
@@ -1576,8 +1576,8 @@
   "stage_pipeline_value": {
     "Showed Up": 2175000.0,
     "New Lead": 40750000.0,
-    "Lost": 47625000.0,
     "Not Yet Ready": 7625000.0,
+    "Lost": 47625000.0,
     "Booked": 2475000.0,
     "Nurturing": 3575000.0,
     "Contract Review": 625000.0,
@@ -1617,7 +1617,7 @@
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 67,
+      "leads_30d": 66,
       "leads_total": 147,
       "opps_total": 76,
       "opps_qualified": 2,
