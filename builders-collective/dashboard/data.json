@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-08-07T04:17:31.311626+00:00",
+  "generated_at": "2026-08-07T09:43:01.532115+00:00",
   "totals": {
-    "total_leads": 578,
-    "leads_30d": 234,
-    "total_opps": 382,
+    "total_leads": 579,
+    "leads_30d": 232,
+    "total_opps": 383,
     "calls_booked": 57,
     "ppas_signed": 16,
-    "pipeline_value": 105903000
+    "pipeline_value": 108203000
   },
   "channels_30d": {
-    "REA": 114,
-    "Eligibility": 84,
-    "Other": 33,
+    "Other": 34,
+    "REA": 113,
+    "Eligibility": 82,
     "Contact": 3
   },
   "channels_total": {
+    "Other": 93,
     "REA": 358,
     "Eligibility": 120,
-    "Other": 92,
     "Contact": 8
   },
   "stages": {
+    "Lost": 130,
     "New Lead": 137,
-    "Lost": 129,
     "Showed Up": 9,
     "Booked": 24,
     "Not Yet Ready": 38,
@@ -586,6 +586,10 @@
     ],
     "Nurturing": [
       [
+        "Kelly Winrow",
+        1075000.0
+      ],
+      [
         "Ivy Lam",
         775000.0
       ],
@@ -611,10 +615,6 @@
       ],
       [
         "Lauren Lang",
-        0.0
-      ],
-      [
-        "Kelly Winrow",
         0.0
       ],
       [
@@ -1067,6 +1067,10 @@
       ]
     ],
     "Lost": [
+      [
+        "KARIN Dautzenberg",
+        1225000.0
+      ],
       [
         "Sanja Maric",
         1075000.0
@@ -1586,12 +1590,12 @@
     ]
   },
   "stage_pipeline_value": {
+    "Lost": 48850000.0,
     "New Lead": 40750000.0,
-    "Lost": 47625000.0,
     "Showed Up": 2175000.0,
     "Booked": 2475000.0,
     "Not Yet Ready": 7625000.0,
-    "Nurturing": 3575000.0,
+    "Nurturing": 4650000.0,
     "Contract Review": 625000.0,
     "Builder Shortlist Sent": 55000.0,
     "Won \u2014 Build Confirmed": 373000.0,
@@ -1611,9 +1615,9 @@
     "94SP86nEZ9qrsSTJB2Qe": {
       "name": "Abdullah",
       "initial": "A",
-      "leads_30d": 38,
+      "leads_30d": 37,
       "leads_total": 103,
-      "opps_total": 103,
+      "opps_total": 104,
       "opps_qualified": 0,
       "opps_won": 9
     },
@@ -1629,7 +1633,7 @@
     "L3j2TVvp2VBUFZG6qP1l": {
       "name": "Masih",
       "initial": "M",
-      "leads_30d": 62,
+      "leads_30d": 60,
       "leads_total": 149,
       "opps_total": 77,
       "opps_qualified": 2,
