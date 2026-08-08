@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-08-08T03:48:22.089402+00:00",
+  "generated_at": "2026-08-08T04:21:34.046794+00:00",
   "totals": {
-    "total_leads": 400,
-    "leads_30d": 232,
-    "total_opps": 383,
+    "total_leads": 583,
+    "leads_30d": 233,
+    "total_opps": 384,
     "calls_booked": 57,
     "ppas_signed": 16,
     "pipeline_value": 108203000
   },
   "channels_30d": {
+    "Eligibility": 81,
     "REA": 115,
     "Other": 34,
-    "Eligibility": 80,
     "Contact": 3
   },
   "channels_total": {
-    "REA": 212,
-    "Other": 69,
-    "Eligibility": 112,
-    "Contact": 7
+    "Eligibility": 121,
+    "REA": 361,
+    "Other": 93,
+    "Contact": 8
   },
   "stages": {
+    "New Lead": 138,
     "Lost": 130,
-    "New Lead": 137,
     "Showed Up": 9,
     "Booked": 24,
     "Not Yet Ready": 38,
@@ -266,6 +266,10 @@
       [
         "shiju naroth \u2014 REA",
         325000.0
+      ],
+      [
+        "Annalise Theodorakis",
+        0.0
       ],
       [
         "Clement Mathieux ",
@@ -1590,8 +1594,8 @@
     ]
   },
   "stage_pipeline_value": {
-    "Lost": 48850000.0,
     "New Lead": 40750000.0,
+    "Lost": 48850000.0,
     "Showed Up": 2175000.0,
     "Booked": 2475000.0,
     "Not Yet Ready": 7625000.0,
@@ -1606,9 +1610,9 @@
     "nNlkTC2z33NTPyxTxdE8": {
       "name": "David",
       "initial": "D",
-      "leads_30d": 65,
-      "leads_total": 94,
-      "opps_total": 98,
+      "leads_30d": 66,
+      "leads_total": 134,
+      "opps_total": 99,
       "opps_qualified": 0,
       "opps_won": 1
     },
@@ -1616,7 +1620,7 @@
       "name": "Abdullah",
       "initial": "A",
       "leads_30d": 39,
-      "leads_total": 66,
+      "leads_total": 105,
       "opps_total": 104,
       "opps_qualified": 0,
       "opps_won": 9
@@ -1625,7 +1629,7 @@
       "name": "Hasib",
       "initial": "H",
       "leads_30d": 53,
-      "leads_total": 89,
+      "leads_total": 142,
       "opps_total": 102,
       "opps_qualified": 1,
       "opps_won": 5
@@ -1634,7 +1638,7 @@
       "name": "Masih",
       "initial": "M",
       "leads_30d": 60,
-      "leads_total": 109,
+      "leads_total": 149,
       "opps_total": 77,
       "opps_qualified": 2,
       "opps_won": 0
@@ -1642,7 +1646,6 @@
   },
   "round_robin": {
     "last12": [
-      "Masih",
       "Abdullah",
       "Abdullah",
       "David",
@@ -1653,16 +1656,17 @@
       "Hasib",
       "Masih",
       "Abdullah",
+      "David",
       "David"
     ],
     "balance": {
-      "Masih": 3,
       "Abdullah": 4,
-      "David": 3,
-      "Hasib": 2
+      "David": 4,
+      "Hasib": 2,
+      "Masih": 2
     },
     "health": "healthy",
-    "sequence_arrow": "Masih \u2192 Abdullah \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David"
+    "sequence_arrow": "Abdullah \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 Hasib \u2192 Masih \u2192 Abdullah \u2192 David \u2192 David"
   },
   "appointments": []
 }
